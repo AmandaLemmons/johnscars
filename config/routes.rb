@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root 'pages#index'
+  resources :order_sheets
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
