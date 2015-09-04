@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150902195711) do
+ActiveRecord::Schema.define(version: 20150904162818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 20150902195711) do
     t.date     "sign_date"
     t.string   "ship_to_countr"
     t.boolean  "same_information"
+    t.boolean  "texas_resident"
+    t.string   "transmission_type"
+    t.string   "transmission_detail"
+    t.string   "ls_type"
+    t.string   "hole_size"
+    t.string   "pilot_diameter"
+    t.string   "ls_year"
+    t.string   "rh_monies"
+    t.boolean  "rh_monies_yes"
+    t.string   "pattern_type"
   end
 
 end
