@@ -1,0 +1,143 @@
+<div class="container">
+  <%= link_to "Edit", edit_order_sheet_path(@order_sheet.id) %>
+
+  <h1 class="text-center"> JCI LS ZCAR ORDER SHEET </h1>
+  <p class="text-center">Please complete as much information as you can. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Illegible, incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, no personal or company checks, no credit cards and no wire transfers. <b> PARTS ARE NOT RETURNABLE.</b> </p>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3><b>CAR OWNER INFORMATION </b></h3>
+    </div>
+    <div class="col-md-6">
+      <h3><b>SHOP OR "SHIP TO" INFORMATION </b></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <b>Name:</b> <%= @order_sheet.car_owner_full_name %>
+    </div>
+    <div class="col-md-6">
+      <b>Contact Person</b> <%= @order_sheet.ship_to_contact_person %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <b>Address:</b> <%= @order_sheet.car_owner_address %>
+    </div>
+    <div class="col-md-6">
+      <b>Address:</b> <%= @order_sheet.ship_to_address %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <b>City/State:</b> <%= @order_sheet.car_owner_city %>, <%= @order_sheet.car_owner_state %>
+    </div>
+    <div class="col-md-3">
+      <b>City/State:</b> <%= @order_sheet.ship_to_city %>, <%= @order_sheet.ship_to_state %>
+    </div>
+    <div class="col-md-3">
+      <b>Zip: </b><%= @order_sheet.ship_to_zip %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <b>Email: </b><%= @order_sheet.car_owner_email %>
+    </div>
+    <div class="col-md-3">
+      <b> Zip: </b><%= @order_sheet.car_owner_zip %>
+    </div>
+    <div class="col-md-3">
+      <b>Email: </b><%= @order_sheet.ship_to_email %>
+    </div>
+    <div class="col-md-3">
+      <b>Country: </b><%= @order_sheet.ship_to_countr %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    <b>  Home Phone:</b> <%= @order_sheet.car_owner_home_phone %>
+    </div>
+    <div class="col-md-3">
+    <b>  Hours:</b> <%= @order_sheet.car_owner_home_hours %>
+    </div>
+    <div class="col-md-6">
+      <b>Shop Phone:</b> <%= @order_sheet.ship_to_phone %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    <b>  Work Phone:</b> <%= @order_sheet.car_owner_work_phone %>
+    </div>
+    <div class="col-md-3">
+    <b>  Hours:</b> <%= @order_sheet.car_owner_work_hours %>
+    </div>
+    <div class="col-md-6">
+      <b>Shop Fax:</b> <%= @order_sheet.ship_to_fax %>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3">
+    <b>  Fax Phone:</b> <%= @order_sheet.car_owner_fax %>
+    </div>
+    <div class="col-md-3">
+    <b>  Hours:</b> <%= @order_sheet.car_owner_fax_hours %>
+    </div>
+  </div>
+
+  <b>How did you find us?</b> <%= @order_sheet.car_owner_find_us %>
+
+  <br>
+  <br>
+
+  <div class="col-md-6 box">
+    <h1 class="text-center"> ZCAR INFO (Before V8) </h1>
+    <b>Type:</b> <%=@order_sheet.zcar_type%>
+    <br>
+    <b> VIN #: </b> <%= @order_sheet.zcar_vin%>
+    <br>
+    <b> Year: </b> <%= @order_sheet.zcar_year %>
+    <br>
+    <b> Month Built:</b> <%= @order_sheet.zcar_month_built %>
+    <br>
+    <b> Year Built: </b> <%= @order_sheet.zcar_year_built %>
+    <br>
+    <div class="text-center">
+      <b> <h3>Differential Flange Details</h3></b>
+    </div>
+    <b> Bolt Hole size:</b> <%= @order_sheet.hole_size%>mm
+    <br>
+    <b> Pilot Diameter:</b> <%= @order_sheet.pilot_diameter %>
+    <br>
+    <b> Square or Rectangle:</b> <%= @order_sheet.pattern_type %>
+    <br>
+    <div class="text-center">
+      <b> <h3>Transmission Details</h3></b>
+    </div>
+    <b> Transmission Type: </b> <%= @order_sheet.transmission_type %>
+    <br>
+    <b> Transmission Detail: </b> <%= @order_sheet.transmission_detail %>
+    <br>
+    <br>
+    <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion </p>
+  </div>
+
+  <div class="col-md-6 box">
+    <b><h1 class="text-center"> LS BUILDING BLOCKS</h1></b>
+    <b> <h3>LS ZCAR FRONT mount set</h3></b>
+    <% if @order_sheet.trans_crossmember == true %>
+      <b> Trans Crossmember and mount:</b> $135.00
+    <% else %>
+    <b> Trans Crossmember and mount: $0</b>
+    <%end%>
+
+  </div>
+
+</div>

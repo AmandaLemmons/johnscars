@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904162818) do
+ActiveRecord::Schema.define(version: 20150909213145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(version: 20150904162818) do
     t.string   "rh_monies"
     t.boolean  "rh_monies_yes"
     t.string   "pattern_type"
+    t.text     "comments"
+    t.integer  "amt1"
+    t.integer  "amt2"
+    t.integer  "amt3"
+    t.integer  "amt4"
+    t.integer  "amt5"
+    t.integer  "amt6"
+    t.integer  "amt7"
+    t.integer  "amt8"
+    t.integer  "amt9"
   end
 
 end
