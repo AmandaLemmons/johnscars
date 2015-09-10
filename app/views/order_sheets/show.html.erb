@@ -18,7 +18,7 @@
       <b>Name:</b> <%= @order_sheet.car_owner_full_name %>
     </div>
     <div class="col-md-6">
-      <b>Contact Person</b> <%= @order_sheet.ship_to_contact_person %>
+      <b>Contact Person</b> <%= @order_sheet.ship_to_full_name %>
     </div>
   </div>
 
@@ -132,11 +132,28 @@
   <div class="col-md-6 box">
     <b><h1 class="text-center"> LS BUILDING BLOCKS</h1></b>
     <b> <h3>LS ZCAR FRONT mount set</h3></b>
-    <% if @order_sheet.trans_crossmember == true %>
-      <b> Trans Crossmember and mount:</b> $135.00
-    <% else %>
-    <b> Trans Crossmember and mount: $0</b>
-    <%end%>
+    <br>
+    <b> Trans Crossmember and mount:</b> $<%= @order_sheet.amt1 %>
+    <br>
+    <b> Driveshaft - ready to install:</b> $<%= @order_sheet.amt2 %>
+    <br>
+    <b> Speedometer Drive Unit:</b> $<%= @order_sheet.amt3 %>
+    <br>
+    <b> Vital Liquids set:</b> $<%= @order_sheet.amt4 %>
+    <br>
+    <b> Header Set (Not California):</b> $<%= @order_sheet.amt5 %>
+    <br>
+    <b> AC Compressor & mounting kit):</b> $<%= @order_sheet.amt6 %>
+    <br>
+    <b> AC Hose Kit (factory AC '77-78'):</b> $<%= @order_sheet.amt7 %>
+    <br>
+    <b> High Volume fuel pump:</b> $<%= @order_sheet.amt8 %>
+    <br>
+    <b> Subtotal (Parts Freight paid):</b> $<%= @order_sheet.subtotal %>
+    <br>
+    <b> Texas Residents 8.25% Sales Tax + </b> $<%= @order_sheet.amt1 %>
+    <br>
+    <b> CASHIER'S CHECK = </b> $<%= @order_sheet.amt1 %>
 
   </div>
 
