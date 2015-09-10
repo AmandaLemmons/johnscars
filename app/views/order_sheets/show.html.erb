@@ -5,103 +5,95 @@
 
 
   <div class="col-md-12">
-    <table class="table">
+    <table class="table table-bordered">
       <thead>
         <tr>
-          <th >CAR OWNERINFORMATION</th>
-          <th > </th>
-          <th >SHOP OR"SHIP TO" INFORMATION  </th>
-          <th > </th>
+          <th> Details</th>
+          <th>CAR OWNER INFORMATION </th>
+          <th>SHOP OR "SHIP TO" INFORMATION  </th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th >Name:</b></th>
+          <th >Name</b></th>
           <td ><%= @order_sheet.car_owner_full_name %> </td>
-          <th >Name:</b></th>
-          <td ><%= @order_sheet.ship_to_full_name %> </td>
+          <td ><%= @order_sheet.ship_to_full_name %></td>
         </tr>
         <tr>
-          <th >Address:</b></th>
+          <th>Address</b></th>
           <td ><%= @order_sheet.car_owner_address %> </td>
-          <th >Address:</b></th>
           <td ><%= @order_sheet.ship_to_address %> </td>
         </tr>
         <tr>
-          <th >City, State Zip:</b></th>
+          <th >City, State Zip</b></th>
           <td > <%= @order_sheet.car_owner_city %>, <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %> </td>
-          <th >City, State Zip:</b></th>
           <td > <%= @order_sheet.ship_to_city %>, <%= @order_sheet.ship_to_state %> <%= @order_sheet.ship_to_zip %> </td>
         </tr>
         <tr>
-          <th > Country: </th>
+          <th> Country </th>
           <td ><%= @order_sheet.car_owner_countr %> </td>
-          <th > Country: </th>
           <td ><%= @order_sheet.ship_to_countr %> </td>
         </tr>
         <tr>
-          <th >Email:</b></th>
+          <th >Email</b></th>
           <td > <%= @order_sheet.car_owner_email %> </td>
-          <th >Email:</b></th>
           <td > <%= @order_sheet.ship_to_email %></td>
         </tr>
         <tr>
-          <th >Home Phone:</b></th>
-          <td > <%= @order_sheet.car_owner_home_phone %> </td>
-          <th >Shop Phone:</b></th>
-          <td > <%= @order_sheet.ship_to_phone %> </td>
+          <th>Home / Shop Phone</th>
+          <td> <%= @order_sheet.car_owner_home_phone %> From:  <%= @order_sheet.car_owner_home_hours %> </td>
+          <td> <%= @order_sheet.ship_to_phone %> </td>
         </tr>
         <tr>
-          <th >Hours:</b></th>
-          <td > <%= @order_sheet.car_owner_home_hours %> </td>
-          <th >Shop Fax:</b></th>
-          <td > <%= @order_sheet.ship_to_fax %> </td>
+          <th> Work Phone</th>
+          <td> <%= @order_sheet.car_owner_work_phone %> From: <%= @order_sheet.car_owner_work_hours %></td>
+          <td> </td>
         </tr>
         <tr>
-          <th >Work Phone:</b></th>
-          <td > <%= @order_sheet.car_owner_work_phone %> </td>
-
+          <th>Fax</th>
+          <td><%= @order_sheet.car_owner_fax %> From: <%= @order_sheet.car_owner_fax_hours %></td>
+          <td> <%= @order_sheet.ship_to_fax %> </td>
         </tr>
         <tr>
-          <th >Hours:</b></th>
-          <td ><%= @order_sheet.car_owner_work_hours %></td>
-
-        </tr>
-        <tr>
-          <th >Fax:</b></th>
-          <td ><%= @order_sheet.car_owner_fax %></td>
-
-        </tr>
-        <tr>
-          <th >Hours:</b></th>
-          <td ><%= @order_sheet.car_owner_fax_hours %></td>
-        </tr>
-        <tr>
-          <th >How did you find us?</b></th>
+          <th>How did you find us?</th>
           <td ><%= @order_sheet.car_owner_find_us %></td>
         </tr>
       </tbody>
   </table>
   </div>
-  <br>
 
-  <div class="col-md-4">
+  <div class="col-md-12">
     <table class="table table-bordered">
       <thead>
         <th>ZCAR INFO (Before V8) </th>
+        <th></th>
+        <th>Differential Flange Details</th>
+        <th></th>
+        <th>Transmission Details</th>
+        <th></th>
       </thead>
       <tbody>
         <tr>
-          <th >Type:</b></th>
-          <td ><%=@order_sheet.zcar_type%></td>
+          <th>Type</b></th>
+          <td><%=@order_sheet.zcar_type%></td>
+          <th>Bolt Hole size:</b></th>
+          <td><%= @order_sheet.hole_size%></td>
+          <th>Transmission Detail:</b></th>
+          <td><%= @order_sheet.transmission_detail %></td>
         </tr>
         <tr>
           <th >VIN #:</b></th>
           <td ><%= @order_sheet.zcar_vin%></td>
+          <th>Pilot Diameter:</b></th>
+          <td><%= @order_sheet.pilot_diameter %></td>
+          <th>Transmission Type: </b></th>
+          <td><%= @order_sheet.transmission_type %></td>
         </tr>
         <tr>
-          <th >Year:</b></th>
-          <td ><%= @order_sheet.zcar_year %>/td>
+          <th >Year:</th>
+          <td ><%= @order_sheet.zcar_year %></td>
+          <th >Square or Rectangle:</b></th>
+          <td ><%= @order_sheet.pattern_type %></td>
         </tr>
         <tr>
           <th >Month Built:</b></th>
@@ -111,106 +103,70 @@
           <th >Year Built:</b></th>
           <td ><%= @order_sheet.zcar_year_built %></td>
         </tr>
-        <tr>
-          <th >Month Built:</b></th>
-          <td ><%= @order_sheet.zcar_month_built %></td>
-        </tr>
       </tbody>
     </table>
   </div>
+      <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion
+      </p>
 
-  <div class="col-md-4">
-    <table class="table table-bordered">
-      <thead>
-        <th>Differential Flange Details</th>
-      </thead>
-      <tbody>
-        <tr>
-          <th >Bolt Hole size:</b></th>
-          <td ><%= @order_sheet.hole_size%></td>
-        </tr>
-        <tr>
-          <th >Pilot Diameter:</b></th>
-          <td ><%= @order_sheet.pilot_diameter %></td>
-        </tr>
-        <tr>
-          <th >Square or Rectangle:</b></th>
-          <td ><%= @order_sheet.pattern_type %></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="col-md-4">
-        <table class="table table-bordered">
-          <thead>
-            <th class="text-center">Transmission Details</th>
-          </thead>
-          <tbody>
-        <tr>
-          <th>Transmission Type: </b></th>
-          <td><%= @order_sheet.transmission_type %></td>
-        </tr>
-         <tr>
-          <th >Transmission Detail:</b></th>
-          <td ><%= @order_sheet.transmission_detail %></td>
-        </tr>
-      </tbody>
-  </table>
-      <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion </p>
-  </div>
-
-<div cass="col-md-6">
-  <table class="table table-bordered table-striped ">
-    <caption><h3><b>LS BUILDING BLOCKS</b> </h3> </caption>
+<div class="col-md-6 nopadding">
+  <table class="table table-bordered ">
+    <thead>
+      <th class="col-md-3">LS BUILDING BLOCKS</th>
+      <th class="col-md-3"> Price </th>
+    </thead>
     <tbody>
       <tr>
-        <th >LS ZCAR FRONT mount set:</b></th>
-        <td >$<%= @order_sheet.mount_set %></td>
+        <th>LS ZCAR FRONT mount set</th>
+        <td>$<%= @order_sheet.mount_set %></td>
       </tr>
       <tr>
-        <th >Trans Crossmember and mount:</b></th>
+        <th >Trans Crossmember and mount</th>
         <td >$<%= @order_sheet.amt1 %></td>
       </tr>
       <tr>
-        <th >Driveshaft - ready to install:</b></th>
+        <th >Driveshaft - ready to install</th>
         <td >$<%= @order_sheet.amt2 %></td>
       </tr>
       <tr>
-        <th >Speedometer Drive Unit:</b></th>
+        <th >Speedometer Drive Unit</th>
         <td >$<%= @order_sheet.amt3 %></td>
       </tr>
       <tr>
-        <th >Vital Liquids set:</b></th>
+        <th >Vital Liquids set</th>
         <td >$<%= @order_sheet.amt4 %></td>
       </tr>
       <tr>
-        <th >Header Set (Not California)::</b></th>
+        <th >Header Set (Not California)</th>
         <td >$<%= @order_sheet.amt5 %></td>
       </tr>
       <tr>
-        <th >AC Compressor & mounting kit):</b></th>
+        <th >AC Compressor & mounting kit)</th>
         <td >$<%= @order_sheet.amt6 %></td>
       </tr>
       <tr>
-        <th >AC Hose Kit (factory AC '77-78'):</b></th>
+        <th >AC Hose Kit (factory AC '77-78')</th>
         <td >$<%= @order_sheet.amt7 %></td>
       </tr>
       <tr>
-        <th >High Volume fuel pump:</b></th>
+        <th >High Volume fuel pump</th>
         <td >$<%= @order_sheet.amt8 %></td>
       </tr>
       <tr>
-        <th >Subtotal (Parts Freight paid):</b></th>
+        <th >Subtotal (Parts Freight paid)</th>
         <td >$<%= @order_sheet.subtotal %></td>
       </tr>
       <tr>
-        <th >Texas Residents 8.25% Sales Tax +</b></th>
+        <th >Texas Residents 8.25% Sales Tax +</th>
         <td >$<%= @order_sheet.sales_tax.round(2) %></td>
       </tr>
       <tr>
-        <th >CASHIER'S CHECK = </b></th>
-        <td >$<%= @order_sheet.total.round(2) %></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th >CASHIER'S CHECK = </th>
+        <td ><b>$<%= @order_sheet.total.round(2) %></b></td>
       </tr>
     </tbody>
 </table>
