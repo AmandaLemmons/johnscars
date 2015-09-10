@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909213145) do
+ActiveRecord::Schema.define(version: 20150910160735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "order_sheets", force: :cascade do |t|
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
     t.string   "car_owner_full_name"
     t.string   "car_owner_address"
     t.string   "car_owner_city"
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20150909213145) do
     t.boolean  "ac_hose_kit"
     t.boolean  "high_volume"
     t.integer  "subtotal"
-    t.decimal  "sales_tax",               precision: 5, scale: 2
-    t.decimal  "total",                   precision: 7, scale: 2
+    t.decimal  "sales_tax",               precision: 10, scale: 2
+    t.decimal  "total",                   precision: 7,  scale: 2
     t.date     "sign_date"
     t.string   "ship_to_countr"
     t.boolean  "same_information"
@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(version: 20150909213145) do
     t.integer  "amt7"
     t.integer  "amt8"
     t.integer  "amt9"
+    t.string   "car_owner_countr"
+    t.integer  "mount_set",                                        default: 295
   end
 
 end

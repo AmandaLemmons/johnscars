@@ -35,6 +35,12 @@
       <h4>Zip </h4>
       <%= f.input :car_owner_zip, label: false,  placeholder:"Zip" %>
     </div>
+
+    <div class="col-md-3">
+      <h4>Country </h4>
+      <%= f.input :car_owner_countr, label: false,  placeholder:"Country" %>
+    </div>
+
     <div class="col-md-3">
       <h4>Email </h4>
       <%= f.input :car_owner_email, label: false,  placeholder:"Email" %>
@@ -150,11 +156,11 @@
     <div class="row">
       <div class="col-md-3">
         <h4>(H) Hole Size  </h4>
-        <%= f.input :hole_size,  label: false,priority: [ "8" ], collection: [ "8", "10", "12"] %>
+        <%= f.input :hole_size,  label: false,priority: [ "8mm" ], collection: [ "8mm", "10mm", "12mm"] %>
       </div>
       <div class="col-md-3">
         <h4>(P) Pilot Diameter  </h4>
-        <%= f.input :pilot_diameter, label: false, priority: [ "50" ], collection: [ "50", "57"] %>
+        <%= f.input :pilot_diameter, label: false, priority: [ "50mm" ], collection: [ "50mm", "57"] %>
       </div>
     <div class="col-md-3">
       <h4> Does X = Y?</h4>
@@ -198,7 +204,7 @@
            <td class="col-md-4">Trans Cross memeber and mount </td>
            <td class="col-md-4">$135.00 </td>
            <td class="col-md-4"><%= f.collection_radio_buttons :trans_crossmember, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
-        
+
 
          </tr>
          <tr>
@@ -213,7 +219,7 @@
          </tr>
          <tr>
            <td class="col-md-4">Speedometer Drive Unit </td>
-           <td class="col-md-4">$345.oo </td>
+           <td class="col-md-4">$345.00 </td>
            <td class="col-md-4"><%= f.collection_radio_buttons :speedometer, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
          </tr>
          <tr>

@@ -8,7 +8,11 @@ class OrderSheetsController < ApplicationController
    before_action :set_ac_compressor_mount_kit, only:[:edit, :update, :show]
    before_action :set_ac_hose_kit, only:[:edit, :update, :show]
    before_action :set_high_volume, only:[:edit, :update, :show]
+   before_action :set_same_shipping, only:[:edit, :update, :show]
    before_action :set_subtotal, only:[:edit, :update, :show]
+   before_action :set_sales_tax, only:[:edit, :update, :show]
+   before_action :set_total, only:[:edit, :update, :show]
+
 
 
 
@@ -19,7 +23,7 @@ class OrderSheetsController < ApplicationController
   def create
     @order_sheet = OrderSheet.new(order_sheet_params)
     @order_sheet.save
-    redirect_to order_sheets_path(@order_sheet.id)
+    redirect_to order_sheet_path(@order_sheet.id)
   end
 
   def index
@@ -47,7 +51,7 @@ class OrderSheetsController < ApplicationController
   private
 
   def order_sheet_params
-    params.require(:order_sheet).permit(:car_owner_full_name, :car_owner_address, :car_owner_city, :car_owner_state, :car_owner_email, :car_owner_zip, :car_owner_home_phone, :car_owner_work_phone, :car_owner_fax, :car_owner_find_us, :car_owner_home_hours, :car_owner_work_hours, :car_owner_fax_hours, :ship_to_full_name, :ship_to_address, :ship_to_city, :ship_to_state, :ship_to_email, :ship_to_zip, :ship_to_phone, :ship_to_fax, :ship_to_contact_person, :zcar_type, :zcar_vin, :zcar_year, :zcar_month_built, :zcar_year_built, :trans_crossmember, :driveshaft, :speedometer, :vital_liquids, :header_set, :ac_compressor_mount_kit, :ac_hose_kit, :high_volume, :subtotal, :sales_tax, :total, :sign_date, :same_information, :ship_to_countr, :comments, :hole_size, :pilot_diameter, :pattern_type, :transmission_type, :transmission_detail, :amt2, :amt1, :amt3, :amt4, :amt5, :amt6, :amt7, :amt8, :amt9, :ls_type, :ls_year, :rh_monies)
+    params.require(:order_sheet).permit(:car_owner_full_name, :car_owner_address, :car_owner_city, :car_owner_state, :car_owner_email, :car_owner_zip, :car_owner_home_phone, :car_owner_work_phone, :car_owner_fax, :car_owner_find_us, :car_owner_home_hours, :car_owner_work_hours, :car_owner_fax_hours, :ship_to_full_name, :ship_to_address, :ship_to_city, :ship_to_state, :ship_to_email, :ship_to_zip, :ship_to_phone, :ship_to_fax, :ship_to_contact_person, :zcar_type, :zcar_vin, :zcar_year, :zcar_month_built, :zcar_year_built, :trans_crossmember, :driveshaft, :speedometer, :vital_liquids, :header_set, :ac_compressor_mount_kit, :ac_hose_kit, :high_volume, :subtotal, :sales_tax, :total, :sign_date, :same_information, :ship_to_countr, :comments, :hole_size, :pilot_diameter, :pattern_type, :transmission_type, :transmission_detail, :amt2, :amt1, :amt3, :amt4, :amt5, :amt6, :amt7, :amt8, :amt9, :ls_type, :ls_year, :rh_monies, :car_owner_countr, :mount_set)
   end
 
   def set_order_sheet
@@ -128,8 +132,45 @@ class OrderSheetsController < ApplicationController
   end
 
   def set_subtotal
-    @order_sheet.subtotal = @order_sheet.amt1 + @order_sheet.amt2 + @order_sheet.amt3 + @order_sheet.amt4 + @order_sheet.amt5 + @order_sheet.amt6 + @order_sheet.amt7 + @order_sheet.amt8
+    @order_sheet.subtotal = @order_sheet.mount_set + @order_sheet.amt1 + @order_sheet.amt2 + @order_sheet.amt3 + @order_sheet.amt4 + @order_sheet.amt5 + @order_sheet.amt6 + @order_sheet.amt7 + @order_sheet.amt8
     @order_sheet.save!
+  end
+
+  def set_sales_tax
+    if @order_sheet.ship_to_state == "Texas"
+      @order_sheet.sales_tax = (@order_sheet.subtotal) * (0.0825)
+      @order_sheet.sales_tax
+    else
+      @order_sheet.sales_tax = 0
+    end
+      @order_sheet.save
+  end
+
+  def set_total
+    @order_sheet.total = @order_sheet.subtotal + @order_sheet.sales_tax
+  end
+
+  def set_same_shipping
+    if @order_sheet.same_information == true
+      @order_sheet.ship_to_full_name = @order_sheet.car_owner_full_name
+
+      @order_sheet.ship_to_address = @order_sheet.car_owner_address
+
+      @order_sheet.ship_to_city = @order_sheet.car_owner_city
+
+      @order_sheet.ship_to_state = @order_sheet.car_owner_state
+
+      @order_sheet.ship_to_zip = @order_sheet.car_owner_zip
+
+      @order_sheet.ship_to_email = @order_sheet.car_owner_email
+
+      @order_sheet.ship_to_phone = @order_sheet.car_owner_home_phone
+
+      @order_sheet.ship_to_fax = @order_sheet.car_owner_fax
+
+      @order_sheet.ship_to_countr = @order_sheet.car_owner_countr
+
+    end
   end
 
 end
