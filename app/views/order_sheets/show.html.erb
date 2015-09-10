@@ -4,176 +4,216 @@
   <p class="text-center">Please complete as much information as you can. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Illegible, incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, no personal or company checks, no credit cards and no wire transfers. <b> PARTS ARE NOT RETURNABLE.</b> </p>
 
 
-  <div class="col-sm-5">
-    <table class="table table-bordered table-condensed table-striped ">
-      <caption><h3><b>CAR OWNER INFORMATION </b> </h3> </caption>
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th >CAR OWNERINFORMATION</th>
+          <th > </th>
+          <th >SHOP OR"SHIP TO" INFORMATION  </th>
+          <th > </th>
+        </tr>
+      </thead>
       <tbody>
         <tr>
-          <td class="col-sm-2">Name:</b></td>
-          <td class="col-sm-3"><%= @order_sheet.car_owner_full_name %> </td>
+          <th >Name:</b></th>
+          <td ><%= @order_sheet.car_owner_full_name %> </td>
+          <th >Name:</b></th>
+          <td ><%= @order_sheet.ship_to_full_name %> </td>
         </tr>
         <tr>
-          <td class="col-sm-2">Address:</b></td>
-          <td class="col-sm-3"><%= @order_sheet.car_owner_address %> </td>
+          <th >Address:</b></th>
+          <td ><%= @order_sheet.car_owner_address %> </td>
+          <th >Address:</b></th>
+          <td ><%= @order_sheet.ship_to_address %> </td>
         </tr>
         <tr>
-          <td class="col-sm-2">City State Zip::</b></td>
-          <td class="col-sm-3"> <%= @order_sheet.car_owner_city %>, <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %> </td>
+          <th >City, State Zip:</b></th>
+          <td > <%= @order_sheet.car_owner_city %>, <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %> </td>
+          <th >City, State Zip:</b></th>
+          <td > <%= @order_sheet.ship_to_city %>, <%= @order_sheet.ship_to_state %> <%= @order_sheet.ship_to_zip %> </td>
         </tr>
         <tr>
-          <td class="col-sm-2"> Country: </td>
-          <td class="col-sm-3"><%= @order_sheet.car_owner_countr %> </td>
+          <th > Country: </th>
+          <td ><%= @order_sheet.car_owner_countr %> </td>
+          <th > Country: </th>
+          <td ><%= @order_sheet.ship_to_countr %> </td>
         </tr>
         <tr>
-          <td class="col-sm-2">Email:</b></td>
-          <td class="col-sm-3"> <%= @order_sheet.car_owner_email %> </td>
+          <th >Email:</b></th>
+          <td > <%= @order_sheet.car_owner_email %> </td>
+          <th >Email:</b></th>
+          <td > <%= @order_sheet.ship_to_email %></td>
         </tr>
         <tr>
-          <td class="col-sm-2">Home Phone:</b></td>
-          <td class="col-sm-3"> <%= @order_sheet.car_owner_home_phone %> </td>
+          <th >Home Phone:</b></th>
+          <td > <%= @order_sheet.car_owner_home_phone %> </td>
+          <th >Shop Phone:</b></th>
+          <td > <%= @order_sheet.ship_to_phone %> </td>
         </tr>
         <tr>
-          <td class="col-sm-2">Hours:</b></td>
-          <td class="col-sm-3"> <%= @order_sheet.car_owner_home_hours %> </td>
+          <th >Hours:</b></th>
+          <td > <%= @order_sheet.car_owner_home_hours %> </td>
+          <th >Shop Fax:</b></th>
+          <td > <%= @order_sheet.ship_to_fax %> </td>
         </tr>
         <tr>
-          <td class="col-sm-2">Work Phone:</b></td>
-          <td class="col-sm-3"> <%= @order_sheet.car_owner_work_phone %> </td>
+          <th >Work Phone:</b></th>
+          <td > <%= @order_sheet.car_owner_work_phone %> </td>
+
         </tr>
         <tr>
-          <td class="col-sm-2">Hours:</b></td>
-          <td class="col-sm-3"><%= @order_sheet.car_owner_work_hours %></td>
+          <th >Hours:</b></th>
+          <td ><%= @order_sheet.car_owner_work_hours %></td>
+
         </tr>
         <tr>
-          <td class="col-sm-2">Fax:</b></td>
-          <td class="col-sm-3"><%= @order_sheet.car_owner_fax %></td>
+          <th >Fax:</b></th>
+          <td ><%= @order_sheet.car_owner_fax %></td>
+
         </tr>
         <tr>
-          <td class="col-sm-2">Hours:</b></td>
-          <td class="col-sm-3"><%= @order_sheet.car_owner_fax_hours %></td>
+          <th >Hours:</b></th>
+          <td ><%= @order_sheet.car_owner_fax_hours %></td>
         </tr>
         <tr>
-          <td class="col-sm-2">How did you find us?</b></td>
-          <td class="col-sm-3"><%= @order_sheet.car_owner_find_us %></td>
+          <th >How did you find us?</b></th>
+          <td ><%= @order_sheet.car_owner_find_us %></td>
         </tr>
       </tbody>
   </table>
   </div>
+  <br>
 
-
-
-  <div class="col-sm-5">
-    <table class="table table-bordered table-condensed table-striped">
-      <caption><h3><b>SHOP OR "SHIP TO" INFORMATION </b></h3> </th> </caption>
+  <div class="col-md-4">
+    <table class="table table-bordered">
+      <thead>
+        <th>ZCAR INFO (Before V8) </th>
+      </thead>
       <tbody>
         <tr>
-          <td class="col-sm-2">Name:</b></td>
-          <td class="col-sm-3"><%= @order_sheet.ship_to_full_name %> </td>
+          <th >Type:</b></th>
+          <td ><%=@order_sheet.zcar_type%></td>
         </tr>
         <tr>
-          <td class="col-sm-2">Address:</b></td>
-          <td class="col-sm-3"><%= @order_sheet.ship_to_address %> </td>
+          <th >VIN #:</b></th>
+          <td ><%= @order_sheet.zcar_vin%></td>
         </tr>
         <tr>
-          <td class="col-sm-2">City State Zip::</b></td>
-          <td class="col-sm-3"> <%= @order_sheet.ship_to_city %>, <%= @order_sheet.ship_to_state %> <%= @order_sheet.ship_to_zip %> </td>
+          <th >Year:</b></th>
+          <td ><%= @order_sheet.zcar_year %>/td>
         </tr>
         <tr>
-          <td class="col-sm-2"> Country: </td>
-          <td class="col-sm-3"><%= @order_sheet.ship_to_countr %> </td>
+          <th >Month Built:</b></th>
+          <td ><%= @order_sheet.zcar_month_built %></td>
         </tr>
         <tr>
-          <td class="col-sm-2">Email:</b></td>
-          <td class="col-sm-3"> <%= @order_sheet.ship_to_email %></td>
+          <th >Year Built:</b></th>
+          <td ><%= @order_sheet.zcar_year_built %></td>
         </tr>
         <tr>
-          <td class="col-sm-2">Shop Phone:</b></td>
-          <td class="col-sm-3"> <%= @order_sheet.ship_to_phone %> </td>
-        </tr>
-        <tr>
-          <td class="col-sm-2">Shop Fax:</b></td>
-          <td class="col-sm-3"> <%= @order_sheet.ship_to_fax %> </td>
-        </tr>
-        <tr>
-          <td class="col-sm-2">Hours:</b></td>
-          <td class="col-md-3"><%= @order_sheet.car_owner_work_hours %></td>
-        </tr>
-        <tr>
-          <td class="col-sm-2">Fax:</b></td>
-          <td class="col-sm-3"><%= @order_sheet.car_owner_fax %></td>
-        </tr>
-        <tr>
+          <th >Month Built:</b></th>
+          <td ><%= @order_sheet.zcar_month_built %></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <br>
-  <br>
-
-
-
-
-
-  <div class="col-sm-5 box">
-    <h1 class="text-center"> ZCAR INFO (Before V8) </h1>
-    <b>Type:</b> <%=@order_sheet.zcar_type%>
-    <br>
-    <b> VIN #: </b> <%= @order_sheet.zcar_vin%>
-    <br>
-    <b> Year: </b> <%= @order_sheet.zcar_year %>
-    <br>
-    <b> Month Built:</b> <%= @order_sheet.zcar_month_built %>
-    <br>
-    <b> Year Built: </b> <%= @order_sheet.zcar_year_built %>
-    <br>
-    <div class="text-center">
-      <b> <h3>Differential Flange Details</h3></b>
-    </div>
-    <b> Bolt Hole size:</b> <%= @order_sheet.hole_size%>mm
-    <br>
-    <b> Pilot Diameter:</b> <%= @order_sheet.pilot_diameter %>
-    <br>
-    <b> Square or Rectangle:</b> <%= @order_sheet.pattern_type %>
-    <br>
-    <div class="text-center">
-      <b> <h3>Transmission Details</h3></b>
-    </div>
-    <b> Transmission Type: </b> <%= @order_sheet.transmission_type %>
-    <br>
-    <b> Transmission Detail: </b> <%= @order_sheet.transmission_detail %>
-    <br>
-    <br>
-    <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion </p>
+  <div class="col-md-4">
+    <table class="table table-bordered">
+      <thead>
+        <th>Differential Flange Details</th>
+      </thead>
+      <tbody>
+        <tr>
+          <th >Bolt Hole size:</b></th>
+          <td ><%= @order_sheet.hole_size%></td>
+        </tr>
+        <tr>
+          <th >Pilot Diameter:</b></th>
+          <td ><%= @order_sheet.pilot_diameter %></td>
+        </tr>
+        <tr>
+          <th >Square or Rectangle:</b></th>
+          <td ><%= @order_sheet.pattern_type %></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="col-md-6 box">
-    <b><h1 class="text-center"> LS BUILDING BLOCKS</h1></b>
-    <b> LS ZCAR FRONT mount set: </b> $<%= @order_sheet.mount_set %>
-    <br>
-    <b> Trans Crossmember and mount:</b> $<%= @order_sheet.amt1 %>
-    <br>
-    <b> Driveshaft - ready to install:</b> $<%= @order_sheet.amt2 %>
-    <br>
-    <b> Speedometer Drive Unit:</b> $<%= @order_sheet.amt3 %>
-    <br>
-    <b> Vital Liquids set:</b> $<%= @order_sheet.amt4 %>
-    <br>
-    <b> Header Set (Not California):</b> $<%= @order_sheet.amt5 %>
-    <br>
-    <b> AC Compressor & mounting kit):</b> $<%= @order_sheet.amt6 %>
-    <br>
-    <b> AC Hose Kit (factory AC '77-78'):</b> $<%= @order_sheet.amt7 %>
-    <br>
-    <b> High Volume fuel pump:</b> $<%= @order_sheet.amt8 %>
-    <br>
-    <b> Subtotal (Parts Freight paid):</b> $<%= @order_sheet.subtotal %>
-    <br>
-    <b> Texas Residents 8.25% Sales Tax + </b> $<%= @order_sheet.sales_tax.round(2) %>
-    <br>
-    <b> CASHIER'S CHECK = </b> $<%= @order_sheet.total.round(2) %>
+  <div class="col-md-4">
+        <table class="table table-bordered">
+          <thead>
+            <th class="text-center">Transmission Details</th>
+          </thead>
+          <tbody>
+        <tr>
+          <th>Transmission Type: </b></th>
+          <td><%= @order_sheet.transmission_type %></td>
+        </tr>
+         <tr>
+          <th >Transmission Detail:</b></th>
+          <td ><%= @order_sheet.transmission_detail %></td>
+        </tr>
+      </tbody>
+  </table>
+      <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion </p>
+  </div>
 
+<div cass="col-md-6">
+  <table class="table table-bordered table-striped ">
+    <caption><h3><b>LS BUILDING BLOCKS</b> </h3> </caption>
+    <tbody>
+      <tr>
+        <th >LS ZCAR FRONT mount set:</b></th>
+        <td >$<%= @order_sheet.mount_set %></td>
+      </tr>
+      <tr>
+        <th >Trans Crossmember and mount:</b></th>
+        <td >$<%= @order_sheet.amt1 %></td>
+      </tr>
+      <tr>
+        <th >Driveshaft - ready to install:</b></th>
+        <td >$<%= @order_sheet.amt2 %></td>
+      </tr>
+      <tr>
+        <th >Speedometer Drive Unit:</b></th>
+        <td >$<%= @order_sheet.amt3 %></td>
+      </tr>
+      <tr>
+        <th >Vital Liquids set:</b></th>
+        <td >$<%= @order_sheet.amt4 %></td>
+      </tr>
+      <tr>
+        <th >Header Set (Not California)::</b></th>
+        <td >$<%= @order_sheet.amt5 %></td>
+      </tr>
+      <tr>
+        <th >AC Compressor & mounting kit):</b></th>
+        <td >$<%= @order_sheet.amt6 %></td>
+      </tr>
+      <tr>
+        <th >AC Hose Kit (factory AC '77-78'):</b></th>
+        <td >$<%= @order_sheet.amt7 %></td>
+      </tr>
+      <tr>
+        <th >High Volume fuel pump:</b></th>
+        <td >$<%= @order_sheet.amt8 %></td>
+      </tr>
+      <tr>
+        <th >Subtotal (Parts Freight paid):</b></th>
+        <td >$<%= @order_sheet.subtotal %></td>
+      </tr>
+      <tr>
+        <th >Texas Residents 8.25% Sales Tax +</b></th>
+        <td >$<%= @order_sheet.sales_tax.round(2) %></td>
+      </tr>
+      <tr>
+        <th >CASHIER'S CHECK = </b></th>
+        <td >$<%= @order_sheet.total.round(2) %></td>
+      </tr>
+    </tbody>
+</table>
+</div>
 
     <p> Comments: <%= @order_sheet.comments %> </p>
-
-  </div>
