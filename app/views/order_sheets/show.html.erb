@@ -62,58 +62,74 @@
   </table>
   </div>
 
-  <div class="col-md-12">
+  <div class="col-md-6">
+    <h4> ZCAR INFO (Before V8) </h4>
+
     <table class="table table-bordered">
       <thead>
-        <th>ZCAR INFO (Before V8) </th>
-        <th></th>
-        <th>Differential Flange Details</th>
-        <th></th>
-        <th>Transmission Details</th>
-        <th></th>
       </thead>
       <tbody>
         <tr>
-          <th>Type</b></th>
-          <td><%=@order_sheet.zcar_type%></td>
+        <th>Type</b></th>
+        <td><%=@order_sheet.zcar_type%></td>
+        <th>VIN #:</b></th>
+        <td><%= @order_sheet.zcar_vin%></td>
+        <th>Year:</th>
+        <td><%= @order_sheet.zcar_year %></td>
+      </tr>
+      <tr>
+        <th>Month Built:</b></th>
+        <td><%= @order_sheet.zcar_month_built %></td>
+        <th >Year Built:</b></th>
+        <td ><%= @order_sheet.zcar_year_built %></td>
+      </tr>
+      </tbody>
+    </table>
+
+  <h4>  Differential Flange Details</h4>
+    <table class="table table-bordered">
+      <thead>
+      </thead>
+      <tbody>
+        <tr>
           <th>Bolt Hole size:</b></th>
           <td><%= @order_sheet.hole_size%></td>
-          <th>Transmission Detail:</b></th>
-          <td><%= @order_sheet.transmission_detail %></td>
-        </tr>
-        <tr>
-          <th >VIN #:</b></th>
-          <td ><%= @order_sheet.zcar_vin%></td>
           <th>Pilot Diameter:</b></th>
           <td><%= @order_sheet.pilot_diameter %></td>
-          <th>Transmission Type: </b></th>
-          <td><%= @order_sheet.transmission_type %></td>
-        </tr>
-        <tr>
-          <th >Year:</th>
-          <td ><%= @order_sheet.zcar_year %></td>
           <th >Square or Rectangle:</b></th>
           <td ><%= @order_sheet.pattern_type %></td>
         </tr>
+
+      </tbody>
+    </table>
+
+    <h4>Transmission Details</h4>
+    <table class="table table-bordered">
+      <thead>
+      </thead>
+      <tbody>
         <tr>
-          <th >Month Built:</b></th>
-          <td ><%= @order_sheet.zcar_month_built %></td>
-        </tr>
-        <tr>
-          <th >Year Built:</b></th>
-          <td ><%= @order_sheet.zcar_year_built %></td>
+          <th>Transmission Detail:</b></th>
+          <td><%= @order_sheet.transmission_detail %></td>
+          <th>Transmission Type: </b></th>
+          <td><%= @order_sheet.transmission_type %></td>
         </tr>
       </tbody>
     </table>
-  </div>
-      <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion
-      </p>
+    <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion
+    </p>
+    <br>
+    <p> Comments: <%= @order_sheet.comments %> </p>
 
-<div class="col-md-6 nopadding">
+  </div>
+
+
+<div class="col-md-6">
+  <h4> LS BUILDING BLOCKS</h4>
   <table class="table table-bordered ">
     <thead>
       <th class="col-md-3">LS BUILDING BLOCKS</th>
-      <th class="col-md-3"> Price </th>
+      <th class="col-md-1"> Price </th>
     </thead>
     <tbody>
       <tr>
@@ -171,5 +187,10 @@
     </tbody>
 </table>
 </div>
+<br>
 
-    <p> Comments: <%= @order_sheet.comments %> </p>
+    <p> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
+    <br>
+    <br>
+
+    <h4> Signature _____________________________________ Date___________________________________</h4>

@@ -143,7 +143,7 @@
       </div>
      <div class="col-md-3">
           <h4>Month Built </h4>
-          <%= f.input :zcar_month_built, label: false, placeholder:"Month Built"%>
+          <%= f.input :zcar_month_built, label: false, placeholder:"Month Built", collection: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"%>
       </div>
    </div row>
 
@@ -160,7 +160,7 @@
       </div>
       <div class="col-md-3">
         <h4>(P) Pilot Diameter  </h4>
-        <%= f.input :pilot_diameter, label: false, priority: [ "50mm" ], collection: [ "50mm", "57"] %>
+        <%= f.input :pilot_diameter, label: false, priority: [ "50mm" ], collection: [ "50mm", "57mm"] %>
       </div>
     <div class="col-md-3">
       <h4> Does X = Y?</h4>
