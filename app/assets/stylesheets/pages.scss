@@ -19,6 +19,23 @@ label .collection_radio_buttons {
   border: black 4px solid;
 }
 
-td {
-  padding: 0;
+// .no-padding {
+//   background-color: red;
+//   th{
+//     padding: 2px;
+//   }
+// }
+
+.table thead tr th {
+  padding: 0px;
 }
+.table thead tr td {
+  padding: 0px;
+}
+
+ .table  tbody  tr  th{
+   padding: 0px;
+ }
+ .table  tbody  tr  td{
+   padding: 0px;
+ } 

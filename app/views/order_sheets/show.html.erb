@@ -5,7 +5,7 @@
 
 
   <div class="col-md-12">
-    <table class="table table-bordered">
+    <table class="table table-bordered ">
       <thead>
         <tr>
           <th> Details</th>
@@ -56,13 +56,28 @@
         </tr>
         <tr>
           <th>How did you find us?</th>
-          <td ><%= @order_sheet.car_owner_find_us %></td>
+          <td ><%= @order_sheet.car_owner_find_us %> -- <%= @order_sheet.car_owner_where_find_us %></td>
         </tr>
       </tbody>
   </table>
   </div>
 
   <div class="col-md-6">
+    <h4> JCI LS ZCAR </h4>
+    <table class="table table-bordered">
+      <thead>
+      </thead>
+      <tbody>
+        <tr>
+        <th>Type</b></th>
+        <td><%=@order_sheet.ls_type%>, <%=@order_sheet.ls_type%></td>
+        <th>Year</b></th>
+        <td><%= @order_sheet.ls_year%></td>
+      </tr>
+      </tbody>
+    </table>
+
+
     <h4> ZCAR INFO (Before V8) </h4>
 
     <table class="table table-bordered">
@@ -71,7 +86,7 @@
       <tbody>
         <tr>
         <th>Type</b></th>
-        <td><%=@order_sheet.zcar_type%></td>
+        <td><%=@order_sheet.zcar_type%>, <%=@order_sheet.zcar_type2%></td>
         <th>VIN #:</b></th>
         <td><%= @order_sheet.zcar_vin%></td>
         <th>Year:</th>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910160735) do
+ActiveRecord::Schema.define(version: 20150914140333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,9 @@ ActiveRecord::Schema.define(version: 20150910160735) do
     t.integer  "amt9"
     t.string   "car_owner_countr"
     t.integer  "mount_set",                                        default: 295
+    t.string   "zcar_type2"
+    t.string   "ls_type2"
+    t.string   "car_owner_where_find_us"
   end
 
 end
