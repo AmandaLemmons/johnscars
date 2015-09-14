@@ -70,7 +70,7 @@
       <tbody>
         <tr>
         <th>Type</b></th>
-        <td><%=@order_sheet.ls_type%>, <%=@order_sheet.ls_type%></td>
+        <td><%=@order_sheet.ls_type%>, <%=@order_sheet.ls_type2%></td>
         <th>Year</b></th>
         <td><%= @order_sheet.ls_year%></td>
       </tr>
@@ -113,6 +113,10 @@
           <td><%= @order_sheet.pilot_diameter %></td>
           <th >Square or Rectangle:</b></th>
           <td ><%= @order_sheet.pattern_type %></td>
+          <th >Q45:</b></th>
+          <td ><%= @order_sheet.q45%></td>
+          <th >Other Differentail Flange:</b></th>
+          <td ><%= @order_sheet.other_differential_flange%></td>
         </tr>
 
       </tbody>
@@ -124,10 +128,12 @@
       </thead>
       <tbody>
         <tr>
+          <th> Donor Type </th>
+          <td><%= @order_sheet.transmission_type %></td>
           <th>Transmission Detail:</b></th>
           <td><%= @order_sheet.transmission_detail %></td>
-          <th>Transmission Type: </b></th>
-          <td><%= @order_sheet.transmission_type %></td>
+          <th>Output Shaft: </b></th>
+          <td><%= @order_sheet.output_shaft %></td>
         </tr>
       </tbody>
     </table>
