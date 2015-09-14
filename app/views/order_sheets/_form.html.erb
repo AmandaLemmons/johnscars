@@ -2,14 +2,46 @@
   <%= simple_form_for(@order_sheet) do |f| %>
   <h2 class="text-center default-form"> JCI LS ZCAR ORDER SHEET </h2>
   <p> Please complete as much information as you can. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Illegible, incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, no personal or company checks, no credit cards and no wire transferes. <b> PARTS ARE NOT RETURNABLE.</b> </p>
+
+  <h2 class="text-center default-form"> ZCar Info (Before V8)
+   </h2>
+   <div class="row">
+       <div class="col-md-3">
+         <h4>Year </h4>
+         <%= f.input :zcar_year, label: false, placeholder:"Year",  collection: ["1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978",]%>
+       </div>
+       <div class="col-md-3">
+         <h4>Model </h4>
+         <%=f.input :zcar_type , label: false,  placeholder:"",  priority: [ "240" ], collection: [ "240", "260", "280", "This kit doesn't fit a 280ZX"] %>
+      </div>
+     <div class="col-md-3">
+       <p>Is this a '2+2'</p>
+       <%= f.collection_radio_buttons :zcar_type2, [[true, 'Yes'], [false, 'No']], :first, :last%>
+     </div>
+     <div class="col-md-3">
+       <h4>VIN NUMBER </h4>
+       <%= f.input :zcar_vin, label: false, placeholder:"Window pillar in front of driver's door"%>
+     </div>
+     <div class="col-md-3">
+          <h4>Month Built </h4>
+          <%= f.input :zcar_month_built, label: false, placeholder:"Month Built", collection: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+          %>
+      </div>
+     <div class="col-md-3">
+          <h4>Year Built </h4>
+          <%= f.input :zcar_year_built, label: false, collection: ["1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979"]%>
+      </div>
+   </div row>
+
+  <h2 class="text-center default-form"> Drive Line</h2>
   <div class="row">
     <div class="col-md-3">
       <h4> LS Type </h4>
       <%= f.input :ls_type, label: false, placeholder:"",  priority: [ "LS1" ], collection: [ "LS1", "LS2", "LS3", "LS7", "Crate"] %>
     </div>
     <div class="col-md-3">
-      <h4> LS Type </h4>
-      <%= f.input :ls_type2, label: false, placeholder:"" %>
+      <h4> More information LS Type</h4>
+      <%= f.input :ls_type2, label: false, placeholder:"If you have extra info about your LS Type" %>
     </div>
     <div class="col-md-3">
       <h4> Year </h4>
@@ -17,76 +49,63 @@
     </div>
   </div>
 
-  <h2 class="text-center default-form"> ZCar Info (Before V8)
+  <h2 class="text-center default-form"> Transmission Details
    </h2>
    <div class="row">
      <div class="col-md-3">
-       <h4>Type </h4>
-       <%=f.input :zcar_type , label: false,  placeholder:"",  priority: [ "240" ], collection: [ "240", "260", "280", "This kit doesn't fit a 280ZX"] %>
-     </div>
-     <div class="col-md-3">
-       <h4>Type (Only if applies)</h4>
-       <%=f.input :zcar_type2 , label: false,  placeholder:"",  priority: [ ], collection: [ "2 + 2"] %>
-     </div>
-     <div class="col-md-3">
-       <h4>VIN NUMBER </h4>
-       <%= f.input :zcar_vin, label: false, placeholder:"Window pillar in front of driver's door"%>
-     </div>
-     <div class="col-md-3">
-       <h4>Year </h4>
-       <%= f.input :zcar_year, label: false, placeholder:"Year",  collection: ["1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978","1979",]%>
-     </div>
-     <div class="col-md-3">
-          <h4>Year Built </h4>
-          <%= f.input :zcar_year_built, label: false, collection: ["1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979"]%>
+        <h4>Donor Type </h4>
+        <%= f.input :transmission_type, label: false, placeholder:"",  priority: [ "Camaro/Firebird" ], collection: [ "Camaro/Firebird", "GTO", "Truck", "Cadillac", "Corvette", "Other"] %>
       </div>
      <div class="col-md-3">
-          <h4>Month Built </h4>
-          <%= f.input :zcar_month_built, label: false, placeholder:"Month Built", collection: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-          %>
+        <h4>Transmission Details </h4>
+        <%= f.input :transmission_detail, label: false, placeholder:"",  priority: [ "Auto" ], collection: [ "Auto", "T56", "TR 6060", "Magnum", "Tremec", "TKO"] %>
       </div>
-   </div row>
+      <div class="col-md-3">
+         <h4>Output Shaft </h4>
+         <%= f.input :output_shaft, label: false, placeholder:"", collection:[ "Bolt on Yoke", "Slip Yoke", "Other"] %>
+       </div>
+    </div row>
+   <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion </p>
 
    <h2 class="text-center default-form"> Differential Flange Details</h2>
    <div class="row">
        <div class="col-md-4">
          <div class="text-center">
-            <%= image_tag('John.png') %>
+            <%= image_tag('john.png') %>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2">
         <h4>(H) Hole Size  </h4>
         <%= f.input :hole_size,  label: false,priority: [ "8mm" ], collection: [ "8mm", "10mm", "12mm"] %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2">
         <h4>(P) Pilot Diameter  </h4>
         <%= f.input :pilot_diameter, label: false, priority: [ "50mm" ], collection: [ "50mm", "57mm"] %>
       </div>
-    <div class="col-md-3">
-      <h4> Does X = Y?</h4>
+    <div class="col-md-4">
+      <h4> Does X = Y?</h4><p> If X = Y, the pattern is a square, else pattern is a rectangle</p>
+
       <%= f.input :pattern_type, label: false, priority: [ "square" ], collection: [ "square", "rectangle"] %>
     </div>
+  </div>
+  <div class="row">
     <div class="col-md-4">
-      <p> If X = Y, the pattern is a square</p>
-      <p> If X doesn't equal Y, the pattern is a rectangle</p>
+
+    </div>
+    <div class="col-md-3">
+      <p>Is this a Q45?</p>
+      <%= f.collection_radio_buttons :q45, [[true, 'Yes'], [false, 'No']], :first, :last%>
+    </div>
+    <div class="col-md-3">
+      <p>Other?</p>
+      <%= f.collection_radio_buttons :other_differential_flange, [[true, 'Yes'], [false, 'No']], :first, :last%>
     </div>
   </div>
 
 
 
-   <h2 class="text-center default-form"> Transmission Details
-    </h2>
-    <div class="row">
-      <div class="col-md-3">
-         <h4>Transmission Type </h4>
-         <%= f.input :transmission_type, label: false, placeholder:"",  priority: [ "Camaro/Firebird" ], collection: [ "Camaro/Firebird", "GTO", "Truck", "Cadillac"] %>
-       </div>
-      <div class="col-md-3">
-         <h4>Transmission Details </h4>
-         <%= f.input :transmission_detail, label: false, placeholder:"",  priority: [ "Auto" ], collection: [ "Auto", "T56", "TR 6060", "Magnum", "Treme", "TKO", "Bolt on Yoke", "Slip Yoke"] %>
-       </div>
-     </div row>
-    <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion </p>
+
+
 
     <h2 class="text-center default-form"> LS Building Blocks (FRT Paid)
      </h2>

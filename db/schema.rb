@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914140333) do
+ActiveRecord::Schema.define(version: 20150914165242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "order_sheets", force: :cascade do |t|
-    t.datetime "created_at",                                                     null: false
-    t.datetime "updated_at",                                                     null: false
+    t.datetime "created_at",                                                       null: false
+    t.datetime "updated_at",                                                       null: false
     t.string   "car_owner_full_name"
     t.string   "car_owner_address"
     t.string   "car_owner_city"
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20150914140333) do
     t.boolean  "ac_hose_kit"
     t.boolean  "high_volume"
     t.integer  "subtotal"
-    t.decimal  "sales_tax",               precision: 10, scale: 2
-    t.decimal  "total",                   precision: 7,  scale: 2
+    t.decimal  "sales_tax",                 precision: 10, scale: 2
+    t.decimal  "total",                     precision: 7,  scale: 2
     t.date     "sign_date"
     t.string   "ship_to_countr"
     t.boolean  "same_information"
@@ -81,10 +81,13 @@ ActiveRecord::Schema.define(version: 20150914140333) do
     t.integer  "amt8"
     t.integer  "amt9"
     t.string   "car_owner_countr"
-    t.integer  "mount_set",                                        default: 295
-    t.string   "zcar_type2"
+    t.integer  "mount_set",                                          default: 295
     t.string   "ls_type2"
     t.string   "car_owner_where_find_us"
+    t.boolean  "zcar_type2"
+    t.boolean  "q45"
+    t.boolean  "other_differential_flange"
+    t.string   "output_shaft"
   end
 
 end
