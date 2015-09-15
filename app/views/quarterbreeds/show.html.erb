@@ -1,0 +1,121 @@
+<!-- link_to "Edit", edit_quarterbreed_path(@quarterbreed.id) %> -->
+
+<h3 class="text-center"> JCI V12 QUARTERBREED KIT ORDER SHEET </h3>
+<p class="text-center"><p> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
+
+<div class="col-md-10 col-md-offset-1">
+  <table class="table table-bordered ">
+    <thead>
+      <tr>
+        <th>CAR OWNER INFORMATION </th>
+        <th>SHOP OR "SHIP TO" INFORMATION  </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td ><b>Name</b>: <%= @quarterbreed.car_owner_full_name %> </th>
+        <td> <b>Name</b>: <%= @quarterbreed.ship_to_full_name %></td>
+      </tr>
+      <tr>
+        <td><b>Address:</b> <%= @quarterbreed.car_owner_address %> <br> <%= @quarterbreed.car_owner_city %>, <%= @quarterbreed.car_owner_state %>  </b><%= @quarterbreed.car_owner_zip %> <%= @quarterbreed.car_owner_countr %> </td>
+        <td><b>Address:</b> <%= @quarterbreed.ship_to_address %><br> <%= @quarterbreed.ship_to_city %>, <%= @quarterbreed.ship_to_state %> <%= @quarterbreed.ship_to_zip %> <%= @quarterbreed.ship_to_countr %> </td>
+      </tr>
+      <tr>
+        <td><b>Email:</b> <%= @quarterbreed.car_owner_email %></td>
+        <td><b>Email:</b> <%= @quarterbreed.ship_to_email %></td>
+      </tr>
+      <tr>
+        <td><b> Home Phone: </b> <%= @quarterbreed.car_owner_home_phone %> <b>From:</b>  <%= @quarterbreed.car_owner_home_hours %> </td>
+        <td> <b> Shop Phone: </b><%= @quarterbreed.ship_to_phone %> </td>
+      </tr>
+      <tr>
+        <td> <b>Work Phone: </b><%= @quarterbreed.car_owner_work_phone %> <b>From:</b> <%= @quarterbreed.car_owner_work_hours%> </td>
+        <td><b>Fax: </b> <%= @quarterbreed.ship_to_fax %> </td>
+      </tr>
+      <tr>
+        <td> <b> Fax: </b> <%= @quarterbreed.car_owner_fax %> <b>From:</b> <%= @quarterbreed.car_owner_fax_hours %></td>
+          <td><b>How did you find us?</b> <%= @quarterbreed.car_owner_find_us %> <b> Where</b>: <%= @quarterbreed.car_owner_where_find_us %></td>
+      </tr>
+    </tbody>
+</table>
+</div>
+
+
+  <div class="col-md-5 col-md-offset-1">
+    <h5> JAGUAR INFORMATION (BEFORE V8) </h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+        <td><b>Type: </b> <%=@quarterbreed.jaguar_type%></td>
+        <td> <b>VIN:</b> <%=@quarterbreed.jaguar_vin%></td>
+        <td><b>Year: </b> <%= @quarterbreed.jaguar_year%></td>
+        <td><b>Month Built: </b> <%= @quarterbreed.jaguar_month_built%></td>
+        <td><b>Year Built: </b> <%= @quarterbreed.jugaur_year_built%></td>
+        <td><b>Transmission: </b> <%= @quarterbreed.jaguar_trans%></td>
+      </tr>
+      <tr>
+        <td><b>Engine Number: </b> <%=@quarterbreed.engine_number%></td>
+        <td><b>Engine Type: </b> <%=@quarterbreed.engine_type%></td>
+        <td><b>Tire Size: </b> <%=@quarterbreed.tire_size%></td>
+        <td><b>Tire Radius: </b> <%=@quarterbreed.tire_radius%></td>
+        <td><b>Rear Axle Ratio: </b> <%=@quarterbreed.rear_axie_ratio%></td>
+        <td><b>Speedo Number: </b> <%=@quarterbreed.speedo_number%></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="col-md-5">
+    <h5> Monies</h5>
+    <table class="table table-bordered ">
+      <thead>
+        <th class="col-md-3">QUARTERBREED BUILDING BLOCKS</th>
+        <th class="col-md-1"> Price </th>
+      </thead>
+      <tbody>
+        <tr>
+          <th>V12 T700 QUARTERBREED Kit</th>
+          <td>$<%= @quarterbreed.quarterbreed_kit %></td>
+        </tr>
+        <tr>
+          <th >T400 Flywheel Core Deposit</th>
+          <td >$<%= @quarterbreed.flywheel_core_amt %></td>
+        </tr>
+        <tr>
+          <th >Driveshaft</th>
+          <td >$<%= @quarterbreed.driveshaft_amt %></td>
+        </tr>
+        <tr>
+          <th >Credit</th>
+          <td > - $<%= @quarterbreed.credit %></td>
+        </tr>
+
+          <th >Subtotal (Parts Freight paid)</th>
+          <td >$<%= @quarterbreed.subtotal %></td>
+        </tr>
+        <tr>
+          <th >Texas Residents 8.25% Sales Tax +</th>
+          <td >$ <%=@quarterbreed.sales_tex.round(2) %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>CASHIER'S CHECK = </th>
+          <td ><b>$<%= @quarterbreed.total.round(2) %></b></td>
+        </tr>
+      </tbody>
+  </table>
+  </div>
+  <br>
+
+<div class="col-md-12">
+  <p> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
+  <br>
+  <br>
+
+  <h5> Signature _____________________________________ Date________________</h5>
+
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915124459) do
+ActiveRecord::Schema.define(version: 20150915154416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,8 +91,8 @@ ActiveRecord::Schema.define(version: 20150915124459) do
   end
 
   create_table "quarterbreeds", force: :cascade do |t|
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
     t.string   "car_owner_full_name"
     t.string   "car_owner_address"
     t.string   "car_owner_city"
@@ -132,14 +132,17 @@ ActiveRecord::Schema.define(version: 20150915124459) do
     t.integer  "flywheel_core_amt"
     t.integer  "driveshaft_amt"
     t.integer  "quarterbreed_kit"
-    t.integer  "credit"
-    t.integer  "subtotal"
-    t.decimal  "sales_tex",              precision: 10, scale: 2
+    t.decimal  "credit",                  precision: 10, scale: 2
+    t.decimal  "subtotal",                precision: 10, scale: 2
+    t.decimal  "sales_tex",               precision: 10, scale: 2
     t.boolean  "texas_resident"
     t.boolean  "same_information"
     t.integer  "expedite"
-    t.integer  "total"
+    t.decimal  "total",                   precision: 10, scale: 2
     t.text     "comments"
+    t.string   "car_owner_countr"
+    t.string   "ship_to_countr"
+    t.string   "car_owner_where_find_us"
   end
 
 end
