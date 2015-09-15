@@ -3,113 +3,111 @@
   <h2 class="text-center"> JCI LS ZCAR ORDER SHEET </h2>
   <p> Please complete as much information as you can. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Illegible, incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, no personal or company checks, no credit cards and no wire transferes. <b> PARTS ARE NOT RETURNABLE.</b> </p>
 
-  <!-- <div class="panel panel-default"> -->
-  <h2 class="text-center default-form"> ZCar Info (Before V8)
-   </h2>
+  <div class="panel panel-default col-md-6">
+  <h2 class="text-center "> ZCar Info (Before V8)</h2>
    <div class="row">
-       <div class="col-md-3">
+       <div class="col-md-4">
          <h4>Year </h4>
          <%= f.input :zcar_year, label: false, placeholder:"Year",  collection: ["1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978",]%>
        </div>
-       <div class="col-md-3">
+       <div class="col-md-4">
          <h4>Model </h4>
          <%=f.input :zcar_type , label: false,  placeholder:"",  priority: [ "240" ], collection: [ "240", "260", "280", "This kit doesn't fit a 280ZX"] %>
       </div>
-     <div class="col-md-3">
-       <p>Is this a '2+2'</p>
+     <div class="col-md-4">
+       <p class="p-form">Is this a '2+2'</p>
        <%= f.collection_radio_buttons :zcar_type2, [[true, 'Yes'], [false, 'No']], :first, :last%>
      </div>
-     <div class="col-md-3">
-       <h4>VIN NUMBER </h4>
+   </div>
+   <div class="row">
+     <div class="col-md-4">
+       <h4>VIN # </h4>
        <%= f.input :zcar_vin, label: false, placeholder:"Window pillar in front of driver's door"%>
      </div>
-     <div class="col-md-3">
+     <div class="col-md-4">
           <h4>Month Built </h4>
           <%= f.input :zcar_month_built, label: false, placeholder:"Month Built", collection: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
           %>
       </div>
-     <div class="col-md-3">
+     <div class="col-md-4">
           <h4>Year Built </h4>
           <%= f.input :zcar_year_built, label: false, collection: ["1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979"]%>
       </div>
    </div row>
- <!-- </div> -->
+   <br>
+   <h2 class="text-center"> Transmission Details </h2>
+   <div class="row">
+     <div class="col-md-4">
+        <h4>Donor Type </h4>
+        <%= f.input :transmission_type, label: false, placeholder:"",  priority: [ "Camaro/Firebird" ], collection: [ "Camaro/Firebird", "GTO", "Truck", "Cadillac", "Corvette", "Other"] %>
+      </div>
+     <div class="col-md-4">
+        <h4>Details </h4>
+        <%= f.input :transmission_detail, label: false, placeholder:"",  priority: [ "Auto" ], collection: [ "Auto", "T56", "TR 6060", "Magnum", "Tremec", "TKO"] %>
+      </div>
+      <div class="col-md-4">
+         <h4>Output Shaft </h4>
+         <%= f.input :output_shaft, label: false, placeholder:"", collection:[ "Bolt on Yoke", "Slip Yoke", "Other"] %>
+       </div>
+        <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion </p>
+    </div row>
+ </div>
 
-   <div class="panel panel-default">
+   <div class="panel panel-default col-md-6">
   <h2 class="text-center"> Drive Line</h2>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4> LS Type </h4>
       <%= f.input :ls_type, label: false, placeholder:"",  priority: [ "LS1" ], collection: [ "LS1", "LS2", "LS3", "LS7", "Crate"] %>
     </div>
-    <div class="col-md-3">
-      <h4> More information LS Type</h4>
+    <div class="col-md-4">
+      <h4> More info LS Type</h4>
       <%= f.input :ls_type2, label: false, placeholder:"If you have extra info about your LS Type" %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4> Year </h4>
       <%= f.input :ls_year, label: false, placeholder:"LS Year", collection: ["1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"]  %>
     </div>
   </div>
-</div>
-
-<div class="panel panel-default">
-  <h2 class="text-center"> Transmission Details
-   </h2>
-   <div class="row">
-     <div class="col-md-3">
-        <h4>Donor Type </h4>
-        <%= f.input :transmission_type, label: false, placeholder:"",  priority: [ "Camaro/Firebird" ], collection: [ "Camaro/Firebird", "GTO", "Truck", "Cadillac", "Corvette", "Other"] %>
-      </div>
-     <div class="col-md-3">
-        <h4>Transmission Details </h4>
-        <%= f.input :transmission_detail, label: false, placeholder:"",  priority: [ "Auto" ], collection: [ "Auto", "T56", "TR 6060", "Magnum", "Tremec", "TKO"] %>
-      </div>
-      <div class="col-md-3">
-         <h4>Output Shaft </h4>
-         <%= f.input :output_shaft, label: false, placeholder:"", collection:[ "Bolt on Yoke", "Slip Yoke", "Other"] %>
+  <br>
+  <h2 class="text-center "> Differential Flange Details</h2>
+  <div class="row">
+      <div class="col-md-4">
+        <div class="text-center">
+           <%= image_tag('john.png') %>
        </div>
-    </div row>
-   <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion </p>
+     </div>
+     <div class="col-md-4">
+       <h4>(H) Hole Size  </h4>
+       <%= f.input :hole_size,  label: false,priority: [ "8mm" ], collection: [ "8mm", "10mm", "12mm"] %>
+     </div>
+     <div class="col-md-4">
+       <h4>(P) Pilot Diameter  </h4>
+       <%= f.input :pilot_diameter, label: false, priority: [ "50mm" ], collection: [ "50mm", "57mm"] %>
+     </div>
+   <div class="col-md-4">
+     <h4> Does X = Y?</h4>
+     <%= f.input :pattern_type, label: false, priority: [ "square" ], collection: [ "square", "rectangle"] %>
+   </div>
+   <div class="col-md-4">
+     <p class="p-form">Is this a Q45?</p>
+     <%= f.collection_radio_buttons :q45, [[true, 'Yes'], [false, 'No']], :first, :last%>
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-md-4">
+   </div>
+   <div class="col-md-4">
+     <small> If X = Y, the pattern is a square, else pattern is a rectangle</small>
+   </div>
+   <div class="col-md-4">
+     <p>Other?</p>
+     <%= f.collection_radio_buttons :other_differential_flange, [[true, 'Yes'], [false, 'No']], :first, :last%>
+   </div>
+ </div>
  </div>
 
- <div class="panel panel-default">
-   <h2 class="text-center "> Differential Flange Details</h2>
-   <div class="row">
-       <div class="col-md-4">
-         <div class="text-center">
-            <%= image_tag('john.png') %>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <h4>(H) Hole Size  </h4>
-        <%= f.input :hole_size,  label: false,priority: [ "8mm" ], collection: [ "8mm", "10mm", "12mm"] %>
-      </div>
-      <div class="col-md-2">
-        <h4>(P) Pilot Diameter  </h4>
-        <%= f.input :pilot_diameter, label: false, priority: [ "50mm" ], collection: [ "50mm", "57mm"] %>
-      </div>
-    <div class="col-md-4">
-      <h4> Does X = Y?</h4><p> If X = Y, the pattern is a square, else pattern is a rectangle</p>
-
-      <%= f.input :pattern_type, label: false, priority: [ "square" ], collection: [ "square", "rectangle"] %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-3">
-      <p>Is this a Q45?</p>
-      <%= f.collection_radio_buttons :q45, [[true, 'Yes'], [false, 'No']], :first, :last%>
-    </div>
-    <div class="col-md-3">
-      <p>Other?</p>
-      <%= f.collection_radio_buttons :other_differential_flange, [[true, 'Yes'], [false, 'No']], :first, :last%>
-    </div>
-  </div>
-</div>
-
+ <div class="panel panel-default col-md-12">
     <h2 class="text-center"> LS Building Blocks (FRT Paid)</h2>
      <table class="table table-bordered">
        <tbody>
@@ -168,118 +166,119 @@
          </tr>
        </tbody>
      </table>
+   </div>
 
-   <div class="panel panel-default">
+   <div class="panel panel-default col-md-6">
   <h2 class="text-center"> Car Owner Information  </h2>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4> Name </h4>
       <%= f.input :car_owner_full_name, label: false,  placeholder:"Full Name" %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4>Address </h4>
       <%= f.input :car_owner_address, label: false,  placeholder:"Address" %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4> City</h4>
       <%= f.input :car_owner_city, label: false,  placeholder:"City" %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4> State</h4>
       <%= f.input :car_owner_state, collection: ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ], label: false,  placeholder:"State" %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4>Zip </h4>
       <%= f.input :car_owner_zip, label: false,  placeholder:"Zip" %>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4>Country </h4>
       <%= f.input :car_owner_countr, label: false,  placeholder:"Country" %>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4>Email </h4>
       <%= f.input :car_owner_email, label: false,  placeholder:"Email" %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4> Home Phone</h4>
       <%= f.input :car_owner_home_phone, label: false,  placeholder:"Home Phone" %>
     </div>
-    <div class="col-md-3">
-      <h4> Home Phone Hours Available</h4>
-      <%= f.input :car_owner_home_hours, label: false,  placeholder:"From xx to xx" %>
+    <div class="col-md-4">
+      <h4>Home Hours </h4>
+      <%= f.input :car_owner_home_hours, label: false,  placeholder:"Home From xx to xx" %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4>Work Phone </h4>
       <%= f.input :car_owner_work_phone, label: false,  placeholder:"Work Phone" %>
     </div>
-    <div class="col-md-3">
-      <h4> Work Phone Hours Available</h4>
-      <%= f.input :car_owner_work_hours , label: false,  placeholder:"From xx to xx" %>
+    <div class="col-md-4">
+      <h4> Work Hours </h4>
+      <%= f.input :car_owner_work_hours , label: false,  placeholder:"Work From xx to xx" %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4>Fax </h4>
       <%= f.input :car_owner_fax, label: false,  placeholder:"Fax" %>
     </div>
-    <div class="col-md-3">
-      <h4> Fax Hours Available</h4>
-      <%= f.input :car_owner_fax_hours , label: false,  placeholder:"From xx to xx" %>
+    <div class="col-md-4">
+      <h4>Fax Hours </h4>
+      <%= f.input :car_owner_fax_hours , label: false,  placeholder:"Fax From xx to xx" %>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4>How did you find us </h4>
       <%= f.input :car_owner_find_us , label: false,  placeholder:"",  priority: [ "Internet" ], collection: [ "Internet", "Magazine", "WOM", "Hybridz", "Shop Referal", "Car Show", "Magazine Article", "Other"] %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4>Where did you find us?</h4>
       <%= f.input :car_owner_where_find_us , label: false,  placeholder:""%>
     </div>
   </div row>
 </div>
 
-<div class="panel panel-default">
+<div class="panel panel-default col-md-6">
     <h2 class="text-center"> Shop or "Ship To" Information  </h2>
-    <p> Is the shipping information the same as the car owner information </p>
+    <p class="p-form"> Is the shipping information the same as the car owner information </p>
     <%= f.collection_radio_buttons :same_information, [[true, 'Yes'] ,[false, 'No']], :first, :last  %> </p>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h4> Name </h4>
         <%= f.input :ship_to_full_name, label: false,  placeholder:"Full Name" %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h4>Address </h4>
         <%= f.input :ship_to_address, label: false,  placeholder:"Address" %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h4> City</h4>
         <%= f.input :ship_to_city, label: false,  placeholder:"City" %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h4> State</h4>
         <%= f.input :ship_to_state,  collection: ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island","South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ] , label: false,  placeholder:"State" %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h4>Zip </h4>
         <%= f.input :ship_to_zip, label: false,  placeholder:"Zip" %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h4>Country </h4>
         <%= f.input :ship_to_countr, label: false,  placeholder:"Country" %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h4>Email </h4>
         <%= f.input :ship_to_email, label: false,  placeholder:"Email" %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h4>Shop Phone </h4>
         <%= f.input :ship_to_phone, label: false,  placeholder:"Shop Phone" %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h4>Shop Fax </h4>
         <%= f.input :ship_to_fax, label: false,  placeholder:"Shop Fax" %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h4>Contact Person </h4>
         <%= f.input :ship_to_contact_person, label: false,  placeholder:"Contact Person" %>
       </div>
@@ -287,16 +286,15 @@
   </div>
 
 
-     <p> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
      <div class="col-md-12">
-        <h4>Additional comments or notes </h4>
-        <%= f.input :comments, label: false, placeholder:"" %>
-      </div>
+            <p> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
+      <h4>Additional comments or notes </h4>
+      <%= f.input :comments, label: false, placeholder:"" %>
 
-
-    <%= f.submit "Submit Order" %>
-
+      <%= f.submit "Submit Order" %>
+      <br>
+      <br>
+  </div>
   <% end %>
-  <br>
-  <br>
+
 </div>
