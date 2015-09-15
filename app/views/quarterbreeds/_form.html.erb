@@ -6,99 +6,116 @@
   <div class="panel panel-default col-md-6">
   <h2 class="text-center">JAGUAR Information (Before V8)</h2>
    <div class="row">
-       <div class="col-md-4">
+       <div class="col-md-6">
+         <p class="p-form"> The VIN # is located on the window pillar or base on windshield in front of driver's door</p>
+       </div>
+       <div class="col-md-3">
          <h4>Type </h4>
          <%= f.input :jaguar_type, label: false, placeholder:"Type",  collection: ["XJ12", "XJ12C", "XJ12L", "XJS", "XJS-HE", "XJ-SC"]%>
        </div>
-       <div class="col-md-4">
+       <div class="col-md-3">
          <h4>VIN </h4>
          <%=f.input :jaguar_vin , label: false,  placeholder:"" %>
       </div>
+   </div row>
+   <div class="row">
      <div class="col-md-4">
        <h4>Year</h4>
        <%= f.input :jaguar_year, label: false, placeholder:"Year"%>
      </div>
-   </div row>
-   <div class="row">
      <div class="col-md-4">
           <h4>Month Built </h4>
           <%= f.input :jaguar_month_built, label: false, placeholder:"Month Built", collection: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
           %>
-      </div>
-      <div class="col-md-4">
-        <small> The VIN # is located on the window pillar or base on windshield in front of driver's door</small>
       </div>
      <div class="col-md-4">
           <h4>Year Built </h4>
           <%= f.input :jugaur_year_built, label: false, placeholder: "Year Built"%>
       </div>
     </div row>
+    <br>
+    <h3 class="text-center"> Engine Information</h3>
     <div class="row">
-      <div class="col-md-4">
-           <h4>Engine Number</h4>
+      <div class="col-md-6">
+        <p class="p-form"> Number at bellhousing flange of engine, top center</p>
+      </div>
+      <div class="col-md-3">
+           <h4>Engine #</h4>
            <%= f.input :engine_number, label: false, placeholder: ""%>
        </div>
-       <div class="col-md-4">
-            <h4>Engline Type </h4>
+       <div class="col-md-3">
+            <h4>Engine Type </h4>
             <%= f.input :engine_type, label: false, placeholder: "", collection: ["Carbureted", "Fuel Injection", "Other - fill out in comments"]%>
         </div>
-        <div class="col-md-4">
-             <h4>Tire Size </h4>
-             <%= f.input :tire_size, label: false, placeholder: "Tire Size"%>
-         </div>
        </div row>
+       <br>
+         <h3 class="text-center"> Tire Information</h3>
        <div class="row">
-         <div class="col-md-4">
-           <small class="p-form">Number at bellhousing flange of engine, top center</small>
-         </div>
-         <div class="col-md-4">
+         <div class="col-md-6">
+              <h4>Tire Size </h4>
+              <%= f.input :tire_size, label: false, placeholder: "Tire Size"%>
+          </div>
+
+         <div class="col-md-6">
               <h4>Tire Radius </h4>
               <%= f.input :tire_radius, label: false, placeholder: "Tire Radius"%>
           </div>
-          <div class="col-md-4">
+       </div>
+       <div class="row">
+         <div class="col-md-6">
+           <p class="p-form"> Tage under bolt on rear cover, sometimes shown in ratio form (49/17)</p>
+         </div>
+          <div class="col-md-6">
                <h4>Rear Axie Radio</h4>
                <%= f.input :rear_axie_ratio, label: false, placeholder: "", collection: ["2.88", "3.08", "3.31", "3.54", "Other - fill out in comments"]%>
                </h4>
            </div>
          </div row>
-         <div class="row">
-           <div class="col-md-4">
-                <h4>Speedo Number </h4>
-                <%= f.input :speedo_number, label: false, placeholder: "", collection: ["940", "1000", "1020", "Other - fill out in comments"]%>
-                <small> I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars</small>
-            </div>
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4">
-              <small>Tage under bolt on rear cover, sometimes shown in ratio form (49/17)</small>
-            </div>
-    </div> <!-- row-->
+
  </div><!--panel-->
 
- <div class="panel panel-default col-md-b">
+ <div class="panel panel-default col-md-6">
    <h2 class="text-center">JAGUAR TRANS INFORMATION</h2>
    <div class="row">
-     <div class="col-md-4">
+     <div class="col-md-6">
+       <div class="text-center">
+          <%= image_tag('transmission.png') %>
+      </div text center>
+    </div col6>
+     <div class="col-md-6">
+       <h3> Current Transmission </h3>
        <%= f.input :jaguar_trans, label: false, placeholder: "Current Transmission", collection: ["Borg Warner", "T400"]%>
      </div>
    </div row>
- </div panel>
+     <div class="row">
+       <div class="col-md-6">
+            <p class="p-form"> I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars</p>
+       </div>
+       <div class="col-md-3">
+         <div class="text-center">
+            <%= image_tag('speedo.png') %>
+          </div>
+        </div>
+         <div class="col-md-3">
+            <h4>Speedo # </h4>
+            <%= f.input :speedo_number, label: false, placeholder: "", collection: ["940", "1000", "1020", "Other - fill out in comments"]%>
 
- <div class="panel panel-default">
- <h2 class="text-center"> MONIES * MONIES * MONIES</h2>
+        </div>
+      </div>
+ <h3 class="text-center"> MONIES * MONIES * MONIES</h3>
   <table class="table table-bordered">
     <tbody>
-      <td class="col-md-4"> V12 T700 QUARTERBREED KIT</td>
+      <td class="col-md-4"> V12 T700 </td>
       <td class="col-md-4"> </td>
       <td class="col-md-4"> $695.00 </td>
       <tr>
         <td class="col-md-4">T400 Flywheel Core Deposit </td>
-        <td class="col-md-4">add $200.00 </td>
+        <td class="col-md-4"> $200.00 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :flywheel_core, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
         <td class="col-md-4">Driveshaft </td>
-        <td class="col-md-4">add $165.00 </td>
+        <td class="col-md-4"> $165.00 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :draveshaft, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
@@ -192,6 +209,7 @@
 
   <div class="panel panel-default col-md-6">
       <h2 class="text-center"> Shop or "Ship To" Information  </h2>
+      <br>
       <p> Is the shipping information the same as the car owner information </p>
       <%= f.collection_radio_buttons :same_information, [[true, 'Yes'] ,[false, 'No']], :first, :last  %> </p>
       <div class="row">
