@@ -59,6 +59,174 @@
     </div> <!-- row-->
  </div><!--panel-->
 
+ <div class="panel panel-default">
+   <h2 class="text-center">JAGUAR TRANS INFORMATION</h2>
+   <div class="row">
+     <div class="col-md-4">
+       <%= f.input :jaguar_trans, label: false, placeholder: "Current Transmission", collection: ["Borg Warner", "T400"]%>
+     </div>
+   </div row>
+ </div panel>
+
+ <h2 class="text-center"> MONIES * MONIES * MONIES</h2>
+  <table class="table table-bordered">
+    <tbody>
+      <td class="col-md-4"> V12 T700 QUARTERBREED KIT</td>
+      <td class="col-md-4"> </td>
+      <td class="col-md-4"> $695.00 </td>
+      <tr>
+        <td class="col-md-4">T400 Flywheel Core Deposit </td>
+        <td class="col-md-4">add $200.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :flywheel_core, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+      </tr>
+      <tr>
+        <td class="col-md-4">Driveshaft </td>
+        <td class="col-md-4">add $165.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :draveshaft, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+      </tr>
+      <tr>
+        <td class="col-md-4">Credit  </td>
+        <td class="col-md-4">(Non-illustrated or Repeat Kits) </td>
+        <td class="col-md-4"> <%= f.input :credit, label: false, placeholder:"" %> </td>
+      </tr>
+      <tr>
+        <td class="col-md-4">Are you a Texas Resident? </td>
+        <td class="col-md-4"> Sales Tax -- 8.25% </td>
+        <td class="col-md-4"> <%= f.collection_radio_buttons :texas_resident, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
+      </tr>
+      <tr>
+        <td class="col-md-4">Hawaii or Expedite </td>
+        <td class="col-md-4"> (Overnite or 2 day) </td>
+        <td class="col-md-4"> <%= f.collection_radio_buttons :expedite, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+     <div class="panel panel-default">
+    <h2 class="text-center"> Car Owner Information  </h2>
+    <div class="row">
+      <div class="col-md-3">
+        <h4> Name </h4>
+        <%= f.input :car_owner_full_name, label: false,  placeholder:"Full Name" %>
+      </div>
+      <div class="col-md-3">
+        <h4>Address </h4>
+        <%= f.input :car_owner_address, label: false,  placeholder:"Address" %>
+      </div>
+      <div class="col-md-3">
+        <h4> City</h4>
+        <%= f.input :car_owner_city, label: false,  placeholder:"City" %>
+      </div>
+      <div class="col-md-3">
+        <h4> State</h4>
+        <%= f.input :car_owner_state, collection: ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ], label: false,  placeholder:"State" %>
+      </div>
+      <div class="col-md-3">
+        <h4>Zip </h4>
+        <%= f.input :car_owner_zip, label: false,  placeholder:"Zip" %>
+      </div>
+
+      <div class="col-md-3">
+        <h4>Country </h4>
+        <%= f.input :car_owner_countr, label: false,  placeholder:"Country" %>
+      </div>
+
+      <div class="col-md-3">
+        <h4>Email </h4>
+        <%= f.input :car_owner_email, label: false,  placeholder:"Email" %>
+      </div>
+      <div class="col-md-3">
+        <h4> Home Phone</h4>
+        <%= f.input :car_owner_home_phone, label: false,  placeholder:"Home Phone" %>
+      </div>
+      <div class="col-md-3">
+        <h4> Home Phone Hours Available</h4>
+        <%= f.input :car_owner_home_hours, label: false,  placeholder:"From xx to xx" %>
+      </div>
+      <div class="col-md-3">
+        <h4>Work Phone </h4>
+        <%= f.input :car_owner_work_phone, label: false,  placeholder:"Work Phone" %>
+      </div>
+      <div class="col-md-3">
+        <h4> Work Phone Hours Available</h4>
+        <%= f.input :car_owner_work_hours , label: false,  placeholder:"From xx to xx" %>
+      </div>
+      <div class="col-md-3">
+        <h4>Fax </h4>
+        <%= f.input :car_owner_fax, label: false,  placeholder:"Fax" %>
+      </div>
+      <div class="col-md-3">
+        <h4> Fax Hours Available</h4>
+        <%= f.input :car_owner_fax_hours , label: false,  placeholder:"From xx to xx" %>
+      </div>
+
+      <div class="col-md-3">
+        <h4>How did you find us </h4>
+        <%= f.input :car_owner_find_us , label: false,  placeholder:"",  priority: [ "Internet" ], collection: [ "Internet", "Magazine", "WOM", "Hybridz", "Shop Referal", "Car Show", "Magazine Article", "Other"] %>
+      </div>
+      <div class="col-md-3">
+        <h4>Where did you find us?</h4>
+        <%= f.input :car_owner_where_find_us , label: false,  placeholder:""%>
+      </div>
+    </div row>
+  </div>
+
+  <div class="panel panel-default">
+      <h2 class="text-center"> Shop or "Ship To" Information  </h2>
+      <p> Is the shipping information the same as the car owner information </p>
+      <%= f.collection_radio_buttons :same_information, [[true, 'Yes'] ,[false, 'No']], :first, :last  %> </p>
+      <div class="row">
+        <div class="col-md-3">
+          <h4> Name </h4>
+          <%= f.input :ship_to_full_name, label: false,  placeholder:"Full Name" %>
+        </div>
+        <div class="col-md-3">
+          <h4>Address </h4>
+          <%= f.input :ship_to_address, label: false,  placeholder:"Address" %>
+        </div>
+        <div class="col-md-3">
+          <h4> City</h4>
+          <%= f.input :ship_to_city, label: false,  placeholder:"City" %>
+        </div>
+        <div class="col-md-3">
+          <h4> State</h4>
+          <%= f.input :ship_to_state,  collection: ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island","South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ] , label: false,  placeholder:"State" %>
+        </div>
+        <div class="col-md-3">
+          <h4>Zip </h4>
+          <%= f.input :ship_to_zip, label: false,  placeholder:"Zip" %>
+        </div>
+        <div class="col-md-3">
+          <h4>Country </h4>
+          <%= f.input :ship_to_countr, label: false,  placeholder:"Country" %>
+        </div>
+        <div class="col-md-3">
+          <h4>Email </h4>
+          <%= f.input :ship_to_email, label: false,  placeholder:"Email" %>
+        </div>
+        <div class="col-md-3">
+          <h4>Shop Phone </h4>
+          <%= f.input :ship_to_phone, label: false,  placeholder:"Shop Phone" %>
+        </div>
+        <div class="col-md-3">
+          <h4>Shop Fax </h4>
+          <%= f.input :ship_to_fax, label: false,  placeholder:"Shop Fax" %>
+        </div>
+        <div class="col-md-3">
+          <h4>Contact Person </h4>
+          <%= f.input :ship_to_contact_person, label: false,  placeholder:"Contact Person" %>
+        </div>
+      </div row>
+    </div>
+
+    <p> The V12 QUARTERBREED Conversion kit is the  property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. This Conversion Kit is for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
+    <div class="col-md-12">
+       <h4>Additional comments or notes </h4>
+       <%= f.input :comments, label: false, placeholder:"" %>
+     </div>
+
+
 
 
     <%= f.submit "Submit Order" %>

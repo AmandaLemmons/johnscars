@@ -3,8 +3,8 @@
   <h2 class="text-center"> JCI LS ZCAR ORDER SHEET </h2>
   <p> Please complete as much information as you can. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Illegible, incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, no personal or company checks, no credit cards and no wire transferes. <b> PARTS ARE NOT RETURNABLE.</b> </p>
 
-  <div class="panel panel-default">
-  <h2 class="text-center"> ZCar Info (Before V8)
+  <!-- <div class="panel panel-default"> -->
+  <h2 class="text-center default-form"> ZCar Info (Before V8)
    </h2>
    <div class="row">
        <div class="col-md-3">
@@ -33,7 +33,7 @@
           <%= f.input :zcar_year_built, label: false, collection: ["1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979"]%>
       </div>
    </div row>
- </div>
+ <!-- </div> -->
 
    <div class="panel panel-default">
   <h2 class="text-center"> Drive Line</h2>
@@ -109,10 +109,6 @@
     </div>
   </div>
 </div>
-
-
-
-
 
     <h2 class="text-center"> LS Building Blocks (FRT Paid)</h2>
      <table class="table table-bordered">
