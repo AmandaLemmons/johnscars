@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#index'
   resources :order_sheets
+  resources :quarterbreeds
 
 
 
