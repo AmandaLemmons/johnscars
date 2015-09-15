@@ -1,152 +1,111 @@
   <%= link_to "Edit", edit_order_sheet_path(@order_sheet.id) %>
 
-  <h1 class="text-center"> JCI LS ZCAR ORDER SHEET </h1>
+  <h3 class="text-center"> JCI LS ZCAR ORDER SHEET </h3>
   <p class="text-center">Please complete as much information as you can. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Illegible, incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, no personal or company checks, no credit cards and no wire transfers. <b> PARTS ARE NOT RETURNABLE.</b> </p>
-
 
   <div class="col-md-12">
     <table class="table table-bordered ">
       <thead>
         <tr>
-          <th> Details</th>
           <th>CAR OWNER INFORMATION </th>
           <th>SHOP OR "SHIP TO" INFORMATION  </th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th >Name</b></th>
-          <td ><%= @order_sheet.car_owner_full_name %> </td>
-          <td ><%= @order_sheet.ship_to_full_name %></td>
+          <td ><b>Name</b>: <%= @order_sheet.car_owner_full_name %> </th>
+          <td> <b>Name</b>: <%= @order_sheet.ship_to_full_name %></td>
         </tr>
         <tr>
-          <th>Address</b></th>
-          <td ><%= @order_sheet.car_owner_address %> </td>
-          <td ><%= @order_sheet.ship_to_address %> </td>
+          <td><b>Address:</b> <%= @order_sheet.car_owner_address %> <br> <%= @order_sheet.car_owner_city %>, <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %> <%= @order_sheet.car_owner_countr %> </td>
+          <td><b>Address:</b> <%= @order_sheet.ship_to_address %><br> <%= @order_sheet.ship_to_city %>, <%= @order_sheet.ship_to_state %> <%= @order_sheet.ship_to_zip %> <%= @order_sheet.ship_to_countr %> </td>
         </tr>
         <tr>
-          <th >City, State Zip</b></th>
-          <td > <%= @order_sheet.car_owner_city %>, <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %> </td>
-          <td > <%= @order_sheet.ship_to_city %>, <%= @order_sheet.ship_to_state %> <%= @order_sheet.ship_to_zip %> </td>
+          <td><b>Email:</b> <%= @order_sheet.car_owner_email %></td>
+          <td><b>Email:</b> <%= @order_sheet.ship_to_email %></td>
         </tr>
         <tr>
-          <th> Country </th>
-          <td ><%= @order_sheet.car_owner_countr %> </td>
-          <td ><%= @order_sheet.ship_to_countr %> </td>
+          <td><b> Home Phone: </b> <%= @order_sheet.car_owner_home_phone %> <b>From:</b>  <%= @order_sheet.car_owner_home_hours %> </td>
+          <td> <b> Shop Phone: </b><%= @order_sheet.ship_to_phone %> </td>
         </tr>
         <tr>
-          <th >Email</b></th>
-          <td > <%= @order_sheet.car_owner_email %> </td>
-          <td > <%= @order_sheet.ship_to_email %></td>
+          <td> <b>Work Phone: </b><%= @order_sheet.car_owner_work_phone %> <b>From:</b> <%= @order_sheet.car_owner_work_hours%> </td>
+          <td><b>Fax: </b> <%= @order_sheet.ship_to_fax %> </td>
         </tr>
         <tr>
-          <th>Home / Shop Phone</th>
-          <td> <%= @order_sheet.car_owner_home_phone %> From:  <%= @order_sheet.car_owner_home_hours %> </td>
-          <td> <%= @order_sheet.ship_to_phone %> </td>
-        </tr>
-        <tr>
-          <th> Work Phone</th>
-          <td> <%= @order_sheet.car_owner_work_phone %> From: <%= @order_sheet.car_owner_work_hours %></td>
-          <td> </td>
-        </tr>
-        <tr>
-          <th>Fax</th>
-          <td><%= @order_sheet.car_owner_fax %> From: <%= @order_sheet.car_owner_fax_hours %></td>
-          <td> <%= @order_sheet.ship_to_fax %> </td>
-        </tr>
-        <tr>
-          <th>How did you find us?</th>
-          <td ><%= @order_sheet.car_owner_find_us %> -- <%= @order_sheet.car_owner_where_find_us %></td>
+          <td> <b> Fax: </b> <%= @order_sheet.car_owner_fax %> <b>From:</b> <%= @order_sheet.car_owner_fax_hours %></td>
+            <td><b>How did you find us?</b> <%= @order_sheet.car_owner_find_us %> <b> Where</b>: <%= @order_sheet.car_owner_where_find_us %></td>
         </tr>
       </tbody>
   </table>
   </div>
 
   <div class="col-md-6">
-    <h4> JCI LS ZCAR </h4>
+    <h5> JCI LS ZCAR </h5>
     <table class="table table-bordered">
-      <thead>
-      </thead>
       <tbody>
         <tr>
-        <th>Type</b></th>
-        <td><%=@order_sheet.ls_type%>, <%=@order_sheet.ls_type2%></td>
-        <th>Year</b></th>
-        <td><%= @order_sheet.ls_year%></td>
+        <td><b>Type: </b> <%=@order_sheet.ls_type%></td>
+        <td> <b>More infor on LS Type:</b> <%=@order_sheet.ls_type2%></td>
+        <td><b>Year: </b> <%= @order_sheet.ls_year%></td>
       </tr>
       </tbody>
     </table>
 
 
-    <h4> ZCAR INFO (Before V8) </h4>
+    <h5> ZCAR INFO (Before V8) </h5>
 
     <table class="table table-bordered">
       <thead>
       </thead>
       <tbody>
         <tr>
-        <th>Type</b></th>
-        <td><%=@order_sheet.zcar_type%>, <%=@order_sheet.zcar_type2%></td>
-        <th>VIN #:</b></th>
-        <td><%= @order_sheet.zcar_vin%></td>
-        <th>Year:</th>
-        <td><%= @order_sheet.zcar_year %></td>
-      </tr>
-      <tr>
-        <th>Month Built:</b></th>
-        <td><%= @order_sheet.zcar_month_built %></td>
-        <th >Year Built:</b></th>
-        <td ><%= @order_sheet.zcar_year_built %></td>
+        <td><b>Type: </b>  <%=@order_sheet.zcar_type%> '2 + 2': <%=@order_sheet.zcar_type2%></td>
+        <td><b>VIN #: </b><%= @order_sheet.zcar_vin%></b></td>
+        <td><b>Year: </b><%= @order_sheet.zcar_year %></td>
+        <td><b>Month Built:</b> <%= @order_sheet.zcar_month_built %></td>
+        <th ><b>Year Built:</b> <%= @order_sheet.zcar_year_built %></td>
       </tr>
       </tbody>
     </table>
 
-  <h4>  Differential Flange Details</h4>
+  <h5>  Differential Flange Details</h5>
     <table class="table table-bordered">
       <thead>
       </thead>
       <tbody>
         <tr>
-          <th>Bolt Hole size:</b></th>
-          <td><%= @order_sheet.hole_size%></td>
-          <th>Pilot Diameter:</b></th>
-          <td><%= @order_sheet.pilot_diameter %></td>
-          <th >Square or Rectangle:</b></th>
-          <td ><%= @order_sheet.pattern_type %></td>
-          <th >Q45:</b></th>
-          <td ><%= @order_sheet.q45%></td>
-          <th >Other Differentail Flange:</b></th>
-          <td ><%= @order_sheet.other_differential_flange%></td>
+          <td><b>Bolt Hole:</b> <%= @order_sheet.hole_size%></th>
+          <td><b>Pilot Diameter:</b> <%= @order_sheet.pilot_diameter %></th>
+          <td><b>Pattern:</b> <%= @order_sheet.pattern_type %></th>
+          <td><b>Q45:</b> <%= @order_sheet.q45%></th>
+          <td><b>Other?:</b> <%= @order_sheet.other_differential_flange%></th>
         </tr>
 
       </tbody>
     </table>
 
-    <h4>Transmission Details</h4>
-    <table class="table table-bordered">
+    <h5>Transmission Details</h5>
+    <table class="table table-bordered ">
       <thead>
       </thead>
       <tbody>
         <tr>
-          <th> Donor Type </th>
-          <td><%= @order_sheet.transmission_type %></td>
-          <th>Transmission Detail:</b></th>
-          <td><%= @order_sheet.transmission_detail %></td>
-          <th>Output Shaft: </b></th>
-          <td><%= @order_sheet.output_shaft %></td>
+          <td><b> Donor Type: </b> <%= @order_sheet.transmission_type %></td>
+          <td><b>Transmission Detail:</b> <%= @order_sheet.transmission_detail %></td>
+          <td><b>Output Shaft: </b> <%= @order_sheet.output_shaft %></td>
         </tr>
       </tbody>
     </table>
     <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion
     </p>
-    <br>
-    <p> Comments: <%= @order_sheet.comments %> </p>
+    <p class="page-break-after"> Comments: <%= @order_sheet.comments %> </p>
 
   </div>
 
 
 <div class="col-md-6">
-  <h4> LS BUILDING BLOCKS</h4>
+  <h5> LS BUILDING BLOCKS</h5>
   <table class="table table-bordered ">
     <thead>
       <th class="col-md-3">LS BUILDING BLOCKS</th>
@@ -214,4 +173,4 @@
     <br>
     <br>
 
-    <h4> Signature _____________________________________ Date___________________________________</h4>
+    <h5> Signature _____________________________________ Date________________</h5>

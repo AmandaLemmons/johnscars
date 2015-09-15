@@ -19,12 +19,19 @@ label .collection_radio_buttons {
   border: black 4px solid;
 }
 
-// .no-padding {
-//   background-color: red;
-//   th{
-//     padding: 2px;
-//   }
-// }
+.page-break-before {
+  @media print {
+  display: block;
+  page-break-before: always;
+}
+}
+
+.page-break-after {
+  @media print {
+  display: block;
+  page-break-after: always;
+}
+}
 
 .table thead tr th {
 }
