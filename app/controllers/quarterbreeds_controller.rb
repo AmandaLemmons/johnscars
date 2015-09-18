@@ -78,14 +78,14 @@ class QuarterbreedsController < ApplicationController
  end
 
  def set_quarterbreed_kit
-   @quarterbreed.quarterbreed_kit = 695
+   @quarterbreed.quarterbreed_kit = 895
    @quarterbreed.save
  end
 
  def set_driveshaft
    @quarterbreed = Quarterbreed.find(params[:id])
    if @quarterbreed.draveshaft == true
-      @quarterbreed.driveshaft_amt = 165
+      @quarterbreed.driveshaft_amt = 265
     else
        @quarterbreed.driveshaft_amt = 0
    end

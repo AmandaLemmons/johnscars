@@ -6,23 +6,24 @@
   <div class="panel panel-default col-md-6">
   <h2 class="text-center">JAGUAR Information (Before V8)</h2>
    <div class="row">
-       <div class="col-md-6">
+       <div class="col-md-12">
          <p class="p-form"> The VIN # is located on the window pillar or base on windshield in front of driver's door</p>
        </div>
-       <div class="col-md-3">
+       <div class="col-md-4">
+         <h4>Model Year</h4>
+         <%= f.input :jaguar_year, label: false, placeholder:"Year", collection: ["1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996"]%>
+       </div>
+       <div class="col-md-4">
          <h4>Type </h4>
          <%= f.input :jaguar_type, label: false, placeholder:"Type",  collection: ["XJ12", "XJ12C", "XJ12L", "XJS", "XJS-HE", "XJ-SC"]%>
        </div>
-       <div class="col-md-3">
-         <h4>VIN </h4>
+       <div class="col-md-4">
+         <h4>VIN #</h4>
          <%=f.input :jaguar_vin , label: false,  placeholder:"" %>
       </div>
    </div row>
    <div class="row">
-     <div class="col-md-4">
-       <h4>Year</h4>
-       <%= f.input :jaguar_year, label: false, placeholder:"Year"%>
-     </div>
+
      <div class="col-md-4">
           <h4>Month Built </h4>
           <%= f.input :jaguar_month_built, label: false, placeholder:"Month Built", collection: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -30,7 +31,7 @@
       </div>
      <div class="col-md-4">
           <h4>Year Built </h4>
-          <%= f.input :jugaur_year_built, label: false, placeholder: "Year Built"%>
+          <%= f.input :jugaur_year_built, label: false, placeholder: "Year Built", collection: ["1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996"]%>
       </div>
     </div row>
     <br>
@@ -44,33 +45,30 @@
            <%= f.input :engine_number, label: false, placeholder: ""%>
        </div>
        <div class="col-md-3">
-            <h4>Engine Type </h4>
-            <%= f.input :engine_type, label: false, placeholder: "", collection: ["Carbureted", "Fuel Injection", "Other - fill out in comments"]%>
+            <h4>Engine Model </h4>
+            <%= f.input :engine_type, label: false, placeholder: "", collection: ["Carbureted", "Fuel Injection", "V12 Etype", "Streetrod/Custom car", "Other - fill out in comments"]%>
         </div>
        </div row>
        <br>
-         <h3 class="text-center"> Tire Information</h3>
        <div class="row">
-         <div class="col-md-6">
+         <div class="col-md-4">
               <h4>Tire Size </h4>
               <%= f.input :tire_size, label: false, placeholder: "Tire Size"%>
           </div>
-
-         <div class="col-md-6">
+         <div class="col-md-4">
               <h4>Tire Radius </h4>
               <%= f.input :tire_radius, label: false, placeholder: "Tire Radius"%>
           </div>
-       </div>
-       <div class="row">
-         <div class="col-md-6">
-           <p class="p-form"> Tage under bolt on rear cover, sometimes shown in ratio form (49/17)</p>
-         </div>
-          <div class="col-md-6">
-               <h4>Rear Axie Radio</h4>
+          <div class="col-md-4">
+               <h4>Rear Axle Radio</h4>
                <%= f.input :rear_axie_ratio, label: false, placeholder: "", collection: ["2.88", "3.08", "3.31", "3.54", "Other - fill out in comments"]%>
                </h4>
            </div>
-         </div row>
+         </div>
+         <div class="col-md-12">
+           <p class="p-form"> Tag under bolt on rear cover, sometimes shown in ratio form (49/17)</p>
+         </div>
+
 
  </div><!--panel-->
 
@@ -102,20 +100,20 @@
 
         </div>
       </div>
- <h3 class="text-center"> MONIES * MONIES * MONIES</h3>
+ <h3 class="text-center"> MONIES </h3>
   <table class="table table-bordered">
     <tbody>
       <td class="col-md-4"> V12 T700 </td>
       <td class="col-md-4"> </td>
-      <td class="col-md-4"> $695.00 </td>
+      <td class="col-md-4"><strong> $895.00 </strong></td>
       <tr>
         <td class="col-md-4">T400 Flywheel Core Deposit </td>
         <td class="col-md-4"> $200.00 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :flywheel_core, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
-        <td class="col-md-4">Driveshaft </td>
-        <td class="col-md-4"> $165.00 </td>
+        <td class="col-md-4">Complete balanced driveshaft </td>
+        <td class="col-md-4"> $265.00 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :draveshaft, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
@@ -191,18 +189,14 @@
         <h4>Fax </h4>
         <%= f.input :car_owner_fax, label: false,  placeholder:"Fax" %>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <h4> Fax Hours </h4>
         <%= f.input :car_owner_fax_hours , label: false,  placeholder:"From xx to xx" %>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-6">
         <h4>How did you find us </h4>
         <%= f.input :car_owner_find_us , label: false,  placeholder:"",  priority: [ "Internet" ], collection: [ "Internet", "Magazine", "WOM", "Hybridz", "Shop Referal", "Car Show", "Magazine Article", "Other"] %>
-      </div>
-      <div class="col-md-4">
-        <h4>Where did you find us?</h4>
-        <%= f.input :car_owner_where_find_us , label: false,  placeholder:""%>
       </div>
     </div row>
   </div>
