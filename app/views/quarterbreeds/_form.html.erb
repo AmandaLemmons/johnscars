@@ -37,14 +37,14 @@
     <br>
     <h3 class="text-center"> Engine Information</h3>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-5">
         <p class="p-form"> Number at bellhousing flange of engine, top center</p>
       </div>
       <div class="col-md-3">
            <h4>Engine #</h4>
            <%= f.input :engine_number, label: false, placeholder: ""%>
        </div>
-       <div class="col-md-3">
+       <div class="col-md-4">
             <h4>Engine Model </h4>
             <%= f.input :engine_type, label: false, placeholder: "", collection: ["Carbureted", "Fuel Injection", "V12 Etype", "Streetrod/Custom car", "Other - fill out in comments"]%>
         </div>
@@ -60,7 +60,7 @@
               <%= f.input :tire_radius, label: false, placeholder: "Tire Radius"%>
           </div>
           <div class="col-md-4">
-               <h4>Rear Axle Radio</h4>
+               <h4>Rear Axle Ratio</h4>
                <%= f.input :rear_axie_ratio, label: false, placeholder: "", collection: ["2.88", "3.08", "3.31", "3.54", "Other - fill out in comments"]%>
                </h4>
            </div>
@@ -77,11 +77,11 @@
    <div class="row">
      <div class="col-md-6">
        <div class="text-center">
-          <%= image_tag('transmission.png') %>
+          <%= image_tag('pic1.png') %>
       </div text center>
     </div col6>
      <div class="col-md-6">
-       <h3> Current Transmission </h3>
+       <h4> Current Transmission </h4>
        <%= f.input :jaguar_trans, label: false, placeholder: "Current Transmission", collection: ["Borg Warner", "T400"]%>
      </div>
    </div row>
@@ -91,7 +91,7 @@
        </div>
        <div class="col-md-3">
          <div class="text-center">
-            <%= image_tag('speedo.png') %>
+            <%= image_tag('pic2.png') %>
           </div>
         </div>
          <div class="col-md-3">

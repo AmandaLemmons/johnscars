@@ -56,15 +56,15 @@
    <div class="panel panel-default col-md-6">
   <h2 class="text-center"> Drive Line</h2>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <h4> LS Type </h4>
       <%= f.input :ls_type, label: false, placeholder:"",  priority: [ "LS1" ], collection: [ "LS1", "LS2", "LS3", "LS7", "Crate"] %>
     </div>
-    <div class="col-md-4">
-      <h4> More info LS Type</h4>
+    <div class="col-md-6">
+      <h4> More on LS Type</h4>
       <%= f.input :ls_type2, label: false, placeholder:"If you have extra info about your LS Type" %>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <h4> Year </h4>
       <%= f.input :ls_year, label: false, placeholder:"LS Year", collection: ["1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"]  %>
     </div>
@@ -73,37 +73,39 @@
   <h2 class="text-center "> Differential Flange Details</h2>
   <div class="row">
       <div class="col-md-4">
-        <div class="text-center">
-           <%= image_tag('john.png') %>
-       </div>
+           <%= image_tag('circle.png') %>
      </div>
      <div class="col-md-4">
+        <small class="p-form"> If X = Y, the pattern is a square, else pattern is a rectangle</small>
+      </div>
+      <div class="col-md-4">
+        <h4> Does X = Y?</h4>
+        <%= f.input :pattern_type, label: false, priority: [ "square" ], collection: [ "square", "rectangle"] %>
+      </div>
+    </div>
+    <div class="row">
+     <div class="col-md-6">
        <h4>(H) Hole Size  </h4>
        <%= f.input :hole_size,  label: false,priority: [ "8mm" ], collection: [ "8mm", "10mm", "12mm"] %>
      </div>
-     <div class="col-md-4">
+     <div class="col-md-6">
        <h4>(P) Pilot Diameter  </h4>
        <%= f.input :pilot_diameter, label: false, priority: [ "50mm" ], collection: [ "50mm", "57mm"] %>
      </div>
-   <div class="col-md-4">
-     <h4> Does X = Y?</h4>
-     <%= f.input :pattern_type, label: false, priority: [ "square" ], collection: [ "square", "rectangle"] %>
    </div>
-   <div class="col-md-4">
-     <p class="p-form">Is this a Q45?</p>
-     <%= f.collection_radio_buttons :q45, [[true, 'Yes'], [false, 'No']], :first, :last%>
+   <div class="row">
+
+     <div class="col-md-6">
+       <p class="p-form">Is this a Q45?</p>
+       <%= f.collection_radio_buttons :q45, [[true, 'Yes'], [false, 'No']], :first, :last%>
+     </div>
+     <div class="col-md-6">
+       <p class="p-form">Other?</p>
+       <%= f.collection_radio_buttons :other_differential_flange, [[true, 'Yes'], [false, 'No']], :first, :last%>
+     </div>
    </div>
- </div>
- <div class="row">
-   <div class="col-md-4">
-   </div>
-   <div class="col-md-4">
-     <small> If X = Y, the pattern is a square, else pattern is a rectangle</small>
-   </div>
-   <div class="col-md-4">
-     <p>Other?</p>
-     <%= f.collection_radio_buttons :other_differential_flange, [[true, 'Yes'], [false, 'No']], :first, :last%>
-   </div>
+
+
  </div>
  </div>
 
@@ -113,7 +115,7 @@
        <tbody>
          <td class="col-md-4"> LS ZCar Front mount set</td>
          <td class="col-md-4"> </td>
-         <td class="col-md-4"> $295.00 </td>
+         <td class="col-md-4"> <strong>$295.00</strong> </td>
          <tr>
            <td class="col-md-4">Trans Cross memeber and mount </td>
            <td class="col-md-4">$135.00 </td>
@@ -221,19 +223,16 @@
       <h4>Fax </h4>
       <%= f.input :car_owner_fax, label: false,  placeholder:"Fax" %>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <h4>Fax Hours </h4>
       <%= f.input :car_owner_fax_hours , label: false,  placeholder:"Fax From xx to xx" %>
     </div>
 
-    <div class="col-md-4">
-      <h4>How did you find us </h4>
+    <div class="col-md-6">
+      <h4>How did you find us? </h4>
       <%= f.input :car_owner_find_us , label: false,  placeholder:"",  priority: [ "Internet" ], collection: [ "Internet", "Magazine", "WOM", "Hybridz", "Shop Referal", "Car Show", "Magazine Article", "Other"] %>
     </div>
-    <div class="col-md-4">
-      <h4>Where did you find us?</h4>
-      <%= f.input :car_owner_where_find_us , label: false,  placeholder:""%>
-    </div>
+
   </div row>
 </div>
 
