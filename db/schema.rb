@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006210055) do
+ActiveRecord::Schema.define(version: 20151006234533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,6 +144,66 @@ ActiveRecord::Schema.define(version: 20151006210055) do
     t.string   "ship_to_countr"
     t.string   "car_owner_where_find_us"
     t.string   "other_speedo"
+  end
+
+  create_table "tr7s", force: :cascade do |t|
+    t.string  "car_owner_full_name"
+    t.string  "car_owner_address"
+    t.string  "car_owner_city"
+    t.string  "car_owner_state"
+    t.string  "car_owner_email"
+    t.string  "car_owner_zip"
+    t.string  "car_owner_home_phone"
+    t.string  "car_owner_work_phone"
+    t.string  "car_owner_fax"
+    t.string  "car_owner_find_us"
+    t.string  "car_owner_home_hours"
+    t.string  "car_owner_work_hours"
+    t.string  "car_owner_fax_hours"
+    t.string  "ship_to_full_name"
+    t.string  "ship_to_address"
+    t.string  "ship_to_city"
+    t.string  "ship_to_state"
+    t.string  "ship_to_email"
+    t.string  "ship_to_zip"
+    t.string  "ship_to_phone"
+    t.string  "ship_to_fax"
+    t.string  "ship_to_contact_person"
+    t.string  "tr7s_type"
+    t.string  "tr7s_vin"
+    t.string  "tr7s_year"
+    t.string  "tr7s_month_built"
+    t.string  "tr7s_year_built"
+    t.string  "tr7s_engine"
+    t.string  "tr7s_ac"
+    t.string  "tr7s_transmission_type"
+    t.string  "tr7s_rear_axle_ratio"
+    t.string  "tr7s_tire_size"
+    t.boolean "tr7s_expansion_tank"
+    t.string  "buick_v6_engine"
+    t.string  "buick_v6_year"
+    t.string  "buick_v6_freon"
+    t.string  "buick_v6_freon_other"
+    t.string  "buick_v6_trans"
+    t.string  "buick_v6_tailhousing_length"
+    t.string  "buick_v6_manual"
+    t.string  "buick_v6_trans_year"
+    t.boolean "tr7s_kit"
+    t.boolean "ac_hoses"
+    t.boolean "jci_headers"
+    t.boolean "fuel_injection_vc"
+    t.boolean "driveshaft_adaptor"
+    t.boolean "electrolock"
+    t.string  "other_kit_options"
+    t.integer "credit_amt"
+    t.string  "credit_description"
+    t.decimal "subtotal",                    precision: 10, scale: 2
+    t.decimal "freight",                     precision: 10, scale: 2
+    t.decimal "sales_tax",                   precision: 10, scale: 2
+    t.decimal "total",                       precision: 10, scale: 2
+    t.string  "buick_v6_cid"
+    t.string  "comments"
+    t.string  "same_information"
   end
 
 end

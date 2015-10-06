@@ -1,140 +1,143 @@
 <div class="container">
-  <%= simple_form_for(@quarterbreed) do |f| %>
+  <%= simple_form_for(@tr7) do |f| %>
   <%= f.error_notification %>
 
-  <h2 class="text-center"> JCI V12 QUARTERBREED KIT ORDER SHEET </h2>
-  <p> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
+  <h2 class="text-center"> JOHN'S CARS V6 TR7 CONVERSION KIT ORDER SHEET </h2>
+  <p> Please complete as much information as you can - there are thousands of variations of my V6 TR7 kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em><strong> unsigned</strong> </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
 
   <div class="panel panel-default col-md-6">
-  <h2 class="text-center">Jaguar Information</h2>
+  <h2 class="text-center">TR7 INFORMATION (BEFORE V6)</h2>
    <div class="row">
        <div class="col-md-12">
          <p class="p-form"> The Vehicle Identification Number (VIN) is located on window pillar or base on windshield in front of driver's door. Year/ Month are located on the driver's door or jamb.</p>
        </div>
        <div class="col-md-4">
          <h4>Model Year</h4>
-         <%= f.input :jaguar_year, label: false, placeholder:"Year", collection: ["1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996"]%>
+         <%= f.input :tr7s_year, label: false, placeholder:"Year", collection: ["1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996"]%>
        </div>
        <div class="col-md-4">
          <h4>Type </h4>
-         <%= f.input :jaguar_type, label: false, placeholder:"Type",  collection: ["XJ12", "XJ12 Series III", "XJ12C", "XJ12L", "XJS", "XJS-HE", "XJ-SC", "V12 Etype", "Streetrod/Custom car", "Other - fill out in comments"]%>
+         <%= f.input :tr7s_type, label: false, placeholder:"Type",  collection: ["Coupe", "Convertible" "Other - fill out in comments"]%>
        </div>
        <div class="col-md-4">
          <h4>VIN #</h4>
-         <%=f.input :jaguar_vin , label: false,  placeholder:"" %>
+         <%=f.input :tr7s_vin , label: false,  placeholder:"" %>
       </div>
    </div row>
    <div class="row">
-
+     <p> Year/Month Built is located on driver's door or jamb.</p>
      <div class="col-md-4">
           <h4>Month Built </h4>
-          <%= f.input :jaguar_month_built, label: false, placeholder:"Month Built", collection: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+          <%= f.input :tr7s_month_built, label: false, placeholder:"Month Built", collection: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
           %>
       </div>
      <div class="col-md-4">
           <h4>Year Built </h4>
-          <%= f.input :jugaur_year_built, label: false, placeholder: "Year Built", collection: ["1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996"]%>
+          <%= f.input :tr7s_year_built, label: false, placeholder: "Year Built", collection: ["1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996"]%>
       </div>
     </div row>
     <br>
-    <h3 class="text-center"> Engine Information</h3>
     <div class="row">
-      <div class="col-md-12">
-        <p class="p-form"> Engine Number is located at bellhousing flange of engine, in the top center</p>
-      </div>
       <div class="col-md-6">
-           <h4>Engine #</h4>
-           <%= f.input :engine_number, label: false, placeholder: ""%>
+           <h4>Engine </h4>
+           <%= f.input :tr7s_engine, label: false, placeholder: "Engine", collection: ["Carbureted", "Fuel Injected"]%>
        </div>
        <div class="col-md-6">
-            <h4>Engine Model </h4>
-            <%= f.input :engine_type, label: false, placeholder: "", collection: ["Carbureted", "Fuel Injection"]%>
+            <h4>A/C </h4>
+            <%= f.collection_radio_buttons :tr7s_ac, [[true, 'Yes'], [false, 'No']], :first, :last%>
         </div>
        </div row>
        <br>
        <div class="row">
          <div class="col-md-4">
-              <h4>Tire Size </h4>
-              <%= f.input :tire_size, label: false, placeholder: "Tire Size"%>
+              <h4>Transmission Type </h4>
+              <%= f.input :tr7s_transmission_type, label: false, placeholder: "", collection: ["Automatic", "4SP", "5SP"]%>
           </div>
          <div class="col-md-4">
-              <h4>Tire Radius </h4>
-              <%= f.input :tire_radius, label: false, placeholder: "Tire Radius"%>
+              <h4>Tire Size/Radius </h4>
+              <%= f.input :tr7s_tire_size, label: false, placeholder: "Tire Radius" %>
           </div>
           <div class="col-md-4">
                <h4>Rear Axle Ratio</h4>
-               <%= f.input :rear_axie_ratio, label: false, placeholder: "", collection: ["2.88", "3.08", "3.31", "3.54", "Other - fill out in comments"]%>
-               </h4>
+               <%= f.input :tr7s_rear_axle_ratio, label: false, placeholder: "", collection: ["308", "327", "345", "363", "391", "327", "363", "Drop out 3rd memeber", "345", "391", "Salisbury rear cover", "Other - Fill out in Comments"]%>
            </div>
+           <div class="col-md-4">
+             <%= f.collection_radio_buttons :tr7s_expansion_tank, [[true, 'Yes'], [false, 'No']], :first, :last%>
+           </div>
+
          </div>
-         <div class="col-md-12">
-           <p class="p-form">Rear Axle Ratio: Tag under bolt on rear cover, sometimes shown in ratio form (49/17)</p>
-         </div>
+
 
 
  </div><!--panel-->
 
  <div class="panel panel-default col-md-6">
-   <h2 class="text-center">Jaguar Trans Information</h2>
+   <h2 class="text-center">Buick V6 Driveline Information</h2>
    <div class="row">
-     <div class="col-md-6">
-       <div class="text-center">
-          <%= image_tag('pic1.png') %>
-      </div text center>
-    </div col6>
-     <div class="col-md-6">
-       <h4> Current Transmission </h4>
-       <%= f.input :jaguar_trans, label: false, placeholder: "Current Transmission", collection: ["Borg Warner", "T400"]%>
+     <div class="col-md-4">
+       <h4> Engine </h4>
+       <%= f.input :buick_v6_engine, label: false, placeholder: "Engine", collection: ["Carb", "Fuel Injection"]%>
      </div>
-   </div row>
-     <div class="row">
-       <div class="col-md-12">
-            <p class="p-form"> Speedo Number:  I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars</p>
-       </div>
-       <div class="col-md-4">
-         <div class="text-center">
-            <%= image_tag('pic2.png') %>
-          </div>
-        </div>
-         <div class="col-md-4">
-            <h4>Speedo # </h4>
-            <%= f.input :speedo_number, label: false, placeholder: "", collection: ["940", "1000", "1020", "Other"]%>
-        </div>
+     <div class="col-md-4">
+        <h4>Year </h4>
+        <%= f.input :buick_v6_year, label: false, placeholder: "Year"%>
+    </div>
         <div class="col-md-4">
-          <h4> Other Speedo # </h4>
-          <%= f.input :other_speedo, label: false, placeholder: "Unique Speedo Number" %>
+          <h4> CID </h4>
+          <%= f.input :buick_v6_cid, label: false, placeholder: "CID" %>
         </div>
       </div>
+
  <h3 class="text-center"> MONIES </h3>
   <table class="table table-bordered">
     <tbody>
-      <td class="col-md-4"> V12 T700 </td>
+      <td class="col-md-4"> TR7 Kit </td>
       <td class="col-md-4"> </td>
-      <td class="col-md-4"><strong> $895.00 </strong></td>
+      <td class="col-md-4"><strong> $795.00 </strong></td>
       <tr>
-        <td class="col-md-4">T400 Flywheel Core Deposit </td>
-        <td class="col-md-4"> $200.00 </td>
-        <td class="col-md-4"><%= f.collection_radio_buttons :flywheel_core, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+        <td class="col-md-4">A/C Hoses </td>
+        <td class="col-md-4"> $55.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :ac_hoses, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
-        <td class="col-md-4">Complete balanced driveshaft </td>
-        <td class="col-md-4"> $265.00 </td>
-        <td class="col-md-4"><%= f.collection_radio_buttons :draveshaft, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+        <td class="col-md-4">JCI Headers </td>
+        <td class="col-md-4"> $225.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :jci_headers, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
-        <td class="col-md-4">Credit  </td>
-        <td class="col-md-4">(Non-illustrated or Repeat Kits) </td>
-        <td class="col-md-4"> <%= f.input :credit, label: false, placeholder:"" %> </td>
+        <td class="col-md-4">Fuel Injection V6 </td>
+        <td class="col-md-4"> $100.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :fuel_injection_vc, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+      </tr>
+      <tr>
+        <td class="col-md-4">Driveshaft Adaptor (4-sp rear) </td>
+        <td class="col-md-4"> $75.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :driveshaft_adaptor, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+      </tr>
+      <tr>
+        <td class="col-md-4">ELECTROLOCK </td>
+        <td class="col-md-4"> $95.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :electrolock, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+      </tr>
+      <tr>
+        <td class="col-md-4">Other (Please itemize in comments) </td>
+        <td class="col-md-4">  </td>
+        <td class="col-md-4"><%= f.input :other_kit_options, label: false, placeholder: ""%> </td>
+      </tr>
+      <tr>
+        <td class="col-md-4">Credit <small> (Suggested Buy or Repeat Kits) </small> </td>
+        <td class="col-md-4"><%= f.input :credit_description, label: false, placeholder:"" %></td>
+        <td class="col-md-4"> <%= f.input :credit_amt, label:false, placeholder: "credit amount"%> </td>
       </tr>
       <tr>
         <td class="col-md-4">Are you a Texas Resident? </td>
         <td class="col-md-4"> Sales Tax -- 8.25% </td>
-        <td class="col-md-4"> <%= f.collection_radio_buttons :texas_resident, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
+        <td class="col-md-4"> <%= f.collection_radio_buttons :sales_tax, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
       </tr>
       <tr>
-        <td class="col-md-4">Hawaii or Expedite </td>
-        <td class="col-md-4"> (Overnite or 2 day) </td>
-        <td class="col-md-4"> <%= f.collection_radio_buttons :expedite, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
+        <td class="col-md-4">Freight </td>
+        <td class="col-md-4"> </td>
+        <td class="col-md-4"> <%= f.collection_radio_buttons :freight, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
       </tr>
     </tbody>
   </table>
@@ -166,10 +169,7 @@
         <%= f.input :car_owner_zip, label: false,  placeholder:"Zip" %>
       </div>
 
-      <div class="col-md-4">
-        <h4>Country </h4>
-        <%= f.input :car_owner_countr, label: false,  placeholder:"Country" %>
-      </div>
+
 
       <div class="col-md-4">
         <h4>Email </h4>
@@ -211,7 +211,7 @@
       <h2 class="text-center"> Shop or "Ship To" Information  </h2>
       <br>
       <p> Is the shipping information the same as the car owner information </p>
-      <%= f.collection_radio_buttons :same_information, [[true, 'Yes'] ,[false, 'No']], :first, :last  %> </p>
+       <%= f.collection_radio_buttons :same_information, [[true, 'Yes'] ,[false, 'No']], :first, :last  %> </p>
       <div class="row">
         <div class="col-md-4">
           <h4> Name </h4>
@@ -233,10 +233,7 @@
           <h4>Zip </h4>
           <%= f.input :ship_to_zip, label: false,  placeholder:"Zip" %>
         </div>
-        <div class="col-md-4">
-          <h4>Country </h4>
-          <%= f.input :ship_to_countr, label: false,  placeholder:"Country" %>
-        </div>
+
         <div class="col-md-4">
           <h4>Email </h4>
           <%= f.input :ship_to_email, label: false,  placeholder:"Email" %>
@@ -260,7 +257,7 @@
     <div class="col-md-12">
         <p> The V12 QUARTERBREED Conversion kit is the  property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. This Conversion Kit is for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
        <h4>Additional comments or notes </h4>
-       <%= f.input :comments, label: false, placeholder:"" %>
+        <%= f.input :comments, label: false, placeholder:"" %>
            <%= f.submit "Submit Order" %>
      </div>
 
