@@ -1,4 +1,5 @@
   <%= link_to "Edit", edit_order_sheet_path(@order_sheet.id) %>
+  <div class="print-form">
 
   <h3 class="text-center"> JCI LS ZCAR ORDER SHEET </h3>
   <p class="text-center">Please complete as much information as you can. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Illegible, incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, no personal or company checks, no credit cards and no wire transfers. <b> PARTS ARE NOT RETURNABLE.</b> </p>
@@ -46,7 +47,7 @@
       <tbody>
         <tr>
         <td><b>Type: </b> <%=@order_sheet.ls_type%></td>
-        <td> <b>More infor on LS Type:</b> <%=@order_sheet.ls_type2%></td>
+        <td> <b>More info on LS Type:</b> <%=@order_sheet.ls_type2%></td>
         <td><b>Year: </b> <%= @order_sheet.ls_year%></td>
       </tr>
       </tbody>
@@ -99,7 +100,7 @@
     </table>
     <p> These parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion
     </p>
-    <p class="page-break-after"> Comments: <%= @order_sheet.comments %> </p>
+    <p > Comments: <%= @order_sheet.comments %> </p>
 
   </div>
 
@@ -113,6 +114,8 @@
     </thead>
     <tbody>
       <tr>
+
+        =number_to_currency(@property_info.finance_amount, :precision => (@property_info.finance_amount.round == @property_info.finance_amount) ? 0 : 2)
         <th>LS ZCAR FRONT mount set</th>
         <td>$<%= @order_sheet.mount_set %></td>
       </tr>
@@ -174,3 +177,5 @@
     <br>
 
     <h5> Signature _____________________________________ Date________________</h5>
+
+  </div>

@@ -36,15 +36,23 @@ label .collection_radio_buttons {
 }
 }
 
-.table thead tr th {
-}
-.table thead tr td {
+.table  tbody  tr  td.data-height{
+  padding: 6px;
 }
 
- .table  tbody  tr  th{
- }
- .table  tbody  tr  td{
- }
+.table thead tr th {
+  padding: 1px;
+}
+.table thead tr td {
+padding: 1px;
+}
+
+.table  tbody  tr  th{
+ padding: 1px;
+}
+.table  tbody  tr  td{
+ padding: 1px;
+}
 
  .height {
    height: 150px;
@@ -63,3 +71,16 @@ label .collection_radio_buttons {
    padding-left: 5px;
    padding-right: 5px;
  }
+
+ .print-form {
+  font-size: 10px;
+  line-height: 12px;
+  h3 {
+    font-size: 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  table {
+    margin-bottom: 5px;
+  }
+}

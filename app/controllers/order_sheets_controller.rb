@@ -22,8 +22,11 @@ class OrderSheetsController < ApplicationController
 
   def create
     @order_sheet = OrderSheet.new(order_sheet_params)
-    @order_sheet.save
-    redirect_to order_sheet_path(@order_sheet.id)
+    if @order_sheet.save
+      redirect_to order_sheet_path(@order_sheet.id)
+    else
+      render :index
+    end
   end
 
   def index
@@ -124,7 +127,7 @@ class OrderSheetsController < ApplicationController
 
   def set_high_volume
     if @order_sheet.high_volume == true
-       @order_sheet.amt8 = 175
+       @order_sheet.amt8 = 165
     else
         @order_sheet.amt8 = 0
     end
@@ -137,7 +140,7 @@ class OrderSheetsController < ApplicationController
   end
 
   def set_sales_tax
-    if @order_sheet.ship_to_state == "Texas"
+    if @order_sheet.ship_to_state || @order_sheet.car_owner_state == "Texas"
       @order_sheet.sales_tax = (@order_sheet.subtotal) * (0.0825)
       @order_sheet.sales_tax
     else

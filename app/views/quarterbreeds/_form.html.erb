@@ -4,10 +4,10 @@
   <p> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
 
   <div class="panel panel-default col-md-6">
-  <h2 class="text-center">JAGUAR Information (Before V8)</h2>
+  <h2 class="text-center">Jaguar Information</h2>
    <div class="row">
        <div class="col-md-12">
-         <p class="p-form"> The VIN # is located on the window pillar or base on windshield in front of driver's door</p>
+         <p class="p-form"> The Vehicle Identification Number (VIN) is located on window pillar or base on windshield in front of driver's door. Year/ Month are located on the driver's door or jamb.</p>
        </div>
        <div class="col-md-4">
          <h4>Model Year</h4>
@@ -15,7 +15,7 @@
        </div>
        <div class="col-md-4">
          <h4>Type </h4>
-         <%= f.input :jaguar_type, label: false, placeholder:"Type",  collection: ["XJ12", "XJ12C", "XJ12L", "XJS", "XJS-HE", "XJ-SC"]%>
+         <%= f.input :jaguar_type, label: false, placeholder:"Type",  collection: ["XJ12", "XJ12 Series III", "XJ12C", "XJ12L", "XJS", "XJS-HE", "XJ-SC", "V12 Etype", "Streetrod/Custom car", "Other - fill out in comments"]%>
        </div>
        <div class="col-md-4">
          <h4>VIN #</h4>
@@ -37,16 +37,16 @@
     <br>
     <h3 class="text-center"> Engine Information</h3>
     <div class="row">
-      <div class="col-md-5">
-        <p class="p-form"> Number at bellhousing flange of engine, top center</p>
+      <div class="col-md-12">
+        <p class="p-form"> Engine Number is located at bellhousing flange of engine, in the top center</p>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-6">
            <h4>Engine #</h4>
            <%= f.input :engine_number, label: false, placeholder: ""%>
        </div>
-       <div class="col-md-4">
+       <div class="col-md-6">
             <h4>Engine Model </h4>
-            <%= f.input :engine_type, label: false, placeholder: "", collection: ["Carbureted", "Fuel Injection", "V12 Etype", "Streetrod/Custom car", "Other - fill out in comments"]%>
+            <%= f.input :engine_type, label: false, placeholder: "", collection: ["Carbureted", "Fuel Injection"]%>
         </div>
        </div row>
        <br>
@@ -66,14 +66,14 @@
            </div>
          </div>
          <div class="col-md-12">
-           <p class="p-form"> Tag under bolt on rear cover, sometimes shown in ratio form (49/17)</p>
+           <p class="p-form">Rear Axle Ratio: Tag under bolt on rear cover, sometimes shown in ratio form (49/17)</p>
          </div>
 
 
  </div><!--panel-->
 
  <div class="panel panel-default col-md-6">
-   <h2 class="text-center">JAGUAR TRANS INFORMATION</h2>
+   <h2 class="text-center">Jaguar Trans Information</h2>
    <div class="row">
      <div class="col-md-6">
        <div class="text-center">
@@ -86,18 +86,21 @@
      </div>
    </div row>
      <div class="row">
-       <div class="col-md-6">
-            <p class="p-form"> I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars</p>
+       <div class="col-md-12">
+            <p class="p-form"> Speedo Number:  I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars</p>
        </div>
-       <div class="col-md-3">
+       <div class="col-md-4">
          <div class="text-center">
             <%= image_tag('pic2.png') %>
           </div>
         </div>
-         <div class="col-md-3">
+         <div class="col-md-4">
             <h4>Speedo # </h4>
-            <%= f.input :speedo_number, label: false, placeholder: "", collection: ["940", "1000", "1020", "Other - fill out in comments"]%>
-
+            <%= f.input :speedo_number, label: false, placeholder: "", collection: ["940", "1000", "1020", "Other"]%>
+        </div>
+        <div class="col-md-4">
+          <h4> Other Speedo # </h4>
+          <%= f.input :other_speedo, label: false, placeholder: "Unique Speedo Number" %>
         </div>
       </div>
  <h3 class="text-center"> MONIES </h3>
@@ -134,6 +137,7 @@
     </tbody>
   </table>
 </div>
+<br clear="all">
 
 
      <div class="panel panel-default col-md-6">
