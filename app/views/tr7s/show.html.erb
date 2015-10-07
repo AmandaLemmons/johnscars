@@ -1,0 +1,147 @@
+<!-- link_to "Edit", edit_quarterbreed_path(@tr7.id) %> -->
+
+<h3 class="text-center"> JCI V6 TR7 CONVERSION KIT ORDER SHEET </h3>
+<p class="text-center"><p> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
+
+<div class="col-md-10 col-md-offset-1">
+  <table class="table table-bordered ">
+    <thead>
+      <tr>
+        <th>CAR OWNER INFORMATION </th>
+        <th>SHOP OR "SHIP TO" INFORMATION  </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td ><b>Name</b>: <%= @tr7.car_owner_full_name %> </th>
+        <td> <b>Name</b>: <%= @tr7.ship_to_full_name %></td>
+      </tr>
+      <tr>
+        <td><b>Address:</b> <%= @tr7.car_owner_address %> <br> <%= @tr7.car_owner_city %>, <%= @tr7.car_owner_state %>  </b><%= @tr7.car_owner_zip %>
+         </td>
+        <td><b>Address:</b> <%= @tr7.ship_to_address %><br> <%= @tr7.ship_to_city %>, <%= @tr7.ship_to_state %> <%= @tr7.ship_to_zip %>  </td>
+      </tr>
+      <tr>
+        <td><b>Email:</b> <%= @tr7.car_owner_email %></td>
+        <td><b>Email:</b> <%= @tr7.ship_to_email %></td>
+      </tr>
+      <tr>
+        <td><b> Home Phone: </b> <%= @tr7.car_owner_home_phone %> <b>From:</b>  <%= @tr7.car_owner_home_hours %> </td>
+        <td> <b> Shop Phone: </b><%= @tr7.ship_to_phone %> </td>
+      </tr>
+      <tr>
+        <td> <b>Work Phone: </b><%= @tr7.car_owner_work_phone %> <b>From:</b> <%= @tr7.car_owner_work_hours%> </td>
+        <td><b>Fax: </b> <%= @tr7.ship_to_fax %> </td>
+      </tr>
+      <tr>
+        <td> <b> Fax: </b> <%= @tr7.car_owner_fax %> <b>From:</b> <%= @tr7.car_owner_fax_hours %></td>
+          <td><b>How did you find us?</b> <%= @tr7.car_owner_find_us %> <b> Where</b>:  </td>
+      </tr>
+    </tbody>
+</table>
+</div>
+
+
+  <div class="col-md-5 col-md-offset-1">
+    <h5> TR7 Information (Before V8) </h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+        <td><b>Type: </b> <%=@tr7.tr7s_type%></td>
+        <td> <b>VIN:</b> <%=@tr7.tr7s_vin%></td>
+        <td><b>Year: </b> <%= @tr7.tr7s_year%></td>
+        <td><b>Month Built: </b> <%= @tr7.tr7s_month_built%></td>
+        <td><b>Year Built: </b> <%= @tr7.tr7s_year_built%></td>
+        <td><b>Transmission: </b> <%= @tr7.tr7s_transmission_type%></td>
+      </tr>
+      <tr>
+        <td><b>Engine Number: </b></td>
+        <td><b>Engine Type: </b> <%=@tr7.tr7s_engine%></td>
+        <td><b>Tire Size: </b> <%=@tr7.tr7s_tire_size%></td>
+        <td><b>Rear Axle Ratio: </b> <%=@tr7.tr7s_rear_axle_ratio%></td>
+        <td><b>AC: </b> <%=@tr7.tr7s_ac%></td>
+        <td><b>Expansion Tank: </b> <%=@tr7.tr7s_expansion_tank%></td>
+      </tr>
+      <tr>
+        <td> <b> Buick Engine: </b> <%= @tr7.buick_v6_engine%></td>
+        <td> <b> Buick Year: </b> <%= @tr7.buick_v6_year%></td>
+        <td> <b> Buick CID: </b> <%= @tr7.buick_v6_cid%></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="col-md-5">
+    <h5> Monies</h5>
+    <table class="table table-bordered ">
+      <thead>
+        <th class="col-md-3">TR7 Kit</th>
+        <th class="col-md-1"> Price </th>
+      </thead>
+      <tbody>
+        <tr>
+          <th>TR7 Kit</th>
+          <td>$<%= @tr7.kit_amt %></td>
+        </tr>
+        <tr>
+          <th >A/C Hoses</th>
+          <td >$<%= @tr7.ac_hoses_amt %></td>
+        </tr>
+        <tr>
+          <th >JCI Headers</th>
+          <td >$<%= @tr7.jci_headers_amt %></td>
+        </tr>
+        <tr>
+          <th >Fuel Injection V6 </th>
+          <td >$<%= @tr7.fuel_injection_vc_amt %></td>
+        </tr>
+        <tr>
+          <th >Driveshaft Adaptor (4-sp rear) </th>
+          <td >$<%= @tr7.driveshaft_adaptor_amt %></td>
+        </tr>
+        <tr>
+          <th >ELECTROLOCK </th>
+          <td >$<%= @tr7.electrolock_amt %></td>
+        </tr>
+        <tr>
+          <th >Other </th>
+          <td >$<%= @tr7 %></td>
+        </tr>
+        <tr>
+          <th >Credit</th>
+          <td > - $<%= @tr7.credit_amt %></td>
+        </tr>
+        <tr>
+          <th >Subtotal (Parts Freight paid)</th>
+          <td >$<%= @tr7.subtotal %></td>
+        </tr>
+        <tr>
+          <th >Texas Residents 8.25% Sales Tax +</th>
+          <td >$ <%=@tr7.sales_tax %></td>
+        </tr>
+        <tr>
+          <th >Freight</th>
+          <td >$<%= @tr7.freight %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>CASHIER'S CHECK = </th>
+          <td ><b>$<%= @tr7.total %></b></td>
+        </tr>
+      </tbody>
+  </table>
+  </div>
+  <br>
+
+<div class="col-md-12">
+  <p> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
+  <br>
+  <br>
+
+  <h5> Signature _____________________________________ Date________________</h5>
+
+</div>

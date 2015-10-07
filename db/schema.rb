@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006234533) do
+ActiveRecord::Schema.define(version: 20151007133739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -188,7 +188,6 @@ ActiveRecord::Schema.define(version: 20151006234533) do
     t.string  "buick_v6_tailhousing_length"
     t.string  "buick_v6_manual"
     t.string  "buick_v6_trans_year"
-    t.boolean "tr7s_kit"
     t.boolean "ac_hoses"
     t.boolean "jci_headers"
     t.boolean "fuel_injection_vc"
@@ -204,6 +203,12 @@ ActiveRecord::Schema.define(version: 20151006234533) do
     t.string  "buick_v6_cid"
     t.string  "comments"
     t.string  "same_information"
+    t.decimal "kit_amt",                     precision: 10, scale: 2
+    t.decimal "ac_hoses_amt",                precision: 10, scale: 2
+    t.decimal "jci_headers_amt",             precision: 10, scale: 2
+    t.decimal "fuel_injection_vc_amt",       precision: 10, scale: 2
+    t.decimal "driveshaft_adaptor_amt",      precision: 10, scale: 2
+    t.decimal "electrolock_amt",             precision: 10, scale: 2
   end
 
 end
