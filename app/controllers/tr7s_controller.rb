@@ -1,5 +1,18 @@
 class Tr7sController < ApplicationController
-  before_action :set_tr7, only:[:show, :edit, :update]
+  before_action :set_tr7, only:[:show, :edit, :update, :set_same_shipping, :set_tr7_kit, :set_ac_hoses, :set_jci_headers, :set_fuel_injection_vc, :set_driveshaft_adaptor, :set_electrolock, :set_subtotal, :set_sales_tax, :set_total]
+  before_action :set_same_shipping, only: [:show, :edit, :update]
+  before_action :set_tr7_kit, only: [:show, :edit, :update]
+  before_action :set_ac_hoses, only: [:show, :edit, :update]
+  before_action :set_jci_headers, only: [:show, :edit, :update]
+  before_action :set_fuel_injection_vc, only: [:show, :edit, :update]
+  before_action :set_driveshaft_adaptor, only: [:show, :edit, :update]
+  before_action :set_electrolock, only: [:show, :edit, :update]
+  before_action :set_subtotal, only: [:show, :edit, :update]
+  before_action :set_sales_tax, only: [:show, :edit, :update]
+  before_action :set_total, only: [:show, :edit, :update]
+
+
+
   def new
     @tr7 = Tr7.new
   end
@@ -18,6 +31,15 @@ class Tr7sController < ApplicationController
  end
 
  def show
+   @tr7.set_tr7_kit
+   @tr7.set_ac_hoses
+   @tr7.set_jci_headers
+   @tr7.set_fuel_injection_vc
+   @tr7.set_driveshaft_adaptor
+   @tr7.set_electrolock
+   @tr7.set_subtotal
+   @tr7.set_sales_tax
+   @tr7.set_total
  end
 
  def edit
@@ -40,6 +62,108 @@ class Tr7sController < ApplicationController
 
  def set_tr7
    @tr7 = Tr7.find(params[:id])
+ end
+
+ def set_same_shipping
+   @tr7 = Tr7.find(params[:id])
+   if @tr7.same_information == true
+     @tr7.ship_to_full_name = @tr7.car_owner_full_name
+
+     @tr7.ship_to_address = @tr7.car_owner_address
+
+     @tr7.ship_to_city = @tr7.car_owner_city
+
+     @tr7.ship_to_state = @tr7.car_owner_state
+
+     @tr7.ship_to_zip = @tr7.car_owner_zip
+
+     @tr7.ship_to_email = @tr7.car_owner_email
+
+     @tr7.ship_to_phone = @tr7.car_owner_home_phone
+
+     @tr7.ship_to_fax = @tr7.car_owner_fax
+   end
+ end
+
+ def set_tr7_kit
+   @tr7 = Tr7.find(params[:id])
+   @tr7.kit_amt = 795
+   @tr7.save
+ end
+
+ def set_ac_hoses
+   @tr7 = Tr7.find(params[:id])
+   if @tr7.ac_hoses == true
+      @tr7.ac_hoses_amt = 55
+    else
+       @tr7.ac_hoses_amt = 0
+   end
+   @tr7.save!
+ end
+
+ def set_jci_headers
+   @tr7 = Tr7.find(params[:id])
+   if @tr7.jci_headers == true
+      @tr7.jci_headers_amt = 225
+    else
+       @tr7.jci_headers_amt = 0
+   end
+   @tr7.save!
+ end
+
+ def set_fuel_injection_vc
+   @tr7 = Tr7.find(params[:id])
+   if @tr7.fuel_injection_vc == true
+      @tr7.fuel_injection_vc_amt = 100
+    else
+       @tr7.fuel_injection_vc_amt = 0
+   end
+   @tr7.save!
+ end
+
+ def set_driveshaft_adaptor
+   @tr7 = Tr7.find(params[:id])
+   if @tr7.driveshaft_adaptor == true
+      @tr7.driveshaft_adaptor_amt = 75
+    else
+       @tr7.driveshaft_adaptor_amt = 0
+   end
+   @tr7.save!
+ end
+
+ def set_electrolock
+   @tr7 = Tr7.find(params[:id])
+   if @tr7.electrolock == true
+      @tr7.electrolock_amt = 95
+    else
+       @tr7.electrolock_amt = 0
+   end
+   @tr7.save!
+ end
+
+ def set_subtotal
+   @tr7 = Tr7.find(params[:id])
+
+   @tr7.subtotal = @tr7.kit_amt + @tr7.ac_hoses_amt + @tr7.jci_headers_amt + @tr7.fuel_injection_vc_amt + @tr7.driveshaft_adaptor_amt +   @tr7.electrolock_amt - @tr7.credit_amt
+   @tr7.save!
+ end
+
+ def set_sales_tax
+   @tr7 = Tr7.find(params[:id])
+
+   if @tr7.ship_to_state == "Texas"
+     @tr7.sales_tax = (@tr7.subtotal) * (0.0825)
+     @tr7.sales_tax
+   else
+     @tr7.sales_tax = 0
+   end
+     @tr7.save
+ end
+
+ def set_total
+   @tr7 = Tr7.find(params[:id])
+
+   @tr7.total = @tr7.subtotal + @tr7.sales_tax
  end
 
 
