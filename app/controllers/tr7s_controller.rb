@@ -1,5 +1,5 @@
 class Tr7sController < ApplicationController
-  before_action :set_tr7, only:[:show, :edit, :update, :set_same_shipping, :set_tr7_kit, :set_ac_hoses, :set_jci_headers, :set_fuel_injection_vc, :set_driveshaft_adaptor, :set_electrolock, :set_subtotal, :set_sales_tax, :set_total]
+  before_action :set_tr7, only:[:show, :edit, :update]
   before_action :set_same_shipping, only: [:show, :edit, :update]
   before_action :set_tr7_kit, only: [:show, :edit, :update]
   before_action :set_ac_hoses, only: [:show, :edit, :update]
@@ -31,15 +31,6 @@ class Tr7sController < ApplicationController
  end
 
  def show
-   @tr7.set_tr7_kit
-   @tr7.set_ac_hoses
-   @tr7.set_jci_headers
-   @tr7.set_fuel_injection_vc
-   @tr7.set_driveshaft_adaptor
-   @tr7.set_electrolock
-   @tr7.set_subtotal
-   @tr7.set_sales_tax
-   @tr7.set_total
  end
 
  def edit
@@ -83,6 +74,7 @@ class Tr7sController < ApplicationController
 
      @tr7.ship_to_fax = @tr7.car_owner_fax
    end
+   @tr7.save
  end
 
  def set_tr7_kit
@@ -157,13 +149,14 @@ class Tr7sController < ApplicationController
    else
      @tr7.sales_tax = 0
    end
-     @tr7.save
+     @tr7.save!
  end
 
  def set_total
    @tr7 = Tr7.find(params[:id])
 
    @tr7.total = @tr7.subtotal + @tr7.sales_tax
+   @tr7.save
  end
 
 

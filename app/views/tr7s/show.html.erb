@@ -1,4 +1,5 @@
-<!-- link_to "Edit", edit_quarterbreed_path(@tr7.id) %> -->
+<%= link_to "Edit", edit_tr7_path(@tr7.id) %>
+<div class="print-form">
 
 <h3 class="text-center"> JCI V6 TR7 CONVERSION KIT ORDER SHEET </h3>
 <p class="text-center"><p> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
@@ -55,7 +56,6 @@
         <td><b>Transmission: </b> <%= @tr7.tr7s_transmission_type%></td>
       </tr>
       <tr>
-        <td><b>Engine Number: </b></td>
         <td><b>Engine Type: </b> <%=@tr7.tr7s_engine%></td>
         <td><b>Tire Size: </b> <%=@tr7.tr7s_tire_size%></td>
         <td><b>Rear Axle Ratio: </b> <%=@tr7.tr7s_rear_axle_ratio%></td>
@@ -106,7 +106,7 @@
         </tr>
         <tr>
           <th >Other </th>
-          <td >$<%= @tr7 %></td>
+          <td >$<%= @tr7.other_kit_options %></td>
         </tr>
         <tr>
           <th >Credit</th>
@@ -141,7 +141,7 @@
   <p> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
   <br>
   <br>
-
+  <br>
   <h5> Signature _____________________________________ Date________________</h5>
-<%= @tr7.ship_to_state%>
+
 </div>
