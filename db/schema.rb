@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008222912) do
+ActiveRecord::Schema.define(version: 20151027205620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20151008222912) do
     t.boolean  "q45"
     t.boolean  "other_differential_flange"
     t.string   "output_shaft"
+    t.string   "add_mount_set"
   end
 
   create_table "quarterbreeds", force: :cascade do |t|
