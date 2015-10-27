@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :quarterbreeds
   resources :tr7s
 
+  get 'jaguars' =>'pages#jaguars', as: :jaguars
 
 
 
