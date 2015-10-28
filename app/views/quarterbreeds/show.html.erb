@@ -1,10 +1,10 @@
 <%= link_to "Edit", edit_quarterbreed_path(@quarterbreed.id) %>
 
-<h3 class="text-center"> JCI V12 QUARTERBREED KIT ORDER SHEET </h3>
-<p class="text-center"><p> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
+<h3 class="center"> JCI V12 QUARTERBREED KIT ORDER SHEET </h3>
+<p class="text-center"><p><small> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </small></p>
 
-<div class="col-xs-10 col-xs-offset-1">
-  <table class="table table-bordered ">
+<div class="col-xs-12 printable-table">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>CAR OWNER INFORMATION </th>
@@ -41,34 +41,39 @@
 </div>
 
 
-  <div class="col-xs-5 col-xs-offset-1">
-    <h5> JAGUAR INFORMATION (BEFORE V8) </h5>
+  <div class="col-xs-6 printable-table">
+    <h5 class="center"> JAGUAR INFORMATION (BEFORE V8) </h5>
     <table class="table table-bordered">
       <tbody>
         <tr>
-        <td><b>Type: </b> <%=@quarterbreed.jaguar_type%></td>
-        <td> <b>VIN:</b> <%=@quarterbreed.jaguar_vin%></td>
-        <td><b>Year: </b> <%= @quarterbreed.jaguar_year%></td>
-        <td><b>Month Built: </b> <%= @quarterbreed.jaguar_month_built%></td>
-        <td><b>Year Built: </b> <%= @quarterbreed.jugaur_year_built%></td>
-        <td><b>Transmission: </b> <%= @quarterbreed.jaguar_trans%></td>
+          <td><b>Type: </b> <%=@quarterbreed.jaguar_type%></td>
+          <td> <b>VIN:</b> <%=@quarterbreed.jaguar_vin%></td>
+          <td><b>Year: </b> <%= @quarterbreed.jaguar_year%></td>
+        </tr>
+        <tr>
+          <td><b>Month Built: </b> <%= @quarterbreed.jaguar_month_built%></td>
+          <td><b>Year Built: </b> <%= @quarterbreed.jugaur_year_built%></td>
+          <td><b>Transmission: </b> <%= @quarterbreed.jaguar_trans%></td>
       </tr>
       <tr>
         <td><b>Engine Number: </b> <%=@quarterbreed.engine_number%></td>
         <td><b>Engine Type: </b> <%=@quarterbreed.engine_type%></td>
         <td><b>Tire Size: </b> <%=@quarterbreed.tire_size%></td>
+      </tr>
+      <tr>
         <td><b>Tire Radius: </b> <%=@quarterbreed.tire_radius%></td>
         <td><b>Rear Axle Ratio: </b> <%=@quarterbreed.rear_axie_ratio%></td>
         <td><b>Speedo Number: </b> <%=@quarterbreed.speedo_number%></td>
       </tr>
       </tbody>
     </table>
+    <p>Comments: <%= @quarterbreed.comments%></p>
   </div>
 
 
-  <div class="col-xs-5">
-    <h5> Monies</h5>
-    <table class="table table-bordered ">
+  <div class="col-xs-6 printable-table">
+    <h5 class="center"> QUARTERBREED BUILDING BLOCKS</h5>
+    <table class="table table-bordered">
       <thead>
         <th class="col-xs-3">QUARTERBREED BUILDING BLOCKS</th>
         <th class="col-xs-1"> Price </th>
@@ -112,10 +117,9 @@
   <br>
 
 <div class="col-xs-12">
-  <p> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
-  <br>
+  <p><small> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use.</small> </p>
   <br>
 
-  <h5> Signature _____________________________________ Date________________</h5>
+  <p> Signature _____________________________________________________ Date______________________</p>
 
 </div>

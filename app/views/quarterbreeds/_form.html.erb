@@ -124,12 +124,12 @@
       <tr>
         <td class="col-md-4">Credit  </td>
         <td class="col-md-4">(Non-illustrated or Repeat Kits) </td>
-        <td class="col-md-4"> <%= f.input :credit, label: false, placeholder:"" %> </td>
+        <td class="col-md-4"> <%= f.input :credit, label: false, placeholder:"Required, must be a positive number" %> </td>
       </tr>
       <tr>
         <td class="col-md-4">Are you a Texas Resident? </td>
-        <td class="col-md-4"> Sales Tax -- 8.25% </td>
-        <td class="col-md-4"> <%= f.collection_radio_buttons :texas_resident, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
+        <td class="col-md-4"> Add Sales Tax -- 8.25% </td>
+        <td class="col-md-4"> </td>
       </tr>
       <tr>
         <td class="col-md-4">Hawaii or Expedite </td>
