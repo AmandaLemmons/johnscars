@@ -5,13 +5,11 @@
 
 <div class="col-xs-12 printable-table">
   <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>CAR OWNER INFORMATION </th>
-        <th>SHOP OR "SHIP TO" INFORMATION  </th>
-      </tr>
-    </thead>
     <tbody>
+      <tr>
+        <td><strong>CAR OWNER INFORMATION</strong> </td>
+        <td><strong>SHOP OR "SHIP TO" INFORMATION </strong> </td>
+      </tr>
       <tr>
         <td ><b>Name</b>: <%= @quarterbreed.car_owner_full_name %> </th>
         <td> <b>Name</b>: <%= @quarterbreed.ship_to_full_name %></td>
@@ -48,20 +46,24 @@
         <tr>
           <td><b>Type: </b> <%=@quarterbreed.jaguar_type%></td>
           <td> <b>VIN:</b> <%=@quarterbreed.jaguar_vin%></td>
-          <td><b>Year: </b> <%= @quarterbreed.jaguar_year%></td>
         </tr>
         <tr>
+          <td><b>Year: </b> <%= @quarterbreed.jaguar_year%></td>
           <td><b>Month Built: </b> <%= @quarterbreed.jaguar_month_built%></td>
+        </tr>
+        <tr>
           <td><b>Year Built: </b> <%= @quarterbreed.jugaur_year_built%></td>
           <td><b>Transmission: </b> <%= @quarterbreed.jaguar_trans%></td>
       </tr>
       <tr>
         <td><b>Engine Number: </b> <%=@quarterbreed.engine_number%></td>
         <td><b>Engine Type: </b> <%=@quarterbreed.engine_type%></td>
-        <td><b>Tire Size: </b> <%=@quarterbreed.tire_size%></td>
       </tr>
       <tr>
+        <td><b>Tire Size: </b> <%=@quarterbreed.tire_size%></td>
         <td><b>Tire Radius: </b> <%=@quarterbreed.tire_radius%></td>
+      </tr>
+      <tr>
         <td><b>Rear Axle Ratio: </b> <%=@quarterbreed.rear_axie_ratio%></td>
         <td><b>Speedo Number: </b> <%=@quarterbreed.speedo_number%></td>
       </tr>
@@ -72,35 +74,35 @@
 
 
   <div class="col-xs-6 printable-table">
-    <h5 class="center"> QUARTERBREED BUILDING BLOCKS</h5>
+    <h5 class="center"> BUILDING BLOCKS</h5>
     <table class="table table-bordered">
-      <thead>
-        <th class="col-xs-3">QUARTERBREED BUILDING BLOCKS</th>
-        <th class="col-xs-1"> Price </th>
-      </thead>
       <tbody>
         <tr>
-          <th>V12 T700 QUARTERBREED Kit</th>
+          <td class="col-xs-3"><strong>QUARTERBREED </strong></td>
+          <td class="col-xs-1"><strong> Price</strong> </td>
+        </tr>
+        <tr>
+          <td>V12 T700 QUARTERBREED Kit</td>
           <td>$<%= @quarterbreed.quarterbreed_kit %></td>
         </tr>
         <tr>
-          <th >T400 Flywheel Core Deposit</th>
+          <td >T400 Flywheel Core Deposit</td>
           <td >$<%= @quarterbreed.flywheel_core_amt %></td>
         </tr>
         <tr>
-          <th >Driveshaft</th>
+          <td >Driveshaft</td>
           <td >$<%= @quarterbreed.driveshaft_amt %></td>
         </tr>
         <tr>
-          <th >Credit</th>
+          <td >Credit</td>
           <td > - $<%= @quarterbreed.credit %></td>
         </tr>
 
-          <th >Subtotal (Parts Freight paid)</th>
+          <td >Subtotal (Parts Freight paid)</td>
           <td >$<%= @quarterbreed.subtotal %></td>
         </tr>
         <tr>
-          <th >Texas Residents 8.25% Sales Tax +</th>
+          <td >Texas Residents 8.25% Sales Tax </td>
           <td >$ <%=@quarterbreed.sales_tex.round(2) %></td>
         </tr>
         <tr>
@@ -108,7 +110,7 @@
           <td></td>
         </tr>
         <tr>
-          <th>CASHIER'S CHECK = </th>
+          <td>CASHIER'S CHECK = </td>
           <td ><b>$<%= @quarterbreed.total.round(2) %></b></td>
         </tr>
       </tbody>

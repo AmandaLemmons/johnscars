@@ -46,21 +46,26 @@
         <tr>
         <td><b>Type: </b> <%=@order_sheet.ls_type%></td>
         <td> <b>More info on LS Type:</b> <%=@order_sheet.ls_type2%></td>
+      </tr>
+      <tr>
         <td><b>Year: </b> <%= @order_sheet.ls_year%></td>
       </tr>
       </tbody>
     </table>
-
 
     <h5 class="center"> ZCAR INFO (Before V8) </h5>
 
     <table class="table table-bordered">
       <tbody>
         <tr>
-        <td><b>Type: </b>  <%=@order_sheet.zcar_type%> '2 + 2': <%=@order_sheet.zcar_type2%></td>
-        <td><b>VIN #: </b><%= @order_sheet.zcar_vin%></b></td>
-        <td><b>Year: </b><%= @order_sheet.zcar_year %></td>
-        <td><b>Month Built:</b> <%= @order_sheet.zcar_month_built %></td>
+          <td><b>Type: </b>  <%=@order_sheet.zcar_type%> '2 + 2': <%=@order_sheet.zcar_type2%></td>
+          <td><b>VIN #: </b><%= @order_sheet.zcar_vin%></b></td>
+        </tr>
+        <tr>
+          <td><b>Year: </b><%= @order_sheet.zcar_year %></td>
+          <td><b>Month Built:</b> <%= @order_sheet.zcar_month_built %></td>
+      </tr>
+      <tr>
         <td ><b>Year Built:</b> <%= @order_sheet.zcar_year_built %></td>
       </tr>
       </tbody>
@@ -72,8 +77,12 @@
         <tr>
           <td><b>Bolt Hole:</b> <%= @order_sheet.hole_size%></td>
           <td><b>Pilot Diameter:</b> <%= @order_sheet.pilot_diameter %></td>
+        </tr>
+        <tr>
           <td><b>Pattern:</b> <%= @order_sheet.pattern_type %></td>
           <td><b>Q45:</b> <%= @order_sheet.q45%></td>
+        </tr>
+        <tr>
           <td><b>Other?:</b> <%= @order_sheet.other_differential_flange%></td>
         </tr>
 
@@ -84,8 +93,10 @@
     <table class="table table-bordered ">
       <tbody>
         <tr>
-          <td><b> Donor Type: </b> <%= @order_sheet.transmission_type %></td>
-          <td><b>Transmission Detail:</b> <%= @order_sheet.transmission_detail %></td>
+          <td><b>Donor Type: </b> <%= @order_sheet.transmission_type %></td>
+          <td><b>Detail:</b> <%= @order_sheet.transmission_detail %></td>
+        </tr>
+        <tr>
           <td><b>Output Shaft: </b> <%= @order_sheet.output_shaft %></td>
         </tr>
       </tbody>
@@ -158,8 +169,10 @@
 </table>
 </div>
 <br clear="all"/>
+<p > Comments: <%= @order_sheet.comments %> </p>
+
     <p><small> these parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion</small></p>
-    <p > Comments: <%= @order_sheet.comments %> </p>
+
     <p><small> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local autdorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use.</small> </p>
     <br>
     <p> Signature _____________________________________________________ Date________________</p>
