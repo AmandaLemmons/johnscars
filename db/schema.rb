@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117130131) do
+ActiveRecord::Schema.define(version: 20151117141133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20151117130131) do
     t.string   "mark_quarterbreeds_before_rear_axle_ratio"
     t.string   "mark_quarterbreeds_before_speedo"
     t.string   "mark_quarterbreeds_gm_trans_year"
-    t.boolean  "mark_quarterbreeds_kit"
+    t.string   "mark_quarterbreeds_kit"
     t.boolean  "mark_quarterbreeds_driveshaft"
     t.boolean  "mark_quarterbreeds_electrolock"
     t.decimal  "mark_quarterbreeds_kit_amt",                precision: 10, scale: 2

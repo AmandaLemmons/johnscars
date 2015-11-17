@@ -19,13 +19,13 @@ class MarkQuarterbreedsController < ApplicationController
   end
 
   def show
+    @mark_quarterbreed.set_same_shipping
     @mark_quarterbreed.set_mark_quarterbreeds_kit
     @mark_quarterbreed.set_mark_quarterbreeds_driveshaft
     @mark_quarterbreed.set_mark_quarterbreeds_electrolock
     @mark_quarterbreed.set_subtotal
     @mark_quarterbreed.set_sales_tax
     @mark_quarterbreed.set_total
-    @mark_quarterbreed.set_same_shipping
   end
 
   def edit
