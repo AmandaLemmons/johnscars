@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :order_sheets
   resources :quarterbreeds
   resources :tr7s
+  resources :mark_quarterbreeds
 
   get 'jaguars' =>'pages#jaguars', as: :jaguars
 

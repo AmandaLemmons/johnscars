@@ -11,10 +11,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027205620) do
+ActiveRecord::Schema.define(version: 20151117130131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "mark_quarterbreeds", force: :cascade do |t|
+    t.datetime "created_at",                                                         null: false
+    t.datetime "updated_at",                                                         null: false
+    t.string   "car_owner_full_name"
+    t.string   "car_owner_address"
+    t.string   "car_owner_city"
+    t.string   "car_owner_state"
+    t.string   "car_owner_email"
+    t.string   "car_owner_zip"
+    t.string   "car_owner_home_phone"
+    t.string   "car_owner_work_phone"
+    t.string   "car_owner_fax"
+    t.string   "car_owner_find_us"
+    t.string   "car_owner_home_hours"
+    t.string   "car_owner_work_hours"
+    t.string   "car_owner_fax_hours"
+    t.string   "ship_to_full_name"
+    t.string   "ship_to_address"
+    t.string   "ship_to_city"
+    t.string   "ship_to_state"
+    t.string   "ship_to_email"
+    t.string   "ship_to_zip"
+    t.string   "ship_to_phone"
+    t.string   "ship_to_fax"
+    t.string   "ship_to_contact_person"
+    t.string   "comments"
+    t.boolean  "same_information"
+    t.string   "mark_quarterbreeds_before_type"
+    t.string   "mark_quarterbreeds_before_vin"
+    t.string   "mark_quarterbreeds_before_year"
+    t.string   "mark_quarterbreeds_before_engine_number"
+    t.string   "mark_quarterbreeds_before_trans"
+    t.string   "mark_quarterbreeds_before_tire_size"
+    t.string   "mark_quarterbreeds_before_rear_axle_ratio"
+    t.string   "mark_quarterbreeds_before_speedo"
+    t.string   "mark_quarterbreeds_gm_trans_year"
+    t.boolean  "mark_quarterbreeds_kit"
+    t.boolean  "mark_quarterbreeds_driveshaft"
+    t.boolean  "mark_quarterbreeds_electrolock"
+    t.decimal  "mark_quarterbreeds_kit_amt",                precision: 10, scale: 2
+    t.decimal  "mark_quarterbreeds_driveshaft_amt",         precision: 10, scale: 2
+    t.decimal  "mark_quarterbreeds_electrolock_amt",        precision: 10, scale: 2
+    t.string   "mark_quarterbreeds_other"
+    t.decimal  "mark_quarterbreeds_other_price",            precision: 10, scale: 2
+    t.decimal  "credit_amt",                                precision: 10, scale: 2
+    t.string   "credit_description"
+    t.decimal  "subtotal",                                  precision: 10, scale: 2
+    t.decimal  "freight",                                   precision: 10, scale: 2
+    t.decimal  "sales_tax",                                 precision: 10, scale: 2
+    t.decimal  "total",                                     precision: 10, scale: 2
+    t.boolean  "add_mount_set_already_bought"
+    t.boolean  "add_mount_set_not_jci"
+    t.string   "auto_shifter"
+    t.string   "rear_axle_ratio_other"
+    t.string   "speedo_other"
+  end
 
   create_table "order_sheets", force: :cascade do |t|
     t.datetime "created_at",                                                       null: false
