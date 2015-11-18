@@ -10,8 +10,8 @@ class MarkQuarterbreedsController < ApplicationController
   def create
    @mark_quarterbreed = MarkQuarterbreed.new(mark_quarterbreed_params)
    if @mark_quarterbreed.save
-     @mark_quarterbreed.secure_url = SecureRandom.urlsafe_base64(5)
-     redirect_to show_mark_quarterbreeds_path(@mark_quarterbreed.secure_url)
+    #  @mark_quarterbreed.secure_url = SecureRandom.urlsafe_base64(5)
+     redirect_to show_mark_quarterbreeds_path(@mark_quarterbreed.id)
    else
      render :index
    end
@@ -32,6 +32,13 @@ class MarkQuarterbreedsController < ApplicationController
   end
 
   def edit
+    @mark_quarterbreed.set_same_shipping
+    @mark_quarterbreed.set_mark_quarterbreeds_kit
+    @mark_quarterbreed.set_mark_quarterbreeds_driveshaft
+    @mark_quarterbreed.set_mark_quarterbreeds_electrolock
+    @mark_quarterbreed.set_subtotal
+    @mark_quarterbreed.set_sales_tax
+    @mark_quarterbreed.set_total
   end
 
   def update
@@ -52,5 +59,5 @@ class MarkQuarterbreedsController < ApplicationController
 end
 
 def set_mark_quarterbreed
-  @mark_quarterbreed = MarkQuarterbreed.find_by(params[:secure_url])
+  @mark_quarterbreed = MarkQuarterbreed.find(params[:id])
 end

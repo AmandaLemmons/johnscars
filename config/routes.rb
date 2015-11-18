@@ -3,11 +3,16 @@ Rails.application.routes.draw do
   resources :order_sheets
   resources :quarterbreeds
   resources :tr7s
-  resources :mark_quarterbreeds, :except => [:show] do
-   collection do
-       get "/:secure_url", :to => "mark_quarterbreeds#show", :as => :show
-   end
- end
+  resources :mark_quarterbreeds
+  # , :except => [:show, :edit, :update] do
+  #  collection do
+  #      get "/:secure_url", :to => "mark_quarterbreeds#show", :as => :show
+  #      get "/:secure_url", :to => "mark_quarterbreeds#edit", :as => :edit
+  #      put ':secure_url' => 'mark_quarterbreeds#update', as: :update
+   #
+   #
+  #  end
+ # end
 
   get 'jaguars' =>'pages#jaguars', as: :jaguars
 
