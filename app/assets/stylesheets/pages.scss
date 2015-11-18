@@ -105,3 +105,13 @@ label .collection_radio_buttons {
 .car-pic {
   padding-top: 70px;
 }
+
+.small-text {
+  font-size: 10px;
+}
+
+.hidden-print {
+  @media print {
+  display: none;
+  }
+}
