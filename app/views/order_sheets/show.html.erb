@@ -82,10 +82,21 @@
         </tr>
         <tr>
           <td><b>Pattern:</b> <%= @order_sheet.pattern_type %></td>
-          <td><b>Q45:</b> <%= @order_sheet.q45%></td>
+          <td><b>Q45:</b>
+            <% if @order_sheet.q45 == "false" %>
+              No
+            <% else %>
+              Yes
+            <% end %>
         </tr>
         <tr>
-          <td><b>Other?:</b> <%= @order_sheet.other_differential_flange%></td>
+          <td><b>Other?:</b>
+            <% if @order_sheet.other_differential_flange == "false" %>
+              No
+            <% else %>
+              Yes
+            <% end %>
+          </td>
         </tr>
 
       </tbody>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118114353) do
+ActiveRecord::Schema.define(version: 20151118130914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -324,6 +324,7 @@ ActiveRecord::Schema.define(version: 20151118114353) do
     t.decimal  "expedite",                   precision: 10, scale: 2
     t.decimal  "sales_tax",                  precision: 10, scale: 2
     t.decimal  "total",                      precision: 10, scale: 2
+    t.string   "engine_model"
   end
 
 end

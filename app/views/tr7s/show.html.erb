@@ -66,10 +66,22 @@
         </tr>
         <tr>
           <td><b>Rear Axle Ratio: </b> <%=@tr7.tr7s_rear_axle_ratio%></td>
-          <td><b>AC: </b> <%=@tr7.tr7s_ac%></td>
+          <td><b>AC: </b>
+            <% if @tr7.tr7s_ac == "true"%>
+              Yes
+            <% else %>
+              No
+            <% end %>
+          </td>
         </tr>
         <tr>
-          <td><b>Expansion Tank: </b> <%=@tr7.tr7s_expansion_tank%></td>
+          <td><b>Expansion Tank: </b>
+            <% if @tr7.tr7s_expansion_tank == "true"%>
+              Yes
+            <% else %>
+              No
+            <% end %>
+          </td>
         </tr>
       </tbody>
     </table>
