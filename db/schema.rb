@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118130914) do
+ActiveRecord::Schema.define(version: 20151119145615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,18 @@ ActiveRecord::Schema.define(version: 20151118130914) do
     t.string   "rear_axle_ratio_other"
     t.string   "speedo_other"
     t.string   "secure_url"
+    t.boolean  "angle_drive"
+    t.boolean  "motor_fuel_injection"
+    t.string   "xj_engine_number"
+    t.boolean  "pipe_plugs"
+    t.boolean  "new_angle_drive"
+    t.decimal  "new_angle_drive_amt",                       precision: 10, scale: 2
+    t.boolean  "starter"
+    t.decimal  "starter_amt",                               precision: 10, scale: 2
+    t.boolean  "trans_oil_cooler"
+    t.decimal  "trans_oil_cooler_amt",                      precision: 10, scale: 2
+    t.boolean  "oil_filter"
+    t.decimal  "oil_filter_amt",                            precision: 10, scale: 2
   end
 
   create_table "order_sheets", force: :cascade do |t|

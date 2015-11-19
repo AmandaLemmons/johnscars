@@ -4,7 +4,7 @@ class MarkQuarterbreed < ActiveRecord::Base
 
   def set_mark_quarterbreeds_kit
     if self.mark_quarterbreeds_kit == "Yes"
-      self.mark_quarterbreeds_kit_amt = 745
+      self.mark_quarterbreeds_kit_amt = 895
     elsif self.mark_quarterbreeds_kit == "No, I already bought this"
       self.mark_quarterbreeds_kit_amt = 0
     else self.mark_quarterbreeds_kit == "Not JCI car parts"
@@ -14,9 +14,18 @@ class MarkQuarterbreed < ActiveRecord::Base
 
   end
 
+  def set_new_angle_drive
+    if self.new_angle_drive == true
+      self.new_angle_drive_amt = 150
+    else
+      self.new_angle_drive_amt = 0
+    end
+    self.save!
+  end
+
   def set_mark_quarterbreeds_driveshaft
     if self.mark_quarterbreeds_driveshaft == true
-      self.mark_quarterbreeds_driveshaft_amt = 165
+      self.mark_quarterbreeds_driveshaft_amt = 245
     else
       self.mark_quarterbreeds_driveshaft_amt = 0
     end
@@ -25,9 +34,36 @@ class MarkQuarterbreed < ActiveRecord::Base
 
   def set_mark_quarterbreeds_electrolock
     if self.mark_quarterbreeds_electrolock == true
-       self.mark_quarterbreeds_electrolock_amt = 85
+       self.mark_quarterbreeds_electrolock_amt = 115
      else
         self.mark_quarterbreeds_electrolock_amt = 0
+    end
+    self.save!
+  end
+
+  def set_starter
+    if self.starter == true
+       self.starter_amt = 165
+     else
+        self.starter_amt = 0
+    end
+    self.save!
+  end
+
+  def set_oil_filter
+    if self.oil_filter == true
+       self.oil_filter_amt = 165
+     else
+        self.oil_filter_amt = 0
+    end
+    self.save!
+  end
+
+  def set_trans_oil_cooler
+    if self.trans_oil_cooler == true
+       self.trans_oil_cooler_amt = 165
+     else
+        self.trans_oil_cooler_amt = 0
     end
     self.save!
   end
