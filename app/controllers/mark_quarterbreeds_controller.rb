@@ -10,8 +10,7 @@ class MarkQuarterbreedsController < ApplicationController
   def create
    @mark_quarterbreed = MarkQuarterbreed.new(mark_quarterbreed_params)
    if @mark_quarterbreed.save
-    #  @mark_quarterbreed.secure_url = SecureRandom.urlsafe_base64(5)
-     redirect_to show_mark_quarterbreeds_path(@mark_quarterbreed.id)
+     redirect_to mark_quarterbreed_path(@mark_quarterbreed.id)
    else
      render :index
    end

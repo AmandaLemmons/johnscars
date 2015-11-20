@@ -2,7 +2,7 @@
   <%= link_to "Edit", edit_mark_quarterbreed_path(@mark_quarterbreed.id) %>
 </div>
 
-<h3 class="center"> JCI MARK QUARTERBREED KIT ORDER SHEET </h3>
+<h4 class="center"> JCI MARK QUARTERBREED KIT ORDER SHEET </h4>
 <p class="text-center small-text"><p><small> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </small></p>
 
 <div class="col-xs-12 printable-table">
@@ -46,33 +46,46 @@
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td><b>Type: </b> <%=@mark_quarterbreed.mark_quarterbreeds_before_type%></td>
+          <td><b>Model: </b> <%=@mark_quarterbreed.mark_quarterbreeds_before_type%></td>
           <td> <b>VIN:</b> <%=@mark_quarterbreed.mark_quarterbreeds_before_vin%></td>
-        </tr>
-        <tr>
           <td><b>Year: </b> <%= @mark_quarterbreed.mark_quarterbreeds_before_year%></td>
         </tr>
-        <tr>
-          <td><b>Engine Number: </b> <%= @mark_quarterbreed.mark_quarterbreeds_before_engine_number%></td>
-          <td><b>Transmission: </b> <%= @mark_quarterbreed.mark_quarterbreeds_before_trans%></td>
-      </tr>
-      <tr>
-        <td><b>Automatic Shifter: </b> <%=@mark_quarterbreed.auto_shifter%></td>
-        <td><b>Tire Size/Radius: </b> <%=@mark_quarterbreed.mark_quarterbreeds_before_tire_size%></td>
-      </tr>
 
+        <tr>
+          <td><b>Transmission: </b> <%= @mark_quarterbreed.mark_quarterbreeds_before_trans%></td>
+          <td><b>Automatic Shifter: </b> <%=@mark_quarterbreed.auto_shifter%></td>
+          <td><b>Tire Size/Radius: </b> <%=@mark_quarterbreed.mark_quarterbreeds_before_tire_size%></td>
+      </tr>
       <tr>
         <% if @mark_quarterbreed.rear_axle_ratio_other.present? %>
           <td><b>Rear Axle Ratio: </b> <%=@mark_quarterbreed.rear_axle_ratio_other%></td>
         <% else %>
-            <td><b>Rear Axle Ratio: <%=@mark_quarterbreed.mark_quarterbreeds_before_rear_axle_ratio%></td>
+          <td><b>Rear Axle Ratio: <%=@mark_quarterbreed.mark_quarterbreeds_before_rear_axle_ratio%></td>
         <% end %>
-
+        <td><b>Angle drive? : </b>
+          <% if @mark_quarterbreed.angle_drive == "true" %>
+            Yes
+          <% else %>
+            No
+          <% end %>
+        </td>
         <% if @mark_quarterbreed.speedo_other.present? %>
-          <td><b>Other Speedo: </b> <%=@mark_quarterbreed.speedo_other%></td>
+          <td><b>Speedo #: </b> <%=@mark_quarterbreed.speedo_other%></td>
         <% else %>
-          <td><b>Speedo Number: </b> <%=@mark_quarterbreed.mark_quarterbreeds_before_speedo%></td>
+          <td><b>Speedo #: </b> <%=@mark_quarterbreed.mark_quarterbreeds_before_speedo%></td>
         <% end %>
+      </tr>
+      <tr>
+        <td> <b> Motor w fuel injection </b>
+          <% if @mark_quarterbreed.motor_fuel_injection == true %>
+            Yes
+          <%else%>
+            No
+          <% end %>
+        </td>
+        <td><b>Engine #: </b> <%= @mark_quarterbreed.mark_quarterbreeds_before_engine_number%></td>
+        <td><b> Metal: </b> <%= @mark_quarterbreed.xj_engine_number %></td>
+
       </tr>
     </tbody>
   </table>
@@ -85,7 +98,7 @@
           </tr>
         </tbody>
       </table>
-    <p>Comments: <%= @mark_quarterbreed.comments%></p>
+    <small>Comments: <%= @mark_quarterbreed.comments%></small>
   </div>
 
 
@@ -102,6 +115,10 @@
           <td>$<%= @mark_quarterbreed.mark_quarterbreeds_kit_amt %></td>
         </tr>
         <tr>
+          <td >New Angle Drive & Speedo Cable</td>
+          <td >$<%= @mark_quarterbreed.new_angle_drive_amt %></td>
+        </tr>
+        <tr>
           <td >Driveshaft</td>
           <td >$<%= @mark_quarterbreed.mark_quarterbreeds_driveshaft_amt %></td>
         </tr>
@@ -110,25 +127,33 @@
           <td >$<%= @mark_quarterbreed.mark_quarterbreeds_electrolock_amt %></td>
         </tr>
         <tr>
-          <td >Starter/ Filter/ Other </td>
-          <td >$<%= @mark_quarterbreed.mark_quarterbreeds_other_price %></td>
+          <td >Starter - "New" gear drive </td>
+          <td >$<%= @mark_quarterbreed.starter_amt %></td>
+        </tr>
+        <tr>
+          <td >Oil Filter Spin-on Setup </td>
+          <td >$<%= @mark_quarterbreed.oil_filter_amt %></td>
+        </tr>
+        <tr>
+          <td >Trans Oil Cooler </td>
+          <td >$<%= @mark_quarterbreed.trans_oil_cooler_amt %></td>
         </tr>
         <tr>
           <td >Credit</td>
           <td > - $<%= @mark_quarterbreed.credit_amt %></td>
         </tr>
 
-          <td >Subtotal (Parts Freight paid)</td>
+          <td >Subtotal </td>
           <td >$<%= @mark_quarterbreed.subtotal %></td>
         </tr>
         <tr>
           <td >Texas Residents 8.25% Sales Tax </td>
           <td >$ <%=@mark_quarterbreed.sales_tax.round(2) %></td>
         </tr>
-        <tr>
+        <!-- <tr>
           <td>Hawaii or Expedite</td>
-          <td>$ <%= @mark_quarterbreed.freight %></td>
-        </tr>
+          <td>$  @mark_quarterbreed.freight %></td>
+        </tr> -->
         <tr>
           <td>CASHIER'S CHECK = </td>
           <td ><b>$<%= @mark_quarterbreed.total.round(2) %></b></td>
@@ -136,8 +161,6 @@
       </tbody>
   </table>
   </div>
-  <br>
-
 <div class="col-xs-12">
   <p class="small-text"><strong> All T700</strong> require a torque converted lockup kit. If you're having a T700 transmission built, just have them set it up to lockup for you. If you have a used/pull-out T700, you have to use our lockup kit. </p>
   <p  class="small-text"> The Mark Quarterbreed Kit is the property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
@@ -146,6 +169,6 @@
   <p> Signature _____________________________________________________ Date______________________</p>
 </div>
 <div class="col-xs-12 text-center">
-    <p><strong>JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226</strong></p>
-    <p>  www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
+    <p><strong><small>JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226</strong></small>
+    <br> <small>  www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</small></p>
 </div>

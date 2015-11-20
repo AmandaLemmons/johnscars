@@ -47,8 +47,8 @@
         </div>
        </div row>
        <br>
-       <div class="row">
 
+       <div class="row">
          <div class="col-md-6">
               <h4>Tire Size/Radius </h4>
               <%= f.input :tr7s_tire_size, label: false, placeholder: "Tire Radius" %>
@@ -57,15 +57,15 @@
                <h4>Rear Axle Ratio</h4>
                <%= f.input :tr7s_rear_axle_ratio, label: false, placeholder: "", collection: ["308", "327", "345", "363", "391", "327", "363", "Drop out 3rd memeber", "345", "391", "Salisbury rear cover", "Other - Fill out in Comments"]%>
            </div>
-           <div class="col-md-6">
-                <h4>A/C </h4>
-                <%= f.collection_radio_buttons :tr7s_ac, [[true, 'Yes'], [false, 'No']], :first, :last%>
-            </div>
-           <div class="col-md-4">
-             <h4> Expansion Tank </h4>
-             <%= f.collection_radio_buttons :tr7s_expansion_tank, [[true, 'Yes'], [false, 'No']], :first, :last%>
-           </div>
 
+           <div class="col-md-6">
+             <h4> Expansion Tank </h4>
+             <%= f.collection_radio_buttons :tr7s_expansion_tank, [[true, 'Yes'], [false, 'No']], :first, :last %>
+           </div>
+           <div class="col-md-6">
+              <h4>A/C </h4>
+              <%= f.collection_radio_buttons :tr7s_ac, [[true, 'Yes'], [false, 'No']], :first, :last%>
+            </div>
          </div>
 
 
@@ -121,25 +121,25 @@
         <td class="col-md-4"><%= f.collection_radio_buttons :electrolock, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
-        <td class="col-md-4">Other (Please itemize in comments) </td>
-        <td class="col-md-4">  </td>
+        <td class="col-md-4">Other </td>
+        <td class="col-md-4"> (Please itemize in comments)  </td>
         <td class="col-md-4"><%= f.input :other_kit_options, label: false, placeholder: ""%> </td>
       </tr>
       <tr>
-        <td class="col-md-4">Credit <small> (Suggested Buy or Repeat Kits) </small> </td>
-        <td class="col-md-4"><%= f.input :credit_description, label: false, placeholder:"Credit Description" %></td>
-        <td class="col-md-4"> <%= f.input :credit_amt, label:false, placeholder: "Required, positive number"%> </td>
+        <td class="col-md-4">Credit <small> (Suggested Buy or Repeat Kits) <br>* Price is Required (if no credit put "0")</small> </td>
+        <td class="col-md-4"> Price <%= f.input :credit_amt, label:false, placeholder: "Required, positive number"%> </td>
+        <td class="col-md-4"> Credit Description<%= f.input :credit_description, label: false, placeholder:"Credit Description" %></td>
       </tr>
       <tr>
         <td class="col-md-4">Are you a Texas Resident? </td>
         <td class="col-md-4"> Add Sales Tax -- 8.25% </td>
         <td class="col-md-4">  </td>
       </tr>
-      <tr>
+      <!-- <tr>
         <td class="col-md-4">Freight </td>
         <td class="col-md-4"> </td>
-        <td class="col-md-4"> <%= f.collection_radio_buttons :freight, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
-      </tr>
+        <td class="col-md-4"> <f.collection_radio_buttons :freight, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
+      </tr> -->
     </tbody>
   </table>
 </div>

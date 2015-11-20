@@ -8,6 +8,9 @@
   <div class="panel panel-default col-xs-6">
   <h2 class="text-center">XJ6 Information (Before QB)</h2>
    <div class="row">
+     <div class="col-xs-12">
+         <p> The Vehicle Identification Number (VIN) is located on window pillar or base on windshield in front of driver's door. </p>
+     </div>
        <div class="col-xs-4">
          <h4>Model</h4>
          <%= f.input :model, label: false, placeholder:"Type", collection: ["XJ6", "XJ6C", "XJ6L"]%>
@@ -21,28 +24,30 @@
          <%=f.input :vin , label: false,  placeholder:"Vin #" %>
       </div>
     </div>
-    <div class="col-xs-12">
-        <p> The Vehicle Identification Number (VIN) is located on window pillar or base on windshield in front of driver's door. </p>
-    </div>
+
 
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-xs-12">
+        <p> Year/ Month are located on the driver's door or jamb.</p>
+       </div>
+      <div class="col-md-6">
            <h4>Month Built </h4>
            <%= f.input :month_built, label: false, placeholder:"Month Built", collection: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
            %>
        </div>
-       <div class="col-md-4">
+       <div class="col-md-6">
             <h4>Year Built </h4>
             <%= f.input :year_built, label: false, placeholder: "Year Built", collection: ["1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996"]%>
         </div>
    </div row>
-   <div class="col-xs-12">
-     <p> Year/ Month are located on the driver's door or jamb.</p>
-    </div>
+
     <br>
    <h3 class="text-center"> Engine Information</h3>
 
    <div class="row">
+     <div class="col-xs-12">
+           <p >Engine Number is on the engine bellhousing flange, driver's side.</p>
+     </div>
       <div class="col-xs-4">
           <h4>Engine # </h4>
           <%= f.input :engine_number, label: false, placeholder:"Engine Number"
@@ -57,11 +62,12 @@
            <%= image_tag("mark_quarterbreeder_engine.png") %>
       </div>
     </div>
-    <div class="col-xs-12">
-          <p >Engine Number is on the engine bellhousing flange, driver's side.</p>
-    </div>
+
 
     <div class="row">
+      <div class="col-xs-12">
+        <p > Rear Axle Ratio: Tag under bolt on rear cover, sometimes shown as a ratio (49/17) - just enter it in. </p>
+      </div>
       <div class="col-xs-4">
             <h4>Rear Axle Ratio </h4>
             <%= f.input :rear_axl_ratio, label: false, placeholder: "", collection: ["2.88", "3.08", "3.31", "3.54", "Other - fill out in next box"]%>
@@ -75,11 +81,12 @@
              <%= f.input :tire_size, label: false, placeholder: ""%>
          </div>
     </div>
-    <div class="col-xs-12">
-      <p > Rear Axle Ratio: Tag under bolt on rear cover, sometimes shown as a ratio (49/17) - just enter it in. </p>
-    </div>
+
 
        <div class="row">
+         <div class="col-xs-12">
+           <p class="p-form">Speedo Number: I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars. See the arrows.</p>
+         </div>
          <div class="col-xs-4">
            <%= image_tag("speedo.png") %>
          </div>
@@ -92,9 +99,7 @@
             <%= f.input :speedo_number_other, label: false, placeholder: ""%>
           </div>
          </div>
-         <div class="col-xs-12">
-           <p class="p-form">Speedo Number: I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars. See the arrows.</p>
-         </div>
+
 
 
  </div><!--panel-->
@@ -139,9 +144,9 @@
         <td class="col-xs-4"><%= f.collection_radio_buttons :torque_converter, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
-        <td class="col-xs-4">Credit  (Non-illustrated or Repeat Kits)</td>
-        <td class="col-xs-4"><p> Price </p><%= f.input :credit_amt, label: false, placeholder:"Required, must be a positive number" %> </td>
-        <td class="col-xs-4"> </p> Description </p> <%= f.input :credit_description, label: false, placeholder:"Required, must be a positive number" %></td>
+        <td class="col-xs-4">Credit  (Non-illustrated or Repeat Kits) <br> <small>* Price is Required (if no credit put "0")</small></td>
+        <td class="col-xs-4">Price<%= f.input :credit_amt, label: false, placeholder:"Required, must be a positive number" %> </td>
+        <td class="col-xs-4"> Credit Description <%= f.input :credit_description, label: false, placeholder:"Required, must be a positive number" %></td>
       </tr>
       <tr>
         <td class="col-xs-4">Are you a Texas Resident? </td>

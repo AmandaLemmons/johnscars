@@ -9,7 +9,8 @@
   <h2 class="text-center">Jaguar Information</h2>
    <div class="row">
        <div class="col-md-12">
-         <p class="p-form"> The Vehicle Identification Number (VIN) is located on window pillar or base on windshield in front of driver's door. Year/ Month are located on the driver's door or jamb.</p>
+         <p class="p-form"> The Vehicle Identification Number (VIN) is located on window pillar or base on windshield in front of driver's door.</p>
+         <p> Year/ Month are located on the driver's door or jamb.</p>
        </div>
        <div class="col-md-4">
          <h4>Model Year</h4>
@@ -75,6 +76,9 @@
 
  <div class="panel panel-default col-md-6">
    <h2 class="text-center">Jaguar Trans Information</h2>
+   <div class="col-md-12">
+        <p class="p-form"> Speedo Number:  I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars</p>
+   </div>
    <div class="row">
      <div class="col-md-6">
        <div class="text-center">
@@ -87,20 +91,17 @@
      </div>
    </div row>
      <div class="row">
-       <div class="col-md-12">
-            <p class="p-form"> Speedo Number:  I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars</p>
-       </div>
        <div class="col-md-4">
          <div class="text-center">
-            <%= image_tag('pic2.png') %>
+            <%= image_tag('speedo2.png') %>
           </div>
         </div>
          <div class="col-md-4">
             <h4>Speedo # </h4>
-            <%= f.input :speedo_number, label: false, placeholder: "", collection: ["940", "1000", "1020", "Other"]%>
+            <%= f.input :speedo_number, label: false, placeholder: "", collection: ["940", "1000", "1020", "Other - fill out in next box"]%>
         </div>
         <div class="col-md-4">
-          <h4> Other Speedo # </h4>
+          <h4> Other Speedo </h4>
           <%= f.input :other_speedo, label: false, placeholder: "Unique Speedo Number" %>
         </div>
       </div>
@@ -121,20 +122,20 @@
         <td class="col-md-4"><%= f.collection_radio_buttons :draveshaft, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
-        <td class="col-md-4">Credit  </td>
+        <td class="col-md-4">Credit  <br> <small>* Price is Required (if no credit put "0")</small></td>
         <td class="col-md-4">(Non-illustrated or Repeat Kits) </td>
-        <td class="col-md-4"> <%= f.input :credit, label: false, placeholder:"Required, must be a positive number" %> </td>
+        <td class="col-md-4"> Price <%= f.input :credit, label: false, placeholder:"Required, must be a positive number" %> </td>
       </tr>
       <tr>
         <td class="col-md-4">Are you a Texas Resident? </td>
         <td class="col-md-4"> Add Sales Tax -- 8.25% </td>
         <td class="col-md-4"> </td>
       </tr>
-      <tr>
+      <!-- <tr>
         <td class="col-md-4">Hawaii or Expedite </td>
         <td class="col-md-4"> (Overnite or 2 day) </td>
-        <td class="col-md-4"> <%= f.collection_radio_buttons :expedite, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
-      </tr>
+        <td class="col-md-4"> < f.collection_radio_buttons :expedite, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
+      </tr> -->
     </tbody>
   </table>
 </div>
@@ -166,11 +167,6 @@
       </div>
 
       <div class="col-md-4">
-        <h4>Country </h4>
-        <%= f.input :car_owner_countr, label: false,  placeholder:"Country" %>
-      </div>
-
-      <div class="col-md-4">
         <h4>Email </h4>
         <%= f.input :car_owner_email, label: false,  placeholder:"Email" %>
       </div>
@@ -194,7 +190,7 @@
         <h4>Fax </h4>
         <%= f.input :car_owner_fax, label: false,  placeholder:"Fax" %>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <h4> Fax Hours </h4>
         <%= f.input :car_owner_fax_hours , label: false,  placeholder:"From xx to xx" %>
       </div>
@@ -232,10 +228,7 @@
           <h4>Zip </h4>
           <%= f.input :ship_to_zip, label: false,  placeholder:"Zip" %>
         </div>
-        <div class="col-md-4">
-          <h4>Country </h4>
-          <%= f.input :ship_to_countr, label: false,  placeholder:"Country" %>
-        </div>
+
         <div class="col-md-4">
           <h4>Email </h4>
           <%= f.input :ship_to_email, label: false,  placeholder:"Email" %>

@@ -52,7 +52,7 @@ class MarkQuarterbreed < ActiveRecord::Base
 
   def set_oil_filter
     if self.oil_filter == true
-       self.oil_filter_amt = 165
+       self.oil_filter_amt = 175
      else
         self.oil_filter_amt = 0
     end
@@ -61,7 +61,7 @@ class MarkQuarterbreed < ActiveRecord::Base
 
   def set_trans_oil_cooler
     if self.trans_oil_cooler == true
-       self.trans_oil_cooler_amt = 165
+       self.trans_oil_cooler_amt = 66
      else
         self.trans_oil_cooler_amt = 0
     end
@@ -69,7 +69,7 @@ class MarkQuarterbreed < ActiveRecord::Base
   end
 
   def set_subtotal
-    self.subtotal = self.mark_quarterbreeds_kit_amt + self.mark_quarterbreeds_driveshaft_amt + self.mark_quarterbreeds_electrolock_amt + self.mark_quarterbreeds_other_price - self.credit_amt
+    self.subtotal = self.mark_quarterbreeds_kit_amt + self.mark_quarterbreeds_driveshaft_amt + self.mark_quarterbreeds_electrolock_amt  + self.new_angle_drive_amt + self.starter_amt + self.oil_filter_amt + self.trans_oil_cooler_amt - self.credit_amt
     self.save!
   end
 
