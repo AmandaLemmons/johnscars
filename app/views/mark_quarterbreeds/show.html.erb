@@ -95,6 +95,13 @@
         <tbody>
           <tr>
             <td><b>Trans Year: </b> <%=@mark_quarterbreed.mark_quarterbreeds_gm_trans_year%></td>
+            <td> <b>3 Pipe Plugs on right: </b>
+            <% if @mark_quarterbreed.pipe_plugs == true %>
+               Yes
+            <% else %>
+              No
+            <% end %>
+          </td>
           </tr>
         </tbody>
       </table>
