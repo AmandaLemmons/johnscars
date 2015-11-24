@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119145615) do
+ActiveRecord::Schema.define(version: 20151121181626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 20151119145615) do
     t.decimal  "trans_oil_cooler_amt",                      precision: 10, scale: 2
     t.boolean  "oil_filter"
     t.decimal  "oil_filter_amt",                            precision: 10, scale: 2
+    t.string   "ship_to_countr"
+    t.string   "car_owner_countr"
   end
 
   create_table "order_sheets", force: :cascade do |t|
@@ -280,6 +282,8 @@ ActiveRecord::Schema.define(version: 20151119145615) do
     t.decimal "driveshaft_adaptor_amt",      precision: 10, scale: 2
     t.decimal "electrolock_amt",             precision: 10, scale: 2
     t.boolean "same_information"
+    t.string  "ship_to_countr"
+    t.string  "car_owner_countr"
   end
 
   create_table "xj6_quarterbreeds", force: :cascade do |t|
@@ -337,6 +341,8 @@ ActiveRecord::Schema.define(version: 20151119145615) do
     t.decimal  "sales_tax",                  precision: 10, scale: 2
     t.decimal  "total",                      precision: 10, scale: 2
     t.string   "engine_model"
+    t.string   "ship_to_countr"
+    t.string   "car_owner_countr"
   end
 
 end

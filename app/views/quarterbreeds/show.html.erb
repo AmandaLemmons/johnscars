@@ -3,7 +3,7 @@
 </div>
 
 <h3 class="center"> JCI V12 QUARTERBREED KIT ORDER SHEET </h3>
-<p class="text-center"><p><small> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </small></p>
+<p class="text-center small-text"> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
 
 <div class="col-xs-12 printable-table">
   <table class="table table-bordered">
@@ -17,8 +17,20 @@
         <td> <b>Name</b>: <%= @quarterbreed.ship_to_full_name %></td>
       </tr>
       <tr>
-        <td><b>Address:</b> <%= @quarterbreed.car_owner_address %> <br> <%= @quarterbreed.car_owner_city %>, <%= @quarterbreed.car_owner_state %>  </b><%= @quarterbreed.car_owner_zip %> <%= @quarterbreed.car_owner_countr %> </td>
-        <td><b>Address:</b> <%= @quarterbreed.ship_to_address %><br> <%= @quarterbreed.ship_to_city %>, <%= @quarterbreed.ship_to_state %> <%= @quarterbreed.ship_to_zip %> <%= @quarterbreed.ship_to_countr %> </td>
+        <td><b>Address:</b> <%= @quarterbreed.car_owner_address %> <br> <%= @quarterbreed.car_owner_city %>,
+          <% if @quarterbreed.car_owner_state == "None" %>
+          </b><%= @quarterbreed.car_owner_zip %>   <%= @quarterbreed.car_owner_countr %>
+          <% else %>
+          <%= @quarterbreed.car_owner_state %>  </b><%= @quarterbreed.car_owner_zip %>,   <%= @quarterbreed.car_owner_countr %>
+          <% end %>
+        </td>
+        <td><b>Address:</b> <%= @quarterbreed.ship_to_address %> <br> <%= @quarterbreed.ship_to_city %>,
+          <% if @quarterbreed.ship_to_state == "None" %>
+        </b><%= @quarterbreed.ship_to_zip %>   <%= @quarterbreed.ship_to_countr %>
+          <% else %>
+          <%= @quarterbreed.ship_to_state %>  </b><%= @quarterbreed.ship_to_zip %>,   <%= @quarterbreed.ship_to_countr %>
+          <% end %>
+        </td>
       </tr>
       <tr>
         <td><b>Email:</b> <%= @quarterbreed.car_owner_email %></td>
@@ -128,18 +140,14 @@
   <br>
 
 <div class="col-xs-12">
-  <p><small> V12 Quarterbreed Conversion Kit is the property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use.</small> </p>
+  <p class="small-text"> V12 Quarterbreed Conversion Kit is the property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
   <br>
 
   <p> Signature _____________________________________________________ Date______________________</p>
 
 </div>
-<div class="col-xs-12">
-  <div class="col-xs-2 text-left">
-    <p>"We've got what they can't get!" </p>
-  </div>
-  <div class="col-xs-8 text-center">
-    <p><strong>JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226</strong></p>
-    <p>  www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
+<div class="col-xs-12 text-center">
+    <p class="small-text">JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226 <br>
+    www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
   </div>
 </div>

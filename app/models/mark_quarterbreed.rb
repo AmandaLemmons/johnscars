@@ -2,6 +2,7 @@ class MarkQuarterbreed < ActiveRecord::Base
   validates :mark_quarterbreeds_before_vin, :car_owner_full_name, :car_owner_address, :car_owner_city, :car_owner_state, :car_owner_zip, presence: true
 
 
+
   def set_mark_quarterbreeds_kit
     if self.mark_quarterbreeds_kit == "Yes"
       self.mark_quarterbreeds_kit_amt = 895
@@ -96,6 +97,7 @@ class MarkQuarterbreed < ActiveRecord::Base
       self.ship_to_city = self.car_owner_city
       self.ship_to_state = self.car_owner_state
       self.ship_to_zip = self.car_owner_zip
+      self.ship_to_countr = self.car_owner_countr
       self.ship_to_email = self.car_owner_email
       self.ship_to_phone = self.car_owner_home_phone
       self.ship_to_fax = self.car_owner_fax

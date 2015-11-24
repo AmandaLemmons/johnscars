@@ -163,13 +163,16 @@
       </div>
       <div class="col-md-4">
         <h4> State</h4>
-        <%= f.input :car_owner_state, collection: ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ], label: false,  placeholder:"State" %>
+        <%= f.input :car_owner_state, collection: ["None", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ], label: false,  placeholder:"State" %>
       </div>
       <div class="col-md-4">
         <h4>Zip </h4>
         <%= f.input :car_owner_zip, label: false,  placeholder:"Zip" %>
       </div>
-
+      <div class="col-md-4">
+        <h4>Country </h4>
+        <%= f.input :car_owner_countr, label: false,  placeholder:"Country" %>
+      </div>
 
 
       <div class="col-md-4">
@@ -212,7 +215,7 @@
       <h2 class="text-center"> Shop or "Ship To" Information  </h2>
       <br>
       <p> Is the shipping information the same as the car owner information (REQUIRED)</p>
-       <%= f.collection_radio_buttons :same_information, [[true, 'Yes'] ,[false, 'No']], :first, :last  %> </p>
+      <%= f.collection_radio_buttons :same_information, [[true, 'Yes'] ,[false, 'No']], :first, :last  %> </p>
       <div class="row">
         <div class="col-md-4">
           <h4> Name </h4>
@@ -228,11 +231,15 @@
         </div>
         <div class="col-md-4">
           <h4> State</h4>
-          <%= f.input :ship_to_state,  collection: ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island","South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ] , label: false,  placeholder:"State" %>
+          <%= f.input :ship_to_state,  collection: ["None", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island","South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ] , label: false,  placeholder:"State" %>
         </div>
         <div class="col-md-4">
           <h4>Zip </h4>
           <%= f.input :ship_to_zip, label: false,  placeholder:"Zip" %>
+        </div>
+        <div class="col-md-4">
+          <h4>Country </h4>
+          <%= f.input :ship_to_countr, label: false,  placeholder:"Country" %>
         </div>
 
         <div class="col-md-4">

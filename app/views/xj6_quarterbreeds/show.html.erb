@@ -3,7 +3,7 @@
 </div>
 
 <h3 class="center"> XJ6 QUARTERBREED CONVERSION KIT ORDER SHEET </h3>
-<p class="text-center small-text"><p><small> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </small></p>
+<p class="text-center small-text">Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
 
 <div class="col-xs-12 printable-table">
   <table class="table table-bordered">
@@ -17,8 +17,20 @@
         <td> <b>Name</b>: <%= @xj6_quarterbreed.ship_to_full_name %></td>
       </tr>
       <tr>
-        <td><b>Address:</b> <%= @xj6_quarterbreed.car_owner_address %> <br> <%= @xj6_quarterbreed.car_owner_city %>, <%= @xj6_quarterbreed.car_owner_state %>  </b><%= @xj6_quarterbreed.car_owner_zip %>  </td>
-        <td><b>Address:</b> <%= @xj6_quarterbreed.ship_to_address %><br> <%= @xj6_quarterbreed.ship_to_city %>, <%= @xj6_quarterbreed.ship_to_state %> <%= @xj6_quarterbreed.ship_to_zip %>  </td>
+        <td><b>Address:</b> <%= @xj6_quarterbreed.car_owner_address %> <br> <%= @xj6_quarterbreed.car_owner_city %>,
+          <% if @xj6_quarterbreed.car_owner_state == "None" %>
+          </b><%= @xj6_quarterbreed.car_owner_zip %>   <%= @xj6_quarterbreed.car_owner_countr %>
+          <% else %>
+          <%= @xj6_quarterbreed.car_owner_state %>  </b><%= @xj6_quarterbreed.car_owner_zip %>,   <%= @xj6_quarterbreed.car_owner_countr %>
+          <% end %>
+        </td>
+        <td><b>Address:</b> <%= @xj6_quarterbreed.ship_to_address %> <br> <%= @xj6_quarterbreed.ship_to_city %>,
+          <% if @xj6_quarterbreed.ship_to_state == "None" %>
+        </b><%= @xj6_quarterbreed.ship_to_zip %>   <%= @xj6_quarterbreed.ship_to_countr %>
+          <% else %>
+          <%= @xj6_quarterbreed.ship_to_state %>  </b><%= @xj6_quarterbreed.ship_to_zip %>,   <%= @xj6_quarterbreed.ship_to_countr %>
+          <% end %>
+        </td>
       </tr>
       <tr>
         <td><b>Email:</b> <%= @xj6_quarterbreed.car_owner_email %></td>
@@ -150,6 +162,6 @@
   <p> Signature _____________________________________________________ Date______________________</p>
 </div>
 <div class="col-xs-12 text-center">
-    <p><strong>JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226</strong></p>
-    <p>  www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
+    <p class="small-text"><strong>JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226</strong><br>
+    www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
 </div>

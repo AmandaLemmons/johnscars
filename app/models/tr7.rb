@@ -1,19 +1,6 @@
 class Tr7 < ActiveRecord::Base
-    validates :tr7s_vin, :car_owner_full_name, :car_owner_address, :car_owner_city, :car_owner_state, :car_owner_zip, :same_information, :credit_amt, presence: true
+    validates :tr7s_vin, :car_owner_full_name, :car_owner_address, :car_owner_city, :car_owner_state, :car_owner_zip, :credit_amt, presence: true
 
-  def set_same_shipping
-    if self.same_information == true
-      self.ship_to_full_name = self.car_owner_full_name
-      self.ship_to_address = self.car_owner_address
-      self.ship_to_city = self.car_owner_city
-      self.ship_to_state = self.car_owner_state
-      self.ship_to_zip = self.car_owner_zip
-      self.ship_to_email = self.car_owner_email
-      self.ship_to_phone = self.car_owner_home_phone
-      self.ship_to_fax = self.car_owner_fax
-    end
-    self.save
-  end
 
   def set_tr7_kit
     self.kit_amt = 795
@@ -85,6 +72,21 @@ class Tr7 < ActiveRecord::Base
     self.save
   end
 
+  def set_same_shipping
+    if self.same_information == true
+      self.ship_to_full_name = self.car_owner_full_name
+      self.ship_to_address = self.car_owner_address
+      self.ship_to_city = self.car_owner_city
+      self.ship_to_state = self.car_owner_state
+      self.ship_to_zip = self.car_owner_zip
+      self.ship_to_countr = self.car_owner_countr
+      self.ship_to_email = self.car_owner_email
+      self.ship_to_phone = self.car_owner_home_phone
+      self.ship_to_fax = self.car_owner_fax
+  else
+    end
+    self.save
+  end
 
 
 end

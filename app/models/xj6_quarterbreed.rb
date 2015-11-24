@@ -64,6 +64,7 @@ class Xj6Quarterbreed < ActiveRecord::Base
       self.ship_to_city = self.car_owner_city
       self.ship_to_state = self.car_owner_state
       self.ship_to_zip = self.car_owner_zip
+      self.ship_to_countr = self.car_owner_countr
       self.ship_to_email = self.car_owner_email
       self.ship_to_phone = self.car_owner_home_phone
       self.ship_to_fax = self.car_owner_fax
