@@ -6,6 +6,9 @@ class PagesController < ApplicationController
   def jaguars
   end
 
+  def order_forms
+  end
+
 
 
 end
