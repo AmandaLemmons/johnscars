@@ -560,6 +560,9 @@ h3.heading-sec {
 .services-box {
   text-align: center;
   margin-bottom: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+
 }
 
 .services-box i {
@@ -3572,7 +3575,7 @@ a.carousel-control i{
 #footer-option{
     background: #121214;
     border-top:8px solid $skincolor;
-    margin-top: 50px;
+    // margin-top: 50px;
     padding: 80px 0 0;
     position: relative;
     clear: both;

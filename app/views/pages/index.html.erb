@@ -23,14 +23,16 @@
         <div class="container">
             <div class="row intro-row">
                 <div class="col-md-12 text-center wow animated fadeInUp">
-                    <h2>	What we offer </h2>
-                    <h3 class="subtitle"></h3>
+                    <h2>	Welcome to John's Cars </h2>
+                    <h3 class="subtitle">Home of those wonderfully British cars with American drivelines. </h3>
                 </div>
                 <div class="space-70"></div>
                 <div class=" col-sm-4">
                     <div class="services-box">
-                        <i class="ion-android-car"></i>
-                        <h1><%= link_to "Jaguar Conversions", jaguars_path %></h1>
+                        <%= link_to jaguars_path do %>
+                          <i class="ion-android-car"></i>
+                        <% end %>
+                        <h1>Jaguar Conversions</h1><br>
                         <p>
                             Want to put an American motor and/or transmission in your Jaguar?  It's a snap with John's Cars conversion.  Kits are available for the Classic XJ Sedans (1969-1987 XJ6, XJ6C, XJ6L, XJ12, XJ12C, XJ12L), the XJS Coupe and Convertibles, the Mark Series, and the legendary E-Type.
                         </p>
@@ -39,7 +41,7 @@
                 <div class=" col-sm-4">
                     <div class="services-box">
                         <i class="ion-wrench"></i>
-                        <h1>Jaguar Parts</h1>
+                        <h1>Jaguar Parts</h1><br>
                         <p>
                             Need parts for your Jaguar?  Have problems you need to diagnose?  Check out our new on-line Broken Kitty Catalog - the best place to find parts and advice on the web.  New, rebuilt, used and aftermarket are all available and ready to ship.  Place your order online with our easy-to-use, secure shopping cart.
                         </p>
@@ -47,8 +49,10 @@
                 </div><!--services box-->
                 <div class="col-sm-4">
                     <div class="services-box">
+                      <%= link_to triumph_tr7_path do %>
                         <i class="ion-android-star-outline"></i>
-                        <h1>Triumph TR7</h1>
+                      <% end %>
+                        <h1>Triumph TR7</h1><br>
                         <p>
                             Salvation for the anemic TR7: a John’s Cars conversion will provide you with the oomph you deserve (more than a TR8) and saves your Triumph from being on the way to the lonely boneyard.  We also have some TR7 parts.
                         </p>
@@ -58,8 +62,11 @@
               <div class="row intro-row">
                 <div class="col-sm-4">
                     <div class="services-box">
+                      <%= link_to datsun_zcar_path do %>
                         <i class="ion-android-star-half"></i>
-                        <h1>Datsun ZCar</h1>
+                      <% end %>
+
+                        <h1>Datsun ZCar</h1><br>
                         <p>
                           Redefine AWESOME with a John's Cars ZCar Chevy V8 conversion.  Our bolt-in kit will breathe new life into the original Datsun sports car. We do not carry any parts for the Datsun ZCar.
                         </p>

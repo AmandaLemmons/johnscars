@@ -9,6 +9,12 @@ class PagesController < ApplicationController
   def order_forms
   end
 
+  def triumph_tr7
+  end
+
+  def datsun_zcar
+  end
+
 
 
 end

@@ -16,6 +16,9 @@ Rails.application.routes.draw do
  # end
 
   get 'jaguars' =>'pages#jaguars', as: :jaguars
+  get 'triumph-tr7' => 'pages#triumph_tr7', as: :triumph_tr7
+  get 'datsun-zcar' => 'pages#datsun_zcar', as: :datsun_zcar
+
   get 'order_forms' => 'pages#order_forms', as: :order_forms
 
 
