@@ -11,7 +11,7 @@
 
        <div class="col-md-4">
          <h4>Year </h4>
-         <%= f.input :zcar_year, label: false, placeholder:"Year",  collection: ["1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978",]%>
+         <%= f.input :zcar_year, label: false, placeholder:"Year",  collection: ["1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978"]%>
        </div>
        <div class="col-md-4">
          <h4>Model </h4>
@@ -57,18 +57,19 @@
     </div row>
     <h2 class="text-center"> Drive Line</h2>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-6">
+        <h4> Year </h4>
+        <%= f.input :ls_year, label: false, placeholder:"LS Year", collection: ["1963", "1964", "1965", "1966", "1967", "1968", "1969","1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1989", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"]  %>
+      </div>
+      <div class="col-md-6">
         <h4> LS Type </h4>
         <%= f.input :ls_type, label: false, placeholder:"",  priority: [ "LS1" ], collection: [ "LS1", "LS2", "LS3", "LS7", "Crate"] %>
       </div>
-      <div class="col-md-6">
-        <h4> More on LS Type</h4>
+      <div class="col-md-12">
+        <h4> More information on LS Type</h4>
         <%= f.input :ls_type2, label: false, placeholder:"If you have extra info about your LS Type" %>
       </div>
-      <div class="col-md-3">
-        <h4> Year </h4>
-        <%= f.input :ls_year, label: false, placeholder:"LS Year", collection: ["1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"]  %>
-      </div>
+
     </div>
  </div>
 
@@ -124,7 +125,7 @@
          <td class="col-md-4"> $295.00</td>
          <td class="col-md-4"> <strong><%= f.input :add_mount_set, label: false,  collection: ["Yes", "No, I already bought this", "Not JCI car parts"]%> </strong> </td>
          <tr>
-           <td class="col-md-4">Trans Cross memeber and mount </td>
+           <td class="col-md-4">Trans Crossmemeber and mount </td>
            <td class="col-md-4">$135.00 </td>
            <td class="col-md-4"><%= f.collection_radio_buttons :trans_crossmember, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
          </tr>
@@ -232,12 +233,17 @@
       <h4>Fax Hours </h4>
       <%= f.input :car_owner_fax_hours , label: false,  placeholder:"Fax From xx to xx" %>
     </div>
+  </div>
 
+  <div class="row">
     <div class="col-md-6">
       <h4>How did you find us? </h4>
       <%= f.input :car_owner_find_us , label: false,  placeholder:"",  priority: [ "Internet" ], collection: [ "Internet", "Magazine", "WOM", "Hybridz", "Shop Referal", "Car Show", "Magazine Article", "Other"] %>
     </div>
-
+    <div class="col-md-6">
+      <h4>Which magazine, WOM, Internet or ??? </h4>
+      <%= f.input :car_owner_where_find_us , label: false,  placeholder:""%>
+    </div>
   </div row>
 </div>
 

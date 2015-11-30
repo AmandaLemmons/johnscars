@@ -6,6 +6,42 @@
   <h3 class="center"> JCI LS ZCAR ORDER SHEET </h3>
   <br>
   <div class="col-xs-12 printable-table">
+    <% if @order_sheet.same_information == true %>
+    <table class="table table-bordered ">
+      <tbody>
+        <tr>
+          <td>CAR OWNER INFORMATION </td>
+        </tr>
+        <tr>
+          <td><em>Name: </em> <b><%= @order_sheet.car_owner_full_name %></b> </td>
+        </tr>
+        <tr>
+          <td><em>Address: </em> <b> <%= @order_sheet.car_owner_address %> <br> <%= @order_sheet.car_owner_city %>,
+            <% if @order_sheet.car_owner_state == "None" %>
+            </b><%= @order_sheet.car_owner_zip %>   <%= @order_sheet.car_owner_countr %>
+            <% else %>
+            <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %>,   <%= @order_sheet.car_owner_countr %></b>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td><em>Email: </em> <b><%= @order_sheet.car_owner_email %></b> </td>
+        </tr>
+        <tr>
+          <td><em>Home Phone: </em> <b>   <%= @order_sheet.car_owner_home_phone %> <em>From:</em>  <b><%= @order_sheet.car_owner_home_hours %> </b></td>
+        </tr>
+        <tr>
+          <td> <em>Work Phone: </em> <b><%= @order_sheet.car_owner_work_phone %></b> <em>From: </em> <b> <%= @order_sheet.car_owner_work_hours%> </b></td>
+        </tr>
+        <tr>
+          <td>  <em>Fax: </em>  <b><%= @order_sheet.car_owner_fax %></b> <em>From: </em> <b> <%= @order_sheet.car_owner_fax_hours %></b></td>
+        </tr>
+        <tr>
+          <td><em>How did you find us? </em> <b><%= @order_sheet.car_owner_find_us %></b><em> -- </em><b> <%= @order_sheet.car_owner_where_find_us %> </b></td>
+        </tr>
+      </tbody>
+  </table>
+    <% else %>
     <table class="table table-bordered ">
       <tbody>
         <tr>
@@ -13,111 +49,80 @@
           <td>SHOP OR "SHIP TO" INFORMATION  </td>
         </tr>
         <tr>
-          <td ><b>Name</b>: <%= @order_sheet.car_owner_full_name %> </td>
-          <td> <b>Name</b>: <%= @order_sheet.ship_to_full_name %></td>
+          <td ><em>Name: </em><b><%= @order_sheet.car_owner_full_name %></b> </td>
+          <td> <em>Name: </em><b><%= @order_sheet.ship_to_full_name %></b> </td>
         </tr>
         <tr>
-          <td><b>Address:</b> <%= @order_sheet.car_owner_address %> <br> <%= @order_sheet.car_owner_city %>,
+          <td><em>Address: </em><b> <%= @order_sheet.car_owner_address %> <br> <%= @order_sheet.car_owner_city %>,
             <% if @order_sheet.car_owner_state == "None" %>
             </b><%= @order_sheet.car_owner_zip %>   <%= @order_sheet.car_owner_countr %>
             <% else %>
-            <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %>,   <%= @order_sheet.car_owner_countr %>
+            <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %>,   <%= @order_sheet.car_owner_countr %></b>
             <% end %>
           </td>
-          <td><b>Address:</b> <%= @order_sheet.ship_to_address %> <br> <%= @order_sheet.ship_to_city %>,
+          <td><em>Address: </em><b> <%= @order_sheet.ship_to_address %> <br> <%= @order_sheet.ship_to_city %>,
             <% if @order_sheet.ship_to_state == "None" %>
           </b><%= @order_sheet.ship_to_zip %>   <%= @order_sheet.ship_to_countr %>
             <% else %>
-            <%= @order_sheet.ship_to_state %>  </b><%= @order_sheet.ship_to_zip %>,   <%= @order_sheet.ship_to_countr %>
+            <%= @order_sheet.ship_to_state %>  </b><%= @order_sheet.ship_to_zip %>,   <%= @order_sheet.ship_to_countr %></b>
             <% end %>
           </td>
         </tr>
         <tr>
-          <td><b>Email:</b> <%= @order_sheet.car_owner_email %></td>
-          <td><b>Email:</b> <%= @order_sheet.ship_to_email %></td>
+          <td><em>Email: </em> <b><%= @order_sheet.car_owner_email %></b></td>
+          <td><em>Email: </em> <b><%= @order_sheet.ship_to_email %></b></td>
         </tr>
         <tr>
-          <td><b> Home Phone: </b> <%= @order_sheet.car_owner_home_phone %> <b>From:</b>  <%= @order_sheet.car_owner_home_hours %> </td>
-          <td> <b> Shop Phone: </b><%= @order_sheet.ship_to_phone %> </td>
+          <td><em> Home Phone: </em><b> <%= @order_sheet.car_owner_home_phone %></b> <em>From: </em><b>  <%= @order_sheet.car_owner_home_hours %></b> </td>
+          <td> <em> Shop Phone: </em><b><%= @order_sheet.ship_to_phone %></b> </td>
         </tr>
         <tr>
-          <td> <b>Work Phone: </b><%= @order_sheet.car_owner_work_phone %> <b>From:</b> <%= @order_sheet.car_owner_work_hours%> </td>
-          <td><b>Fax: </b> <%= @order_sheet.ship_to_fax %> </td>
+          <td> <em>Work Phone: </em><b><%= @order_sheet.car_owner_work_phone %></b> <em>From: </em><b> <%= @order_sheet.car_owner_work_hours%></b> </td>
+          <td><em>Fax: </em><b> <%= @order_sheet.ship_to_fax %></b> </td>
         </tr>
         <tr>
-          <td> <b> Fax: </b> <%= @order_sheet.car_owner_fax %> <b>From:</b> <%= @order_sheet.car_owner_fax_hours %></td>
-            <td><b>How did you find us?</b> <%= @order_sheet.car_owner_find_us %> <b> Where</b>: <%= @order_sheet.car_owner_where_find_us %></td>
+          <td> <em> Fax: </em><b> <%= @order_sheet.car_owner_fax %> </b> <em>From: </em> <b> <%= @order_sheet.car_owner_fax_hours %></b></td>
+            <td><em>How did you find us? </em><b> <%= @order_sheet.car_owner_find_us %> </b> <em> -- </em><b> <%= @order_sheet.car_owner_where_find_us %></b></td>
         </tr>
       </tbody>
   </table>
+  <% end %>
   </div>
 
   <div class="col-xs-6 printable-table">
-    <h5 class="center"> ZCAR INFO (Before V8) </h5>
+    <h5 class="center"> ZCAR INFO </h5>
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td><b><%= @order_sheet.zcar_year %></b></td>
-          <td><b><%=@order_sheet.zcar_type%> </b></td>
+          <td><em> Year: </em><b><%= @order_sheet.zcar_year %></b></td>
+          <td><em> Model: </em><b><%=@order_sheet.zcar_type%> </b></td>
         </tr>
         <tr>
-          <td>VIN <b><%= @order_sheet.zcar_vin%></b></td>
+          <td><em>VIN:</em> <b><%= @order_sheet.zcar_vin%></b></td>
           <td>
             <% if @order_sheet.zcar_type2 == true%>
-              '2 + 2': <b>Yes</b>
+              <em>'2 + 2':</em> <b>Yes</b>
           <% else %>
           <% end %>
         </td>
         </tr>
         <tr>
-          <td><b> <%= @order_sheet.zcar_month_built %></b></td>
-          <td><b> <%= @order_sheet.zcar_year_built %></b></td>
+          <td><em>Month Built:</em><b> <%= @order_sheet.zcar_month_built %></b></td>
+          <td><em>Year Built:</em><b> <%= @order_sheet.zcar_year_built %></b></td>
       </tr>
       </tbody>
     </table>
 
-    <h5 class="center"> JCI LS ZCAR </h5>
+    <h5 class="center"> ENGINE/MOTOR DETAILS </h5>
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td><b><%= @order_sheet.ls_year%></b></td>
-          <td><b><%=@order_sheet.ls_type%></b></td>
+          <td><em>Year: </em><b><%= @order_sheet.ls_year%></b></td>
+          <td><em>Type: </em><b><%=@order_sheet.ls_type%></b></td>
         </tr>
         <tr>
-          <% if @order_sheet.ls_type2.present? %>
-            <td> <b>More:</b> <%=@order_sheet.ls_type2%></td>
-          <% else %>
-          <% end %>
+          <td><em>MORE:</em> <b> <%=@order_sheet.ls_type2%></b></td>
         </tr>
-      </tbody>
-    </table>
-
-  <h5 class="center">  DIFFERENTAIL FLANGE DETAILS</h5>
-    <table class="table table-bordered">
-      <tbody>
-        <tr>
-          <td><b>Bolt Hole:</b> <%= @order_sheet.hole_size%></td>
-          <td><b>Pilot Diameter:</b> <%= @order_sheet.pilot_diameter %></td>
-          <td><b>Pattern:</b> <%= @order_sheet.pattern_type %></td>
-        </tr>
-        <tr>
-          <td><b>Q45:</b>
-            <% if @order_sheet.q45 == "false" %>
-              No
-            <% else %>
-              Yes
-            <% end %>
-        <td><b>Other?:</b>
-          <% if @order_sheet.other_differential_flange == "false" %>
-            No
-          <% else %>
-            Yes
-          <% end %>
-        </td>
-        <tr>
-
-        </tr>
-
       </tbody>
     </table>
 
@@ -125,28 +130,49 @@
     <table class="table table-bordered ">
       <tbody>
         <tr>
-          <td><b>Donor Type: </b> <%= @order_sheet.transmission_type %></td>
-          <td><b>Detail:</b> <%= @order_sheet.transmission_detail %></td>
+          <td> <em>Donor Type: </em> <b><%= @order_sheet.transmission_type %></b></td>
+          <td> <em>Detail: </em> <b> <%= @order_sheet.transmission_detail %></b></td>
         </tr>
         <tr>
-          <td><b>Output Shaft: </b> <%= @order_sheet.output_shaft %></td>
+          <td> <em> Output Shaft: </em><b> <%= @order_sheet.output_shaft %></b></td>
         </tr>
       </tbody>
     </table>
-  </div>
 
+  <h5 class="center">  DIFFERENTIAL FLANGE DETAILS</h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><em>Bolt Hole: </em><b> <%= @order_sheet.hole_size%></b></td>
+          <td><em>Pilot Diameter: </em><b><%= @order_sheet.pilot_diameter %></b> </td>
+        </tr>
+        <tr>
+          <td><em>Pattern: </em><b><%= @order_sheet.pattern_type %></b> </td>
+          <% if @order_sheet.q45 == "true" %>
+          <td><em>Q45:</em> <b> Yes </b>
+            <% else %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <% if @order_sheet.other_differential_flange == "true" %>
+          <td><em>Other Rearend?:</em> <b>Yes</b>
+            <% else %>
+            <% end %>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
 
 <div class="col-xs-6 printable-table">
   <h5 class="center"> LS BUILDING BLOCKS</h5>
   <table class="table table-bordered ">
     <tbody>
-      <td class="col-xs-3">LS BUILDING BLOCKS</td>
-      <td class="col-xs-1"> Price </td>
-    </tbody>
-    <tbody>
       <tr>
 
-        <td>LS ZCAR FRONT mount set</td>
+        <td>LS Zcar front mount set</td>
         <td>$<%= @order_sheet.mount_set %></td>
       </tr>
       <tr>
@@ -154,7 +180,7 @@
         <td >$<%= @order_sheet.amt1 %></td>
       </tr>
       <tr>
-        <td >Driveshaft - ready to install</td>
+        <td >Driveshaft complete/balanced</td>
         <td >$<%= @order_sheet.amt2 %></td>
       </tr>
       <tr>
@@ -170,11 +196,11 @@
         <td >$<%= @order_sheet.amt5 %></td>
       </tr>
       <tr>
-        <td >AC Compressor & mounting kit)</td>
+        <td >AC Compressor (new) with mounting kit</td>
         <td >$<%= @order_sheet.amt6 %></td>
       </tr>
       <tr>
-        <td >AC Hose Kit (factory AC '77-78')</td>
+        <td >AC 3 hose set w/drier (factory AC)</td>
         <td >$<%= @order_sheet.amt7 %></td>
       </tr>
       <tr>
@@ -182,7 +208,7 @@
         <td >$<%= @order_sheet.amt8 %></td>
       </tr>
       <tr>
-        <td >Subtotal (Parts Freight paid)</td>
+        <td >Subtotal (Parts Freight paid 48 states only) </td>
         <td >$<%= @order_sheet.subtotal %></td>
       </tr>
       <tr>
