@@ -6,42 +6,7 @@
   <h3 class="center"> JCI LS ZCAR ORDER SHEET </h3>
   <br>
   <div class="col-xs-12 printable-table">
-    <% if @order_sheet.same_information == true %>
-    <table class="table table-bordered ">
-      <tbody>
-        <tr>
-          <td>CAR OWNER INFORMATION </td>
-        </tr>
-        <tr>
-          <td><em>Name: </em> <b><%= @order_sheet.car_owner_full_name %></b> </td>
-        </tr>
-        <tr>
-          <td><em>Address: </em> <b> <%= @order_sheet.car_owner_address %> <br> <%= @order_sheet.car_owner_city %>,
-            <% if @order_sheet.car_owner_state == "None" %>
-            </b><%= @order_sheet.car_owner_zip %>   <%= @order_sheet.car_owner_countr %>
-            <% else %>
-            <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %>,   <%= @order_sheet.car_owner_countr %></b>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <td><em>Email: </em> <b><%= @order_sheet.car_owner_email %></b> </td>
-        </tr>
-        <tr>
-          <td><em>Home Phone: </em> <b>   <%= @order_sheet.car_owner_home_phone %> <em>From:</em>  <b><%= @order_sheet.car_owner_home_hours %> </b></td>
-        </tr>
-        <tr>
-          <td> <em>Work Phone: </em> <b><%= @order_sheet.car_owner_work_phone %></b> <em>From: </em> <b> <%= @order_sheet.car_owner_work_hours%> </b></td>
-        </tr>
-        <tr>
-          <td>  <em>Fax: </em>  <b><%= @order_sheet.car_owner_fax %></b> <em>From: </em> <b> <%= @order_sheet.car_owner_fax_hours %></b></td>
-        </tr>
-        <tr>
-          <td><em>How did you find us? </em> <b><%= @order_sheet.car_owner_find_us %></b><em> -- </em><b> <%= @order_sheet.car_owner_where_find_us %> </b></td>
-        </tr>
-      </tbody>
-  </table>
-    <% else %>
+    <% if @order_sheet.same_information == false || nil  %>
     <table class="table table-bordered ">
       <tbody>
         <tr>
@@ -83,6 +48,41 @@
         <tr>
           <td> <em> Fax: </em><b> <%= @order_sheet.car_owner_fax %> </b> <em>From: </em> <b> <%= @order_sheet.car_owner_fax_hours %></b></td>
             <td><em>How did you find us? </em><b> <%= @order_sheet.car_owner_find_us %> </b> <em> -- </em><b> <%= @order_sheet.car_owner_where_find_us %></b></td>
+        </tr>
+      </tbody>
+  </table>
+  <% else %>
+    <table class="table table-bordered ">
+      <tbody>
+        <tr>
+          <td>CAR OWNER INFORMATION </td>
+        </tr>
+        <tr>
+          <td><em>Name: </em> <b><%= @order_sheet.car_owner_full_name %></b> </td>
+        </tr>
+        <tr>
+          <td><em>Address: </em> <b> <%= @order_sheet.car_owner_address %> <br> <%= @order_sheet.car_owner_city %>,
+            <% if @order_sheet.car_owner_state == "None" %>
+            </b><%= @order_sheet.car_owner_zip %>   <%= @order_sheet.car_owner_countr %>
+            <% else %>
+            <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %>,   <%= @order_sheet.car_owner_countr %></b>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td><em>Email: </em> <b><%= @order_sheet.car_owner_email %></b> </td>
+        </tr>
+        <tr>
+          <td><em>Home Phone: </em> <b>   <%= @order_sheet.car_owner_home_phone %> <em>From:</em>  <b><%= @order_sheet.car_owner_home_hours %> </b></td>
+        </tr>
+        <tr>
+          <td> <em>Work Phone: </em> <b><%= @order_sheet.car_owner_work_phone %></b> <em>From: </em> <b> <%= @order_sheet.car_owner_work_hours%> </b></td>
+        </tr>
+        <tr>
+          <td>  <em>Fax: </em>  <b><%= @order_sheet.car_owner_fax %></b> <em>From: </em> <b> <%= @order_sheet.car_owner_fax_hours %></b></td>
+        </tr>
+        <tr>
+          <td><em>How did you find us? </em> <b><%= @order_sheet.car_owner_find_us %></b><em> -- </em><b> <%= @order_sheet.car_owner_where_find_us %> </b></td>
         </tr>
       </tbody>
   </table>

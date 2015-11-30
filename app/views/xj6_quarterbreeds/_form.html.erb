@@ -2,7 +2,7 @@
   <%= simple_form_for(@xj6_quarterbreed) do |f| %>
   <%= f.error_notification %>
 
-  <h2 class="text-center"> JCI MARK QUARTERBREED KIT ORDER SHEET </h2>
+  <h2 class="text-center"> XJ6 QUARTERBREED CONVERSION KIT ORDER SHEET</h2>
   <p> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
 
   <div class="panel panel-default col-xs-6">
@@ -139,7 +139,7 @@
         <td class="col-xs-4"><%= f.collection_radio_buttons :driveshaft, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
-        <td class="col-xs-4">Torque Converter Lockup Kit </td>
+        <td class="col-xs-4">Torque Converter Lockup Kit* </td>
         <td class="col-xs-4"> $75.00 </td>
         <td class="col-xs-4"><%= f.collection_radio_buttons :torque_converter, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
@@ -160,6 +160,8 @@
       </tr> -->
     </tbody>
   </table>
+  <br>
+    <p>*All T700 and some T350 (with a blue2-terminal connector) require a torque converted lockup kit. If you're having a T700 transmission built, just have them set it up to lockup for you. If you have a lockup-capable T350 or a used/pull-out T700, you have to use our lockup kit.</p>
 </div>
 <br clear="all">
 
@@ -220,10 +222,16 @@
         <h4> Fax Hours </h4>
         <%= f.input :car_owner_fax_hours , label: false,  placeholder:"From xx to xx" %>
       </div>
+    </div >
 
+    <div class= "row">
       <div class="col-xs-6">
         <h4>How did you find us </h4>
         <%= f.input :car_owner_find_us , label: false,  placeholder:"",  priority: [ "Internet" ], collection: [ "Internet", "Magazine", "WOM", "Hybridz", "Shop Referal", "Car Show", "Magazine Article", "Other"] %>
+      </div>
+      <div class="col-md-6">
+        <h4>Which magazine, WOM, Internet or ??? </h4>
+        <%= f.input :car_owner_where_find_us , label: false,  placeholder:""%>
       </div>
     </div row>
   </div>
@@ -280,13 +288,11 @@
 
 
     <div class="col-xs-12">
-        <p> The V12 QUARTERBREED Conversion kit is the  property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. This Conversion Kit is for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
-       <h4>Additional comments or notes </h4>
-       <%= f.input :comments, label: false, placeholder:"" %>
-           <%= f.submit "Submit Order" %>
-     </div>
 
-  <% end %>
-  <br>
-  <br>
+      <p> The XJ6 Quarterbreed Kit is the  property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
+     <h4>Additional comments or notes </h4>
+      <%= f.input :comments, label: false, placeholder:"" %>
+         <%= f.submit "Submit Order" %>
+     </div>
+    <% end %>
 </div>

@@ -203,10 +203,15 @@
         <h4> Fax Hours </h4>
         <%= f.input :car_owner_fax_hours , label: false,  placeholder:"From xx to xx" %>
       </div>
-
+    </div>
+    <div class="row">
       <div class="col-md-6">
         <h4>How did you find us </h4>
         <%= f.input :car_owner_find_us , label: false,  placeholder:"",  priority: [ "Internet" ], collection: [ "Internet", "Magazine", "WOM", "Hybridz", "Shop Referal", "Car Show", "Magazine Article", "Other"] %>
+      </div>
+      <div class="col-md-6">
+        <h4>Which magazine, WOM, Internet or ??? </h4>
+        <%= f.input :car_owner_where_find_us , label: false,  placeholder:""%>
       </div>
     </div row>
   </div>

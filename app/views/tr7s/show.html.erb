@@ -8,50 +8,90 @@
 <p class="text-center small-text">Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
 
 <div class="col-xs-12 printable-table">
+  <% if @tr7.same_information == false || nil  %>
   <table class="table table-bordered ">
     <tbody>
       <tr>
-        <td><strong>CAR OWNER INFORMATION </strong></td>
-        <td><strong>SHOP OR "SHIP TO" INFORMATION  </strong></td>
+        <td>CAR OWNER INFORMATION </td>
+        <td>SHOP OR "SHIP TO" INFORMATION  </td>
       </tr>
       <tr>
-        <td ><b>Name</b>: <%= @tr7.car_owner_full_name %> </th>
-        <td> <b>Name</b>: <%= @tr7.ship_to_full_name %></td>
+        <td ><em>Name: </em><b><%= @tr7.car_owner_full_name %></b> </td>
+        <td> <em>Name: </em><b><%= @tr7.ship_to_full_name %></b> </td>
       </tr>
       <tr>
-        <td><b>Address:</b> <%= @tr7.car_owner_address %> <br> <%= @tr7.car_owner_city %>,
+        <td><em>Address: </em><b> <%= @tr7.car_owner_address %> <br> <%= @tr7.car_owner_city %>,
           <% if @tr7.car_owner_state == "None" %>
           </b><%= @tr7.car_owner_zip %>   <%= @tr7.car_owner_countr %>
           <% else %>
-          <%= @tr7.car_owner_state %>  </b><%= @tr7.car_owner_zip %>,   <%= @tr7.car_owner_countr %>
+          <%= @tr7.car_owner_state %>  </b><%= @tr7.car_owner_zip %>,   <%= @tr7.car_owner_countr %></b>
           <% end %>
         </td>
-        <td><b>Address:</b> <%= @tr7.ship_to_address %> <br> <%= @tr7.ship_to_city %>,
+        <td><em>Address: </em><b> <%= @tr7.ship_to_address %> <br> <%= @tr7.ship_to_city %>,
           <% if @tr7.ship_to_state == "None" %>
         </b><%= @tr7.ship_to_zip %>   <%= @tr7.ship_to_countr %>
           <% else %>
-          <%= @tr7.ship_to_state %>  </b><%= @tr7.ship_to_zip %>,   <%= @tr7.ship_to_countr %>
+          <%= @tr7.ship_to_state %>  </b><%= @tr7.ship_to_zip %>,   <%= @tr7.ship_to_countr %></b>
           <% end %>
         </td>
-      <tr>
-        <td><b>Email:</b> <%= @tr7.car_owner_email %></td>
-        <td><b>Email:</b> <%= @tr7.ship_to_email %></td>
       </tr>
       <tr>
-        <td><b> Home Phone: </b> <%= @tr7.car_owner_home_phone %> <b>From:</b>  <%= @tr7.car_owner_home_hours %> </td>
-        <td> <b> Shop Phone: </b><%= @tr7.ship_to_phone %> </td>
+        <td><em>Email: </em> <b><%= @tr7.car_owner_email %></b></td>
+        <td><em>Email: </em> <b><%= @tr7.ship_to_email %></b></td>
       </tr>
       <tr>
-        <td> <b>Work Phone: </b><%= @tr7.car_owner_work_phone %> <b>From:</b> <%= @tr7.car_owner_work_hours%> </td>
-        <td><b>Fax: </b> <%= @tr7.ship_to_fax %> </td>
+        <td><em> Home Phone: </em><b> <%= @tr7.car_owner_home_phone %></b> <em>From: </em><b>  <%= @tr7.car_owner_home_hours %></b> </td>
+        <td> <em> Shop Phone: </em><b><%= @tr7.ship_to_phone %></b> </td>
       </tr>
       <tr>
-        <td> <b> Fax: </b> <%= @tr7.car_owner_fax %> <b>From:</b> <%= @tr7.car_owner_fax_hours %></td>
-          <td><b>How did you find us?</b> <%= @tr7.car_owner_find_us %> <b> Where</b>:  </td>
+        <td> <em>Work Phone: </em><b><%= @tr7.car_owner_work_phone %></b> <em>From: </em><b> <%= @tr7.car_owner_work_hours%></b> </td>
+        <td><em>Fax: </em><b> <%= @tr7.ship_to_fax %></b> </td>
+      </tr>
+      <tr>
+        <td> <em> Fax: </em><b> <%= @tr7.car_owner_fax %> </b> <em>From: </em> <b> <%= @tr7.car_owner_fax_hours %></b></td>
+          <td><em>How did you find us? </em><b> <%= @tr7.car_owner_find_us %> </b> <em> -- </em><b> <%= @tr7.car_owner_where_find_us %></b></td>
       </tr>
     </tbody>
-</table>
+  </table>
+<% else %>
+  <table class="table table-bordered ">
+    <tbody>
+      <tr>
+        <td>CAR OWNER INFORMATION </td>
+      </tr>
+      <tr>
+        <td><em>Name: </em> <b><%= @tr7.car_owner_full_name %></b> </td>
+      </tr>
+      <tr>
+        <td><em>Address: </em> <b> <%= @tr7.car_owner_address %> <br> <%= @tr7.car_owner_city %>,
+          <% if @tr7.car_owner_state == "None" %>
+          </b><%= @tr7.car_owner_zip %>   <%= @tr7.car_owner_countr %>
+          <% else %>
+          <%= @tr7.car_owner_state %>  </b><%= @tr7.car_owner_zip %>,   <%= @tr7.car_owner_countr %></b>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><em>Email: </em> <b><%= @tr7.car_owner_email %></b> </td>
+      </tr>
+      <tr>
+        <td><em>Home Phone: </em> <b>   <%= @tr7.car_owner_home_phone %> <em>From:</em>  <b><%= @tr7.car_owner_home_hours %> </b></td>
+      </tr>
+      <tr>
+        <td> <em>Work Phone: </em> <b><%= @tr7.car_owner_work_phone %></b> <em>From: </em> <b> <%= @tr7.car_owner_work_hours%> </b></td>
+      </tr>
+      <tr>
+        <td>  <em>Fax: </em>  <b><%= @tr7.car_owner_fax %></b> <em>From: </em> <b> <%= @tr7.car_owner_fax_hours %></b></td>
+      </tr>
+      <tr>
+        <td><em>How did you find us? </em> <b><%= @tr7.car_owner_find_us %></b><em> -- </em><b> <%= @tr7.car_owner_where_find_us %> </b></td>
+      </tr>
+    </tbody>
+  </table>
+
+<% end %>
 </div>
+
 
 
   <div class="col-xs-6 printable-table">

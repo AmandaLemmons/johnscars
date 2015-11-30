@@ -3,53 +3,89 @@
 </div>
 
 <h3 class="center"> XJ6 QUARTERBREED CONVERSION KIT ORDER SHEET </h3>
-<p class="text-center small-text">Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
-
 <div class="col-xs-12 printable-table">
-  <table class="table table-bordered">
+  <% if @xj6_quarterbreed.same_information == false || nil  %>
+  <table class="table table-bordered ">
     <tbody>
       <tr>
-        <td><strong>CAR OWNER INFORMATION</strong> </td>
-        <td><strong>SHOP OR "SHIP TO" INFORMATION </strong> </td>
+        <td>CAR OWNER INFORMATION </td>
+        <td>SHOP OR "SHIP TO" INFORMATION  </td>
       </tr>
       <tr>
-        <td ><b>Name</b>: <%= @xj6_quarterbreed.car_owner_full_name %> </th>
-        <td> <b>Name</b>: <%= @xj6_quarterbreed.ship_to_full_name %></td>
+        <td ><em>Name: </em><b><%= @xj6_quarterbreed.car_owner_full_name %></b> </td>
+        <td> <em>Name: </em><b><%= @xj6_quarterbreed.ship_to_full_name %></b> </td>
       </tr>
       <tr>
-        <td><b>Address:</b> <%= @xj6_quarterbreed.car_owner_address %> <br> <%= @xj6_quarterbreed.car_owner_city %>,
+        <td><em>Address: </em><b> <%= @xj6_quarterbreed.car_owner_address %> <br> <%= @xj6_quarterbreed.car_owner_city %>,
           <% if @xj6_quarterbreed.car_owner_state == "None" %>
           </b><%= @xj6_quarterbreed.car_owner_zip %>   <%= @xj6_quarterbreed.car_owner_countr %>
           <% else %>
-          <%= @xj6_quarterbreed.car_owner_state %>  </b><%= @xj6_quarterbreed.car_owner_zip %>,   <%= @xj6_quarterbreed.car_owner_countr %>
+          <%= @xj6_quarterbreed.car_owner_state %>  </b><%= @xj6_quarterbreed.car_owner_zip %>,   <%= @xj6_quarterbreed.car_owner_countr %></b>
           <% end %>
         </td>
-        <td><b>Address:</b> <%= @xj6_quarterbreed.ship_to_address %> <br> <%= @xj6_quarterbreed.ship_to_city %>,
+        <td><em>Address: </em><b> <%= @xj6_quarterbreed.ship_to_address %> <br> <%= @xj6_quarterbreed.ship_to_city %>,
           <% if @xj6_quarterbreed.ship_to_state == "None" %>
         </b><%= @xj6_quarterbreed.ship_to_zip %>   <%= @xj6_quarterbreed.ship_to_countr %>
           <% else %>
-          <%= @xj6_quarterbreed.ship_to_state %>  </b><%= @xj6_quarterbreed.ship_to_zip %>,   <%= @xj6_quarterbreed.ship_to_countr %>
+          <%= @xj6_quarterbreed.ship_to_state %>  </b><%= @xj6_quarterbreed.ship_to_zip %>,   <%= @xj6_quarterbreed.ship_to_countr %></b>
           <% end %>
         </td>
       </tr>
       <tr>
-        <td><b>Email:</b> <%= @xj6_quarterbreed.car_owner_email %></td>
-        <td><b>Email:</b> <%= @xj6_quarterbreed.ship_to_email %></td>
+        <td><em>Email: </em> <b><%= @xj6_quarterbreed.car_owner_email %></b></td>
+        <td><em>Email: </em> <b><%= @xj6_quarterbreed.ship_to_email %></b></td>
       </tr>
       <tr>
-        <td><b> Home Phone: </b> <%= @xj6_quarterbreed.car_owner_home_phone %> <b>From:</b>  <%= @xj6_quarterbreed.car_owner_home_hours %> </td>
-        <td> <b> Shop Phone: </b><%= @xj6_quarterbreed.ship_to_phone %> </td>
+        <td><em> Home Phone: </em><b> <%= @xj6_quarterbreed.car_owner_home_phone %></b> <em>From: </em><b>  <%= @xj6_quarterbreed.car_owner_home_hours %></b> </td>
+        <td> <em> Shop Phone: </em><b><%= @xj6_quarterbreed.ship_to_phone %></b> </td>
       </tr>
       <tr>
-        <td> <b>Work Phone: </b><%= @xj6_quarterbreed.car_owner_work_phone %> <b>From:</b> <%= @xj6_quarterbreed.car_owner_work_hours%> </td>
-        <td><b>Fax: </b> <%= @xj6_quarterbreed.ship_to_fax %> </td>
+        <td> <em>Work Phone: </em><b><%= @xj6_quarterbreed.car_owner_work_phone %></b> <em>From: </em><b> <%= @xj6_quarterbreed.car_owner_work_hours%></b> </td>
+        <td><em>Fax: </em><b> <%= @xj6_quarterbreed.ship_to_fax %></b> </td>
       </tr>
       <tr>
-        <td> <b> Fax: </b> <%= @xj6_quarterbreed.car_owner_fax %> <b>From:</b> <%= @xj6_quarterbreed.car_owner_fax_hours %></td>
-          <td><b>How did you find us?</b> <%= @xj6_quarterbreed.car_owner_find_us %> </td>
+        <td> <em> Fax: </em><b> <%= @xj6_quarterbreed.car_owner_fax %> </b> <em>From: </em> <b> <%= @xj6_quarterbreed.car_owner_fax_hours %></b></td>
+          <td><em>How did you find us? </em><b> <%= @xj6_quarterbreed.car_owner_find_us %> </b> <em> -- </em><b> <%= @xj6_quarterbreed.car_owner_where_find_us %></b></td>
       </tr>
     </tbody>
-</table>
+  </table>
+<% else %>
+  <table class="table table-bordered ">
+    <tbody>
+      <tr>
+        <td>CAR OWNER INFORMATION </td>
+      </tr>
+      <tr>
+        <td><em>Name: </em> <b><%= @xj6_quarterbreed.car_owner_full_name %></b> </td>
+      </tr>
+      <tr>
+        <td><em>Address: </em> <b> <%= @xj6_quarterbreed.car_owner_address %> <br> <%= @xj6_quarterbreed.car_owner_city %>,
+          <% if @xj6_quarterbreed.car_owner_state == "None" %>
+          </b><%= @xj6_quarterbreed.car_owner_zip %>   <%= @xj6_quarterbreed.car_owner_countr %>
+          <% else %>
+          <%= @xj6_quarterbreed.car_owner_state %>  </b><%= @xj6_quarterbreed.car_owner_zip %>,   <%= @xj6_quarterbreed.car_owner_countr %></b>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><em>Email: </em> <b><%= @xj6_quarterbreed.car_owner_email %></b> </td>
+      </tr>
+      <tr>
+        <td><em>Home Phone: </em> <b>   <%= @xj6_quarterbreed.car_owner_home_phone %> <em>From:</em>  <b><%= @xj6_quarterbreed.car_owner_home_hours %> </b></td>
+      </tr>
+      <tr>
+        <td> <em>Work Phone: </em> <b><%= @xj6_quarterbreed.car_owner_work_phone %></b> <em>From: </em> <b> <%= @xj6_quarterbreed.car_owner_work_hours%> </b></td>
+      </tr>
+      <tr>
+        <td>  <em>Fax: </em>  <b><%= @xj6_quarterbreed.car_owner_fax %></b> <em>From: </em> <b> <%= @xj6_quarterbreed.car_owner_fax_hours %></b></td>
+      </tr>
+      <tr>
+        <td><em>How did you find us? </em> <b><%= @xj6_quarterbreed.car_owner_find_us %></b><em> -- </em><b> <%= @xj6_quarterbreed.car_owner_where_find_us %> </b></td>
+      </tr>
+    </tbody>
+  </table>
+
+<% end %>
 </div>
 
 
@@ -155,8 +191,6 @@
   <br>
 
 <div class="col-xs-12">
-  <p class="small-text"><strong> All T700</strong> and some T350 (with a blue2-terminal connector) require a torque converted lockup kit. If you're having a T700 transmission built, just have them set it up to lockup for you. If you have a lockup-capable T350 or a used/pull-out T700, you have to use our lockup kit.</p>
-  <p  class="small-text"> The XJ6 Quarterbreed Kit is the  property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
   <br>
 
   <p> Signature _____________________________________________________ Date______________________</p>
