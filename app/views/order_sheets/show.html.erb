@@ -130,11 +130,17 @@
     <table class="table table-bordered ">
       <tbody>
         <tr>
-          <td> <em>Donor Type: </em> <b><%= @order_sheet.transmission_type %></b></td>
           <td> <em>Detail: </em> <b> <%= @order_sheet.transmission_detail %></b></td>
+          <td> <em> Output Shaft: </em><b> <%= @order_sheet.output_shaft %></b></td>
+        </tr>
+          <td> <em> Transmission Year: </em><b> <%= @order_sheet.transmission_year %></b></td>
+          <% if @order_sheet.transmission_type == "Other- fill out in next box" %>
+            <td> <em> Donor Type:</em> <b> <%= @order_sheet.transmission_other%>
+          <% else %>
+            <td> <em>Donor Type: </em> <b><%= @order_sheet.transmission_type %></b></td>
+          <% end %>
         </tr>
         <tr>
-          <td> <em> Output Shaft: </em><b> <%= @order_sheet.output_shaft %></b></td>
         </tr>
       </tbody>
     </table>
