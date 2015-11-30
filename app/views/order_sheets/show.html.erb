@@ -4,8 +4,7 @@
   <div class="print-form">
 
   <h3 class="center"> JCI LS ZCAR ORDER SHEET </h3>
-  <p class="text-center small-text">Please complete as much information as you can. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Illegible, incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, no personal or company checks, no credit cards and no wire transfers. <b> PARTS ARE NOT RETURNABLE.</b> </p>
-
+  <br>
   <div class="col-xs-12 printable-table">
     <table class="table table-bordered ">
       <tbody>
@@ -54,43 +53,42 @@
   </div>
 
   <div class="col-xs-6 printable-table">
+    <h5 class="center"> ZCAR INFO (Before V8) </h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><b><%= @order_sheet.zcar_year %></b></td>
+          <td><b><%=@order_sheet.zcar_type%> </b></td>
+        </tr>
+        <tr>
+          <td>VIN <b><%= @order_sheet.zcar_vin%></b></td>
+          <td>
+            <% if @order_sheet.zcar_type2 == true%>
+              '2 + 2': <b>Yes</b>
+          <% else %>
+          <% end %>
+        </td>
+        </tr>
+        <tr>
+          <td><b> <%= @order_sheet.zcar_month_built %></b></td>
+          <td><b> <%= @order_sheet.zcar_year_built %></b></td>
+      </tr>
+      </tbody>
+    </table>
+
     <h5 class="center"> JCI LS ZCAR </h5>
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td><b>Type: </b> <%=@order_sheet.ls_type%></td>
+          <td><b><%= @order_sheet.ls_year%></b></td>
+          <td><b><%=@order_sheet.ls_type%></b></td>
+        </tr>
+        <tr>
           <% if @order_sheet.ls_type2.present? %>
-          <td> <b>More info on LS Type:</b> <%=@order_sheet.ls_type2%></td>
-        </tr>
-        <tr>
-          <td><b>Year: </b> <%= @order_sheet.ls_year%></td>
-        </tr>
+            <td> <b>More:</b> <%=@order_sheet.ls_type2%></td>
           <% else %>
-            <td><b>Year: </b> <%= @order_sheet.ls_year%></td>
+          <% end %>
         </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-    <h5 class="center"> ZCAR INFO (Before V8) </h5>
-
-    <table class="table table-bordered">
-      <tbody>
-        <tr>
-          <td><b>Type: </b>  <%=@order_sheet.zcar_type%> '2 + 2':
-            <% if @order_sheet.zcar_type2 == true%>
-            Yes
-            <% else %>
-            No
-            <% end %>
-          </td>
-          <td><b>VIN #: </b><%= @order_sheet.zcar_vin%></b></td>
-          <td><b>Year: </b><%= @order_sheet.zcar_year %></td>
-        </tr>
-        <tr>
-          <td><b>Month Built:</b> <%= @order_sheet.zcar_month_built %></td>
-        <td ><b>Year Built:</b> <%= @order_sheet.zcar_year_built %></td>
-      </tr>
       </tbody>
     </table>
 
@@ -201,10 +199,6 @@
 </div>
 <br clear="all"/>
 <p > Comments: <%= @order_sheet.comments %> </p>
-
-    <p class="small-text"> these parts are for LS only - the ZCar small block Chevy kit is a different product. It is $695.00. No parts interchange with the LS. Please use the correct order sheet for the small block V8 conversion</p>
-
-    <p class="small-text"> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local autdorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
     <br>
     <p> Signature _____________________________________________________ Date________________</p>
   </div>
