@@ -99,37 +99,45 @@
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td><b>Type: </b> <%=@tr7.tr7s_type%></td>
-          <td> <b>VIN:</b> <%=@tr7.tr7s_vin%></td>
+          <% if @tr7.tr7s_type == "Other - fill out in next box" %>
+            <td><em>Type: </em> <b> <%=@tr7.other_type%></b></td>
+          <% else %>
+            <td><em>Type: </em> <b> <%=@tr7.tr7s_type%></b></td>
+          <% end %>
+          <td><em>Year: </em> <b> <%= @tr7.tr7s_year%></b></td>
         </tr>
         <tr>
-          <td><b>Year: </b> <%= @tr7.tr7s_year%></td>
-          <td><b>Month Built: </b> <%= @tr7.tr7s_month_built%></td>
+          <td> <em>VIN:</em> <b> <%=@tr7.tr7s_vin%></b></td>
         </tr>
         <tr>
-          <td><b>Year Built: </b> <%= @tr7.tr7s_year_built%></td>
-          <td><b>Transmission: </b> <%= @tr7.tr7s_transmission_type%></td>
+          <td><em>Month Built: </em> <b> <%= @tr7.tr7s_month_built%></b></td>
+          <td><em>Year Built: </em> <b> <%= @tr7.tr7s_year_built%></b></td>
         </tr>
         <tr>
-          <td><b>Engine Type: </b> <%=@tr7.tr7s_engine%></td>
-          <td><b>Tire Size: </b> <%=@tr7.tr7s_tire_size%></td>
+          <td><em>Engine: </em> <b><%=@tr7.tr7s_engine%></b></td>
+          <td><em>Transmission Type: </em> <b> <%= @tr7.tr7s_transmission_type%></b></td>
         </tr>
         <tr>
-          <td><b>Rear Axle Ratio: </b> <%=@tr7.tr7s_rear_axle_ratio%></td>
-          <td><b>AC: </b>
-            <% if @tr7.tr7s_ac == "true"%>
-              Yes
+          <td><em>AC: </em>
+            <% if @tr7.tr7s_ac == true%>
+              <b>Yes</b>
             <% else %>
-              No
+              <b>No</b>
             <% end %>
           </td>
+          <% if @tr7.tr7s_rear_axle_ratio == "Other - fill out in next box" %>
+            <td><em>Rear Axle Ratio: </em> <b><%=@tr7.other_rear_axle_ratio%></b></td>
+          <% else %>
+          <td><em>Rear Axle Ratio: </em> <b><%=@tr7.tr7s_rear_axle_ratio%></b></td>
+          <% end %>
         </tr>
         <tr>
-          <td><b>Expansion Tank: </b>
-            <% if @tr7.tr7s_expansion_tank == "true"%>
-              Yes
+          <td><em>Tire Size: </em> <b><%=@tr7.tr7s_tire_size%></b></td>
+          <td><em>Expansion Tank: </em>
+            <% if @tr7.tr7s_expansion_tank == true%>
+              <b>Yes</b>
             <% else %>
-              No
+              <b>No</b>
             <% end %>
           </td>
         </tr>
@@ -139,11 +147,11 @@
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td> <b> Buick Engine: </b> <%= @tr7.buick_v6_engine%></td>
-          <td> <b> Buick Year: </b> <%= @tr7.buick_v6_year%></td>
+          <td> <em> Buick Engine: </em> <b><%= @tr7.buick_v6_engine%></b></td>
+          <td> <em> Buick Year: </em><b> <%= @tr7.buick_v6_year%></b></td>
         </tr>
         <tr>
-          <td> <b> Buick CID: </b> <%= @tr7.buick_v6_cid%></td>
+          <td> <em> Buick CID: </em> <b><%= @tr7.buick_v6_cid%></b></td>
         </tr>
       </tbody>
     </table>
@@ -213,7 +221,7 @@
   <br>
 
 <div class="col-xs-12">
-  <p class="small-text"> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
+  <p class="small-text"> JCI V6 TR7 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
   <br>
 
   <h5> Signature _____________________________________ Date________________</h5>

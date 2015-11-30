@@ -18,7 +18,11 @@
        </div>
        <div class="col-md-4">
          <h4>Type </h4>
-         <%= f.input :tr7s_type, label: false, placeholder:"Type",  collection: ["Coupe", "Convertible", "Other - fill out in comments"]%>
+         <%= f.input :tr7s_type, label: false, placeholder:"Type",  collection: ["Coupe", "Convertible", "Other - fill out in next box"]%>
+       </div>
+       <div class="col-md-4">
+         <h4>Other Type </h4>
+         <%= f.input :other_type, label: false, placeholder:"Other Type"%>
        </div>
        <div class="col-md-4">
          <h4>VIN #</h4>
@@ -55,8 +59,12 @@
           </div>
           <div class="col-md-6">
                <h4>Rear Axle Ratio</h4>
-               <%= f.input :tr7s_rear_axle_ratio, label: false, placeholder: "", collection: ["308", "327", "345", "363", "391", "327", "363", "Drop out 3rd memeber", "345", "391", "Salisbury rear cover", "Other - Fill out in Comments"]%>
+               <%= f.input :tr7s_rear_axle_ratio, label: false, placeholder: "", collection: ["308", "327", "345", "363", "391", "327", "363", "Drop out 3rd memeber", "345", "391", "Salisbury rear cover", "Other - fill out in next box"]%>
            </div>
+           <div class="col-md-12">
+                <h4>Other Rear Axle Ratio</h4>
+                <%= f.input :other_rear_axle_ratio, label: false, placeholder: ""%>
+            </div>
 
            <div class="col-md-6">
              <h4> Expansion Tank </h4>

@@ -94,34 +94,41 @@
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td><b>Type: </b> <%=@quarterbreed.jaguar_type%></td>
-          <td> <b>VIN:</b> <%=@quarterbreed.jaguar_vin%></td>
+          <td><em>Year: </em><b> <%= @quarterbreed.jaguar_year%></b></td>
+          <td><em>Model: </em><b> <%=@quarterbreed.jaguar_type%></b></td>
         </tr>
         <tr>
-          <td><b>Year: </b> <%= @quarterbreed.jaguar_year%></td>
+          <td> <em>VIN:</em><b> <%=@quarterbreed.jaguar_vin%></b></td>
+
         </tr>
         <tr>
-          <td><b>Month Built: </b> <%= @quarterbreed.jaguar_month_built%></td>
-          <td><b>Year Built: </b> <%= @quarterbreed.jugaur_year_built%></td>
+          <td><em>Month Built: </em><b> <%= @quarterbreed.jaguar_month_built%></b></td>
+          <td><em>Year Built: </em><b> <%= @quarterbreed.jugaur_year_built%></b></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h5 class="center"> ENGINE/MOTOR DETAILS </h5>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td><em>Engine Number: </em> <b> <%=@quarterbreed.engine_number%></b></td>
+        <td><em>Engine Type: </em> <b> <%=@quarterbreed.engine_type%></b></td>
       </tr>
       <tr>
-        <td><b>Engine Number: </b> <%=@quarterbreed.engine_number%></td>
-        <td><b>Engine Type: </b> <%=@quarterbreed.engine_type%></td>
+        <td><em>Tire Size: </em> <b> <%=@quarterbreed.tire_size%></b></td>
+        <td><em>Tire Radius: </em> <b> <%=@quarterbreed.tire_radius%></b></td>
       </tr>
       <tr>
-        <td><b>Tire Size: </b> <%=@quarterbreed.tire_size%></td>
-        <td><b>Tire Radius: </b> <%=@quarterbreed.tire_radius%></td>
-      </tr>
-      <tr>
-        <td><b>Rear Axle Ratio: </b> <%=@quarterbreed.rear_axie_ratio%></td>
-        <td><b>Speedo Number: </b> <%=@quarterbreed.speedo_number%></td>
+        <td><em>Rear Axle Ratio: </em> <b> <%=@quarterbreed.rear_axie_ratio%></b></td>
+        <td><em>Speedo Number: </em> <b> <%=@quarterbreed.speedo_number%></b></td>
       </tr>
       </tbody>
     </table>
     <h5 class="center"> JAGUAR TRANSMISSION</h5>
     <table class="table table-bordered">
       <tbody>
-        <td><b>Transmission: </b> <%= @quarterbreed.jaguar_trans%></td>
+        <td><em>Transmission: </em> <b><%= @quarterbreed.jaguar_trans%></b></td>
       </tr>
     </tbody>
   </table>
@@ -135,11 +142,11 @@
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td class="col-xs-3"><strong>QUARTERBREED </strong></td>
+          <td class="col-xs-3"><strong>Quarterbreed </strong></td>
           <td class="col-xs-1"><strong> Price</strong> </td>
         </tr>
         <tr>
-          <td>V12 T700 QUARTERBREED Kit</td>
+          <td>V12 T700 Quarterbreed Kit</td>
           <td>$<%= @quarterbreed.quarterbreed_kit %></td>
         </tr>
         <tr>
