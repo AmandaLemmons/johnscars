@@ -22,16 +22,16 @@
       <tr>
         <td><em>Address: </em><b> <%= @tr7.car_owner_address %> <br> <%= @tr7.car_owner_city %>,
           <% if @tr7.car_owner_state == "None" %>
-          </b><%= @tr7.car_owner_zip %>   <%= @tr7.car_owner_countr %>
+            <%= @tr7.car_owner_zip %>   <%= @tr7.car_owner_countr %></b>
           <% else %>
-          <%= @tr7.car_owner_state %>  </b><%= @tr7.car_owner_zip %>,   <%= @tr7.car_owner_countr %></b>
+            <%= @tr7.car_owner_state %> <%= @tr7.car_owner_zip %>,   <%= @tr7.car_owner_countr %></b>
           <% end %>
         </td>
         <td><em>Address: </em><b> <%= @tr7.ship_to_address %> <br> <%= @tr7.ship_to_city %>,
           <% if @tr7.ship_to_state == "None" %>
-        </b><%= @tr7.ship_to_zip %>   <%= @tr7.ship_to_countr %>
+            <%= @tr7.ship_to_zip %>   <%= @tr7.ship_to_countr %></b>
           <% else %>
-          <%= @tr7.ship_to_state %>  </b><%= @tr7.ship_to_zip %>,   <%= @tr7.ship_to_countr %></b>
+            <%= @tr7.ship_to_state %>  </b><%= @tr7.ship_to_zip %>,   <%= @tr7.ship_to_countr %></b>
           <% end %>
         </td>
       </tr>
@@ -65,9 +65,9 @@
       <tr>
         <td><em>Address: </em> <b> <%= @tr7.car_owner_address %> <br> <%= @tr7.car_owner_city %>,
           <% if @tr7.car_owner_state == "None" %>
-          </b><%= @tr7.car_owner_zip %>   <%= @tr7.car_owner_countr %>
+            <%= @tr7.car_owner_zip %>   <%= @tr7.car_owner_countr %></b>
           <% else %>
-          <%= @tr7.car_owner_state %>  </b><%= @tr7.car_owner_zip %>,   <%= @tr7.car_owner_countr %></b>
+            <%= @tr7.car_owner_state %> <%= @tr7.car_owner_zip %>,   <%= @tr7.car_owner_countr %></b>
           <% end %>
         </td>
       </tr>
@@ -75,7 +75,7 @@
         <td><em>Email: </em> <b><%= @tr7.car_owner_email %></b> </td>
       </tr>
       <tr>
-        <td><em>Home Phone: </em> <b>   <%= @tr7.car_owner_home_phone %> <em>From:</em>  <b><%= @tr7.car_owner_home_hours %> </b></td>
+        <td><em>Home Phone: </em> <b>   <%= @tr7.car_owner_home_phone %> </b> <em>From:</em>  <b><%= @tr7.car_owner_home_hours %> </b></td>
       </tr>
       <tr>
         <td> <em>Work Phone: </em> <b><%= @tr7.car_owner_work_phone %></b> <em>From: </em> <b> <%= @tr7.car_owner_work_hours%> </b></td>

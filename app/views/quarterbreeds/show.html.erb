@@ -18,16 +18,16 @@
       <tr>
         <td><em>Address: </em><b> <%= @quarterbreed.car_owner_address %> <br> <%= @quarterbreed.car_owner_city %>,
           <% if @quarterbreed.car_owner_state == "None" %>
-          </b><%= @quarterbreed.car_owner_zip %>   <%= @quarterbreed.car_owner_countr %>
+          <%= @quarterbreed.car_owner_zip %>   <%= @quarterbreed.car_owner_countr %></b>
           <% else %>
-          <%= @quarterbreed.car_owner_state %>  </b><%= @quarterbreed.car_owner_zip %>,   <%= @quarterbreed.car_owner_countr %></b>
+          <%= @quarterbreed.car_owner_state %> <%= @quarterbreed.car_owner_zip %>,   <%= @quarterbreed.car_owner_countr %></b>
           <% end %>
         </td>
         <td><em>Address: </em><b> <%= @quarterbreed.ship_to_address %> <br> <%= @quarterbreed.ship_to_city %>,
           <% if @quarterbreed.ship_to_state == "None" %>
-        </b><%= @quarterbreed.ship_to_zip %>   <%= @quarterbreed.ship_to_countr %>
+        <%= @quarterbreed.ship_to_zip %>   <%= @quarterbreed.ship_to_countr %></b>
           <% else %>
-          <%= @quarterbreed.ship_to_state %>  </b><%= @quarterbreed.ship_to_zip %>,   <%= @quarterbreed.ship_to_countr %></b>
+          <%= @quarterbreed.ship_to_state %> <%= @quarterbreed.ship_to_zip %>,   <%= @quarterbreed.ship_to_countr %></b>
           <% end %>
         </td>
       </tr>
@@ -61,9 +61,9 @@
       <tr>
         <td><em>Address: </em> <b> <%= @quarterbreed.car_owner_address %> <br> <%= @quarterbreed.car_owner_city %>,
           <% if @quarterbreed.car_owner_state == "None" %>
-          </b><%= @quarterbreed.car_owner_zip %>   <%= @quarterbreed.car_owner_countr %>
+          <%= @quarterbreed.car_owner_zip %>   <%= @quarterbreed.car_owner_countr %></b>
           <% else %>
-          <%= @quarterbreed.car_owner_state %>  </b><%= @quarterbreed.car_owner_zip %>,   <%= @quarterbreed.car_owner_countr %></b>
+          <%= @quarterbreed.car_owner_state %> <%= @quarterbreed.car_owner_zip %>,   <%= @quarterbreed.car_owner_countr %></b>
           <% end %>
         </td>
       </tr>
@@ -71,7 +71,7 @@
         <td><em>Email: </em> <b><%= @quarterbreed.car_owner_email %></b> </td>
       </tr>
       <tr>
-        <td><em>Home Phone: </em> <b>   <%= @quarterbreed.car_owner_home_phone %> <em>From:</em>  <b><%= @quarterbreed.car_owner_home_hours %> </b></td>
+        <td><em>Home Phone: </em> <b>   <%= @quarterbreed.car_owner_home_phone %> </b> <em>From:</em>  <b><%= @quarterbreed.car_owner_home_hours %> </b></td>
       </tr>
       <tr>
         <td> <em>Work Phone: </em> <b><%= @quarterbreed.car_owner_work_phone %></b> <em>From: </em> <b> <%= @quarterbreed.car_owner_work_hours%> </b></td>

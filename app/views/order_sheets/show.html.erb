@@ -18,18 +18,18 @@
           <td> <em>Name: </em><b><%= @order_sheet.ship_to_full_name %></b> </td>
         </tr>
         <tr>
-          <td><em>Address: </em><b> <%= @order_sheet.car_owner_address %> <br> <%= @order_sheet.car_owner_city %>,
+          <td><em>Address: </em> <b> <%= @order_sheet.car_owner_address %> <br> <%= @order_sheet.car_owner_city %>,
             <% if @order_sheet.car_owner_state == "None" %>
-            </b><%= @order_sheet.car_owner_zip %>   <%= @order_sheet.car_owner_countr %>
+            <%= @order_sheet.car_owner_zip %>   <%= @order_sheet.car_owner_countr %></b>
             <% else %>
-            <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %>,   <%= @order_sheet.car_owner_countr %></b>
+            <%= @order_sheet.car_owner_state %> <%= @order_sheet.car_owner_zip %>,   <%= @order_sheet.car_owner_countr %></b>
             <% end %>
           </td>
           <td><em>Address: </em><b> <%= @order_sheet.ship_to_address %> <br> <%= @order_sheet.ship_to_city %>,
             <% if @order_sheet.ship_to_state == "None" %>
-          </b><%= @order_sheet.ship_to_zip %>   <%= @order_sheet.ship_to_countr %>
+          <%= @order_sheet.ship_to_zip %>   <%= @order_sheet.ship_to_countr %></b>
             <% else %>
-            <%= @order_sheet.ship_to_state %>  </b><%= @order_sheet.ship_to_zip %>,   <%= @order_sheet.ship_to_countr %></b>
+            <%= @order_sheet.ship_to_state %> <%= @order_sheet.ship_to_zip %>,   <%= @order_sheet.ship_to_countr %></b>
             <% end %>
           </td>
         </tr>
@@ -63,9 +63,9 @@
         <tr>
           <td><em>Address: </em> <b> <%= @order_sheet.car_owner_address %> <br> <%= @order_sheet.car_owner_city %>,
             <% if @order_sheet.car_owner_state == "None" %>
-            </b><%= @order_sheet.car_owner_zip %>   <%= @order_sheet.car_owner_countr %>
+            <%= @order_sheet.car_owner_zip %>   <%= @order_sheet.car_owner_countr %></b>
             <% else %>
-            <%= @order_sheet.car_owner_state %>  </b><%= @order_sheet.car_owner_zip %>,   <%= @order_sheet.car_owner_countr %></b>
+            <%= @order_sheet.car_owner_state %> <%= @order_sheet.car_owner_zip %>,   <%= @order_sheet.car_owner_countr %></b>
             <% end %>
           </td>
         </tr>
@@ -73,7 +73,7 @@
           <td><em>Email: </em> <b><%= @order_sheet.car_owner_email %></b> </td>
         </tr>
         <tr>
-          <td><em>Home Phone: </em> <b>   <%= @order_sheet.car_owner_home_phone %> <em>From:</em>  <b><%= @order_sheet.car_owner_home_hours %> </b></td>
+          <td><em>Home Phone: </em> <b>   <%= @order_sheet.car_owner_home_phone %> </b> <em>From:</em>  <b><%= @order_sheet.car_owner_home_hours %> </b></td>
         </tr>
         <tr>
           <td> <em>Work Phone: </em> <b><%= @order_sheet.car_owner_work_phone %></b> <em>From: </em> <b> <%= @order_sheet.car_owner_work_hours%> </b></td>

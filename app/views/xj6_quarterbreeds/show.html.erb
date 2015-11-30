@@ -18,16 +18,16 @@
       <tr>
         <td><em>Address: </em><b> <%= @xj6_quarterbreed.car_owner_address %> <br> <%= @xj6_quarterbreed.car_owner_city %>,
           <% if @xj6_quarterbreed.car_owner_state == "None" %>
-          </b><%= @xj6_quarterbreed.car_owner_zip %>   <%= @xj6_quarterbreed.car_owner_countr %>
+            <%= @xj6_quarterbreed.car_owner_zip %>   <%= @xj6_quarterbreed.car_owner_countr %></b>
           <% else %>
-          <%= @xj6_quarterbreed.car_owner_state %>  </b><%= @xj6_quarterbreed.car_owner_zip %>,   <%= @xj6_quarterbreed.car_owner_countr %></b>
+            <%= @xj6_quarterbreed.car_owner_state %> <%= @xj6_quarterbreed.car_owner_zip %>,   <%= @xj6_quarterbreed.car_owner_countr %></b>
           <% end %>
         </td>
         <td><em>Address: </em><b> <%= @xj6_quarterbreed.ship_to_address %> <br> <%= @xj6_quarterbreed.ship_to_city %>,
           <% if @xj6_quarterbreed.ship_to_state == "None" %>
-        </b><%= @xj6_quarterbreed.ship_to_zip %>   <%= @xj6_quarterbreed.ship_to_countr %>
+            <%= @xj6_quarterbreed.ship_to_zip %>   <%= @xj6_quarterbreed.ship_to_countr %></b>
           <% else %>
-          <%= @xj6_quarterbreed.ship_to_state %>  </b><%= @xj6_quarterbreed.ship_to_zip %>,   <%= @xj6_quarterbreed.ship_to_countr %></b>
+          <%= @xj6_quarterbreed.ship_to_state %> <%= @xj6_quarterbreed.ship_to_zip %>,   <%= @xj6_quarterbreed.ship_to_countr %></b>
           <% end %>
         </td>
       </tr>
@@ -61,9 +61,9 @@
       <tr>
         <td><em>Address: </em> <b> <%= @xj6_quarterbreed.car_owner_address %> <br> <%= @xj6_quarterbreed.car_owner_city %>,
           <% if @xj6_quarterbreed.car_owner_state == "None" %>
-          </b><%= @xj6_quarterbreed.car_owner_zip %>   <%= @xj6_quarterbreed.car_owner_countr %>
+            <%= @xj6_quarterbreed.car_owner_zip %>   <%= @xj6_quarterbreed.car_owner_countr %></b>
           <% else %>
-          <%= @xj6_quarterbreed.car_owner_state %>  </b><%= @xj6_quarterbreed.car_owner_zip %>,   <%= @xj6_quarterbreed.car_owner_countr %></b>
+            <%= @xj6_quarterbreed.car_owner_state %> <%= @xj6_quarterbreed.car_owner_zip %>,   <%= @xj6_quarterbreed.car_owner_countr %></b>
           <% end %>
         </td>
       </tr>
@@ -71,7 +71,7 @@
         <td><em>Email: </em> <b><%= @xj6_quarterbreed.car_owner_email %></b> </td>
       </tr>
       <tr>
-        <td><em>Home Phone: </em> <b>   <%= @xj6_quarterbreed.car_owner_home_phone %> <em>From:</em>  <b><%= @xj6_quarterbreed.car_owner_home_hours %> </b></td>
+        <td><em>Home Phone: </em> <b>   <%= @xj6_quarterbreed.car_owner_home_phone %></b> <em>From:</em>  <b><%= @xj6_quarterbreed.car_owner_home_hours %> </b></td>
       </tr>
       <tr>
         <td> <em>Work Phone: </em> <b><%= @xj6_quarterbreed.car_owner_work_phone %></b> <em>From: </em> <b> <%= @xj6_quarterbreed.car_owner_work_hours%> </b></td>
