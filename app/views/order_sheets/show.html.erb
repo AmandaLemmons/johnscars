@@ -154,14 +154,14 @@
         </tr>
         <tr>
           <td><em>Pattern: </em><b><%= @order_sheet.pattern_type %></b> </td>
-          <% if @order_sheet.q45 == "true" %>
+          <% if @order_sheet.q45 == true %>
           <td><em>Q45:</em> <b> Yes </b>
             <% else %>
             <% end %>
           </td>
         </tr>
         <tr>
-          <% if @order_sheet.other_differential_flange == "true" %>
+          <% if @order_sheet.other_differential_flange == true %>
           <td><em>Other Rearend?:</em> <b>Yes</b>
             <% else %>
             <% end %>
