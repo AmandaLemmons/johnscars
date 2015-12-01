@@ -5,7 +5,6 @@
 <div class="print-form">
 
 <h3 class="text-center"> JCI V6 TR7 CONVERSION KIT ORDER SHEET </h3>
-<p class="text-center small-text">Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
 
 <div class="col-xs-12 printable-table">
   <% if @tr7.same_information == false || nil  %>
@@ -99,12 +98,12 @@
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <% if @tr7.tr7s_type == "Other - fill out in next box" %>
-            <td><em>Type: </em> <b> <%=@tr7.other_type%></b></td>
-          <% else %>
-            <td><em>Type: </em> <b> <%=@tr7.tr7s_type%></b></td>
-          <% end %>
           <td><em>Year: </em> <b> <%= @tr7.tr7s_year%></b></td>
+          <% if @tr7.tr7s_type == "Other - fill out in next box" %>
+            <td><em>Model: </em> <b> <%=@tr7.other_type%></b></td>
+          <% else %>
+            <td><em>Model: </em> <b> <%=@tr7.tr7s_type%></b></td>
+          <% end %>
         </tr>
         <tr>
           <td> <em>VIN:</em> <b> <%=@tr7.tr7s_vin%></b></td>
@@ -156,6 +155,7 @@
       </tbody>
     </table>
     <p> Comments: <%= @tr7.comments%> </p>
+    <p> <%= @tr7.other_kit_options %> </p>
   </div>
 
 
@@ -164,7 +164,7 @@
     <table class="table table-bordered ">
       <tbody>
         <tr>
-          <td class="col-xs-3"><strong>TR7 Kit</strong> </td>
+          <td class="col-xs-3"><strong>TR7</strong> </td>
           <td class="col-xs-1"><strong> Price</strong> </td>
         </tr>
         <tr>
@@ -188,29 +188,29 @@
           <td >$<%= @tr7.driveshaft_adaptor_amt %></td>
         </tr>
         <tr>
-          <td >ELECTROLOCK </td>
+          <td >Electrolock  </td>
           <td >$<%= @tr7.electrolock_amt %></td>
         </tr>
-        <tr>
+        <!-- <tr>
           <td >Other </td>
-          <td >$<%= @tr7.other_kit_options %></td>
-        </tr>
+          <td >= @tr7.other_kit_options %></td>
+        </tr> -->
         <tr>
           <td >Credit</td>
           <td > - $<%= @tr7.credit_amt %></td>
         </tr>
         <tr>
-          <td >Subtotal (Parts Freight paid)</td>
+          <td >Subtotal (Parts are freight paid 48 states only)</td>
           <td >$<%= @tr7.subtotal %></td>
         </tr>
         <tr>
           <td >Texas Residents 8.25% Sales Tax +</td>
           <td >$ <%=@tr7.sales_tax %></td>
         </tr>
-        <tr>
+        <!-- <tr>
           <td >Freight</td>
-          <td >$<%= @tr7.freight %></td>
-        </tr>
+          <td >$= @tr7.freight %></td>
+        </tr> -->
         <tr>
           <td><b>CASHIER'S CHECK = </b></td>
           <td ><b>$<%= @tr7.total %></b></td>
@@ -221,12 +221,11 @@
   <br>
 
 <div class="col-xs-12">
-  <p class="small-text"> JCI V6 TR7 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
-  <br>
 
-  <h5> Signature _____________________________________ Date________________</h5>
+  <p> Signature _____________________________________________________ Date________________</p>
 </div>
 <div class="col-xs-12 text-center">
-    <p class="text-small"><strong>JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226</strong><br>
-    www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
+    <p class="small-text">JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226
+      <br> www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
+  </div>
 </div>
