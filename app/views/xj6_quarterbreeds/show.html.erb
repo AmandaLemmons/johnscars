@@ -90,39 +90,41 @@
 
 
   <div class="col-xs-6 printable-table">
-    <h5 class="center"> XJ6 INFORMATION (BEFORE QB) </h5>
+    <h5 class="center"> XJ6 INFORMATION </h5>
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td><b>Model: </b> <%=@xj6_quarterbreed.model%></td>
-          <td><b>Year: </b> <%= @xj6_quarterbreed.year%></td>
-          <td> <b>VIN:</b> <%=@xj6_quarterbreed.vin%></td>
+          <td><em>Year: </em> <b><%= @xj6_quarterbreed.year%></b></td>
+          <td><em>Model: </em> <b><%=@xj6_quarterbreed.model%></b></td>
+        </tr>
+          <td> <em>VIN:</em> <b><%=@xj6_quarterbreed.vin%></b></td>
+        </tr>
+        <tr>
+          <td> <em> Month Built</em> <b><%= @xj6_quarterbreed.month_built%></b> </td>
+          <td> <em> Year Built</em> <b><%= @xj6_quarterbreed.year_built%></b> </td>
         </tr>
       </tbody>
     </table>
+    <h5 class="center"> ENGINE/ MOTOR DETAILS </h5>
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td> <b> Month Built</b> <%= @xj6_quarterbreed.month_built%> </td>
-          <td> <b> Year Built</b> <%= @xj6_quarterbreed.year_built%> </td>
-        </tr>
-        <tr>
-          <td><b>Engine #: </b> <%= @xj6_quarterbreed.engine_number%></td>
-          <td><b>Engine Model: </b> <%= @xj6_quarterbreed.engine_model%></td>
+          <td><em>Engine Model: </em> <b><%= @xj6_quarterbreed.engine_model%><b></td>
+          <td><em>Engine #: </em> <b><%= @xj6_quarterbreed.engine_number%><b></td>
       </tr>
       <tr>
-        <% if @xj6_quarterbreed.rear_axl_ratio_other.present? %>
-          <td><b>Rear Axle Ratio: </b> <%=@xj6_quarterbreed.rear_axl_ratio_other%></td>
+        <% if @xj6_quarterbreed.rear_axl_ratio_other.present? || @xj6_quarterbreed.rear_axl_ratio == "Other - fill out in next box"%>
+          <td><em>Rear Axle Ratio: </em> <b><%=@xj6_quarterbreed.rear_axl_ratio_other%></b></td>
         <% else %>
-          <td><b>Rear Axle Ratio: </b> <%=@xj6_quarterbreed.rear_axl_ratio%></td>
+          <td><em>Rear Axle Ratio: </em> <b><%=@xj6_quarterbreed.rear_axl_ratio%></b></td>
         <% end %>
-        <td><b>Tire Size/ Radius: </b> <%=@xj6_quarterbreed.tire_size%></td>
+        <td><em>Tire Size/ Radius: </em> <b><%=@xj6_quarterbreed.tire_size%></b></td>
       </tr>
       <tr>
-        <% if @xj6_quarterbreed.speedo_number_other.present? %>
-          <td><b>Speedo #: </b> <%=@xj6_quarterbreed.speedo_number_other%></td>
+        <% if @xj6_quarterbreed.speedo_number_other.present? || @xj6_quarterbreed.speedo_number == "Other - fill out in next box"%>
+          <td><em>Speedo #: </em> <b><%=@xj6_quarterbreed.speedo_number_other%></b></td>
         <% else %>
-        <td><b>Speedo #: </b> <%=@xj6_quarterbreed.speedo_number%></td>
+          <td><em>Speedo #: </em> <b><%=@xj6_quarterbreed.speedo_number%></b></td>
         <% end %>
       </tr>
     </tbody>
@@ -131,12 +133,14 @@
   <table class="table table-bordered">
     <tbody>
       <tr>
-        <td><b>Transmission: </b> <%=@xj6_quarterbreed.trans%></td>
-        <td><b>Trans Year: </b> <%=@xj6_quarterbreed.trans_year%></td>
-          <% if @xj6_quarterbreed.trans_length_other.present? %>
-            <td><b>Tailhousing Length: </b> <%=@xj6_quarterbreed.trans_length_other%></td>
+        <td><em>Year: </em> <b><%=@xj6_quarterbreed.trans_year%></b></td>
+        <td><em>Model: </em> <b><%=@xj6_quarterbreed.trans%></b></td>
+      </tr>
+      <tr>
+          <% if @xj6_quarterbreed.trans_length_other.present? || @xj6_quarterbreed.trans_length == "Other - fill out in box"%>
+            <td><em>Tailhousing Length: </em> <b><%=@xj6_quarterbreed.trans_length_other%></b></td>
           <% else %>
-            <td><b>Tailhousing Length: </b> <%=@xj6_quarterbreed.trans_length%></td>
+            <td><em>Tailhousing Length: </em> <b><%=@xj6_quarterbreed.trans_length%></b></td>
           <% end %>
         </tr>
       </tr>
@@ -170,7 +174,7 @@
           <td >Credit</td>
           <td > - $<%= @xj6_quarterbreed.credit_amt %></td>
         </tr>
-          <td >Subtotal (Parts Freight paid)</td>
+          <td >Subtotal (Parts are freight paid 48 states only)</td>
           <td >$<%= @xj6_quarterbreed.subtotal %></td>
         </tr>
         <tr>
