@@ -6,7 +6,7 @@
   <p> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
 
   <div class="panel panel-default col-md-6">
-  <h2 class="text-center">Jaguar Information</h2>
+  <h class="text-center">Jaguar Information</h3>
    <div class="row">
        <div class="col-md-12">
          <p class="p-form"> The Vehicle Identification Number (VIN) is located on window pillar or base on windshield in front of driver's door.</p>
@@ -55,19 +55,26 @@
        </div row>
        <br>
        <div class="row">
-         <div class="col-md-4">
+         <div class="col-md-6">
               <h4>Tire Size </h4>
               <%= f.input :tire_size, label: false, placeholder: "Tire Size"%>
           </div>
-         <div class="col-md-4">
+         <div class="col-md-6">
               <h4>Tire Radius </h4>
               <%= f.input :tire_radius, label: false, placeholder: "Tire Radius"%>
           </div>
-          <div class="col-md-4">
+        </div>
+        <div class="row">
+          <div class="col-md-6">
                <h4>Rear Axle Ratio</h4>
-               <%= f.input :rear_axie_ratio, label: false, placeholder: "", collection: ["2.88", "3.08", "3.31", "3.54", "Other - fill out in comments"]%>
+               <%= f.input :rear_axie_ratio, label: false, placeholder: "", collection: ["2.88", "3.08", "3.31", "3.54", "Other - fill out in the next box"]%>
                </h4>
            </div>
+           <div class="col-md-6">
+                <h4>Rear Axle Ratio Other</h4>
+                <%= f.input :rear_axle_ratio_other, label: false, placeholder: ""%>
+                </h4>
+            </div>
          </div>
 
 
@@ -75,7 +82,7 @@
  </div><!--panel-->
 
  <div class="panel panel-default col-md-6">
-   <h2 class="text-center">Jaguar Trans Information</h2>
+   <h3 class="text-center">Transmission Information</h3>
    <div class="col-md-12">
         <p class="p-form"> Speedo Number:  I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars</p>
    </div>
@@ -177,7 +184,7 @@
       </div>
       <div class="col-md-4">
         <h4> Home Phone</h4>
-        <%= f.input :car_owner_home_phone, label: false,  placeholder:"Home Phone" %>
+        <%= f.input :car_owner_home_phone, label: false,  placeholder:"(###) ### - ####" %>
       </div>
       <div class="col-md-4">
         <h4> Home Hours </h4>
@@ -185,7 +192,7 @@
       </div>
       <div class="col-md-4">
         <h4>Work Phone </h4>
-        <%= f.input :car_owner_work_phone, label: false,  placeholder:"Work Phone" %>
+        <%= f.input :car_owner_work_phone, label: false,  placeholder:"(###) ### - ####" %>
       </div>
       <div class="col-md-4">
         <h4> Work  Hours </h4>
@@ -193,7 +200,7 @@
       </div>
       <div class="col-md-4">
         <h4>Fax </h4>
-        <%= f.input :car_owner_fax, label: false,  placeholder:"Fax" %>
+        <%= f.input :car_owner_fax, label: false,  placeholder:"(###) ### - ####" %>
       </div>
       <div class="col-md-4">
         <h4> Fax Hours </h4>
@@ -249,11 +256,11 @@
         </div>
         <div class="col-md-4">
           <h4>Shop Phone </h4>
-          <%= f.input :ship_to_phone, label: false,  placeholder:"Shop Phone" %>
+          <%= f.input :ship_to_phone, label: false,  placeholder:"(###) ### - ####" %>
         </div>
         <div class="col-md-4">
           <h4>Shop Fax </h4>
-          <%= f.input :ship_to_fax, label: false,  placeholder:"Shop Fax" %>
+          <%= f.input :ship_to_fax, label: false,  placeholder:"(###) ### - ####" %>
         </div>
         <div class="col-md-4">
           <h4>Contact Person </h4>

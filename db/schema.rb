@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130145946) do
+ActiveRecord::Schema.define(version: 20151201082113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -220,6 +220,7 @@ ActiveRecord::Schema.define(version: 20151130145946) do
     t.string   "ship_to_countr"
     t.string   "car_owner_where_find_us"
     t.string   "other_speedo"
+    t.string   "rear_axle_ratio_other"
   end
 
   create_table "tr7s", force: :cascade do |t|
