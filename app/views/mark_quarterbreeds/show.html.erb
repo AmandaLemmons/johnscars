@@ -4,7 +4,7 @@
 
 <h4 class="center"> JCI MARK QUARTERBREED KIT ORDER SHEET </h4>
 <div class="col-xs-12 printable-table">
-  <% if @order_sheet.same_information == false || nil  %>
+  <% if @mark_quarterbreed.same_information == false || nil  %>
   <table class="table table-bordered ">
     <tbody>
       <tr>
@@ -93,46 +93,50 @@
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td><b>Model: </b> <%=@mark_quarterbreed.mark_quarterbreeds_before_type%></td>
-          <td> <b>VIN:</b> <%=@mark_quarterbreed.mark_quarterbreeds_before_vin%></td>
-          <td><b>Year: </b> <%= @mark_quarterbreed.mark_quarterbreeds_before_year%></td>
+          <td><em>Year: </em> <b><%= @mark_quarterbreed.mark_quarterbreeds_before_year%></b></td>
+          <td><em>Model: </em> <b><%=@mark_quarterbreed.mark_quarterbreeds_before_type%></b></td>
         </tr>
-
         <tr>
-          <td><b>Transmission: </b> <%= @mark_quarterbreed.mark_quarterbreeds_before_trans%></td>
-          <td><b>Automatic Shifter: </b> <%=@mark_quarterbreed.auto_shifter%></td>
-          <td><b>Tire Size/Radius: </b> <%=@mark_quarterbreed.mark_quarterbreeds_before_tire_size%></td>
+          <td><em>VIN:</em> <b><%=@mark_quarterbreed.mark_quarterbreeds_before_vin%></b></td>
+        </tr>
+        <tr>
+          <td><em>Transmission: </em> <b> <%= @mark_quarterbreed.mark_quarterbreeds_before_trans%></b></td>
+          <td><em>Automatic Shifter: </em> <b> <%=@mark_quarterbreed.auto_shifter%></b></td>
       </tr>
       <tr>
-        <% if @mark_quarterbreed.rear_axle_ratio_other.present? %>
-          <td><b>Rear Axle Ratio: </b> <%=@mark_quarterbreed.rear_axle_ratio_other%></td>
+        <td><em>Tire Size/Radius: </em> <b> <%=@mark_quarterbreed.mark_quarterbreeds_before_tire_size%></b></td>
+        <% if @mark_quarterbreed.rear_axle_ratio_other.present? || @mark_quarterbreed.mark_quarterbreeds_before_rear_axle_ratio == "Other - fill out in next box"%>
+          <td><em>Rear Axle Ratio: </em> <b><%=@mark_quarterbreed.rear_axle_ratio_other%></b></td>
         <% else %>
-          <td><b>Rear Axle Ratio: <%=@mark_quarterbreed.mark_quarterbreeds_before_rear_axle_ratio%></td>
+          <td><em>Rear Axle Ratio: </em><b> <%=@mark_quarterbreed.mark_quarterbreeds_before_rear_axle_ratio%></b></td>
         <% end %>
-        <td><b>Angle drive? : </b>
-          <% if @mark_quarterbreed.angle_drive == "true" %>
-            Yes
+      </tr>
+      <tr>
+        <td><em>Angle drive? : </em><b>
+          <% if @mark_quarterbreed.angle_drive == true %>
+            <b>Yes</b>
           <% else %>
-            No
+            <b>No</b>
           <% end %>
-        </td>
-        <% if @mark_quarterbreed.speedo_other.present? %>
-          <td><b>Speedo #: </b> <%=@mark_quarterbreed.speedo_other%></td>
+        </b></td>
+        <% if @mark_quarterbreed.speedo_other.present? ||  @mark_quarterbreed.mark_quarterbreeds_before_speedo == "Other - fill out in next box"%>
+          <td><em>Speedo #: </em> <b><%=@mark_quarterbreed.speedo_other%></b></td>
         <% else %>
-          <td><b>Speedo #: </b> <%=@mark_quarterbreed.mark_quarterbreeds_before_speedo%></td>
+          <td><em>Speedo #: </em> <b><%=@mark_quarterbreed.mark_quarterbreeds_before_speedo%></b></td>
         <% end %>
       </tr>
       <tr>
-        <td> <b> Motor w fuel injection </b>
+        <td> <em> Motor w fuel injection </em>
           <% if @mark_quarterbreed.motor_fuel_injection == true %>
-            Yes
+            <b>Yes</b>
           <%else%>
-            No
+            <b>No</b>
           <% end %>
         </td>
-        <td><b>Engine #: </b> <%= @mark_quarterbreed.mark_quarterbreeds_before_engine_number%></td>
-        <td><b> Metal: </b> <%= @mark_quarterbreed.xj_engine_number %></td>
-
+        <td><em>Engine #: </em> <b><%= @mark_quarterbreed.mark_quarterbreeds_before_engine_number%></b></td>
+      </tr>
+      <tr>
+        <td><em> NAME?!?!: </em> <b><%= @mark_quarterbreed.xj_engine_number %></b></td>
       </tr>
     </tbody>
   </table>
@@ -141,12 +145,12 @@
       <table class="table table-bordered">
         <tbody>
           <tr>
-            <td><b>Trans Year: </b> <%=@mark_quarterbreed.mark_quarterbreeds_gm_trans_year%></td>
-            <td> <b>3 Pipe Plugs on right: </b>
+            <td><em>Year: </em><b> <%=@mark_quarterbreed.mark_quarterbreeds_gm_trans_year%></b></td>
+            <td> <em>3 Pipe Plugs on right: </em>
             <% if @mark_quarterbreed.pipe_plugs == true %>
-               Yes
+               <b>Yes</b>
             <% else %>
-              No
+              <b>No</b>
             <% end %>
           </td>
           </tr>
@@ -197,7 +201,7 @@
           <td > - $<%= @mark_quarterbreed.credit_amt %></td>
         </tr>
 
-          <td >Subtotal </td>
+          <td >Subtotal (Parts are freight paid 48 states only)</td>
           <td >$<%= @mark_quarterbreed.subtotal %></td>
         </tr>
         <tr>

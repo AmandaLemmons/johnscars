@@ -99,7 +99,7 @@
       <tbody>
         <tr>
           <td><em>Year: </em> <b> <%= @tr7.tr7s_year%></b></td>
-          <% if @tr7.tr7s_type == "Other - fill out in next box" %>
+          <% if @tr7.tr7s_type == "Other - fill out in next box" || @tr7.other_type.present? %>
             <td><em>Model: </em> <b> <%=@tr7.other_type%></b></td>
           <% else %>
             <td><em>Model: </em> <b> <%=@tr7.tr7s_type%></b></td>
@@ -124,10 +124,10 @@
               <b>No</b>
             <% end %>
           </td>
-          <% if @tr7.tr7s_rear_axle_ratio == "Other - fill out in next box" %>
+          <% if @tr7.tr7s_rear_axle_ratio == "Other - fill out in next box" ||  @tr7.other_rear_axle_ratio.present?%>
             <td><em>Rear Axle Ratio: </em> <b><%=@tr7.other_rear_axle_ratio%></b></td>
           <% else %>
-          <td><em>Rear Axle Ratio: </em> <b><%=@tr7.tr7s_rear_axle_ratio%></b></td>
+            <td><em>Rear Axle Ratio: </em> <b><%=@tr7.tr7s_rear_axle_ratio%></b></td>
           <% end %>
         </tr>
         <tr>
