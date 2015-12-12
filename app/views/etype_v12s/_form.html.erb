@@ -1,1 +1,99 @@
-test
+<div class="container">
+  <%= simple_form_for(@etype_v12) do |f| %>
+  <%= f.error_notification %>
+
+  <h2 class="text-center"> JCI's E-Type Conversion KitT ORDER SHEET </h2>
+  <p> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
+
+  <div class="panel panel-default col-xs-6">
+  <h2 class="text-center">E-Type Info (Before V8)</h2>
+   <div class="row">
+       <div class="col-xs-6">
+         <h4>E-Type</h4>
+         <%= f.input :etype_cyl, label: false, placeholder:"Type", collection: ["6-cyl", "V12"]%>
+       </div>
+       <div class="col-xs-6">
+         <h4>E-Type</h4>
+         <%= f.input :etype_car_type, label: false, placeholder:"Type", collection: ["Coupe", "Convertible"]%>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-xs-6">
+         <h4>VIN</h4>
+         <%=f.input :vin , label: false,  placeholder:"Vin #" %>
+      </div>
+       <div class="col-xs-6">
+         <h4>Year </h4>
+         <%= f.input :year, label: false, placeholder:"Year"%>
+       </div>
+   </div row>
+   <div class"row">
+     <div class="col-xs-6">
+       <h4>Engine Number </h4>
+       <%= f.input :engine_number, label: false, placeholder:"Engine Number"%>
+     </div>
+     <div class="col-xs-6">
+       <h4> Number of Carburetors</h4>
+       <%= f.input :carburetors, label: false, placeholder:"", collection: ["Two", "Three", "Four"]%>
+     </div>
+   </div>
+
+    <div class="row">
+      <div class="col-xs-6">
+          <h4>Transmission </h4>
+          <%= f.input :trans, label: false, placeholder: "Trans", collection: ["Borg Warner", "Manuel", "Quarterbreed"]%>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <p> Rear Axle Ratio: Tag under bolt on rear cover, sometimes shown as a ratio (49/17) - just enter it in. </p>
+      </div>
+      <div class="col-xs-4">
+           <h4>Tire Size/ Radius</h4>
+           <%= f.input :tire_size, label: false, placeholder: ""%>
+       </div>
+       <div class="col-xs-4">
+            <h4>Rear Axle Ratio </h4>
+            <%= f.input :rear_axl_ratio, label: false, placeholder:"", collection: ["2.88", "3.08", "3.31", "3.54", "Other - fill out in next box"]%>
+        </div>
+        <div class="col-xs-4">
+          <h4>Other Axle Ratio </h4>
+          <%= f.input :rear_axl_ratio_other, label: false, placeholder: ""%>
+        </div>
+       </div row>
+       <div class="row">
+         <div class="col-xs-12">
+           <p class="p-form">Speedo Number: I need the 3 or 4 numbers in fine print near the center of the speedometer. See the arrow.</p>
+         </div>
+         <div class="col-xs-4">
+              <h4>Speedo # </h4>
+              <%= f.input :speedo_number, label: false, placeholder: "", collection: ["1020", "1216", "1312", "1352", "Other - fill out in next box"]%>
+          </div>
+         <div class="col-xs-4">
+            <h4>Other Speedo </h4>
+            <%= f.input :speedo_number_other, label: false, placeholder: ""%>
+          </div>
+          <div class="col-xs-4">
+            <%= image_tag("speedo2.png") %>
+          </div>
+         </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p> Is the Jaguar motor missing from car? <%= f.collection_radio_buttons :motor_missing, [[true, 'Yes'], [false, 'No']], :first, :last%> </p>
+          </div>
+          <div class="col-xs-12">
+            <p> Is the Jaguar motor burned from a fire? <%= f.collection_radio_buttons :motor_burned, [[true, 'Yes'], [false, 'No']], :first, :last%> </p>
+          </div>
+          <div class="col-xs-12">
+            <p> Is the Jaguar motor right-hand drive? <%= f.collection_radio_buttons :right_hand_drive, [[true, 'Yes'], [false, 'No']], :first, :last%> </p>
+          </div>
+        </div>
+ </div><!--panel-->
+
+
+
+  <% end %>
+  <br>
+  <br>
+</div>
