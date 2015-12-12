@@ -89,8 +89,55 @@
             <p> Is the Jaguar motor right-hand drive? <%= f.collection_radio_buttons :right_hand_drive, [[true, 'Yes'], [false, 'No']], :first, :last%> </p>
           </div>
         </div>
- </div><!--panel-->
+      </div> <!--panel-->
+      
+      <div class="panel panel-default col-xs-6">
 
+      <h3 class="text-center"> MONIES </h3>
+      <h5 class="text-center"> V12 E-Type to Chevy V8 Kit and Options </h5>
+       <table class="table table-bordered">
+         <tbody>
+           <td class="col-xs-4"> Automatic Trans Kit </td>
+           <td class="col-xs-4">$1255.00   </td>
+           <td class="col-xs-4"><strong><%= f.collection_radio_buttons :auto_trans_kit, [[true, 'Yes'], [false, 'No']], :first, :last%></strong></td>
+           <tr>
+             <td class="col-xs-4"> Manual Trans Kit </td>
+             <td class="col-xs-4"> $1500.00 </td>
+             <td class="col-xs-4"><%= f.collection_radio_buttons :manual_tras_kit, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+           </tr>
+           <tr>
+             <td class="col-xs-4">Tach Calibration </td>
+             <td class="col-xs-4"> $59.00 </td>
+             <td class="col-xs-4"><%= f.collection_radio_buttons :tach_calibration, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+           </tr>
+           <tr>
+             <td class="col-xs-4">Fuel Injection V8 </td>
+             <td class="col-xs-4"> $100.00 </td>
+             <td class="col-xs-4"><%= f.collection_radio_buttons :fuel_injection_v8, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+           </tr>
+           <tr>
+             <td class="col-xs-4">Overdrive (T700 or T5)</td>
+             <td class="col-xs-4"> $50.00</td>
+             <td class="col-xs-4"> <%= f.collection_radio_buttons :overdrive, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+           </tr>
+           <tr>
+             <td class="col-xs-4">Credit  (Non-illustrated or Repeat Kits)<br> <small>* Price is Required (if no credit put "0")</small></td>
+             <td class="col-xs-4">Price <%= f.input :credit_amt, label: false, placeholder:"Required, must be a positive number" %> </td>
+             <td class="col-xs-4"> Description of Credit <%= f.input :credit_description, label: false, placeholder:"" %></td>
+           </tr>
+           <tr>
+             <td class="col-xs-4">Are you a Texas Resident? </td>
+             <td class="col-xs-4"> Add Sales Tax -- 8.25% </td>
+             <td class="col-xs-4"> </td>
+           </tr>
+           <tr>
+             <td class="col-xs-4">Freight</td>
+             <td class="col-xs-4">  </td>
+             <td class="col-xs-4">  <%= f.collection_radio_buttons :freight, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+           </tr>
+         </tbody>
+       </table>
+      </div><!--panel-->
 
 
   <% end %>
