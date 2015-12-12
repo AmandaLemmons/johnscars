@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :tr7s
   resources :mark_quarterbreeds
   resources :xj6_quarterbreeds
+  resources :etype_v12s
+
   # , :except => [:show, :edit, :update] do
   #  collection do
   #      get "/:secure_url", :to => "mark_quarterbreeds#show", :as => :show

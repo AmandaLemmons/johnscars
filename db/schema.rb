@@ -11,10 +11,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201082113) do
+ActiveRecord::Schema.define(version: 20151212160315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "etype_v12s", force: :cascade do |t|
+    t.datetime "created_at",                                                       null: false
+    t.datetime "updated_at",                                                       null: false
+    t.string   "car_owner_full_name"
+    t.string   "car_owner_address"
+    t.string   "car_owner_city"
+    t.string   "car_owner_state"
+    t.string   "car_owner_email"
+    t.string   "car_owner_zip"
+    t.string   "car_owner_home_phone"
+    t.string   "car_owner_work_phone"
+    t.string   "car_owner_fax"
+    t.string   "car_owner_find_us"
+    t.string   "car_owner_home_hours"
+    t.string   "car_owner_work_hours"
+    t.string   "car_owner_fax_hours"
+    t.string   "car_owner_country"
+    t.string   "car_owner_where_find_us"
+    t.string   "ship_to_full_name"
+    t.string   "ship_to_address"
+    t.string   "ship_to_city"
+    t.string   "ship_to_state"
+    t.string   "ship_to_email"
+    t.string   "ship_to_zip"
+    t.string   "ship_to_phone"
+    t.string   "ship_to_fax"
+    t.string   "ship_to_contact_person"
+    t.string   "ship_to_country"
+    t.string   "etype_cyl"
+    t.string   "etype_car_type"
+    t.string   "vin"
+    t.string   "year"
+    t.string   "engine_number"
+    t.string   "carburetors"
+    t.string   "trans"
+    t.string   "tire_size"
+    t.string   "tire_radius"
+    t.string   "rear_axl_ratio"
+    t.string   "rear_axl_ratio_other"
+    t.string   "speedo_number"
+    t.string   "speedo_number_other"
+    t.boolean  "motor_missing"
+    t.boolean  "motor_burned"
+    t.boolean  "right_hand_drive"
+    t.boolean  "auto_trans_kit",                                   default: false
+    t.integer  "auto_trans_kit_amt"
+    t.boolean  "manual_tras_kit",                                  default: false
+    t.integer  "manual_tras_kit_amt"
+    t.boolean  "tach_calibration",                                 default: false
+    t.integer  "tach_calibration_amt"
+    t.boolean  "fuel_injection_v8",                                default: false
+    t.integer  "fuel_injection_v8_amt"
+    t.boolean  "overdrive",                                        default: false
+    t.integer  "overdrive_amt"
+    t.decimal  "credit_amt",              precision: 10, scale: 2
+    t.string   "credit_description"
+    t.decimal  "subtotal",                precision: 10, scale: 2
+    t.decimal  "freight",                 precision: 10, scale: 2
+    t.decimal  "sales_tax",               precision: 10, scale: 2
+    t.decimal  "total",                   precision: 10, scale: 2
+  end
 
   create_table "mark_quarterbreeds", force: :cascade do |t|
     t.datetime "created_at",                                                         null: false
