@@ -14,16 +14,6 @@ class EtypeV12 < ActiveRecord::Base
     end
   end
 
-  # def set_phone_dahses
-  #   if self.car_owner_home_phone.present?
-  #     self.car_owner_home_phone.insert(3,'-').insert(7, '-')
-  #   end
-  #
-  #   if self.car_owner_work_phone.present?
-  #     self.car_owner_work_phone.insert(3,'-').insert(7, '-')
-  #   end
-  # end
-
   def set_auto_trans_kit
     if self.auto_trans_kit == true
       self.auto_trans_kit_amt = 1255

@@ -266,6 +266,56 @@
             </div>
           </div row>
         </div>
+        <br clear="all">
+        <h2 class="text-center">Chevy V8 Driveline Information</h2>
+
+        <div class="panel panel-default col-xs-6">
+          <div class="row">
+            <div class="col-xs-12">
+              <h4 class="text-center"> Engine </h4>
+            </div>
+            <div class="col-xs-6">
+              <h4>Engine</h4>
+                <%= f.input :etype_cyl, label: false, collection: ["Carb", "TBI", "TPI", "LT-1"]%>
+            </div>
+            <div class="col-xs-6">
+              <h4>Year</h4>
+                <%= f.input :driveline_year, label: false, placeholder: "Engine Year"%>
+            </div>
+            <div class="col-xs-6">
+              <h4>CID</h4>
+                <%= f.input :driveline_cid, label: false, placeholder: "Engine CID"%>
+            </div>
+            <div class="col-xs-6">
+              <h4>Donor Car</h4>
+                <%= f.input :driveline_cid, label: false, collection: ["Caprice", "Camaro", "Truck", "Other - fill out in next box"]%>
+            </div>
+            <div class="col-xs-6">
+              <h4>Donor Car Other</h4>
+                <%= f.input :driveline_cid, label: false%>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <h4 class="text-center"> Trans </h4>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h4>Trans</h4>
+                <%= f.input :driveline_trans, label: false, collection: ["350", "400", "700", "4L60E"]%>
+            </div>
+            <div class="col-xs-6">
+              <h4>Year</h4>
+                <%= f.input :driveline_trans_year, label: false, placeholder: "Year"%>
+            </div>
+            <div class="col-xs-12">
+              <h4>Tailhousing Length (inches)</h4>
+                <%= f.input :tailhousing_length, label: false, placeholder: "Tailhousing Length in inches"%>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <p> How did you get your Trans? <%= f.input :how_get_trans, label: false, collection: ["With Motor", "Separately"] %> </p>
+          </div>
+        </div>
 
       <div class="col-md-12">
         <p> The E-Type Conversion Kit is the property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>

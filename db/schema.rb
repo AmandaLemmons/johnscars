@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214110200) do
+ActiveRecord::Schema.define(version: 20151214115753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,39 @@ ActiveRecord::Schema.define(version: 20151214110200) do
     t.decimal  "total",                   precision: 10, scale: 2
     t.boolean  "same_information",                                 default: false
     t.string   "comments"
+    t.string   "driveline_engine"
+    t.string   "driveline_year"
+    t.string   "driveline_cid"
+    t.string   "donar_car"
+    t.string   "donar_car_other"
+    t.string   "driveline_trans"
+    t.string   "driveline_trans_year"
+    t.string   "tailhousing_length"
+    t.string   "how_get_trans"
+    t.string   "ac_refrigerant"
+    t.string   "ac_refrigerant_other"
+    t.string   "battery_type"
+    t.string   "fan_belts"
+    t.boolean  "some_carb_v8",                                     default: false
+    t.boolean  "most_carb_v8",                                     default: false
+    t.boolean  "truck_tbi",                                        default: false
+    t.boolean  "camaro_lt1",                                       default: false
+    t.boolean  "corvette_lt4",                                     default: false
+    t.boolean  "other_front_view",                                 default: false
+    t.boolean  "compressor_a6",                                    default: false
+    t.boolean  "compressor_r4",                                    default: false
+    t.boolean  "compressor_da6",                                   default: false
+    t.boolean  "compressor_nd",                                    default: false
+    t.boolean  "plug_a6",                                          default: false
+    t.boolean  "plug_r4",                                          default: false
+    t.boolean  "plug_da6",                                         default: false
+    t.boolean  "plug_nd",                                          default: false
+    t.boolean  "alternator_plug_type2",                            default: false
+    t.boolean  "alternator_plug_type3",                            default: false
+    t.boolean  "alternator_plug_type1",                            default: false
+    t.boolean  "ignition_plug_type1",                              default: false
+    t.boolean  "ignition_plug_type2",                              default: false
+    t.boolean  "ignition_plug_type3",                              default: false
   end
 
   create_table "mark_quarterbreeds", force: :cascade do |t|
