@@ -20,7 +20,8 @@ class EtypeV12sController < ApplicationController
  end
 
  def show
-    @etype_v12.set_same_shipping
+  @etype_v12.set_same_shipping
+  # @etype_v12.set_phone_dahses
    @etype_v12.set_auto_trans_kit
    @etype_v12. set_manual_tras_kit
    @etype_v12.set_tach_calibration
