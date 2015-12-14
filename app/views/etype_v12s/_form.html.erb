@@ -450,6 +450,33 @@
             </div>
           </div>
         </div>
+        <br clear="all">
+        <div class= "col-md-12">
+          <h2 class="text-center">HEI Ignition Plug (Select One)</h2>
+        </div>
+        <div class="col-md-">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="text-center"> Type 2: Coll in Cap 5" Distributor Cap </p>
+            </div>
+            <div class="col-md-6">
+              <p class="text-center"> Type 3: Remote Coll 4" Distributor Cap </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= image_tag("ignition_plug_type2.png") %><br>
+              <%= f.collection_radio_buttons :ignition_plug_type2, [[true, 'Yes'], [false, 'No']], :first, :last %>
+            </div>
+            <div class="col-md-6">
+              <%= image_tag("ignition_plug_type3.png") %><br>
+              <%= f.collection_radio_buttons :ignition_plug_type3, [[true, 'Yes'], [false, 'No']], :first, :last %>
+            </div>
+            <div class="col-md-12">
+              <p> Type 1 is points ignition - call for more information.</p>
+            </div>
+          </div>
+        </div>
 
 
       <div class="col-md-12">
