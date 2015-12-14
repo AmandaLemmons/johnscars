@@ -112,7 +112,7 @@
      </div>
    </div>
 
-   <div class="row col-xs-12">
+   <div class="row col-md-12">
      <div class="col-md-6">
        <p class="p-form">Is this a Q45 rearend?</p>
        <%= f.collection_radio_buttons :q45, [[true, 'Yes'], [false, 'No']], :first, :last%>
@@ -213,7 +213,7 @@
       <h4>Zip </h4>
       <%= f.input :car_owner_zip, required: true, label: false,  placeholder:"Zip" %>
     </div>
-    <div class="col-xs-4">
+    <div class="col-md-4">
       <h4>Country </h4>
       <%=  f.input :car_owner_countr, label: false,  placeholder:"Country" %>
     </div>
@@ -284,7 +284,7 @@
         <h4>Zip </h4>
         <%= f.input :ship_to_zip, label: false,  placeholder:"Zip" %>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4>Country </h4>
         <%=  f.input :ship_to_countr, label: false,  placeholder:"Country" %>
       </div>

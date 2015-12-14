@@ -5,21 +5,21 @@
   <h2 class="text-center"> JCI MARK QUARTERBREED KIT ORDER SHEET </h2>
   <p> Please complete as much information as you can - there are thousands of variations of my Jaguar kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
 
-  <div class="panel panel-default col-xs-6">
+  <div class="panel panel-default col-md-6">
   <h2 class="text-center">Mark Information (Before QB)</h2>
-  <div class="col-xs-12 text-center">
+  <div class="col-md-12 text-center">
     <p> VIN/ Body Number: Plate in the engine bay, Right Hand Block by oil filter </p>
   </div>
    <div class="row">
-       <div class="col-xs-4">
+       <div class="col-md-4">
          <h4>Model</h4>
          <%= f.input :mark_quarterbreeds_before_type, label: false, placeholder:"Type", collection: ["Mark 1", "Mark 2", "Mark VII", " Mark VIII", "Mark IX", "3.8 Sedan", "3.8S"]%>
        </div>
-       <div class="col-xs-4">
+       <div class="col-md-4">
          <h4>Year </h4>
          <%= f.input :mark_quarterbreeds_before_year, label: false, placeholder:"Year",  collection: ["1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967"]%>
        </div>
-       <div class="col-xs-4">
+       <div class="col-md-4">
          <h4>VIN/ Body #</h4>
          <%=f.input :mark_quarterbreeds_before_vin , label: false,  placeholder:"Vin #" %>
       </div>
@@ -29,28 +29,28 @@
    </div>
 
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-md-6">
           <h4>Transmission </h4>
           <%= f.input :mark_quarterbreeds_before_trans, label: false, placeholder: "Trans", collection: ["Automatic", "Manuel"]%>
       </div>
-      <div class="col-xs-6">
+      <div class="col-md-6">
             <h4>Automatic Shifter </h4>
             <%= f.input :auto_shifter, label: false, placeholder: "Trans", collection: ["Column", "Dashboard"]%>
         </div>
     </div>
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-md-12">
         <p> Rear Axle Ratio: Tag under bolt on rear cover, sometimes shown as a ratio (49/17) - just enter it in. </p>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
            <h4>Tire Size/ Radius</h4>
            <%= f.input :mark_quarterbreeds_before_tire_size, label: false, placeholder: ""%>
        </div>
-       <div class="col-xs-4">
+       <div class="col-md-4">
             <h4>Rear Axle Ratio </h4>
             <%= f.input :mark_quarterbreeds_before_rear_axle_ratio, label: false, placeholder: "", collection: ["3.31", "3.54", "3.77", "4.07", "4.27", "Other - fill out in next box"]%>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <h4>Other Axle Ratio </h4>
           <%= f.input :rear_axle_ratio_other, label: false, placeholder: ""%>
         </div>
@@ -58,49 +58,49 @@
 
 
        <div class ="row">
-         <div class="col-xs-8">
+         <div class="col-md-8">
            <h4> Does the car have angle drive like pictured to the right?</h4>
            <%= f.collection_radio_buttons :angle_drive, [[true, 'Yes'], [false, 'No']], :first, :last%>
          </div>
-         <div class="col-xs-4">
+         <div class="col-md-4">
               <%= image_tag("angle_drive.png") %>
          </div>
-         <div class="col-xs-12">
+         <div class="col-md-12">
            <p> Note: If your Mark does not have this angle drive, order new angle drive and cable with kit. </p>
          </div>
        </div>
        <div class="row">
-         <div class="col-xs-12">
+         <div class="col-md-12">
            <p class="p-form">Speedo Number: I need the 3 or 4 numbers in fine print near the center of the speedometer. See the arrow.</p>
          </div>
-         <div class="col-xs-4">
+         <div class="col-md-4">
               <h4>Speedo # </h4>
               <%= f.input :mark_quarterbreeds_before_speedo, label: false, placeholder: "", collection: ["1080", "1100", "1152", "Other - fill out in next box"]%>
           </div>
-         <div class="col-xs-4">
+         <div class="col-md-4">
             <h4>Other Speedo </h4>
             <%= f.input :speedo_other, label: false, placeholder: ""%>
           </div>
-          <div class="col-xs-4">
+          <div class="col-md-4">
             <%= image_tag("speedo2.png") %>
           </div>
          </div>
 
 
          <div class="row">
-           <div class="col-xs-12 text-center">
+           <div class="col-md-12 text-center">
                  Engine Number is on the engline bellhousing flange, driver's side.
            </div>
-           <div class="col-xs-6">
+           <div class="col-md-6">
                <h4>Installing or has a later model 4.2 motor with fuel injection? </h4>
                <%= f.collection_radio_buttons :motor_fuel_injection, [[true, 'Yes'], [false, 'No']], :first, :last %>
            </div>
-            <div class="col-xs-6">
+            <div class="col-md-6">
                 <h4>XJ Engine Number </h4>
                 <%= f.input :mark_quarterbreeds_before_engine_number, label: false, placeholder:"Engine Number"
                 %>
             </div>
-            <div class="col-xs-6">
+            <div class="col-md-6">
                 <h4>NAME??!?! </h4>
                 <%= f.input :xj_engine_number, label: false, placeholder:"", collection: ["Oil Pan", "Alloy", "Steel"]  %>
             </div>
@@ -108,17 +108,17 @@
           </div>
  </div><!--panel-->
 
- <div class="panel panel-default col-xs-6">
+ <div class="panel panel-default col-md-6">
    <h2 class="text-center">GM Trans Information</h2>
    <div class="row">
-     <div class="col-xs-6">
+     <div class="col-md-6">
        <h4> Trans: 700 </h4>
      </div>
-     <div class="col-xs-6">
+     <div class="col-md-6">
        <h4> Year</h4>
        <%= f.input :mark_quarterbreeds_gm_trans_year, label: false, placeholder: "Year"%>
     </div>
-    <div class="col-xs-12">
+    <div class="col-md-12">
       <p> 3 Pipe Plugs on right side of case?</p>
       <%= f.collection_radio_buttons :pipe_plugs, [[true, 'Yes'], [false, 'No']], :first, :last%>
    </div>
@@ -127,53 +127,53 @@
  <h3 class="text-center"> MONIES </h3>
   <table class="table table-bordered">
     <tbody>
-      <td class="col-xs-4"> Mark Quarterbreed Kit </td>
-      <td class="col-xs-4">$895.00   </td>
-      <td class="col-xs-4"><strong><%= f.input :mark_quarterbreeds_kit, label: false,  collection: ["Yes", "No, I already bought this", "Not JCI car parts"]%></strong></td>
+      <td class="col-md-4"> Mark Quarterbreed Kit </td>
+      <td class="col-md-4">$895.00   </td>
+      <td class="col-md-4"><strong><%= f.input :mark_quarterbreeds_kit, label: false,  collection: ["Yes", "No, I already bought this", "Not JCI car parts"]%></strong></td>
       <tr>
-        <td class="col-xs-4">New Angle Drive & Speedo Cable </td>
-        <td class="col-xs-4"> $150.00 </td>
-        <td class="col-xs-4"><%= f.collection_radio_buttons :new_angle_drive, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+        <td class="col-md-4">New Angle Drive & Speedo Cable </td>
+        <td class="col-md-4"> $150.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :new_angle_drive, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
-        <td class="col-xs-4">Driveshaft </td>
-        <td class="col-xs-4"> $245.00 </td>
-        <td class="col-xs-4"><%= f.collection_radio_buttons :mark_quarterbreeds_driveshaft, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+        <td class="col-md-4">Driveshaft </td>
+        <td class="col-md-4"> $245.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :mark_quarterbreeds_driveshaft, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
-        <td class="col-xs-4">Electrolock TC Lockup Kit* </td>
-        <td class="col-xs-4"> $115.00 </td>
-        <td class="col-xs-4"><%= f.collection_radio_buttons :mark_quarterbreeds_electrolock, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+        <td class="col-md-4">Electrolock TC Lockup Kit* </td>
+        <td class="col-md-4"> $115.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :mark_quarterbreeds_electrolock, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
-        <td class="col-xs-4">Starter - "New" gear drive</td>
-        <td class="col-xs-4"> $165.00</td>
-        <td class="col-xs-4"> <%= f.collection_radio_buttons :starter, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+        <td class="col-md-4">Starter - "New" gear drive</td>
+        <td class="col-md-4"> $165.00</td>
+        <td class="col-md-4"> <%= f.collection_radio_buttons :starter, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
       </tr>
       <tr>
-        <td class="col-xs-4">Oil Flter Spin-on Setup </td>
-        <td class="col-xs-4"> $175.00</td>
-        <td class="col-xs-4"> <%= f.collection_radio_buttons :oil_filter, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+        <td class="col-md-4">Oil Flter Spin-on Setup </td>
+        <td class="col-md-4"> $175.00</td>
+        <td class="col-md-4"> <%= f.collection_radio_buttons :oil_filter, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
       </tr>
       <tr>
-        <td class="col-xs-4">Trans Oil Cooler </td>
-        <td class="col-xs-4"> $66.00</td>
-        <td class="col-xs-4"> <%= f.collection_radio_buttons :trans_oil_cooler, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+        <td class="col-md-4">Trans Oil Cooler </td>
+        <td class="col-md-4"> $66.00</td>
+        <td class="col-md-4"> <%= f.collection_radio_buttons :trans_oil_cooler, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
       </tr>
       <tr>
-        <td class="col-xs-4">Credit  (Non-illustrated or Repeat Kits)<br> <small>* Price is Required (if no credit put "0")</small></td>
-        <td class="col-xs-4">Price <%= f.input :credit_amt, label: false, placeholder:"Required, must be a positive number" %> </td>
-        <td class="col-xs-4"> Description of Credit <%= f.input :credit_description, label: false, placeholder:"" %></td>
+        <td class="col-md-4">Credit  (Non-illustrated or Repeat Kits)<br> <small>* Price is Required (if no credit put "0")</small></td>
+        <td class="col-md-4">Price <%= f.input :credit_amt, label: false, placeholder:"Required, must be a positive number" %> </td>
+        <td class="col-md-4"> Description of Credit <%= f.input :credit_description, label: false, placeholder:"" %></td>
       </tr>
       <tr>
-        <td class="col-xs-4">Are you a Texas Resident? </td>
-        <td class="col-xs-4"> Add Sales Tax -- 8.25% </td>
-        <td class="col-xs-4"> </td>
+        <td class="col-md-4">Are you a Texas Resident? </td>
+        <td class="col-md-4"> Add Sales Tax -- 8.25% </td>
+        <td class="col-md-4"> </td>
       </tr>
       <!-- <tr>
-        <td class="col-xs-4">Hawaii or Expedite </td>
-        <td class="col-xs-4"> (Overnite or 2 day) </td>
-        <td class="col-xs-4">  f.collection_radio_buttons :freight, [[true, 'Yes'], [false, 'No']], :first, :last </td>
+        <td class="col-md-4">Hawaii or Expedite </td>
+        <td class="col-md-4"> (Overnite or 2 day) </td>
+        <td class="col-md-4">  f.collection_radio_buttons :freight, [[true, 'Yes'], [false, 'No']], :first, :last </td>
       </tr> -->
     </tbody>
   </table>
@@ -182,66 +182,66 @@
 <br clear="all">
 
 
-     <div class="panel panel-default col-xs-6">
+     <div class="panel panel-default col-md-6">
     <h2 class="text-center"> Car Owner Information  </h2>
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4> Name </h4>
         <%= f.input :car_owner_full_name, label: false,  placeholder:"Full Name" %>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4>Address </h4>
         <%= f.input :car_owner_address, label: false,  placeholder:"Address" %>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4> City</h4>
         <%= f.input :car_owner_city, label: false,  placeholder:"City" %>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4> State</h4>
         <%= f.input :car_owner_state, collection: ["None", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ], label: false,  placeholder:"State" %>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4>Zip </h4>
         <%= f.input :car_owner_zip, label: false,  placeholder:"Zip" %>
       </div>
 
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4>Country </h4>
         <%=  f.input :car_owner_countr, label: false,  placeholder:"Country" %>
       </div>
 
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4>Email </h4>
         <%= f.input :car_owner_email, label: false,  placeholder:"Email" %>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4> Home Phone</h4>
         <%= f.input :car_owner_home_phone, label: false,  placeholder:"(###) ### - ####" %>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4> Home Hours </h4>
         <%= f.input :car_owner_home_hours, label: false,  placeholder:"From xx to xx" %>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4>Work Phone </h4>
         <%= f.input :car_owner_work_phone, label: false,  placeholder:"(###) ### - ####" %>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4> Work  Hours </h4>
         <%= f.input :car_owner_work_hours , label: false,  placeholder:"From xx to xx" %>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <h4>Fax </h4>
         <%= f.input :car_owner_fax, label: false,  placeholder:"(###) ### - ####" %>
       </div>
-      <div class="col-xs-6">
+      <div class="col-md-6">
         <h4> Fax Hours </h4>
         <%= f.input :car_owner_fax_hours , label: false,  placeholder:"From xx to xx" %>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-md-6">
         <h4>How did you find us </h4>
         <%= f.input :car_owner_find_us , label: false,  placeholder:"",  priority: [ "Internet" ], collection: [ "Internet", "Magazine", "WOM", "Hybridz", "Shop Referal", "Car Show", "Magazine Article", "Other"] %>
       </div>
@@ -252,51 +252,51 @@
     </div row>
   </div>
 
-  <div class="panel panel-default col-xs-6">
+  <div class="panel panel-default col-md-6">
       <h2 class="text-center"> Shop or "Ship To" Information  </h2>
       <br>
       <p> Is the shipping information the same as the car owner information (REQUIRED)</p>
       <%= f.collection_radio_buttons :same_information, [[true, 'Yes'] ,[false, 'No']], :first, :last  %> </p>
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <h4> Name </h4>
           <%= f.input :ship_to_full_name, label: false,  placeholder:"Full Name" %>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <h4>Address </h4>
           <%= f.input :ship_to_address, label: false,  placeholder:"Address" %>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <h4> City</h4>
           <%= f.input :ship_to_city, label: false,  placeholder:"City" %>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <h4> State</h4>
           <%= f.input :ship_to_state,  collection: ["None", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island","South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ] , label: false,  placeholder:"State" %>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <h4>Zip </h4>
           <%= f.input :ship_to_zip, label: false,  placeholder:"Zip" %>
         </div>
 
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <h4>Country </h4>
           <%=  f.input :ship_to_countr, label: false,  placeholder:"Country" %>
         </div>
 
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <h4>Email </h4>
           <%= f.input :ship_to_email, label: false,  placeholder:"Email" %>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <h4>Shop Phone </h4>
           <%= f.input :ship_to_phone, label: false,  placeholder:"(###) ### - ####" %>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <h4>Shop Fax </h4>
           <%= f.input :ship_to_fax, label: false,  placeholder:"(###) ### - ####" %>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <h4>Contact Person </h4>
           <%= f.input :ship_to_contact_person, label: false,  placeholder:"Contact Person" %>
         </div>
@@ -304,7 +304,7 @@
     </div>
 
 
-    <div class="col-xs-12">
+    <div class="col-md-12">
       <p> The Mark Quarterbreed Kit is the property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
 
        <h4>Additional comments or notes </h4>
