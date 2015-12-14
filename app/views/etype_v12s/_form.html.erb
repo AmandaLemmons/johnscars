@@ -377,6 +377,52 @@
           <%= image_tag("other_front_view.png") %><br>
           <%= f.collection_radio_buttons :other_front_view, [[true, 'Yes'], [false, 'No']], :first, :last %>
         </div>
+        <br clear="all">
+        <div class= "col-md-12">
+          <h2 class="text-center">A/C Compressor (Select one compressor and plug)</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <h4> Compressor Type </h4>
+          </div>
+          <div class="col-md-2">
+            <%= image_tag("compressor_a6.png") %><br>
+            <%= f.collection_radio_buttons :compressor_a6, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          </div>
+          <div class="col-md-2">
+            <%= image_tag("compressor_r4.png") %><br>
+            <%= f.collection_radio_buttons :compressor_r4, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          </div>
+          <div class="col-md-2">
+            <%= image_tag("compressor_da6.png") %><br>
+            <%= f.collection_radio_buttons :compressor_da6, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          </div>
+          <div class="col-md-2">
+            <%= image_tag("compressor_nd.png") %><br>
+            <%= f.collection_radio_buttons :compressor_nd, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <h4> Plug on Front of Compresson Near Belt</h4><small> (not the rear)</small>
+          </div>
+          <div class="col-md-2">
+            <%= image_tag("plug_a6.png") %><br>
+            <%= f.collection_radio_buttons :plug_a6, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          </div>
+          <div class="col-md-2">
+            <%= image_tag("plug_r4.png") %><br>
+            <%= f.collection_radio_buttons :plug_r4, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          </div>
+          <div class="col-md-2">
+            <%= image_tag("plug_da6.png") %><br>
+            <%= f.collection_radio_buttons :plug_da6, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          </div>
+          <div class="col-md-2">
+            <%= image_tag("plug_nd.png") %><br>
+            <%= f.collection_radio_buttons :plug_nd, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          </div>
+        </div>
 
       <div class="col-md-12">
         <p> The E-Type Conversion Kit is the property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
