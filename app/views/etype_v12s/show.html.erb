@@ -1,0 +1,225 @@
+<div class="hidden-print">
+  <%= link_to "Edit", edit_etype_v12_path(@etype_v12.id) %>
+</div>
+  <div class="print-form">
+
+  <h3 class="center"> JCI LS ZCAR ORDER SHEET </h3>
+  <br>
+  <div class="col-xs-12 printable-table">
+    <% if @etype_v12.same_information == false || nil  %>
+    <table class="table table-bordered ">
+      <tbody>
+        <tr>
+          <td>CAR OWNER INFORMATION </td>
+          <td>SHOP OR "SHIP TO" INFORMATION  </td>
+        </tr>
+        <tr>
+          <td ><em>Name: </em><b><%= @etype_v12.car_owner_full_name %></b> </td>
+          <td> <em>Name: </em><b><%= @etype_v12.ship_to_full_name %></b> </td>
+        </tr>
+        <tr>
+          <td><em>Address: </em> <b> <%= @etype_v12.car_owner_address %> <br> <%= @etype_v12.car_owner_city %>,
+            <% if @etype_v12.car_owner_state == "None" %>
+            <%= @etype_v12.car_owner_zip %>   <%= @etype_v12.car_owner_country %></b>
+            <% else %>
+            <%= @etype_v12.car_owner_state %> <%= @etype_v12.car_owner_zip %>,   <%= @etype_v12.car_owner_country %></b>
+            <% end %>
+          </td>
+          <td><em>Address: </em><b> <%= @etype_v12.ship_to_address %> <br> <%= @etype_v12.ship_to_city %>,
+            <% if @etype_v12.ship_to_state == "None" %>
+          <%= @etype_v12.ship_to_zip %>   <%= @etype_v12.ship_to_country %></b>
+            <% else %>
+            <%= @etype_v12.ship_to_state %> <%= @etype_v12.ship_to_zip %>,   <%= @etype_v12.ship_to_country %></b>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td><em>Email: </em> <b><%= @etype_v12.car_owner_email %></b></td>
+          <td><em>Email: </em> <b><%= @etype_v12.ship_to_email %></b></td>
+        </tr>
+        <tr>
+          <td><em> Home Phone: </em><b> <%= @etype_v12.car_owner_home_phone %></b> <em>From: </em><b>  <%= @etype_v12.car_owner_home_hours %></b> </td>
+          <td> <em> Shop Phone: </em><b><%= @etype_v12.ship_to_phone %></b> </td>
+        </tr>
+        <tr>
+          <td> <em>Work Phone: </em><b><%= @etype_v12.car_owner_work_phone %></b> <em>From: </em><b> <%= @etype_v12.car_owner_work_hours%></b> </td>
+          <td><em>Fax: </em><b> <%= @etype_v12.ship_to_fax %></b> </td>
+        </tr>
+        <tr>
+          <td> <em> Fax: </em><b> <%= @etype_v12.car_owner_fax %> </b> <em>From: </em> <b> <%= @etype_v12.car_owner_fax_hours %></b></td>
+            <td><em>How did you find us? </em><b> <%= @etype_v12.car_owner_find_us %> </b> <em> -- </em><b> <%= @etype_v12.car_owner_where_find_us %></b></td>
+        </tr>
+      </tbody>
+  </table>
+  <% else %>
+    <table class="table table-bordered ">
+      <tbody>
+        <tr>
+          <td>CAR OWNER INFORMATION </td>
+        </tr>
+        <tr>
+          <td><em>Name: </em> <b><%= @etype_v12.car_owner_full_name %></b> </td>
+        </tr>
+        <tr>
+          <td><em>Address: </em> <b> <%= @etype_v12.car_owner_address %> <br> <%= @etype_v12.car_owner_city %>,
+            <% if @etype_v12.car_owner_state == "None" %>
+            <%= @etype_v12.car_owner_zip %>   <%= @etype_v12.car_owner_country %></b>
+            <% else %>
+            <%= @etype_v12.car_owner_state %> <%= @etype_v12.car_owner_zip %>,   <%= @etype_v12.car_owner_country %></b>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td><em>Email: </em> <b><%= @etype_v12.car_owner_email %></b> </td>
+        </tr>
+        <tr>
+          <td><em>Home Phone: </em> <b>   <%= @etype_v12.car_owner_home_phone %> </b> <em>From:</em>  <b><%= @etype_v12.car_owner_home_hours %> </b></td>
+        </tr>
+        <tr>
+          <td> <em>Work Phone: </em> <b><%= @etype_v12.car_owner_work_phone %></b> <em>From: </em> <b> <%= @etype_v12.car_owner_work_hours%> </b></td>
+        </tr>
+        <tr>
+          <td>  <em>Fax: </em>  <b><%= @etype_v12.car_owner_fax %></b> <em>From: </em> <b> <%= @etype_v12.car_owner_fax_hours %></b></td>
+        </tr>
+        <tr>
+          <td><em>How did you find us? </em> <b><%= @etype_v12.car_owner_find_us %></b><em> -- </em><b> <%= @etype_v12.car_owner_where_find_us %> </b></td>
+        </tr>
+      </tbody>
+  </table>
+  <% end %>
+  </div>
+
+  <div class="col-xs-6 printable-table">
+    <h5 class="center"> E-Type INFO </h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><em> E-Type: </em><b><%= @etype_v12.etype_cyl %></b></td>
+          <td><em> E-Type: </em><b><%=@etype_v12.etype_car_type%> </b></td>
+        </tr>
+        <tr>
+          <td><em>VIN:</em> <b><%= @etype_v12.vin%></b></td>
+          <td><em>Year:</em> <b><%= @etype_v12.year%></b></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h5 class="center"> ENGINE/MOTOR DETAILS </h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><em>Number: </em><b><%= @etype_v12.engine_number%></b></td>
+          <td><em>Number of Carburetors: </em><b><%=@etype_v12.carburetors%></b></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h5 class="center">TRANSMISSION DETAILS</h5>
+    <table class="table table-bordered ">
+      <tbody>
+        <tr>
+          <td> <em>Trans: </em> <b> <%= @etype_v12.trans %></b></td>
+        </tr>
+      </tbody>
+    </table>
+
+  <h5 class="center"> MORE DETAILS</h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><em>Tire Size/Radius: </em><b> <%= @etype_v12.tire_size%></b></td>
+
+          <% if @etype_v12.rear_axl_ratio_other.present? || @etype_v12.rear_axl_ratio == "Other - fill out in next box"%>
+            <td><em>Rear Axle Ratio: </em> <b><%=@etype_v12.rear_axl_ratio_other%></b></td>
+          <% else %>
+            <td><em>Rear Axle Ratio: </em> <b><%=@etype_v12.rear_axl_ratio%></b></td>
+          <% end %>
+        </tr>
+        <tr>
+          <% if @etype_v12.speedo_number_other.present? || @etype_v12.speedo_number == "Other - fill out in next box"%>
+            <td><em>Speedo #: </em> <b><%=@etype_v12.speedo_number_other%></b></td>
+          <% else %>
+            <td><em>Speedo #: </em> <b><%=@etype_v12.speedo_number%></b></td>
+          <% end %>
+        </tr>
+        <tr>
+          <% if @etype_v12.motor_missing == true %>
+          <td><em>Motor Missing:</em> <b>Yes</b>
+            <% else %>
+            <% end %>
+          </td>
+          <% if @etype_v12.motor_burned == true %>
+          <td><em>Motor Burned:</em> <b>Yes</b>
+            <% else %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <% if @etype_v12.right_hand_drive == true %>
+          <td><em>Right-hand drive:</em> <b>Yes</b>
+            <% else %>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<div class="col-xs-6 printable-table">
+  <h5 class="center"> BUILDING BLOCKS</h5>
+  <table class="table table-bordered ">
+    <tbody>
+      <tr>
+        <td class="col-xs-3"><strong>E-Type V12 </strong></td>
+        <td class="col-xs-1"><strong> Price</strong> </td>
+      </tr>
+      <tr>
+
+        <td>Automatic Trans Kit</td>
+        <td>$<%= @etype_v12.auto_trans_kit_amt %></td>
+      </tr>
+      <tr>
+        <td >Manual Trans Kit</td>
+        <td >$<%= @etype_v12.manual_tras_kit_amt %></td>
+      </tr>
+      <tr>
+        <td >Tach Calibration </td>
+        <td >$<%= @etype_v12.tach_calibration_amt %></td>
+      </tr>
+      <tr>
+        <td >Fuel Injection V8</td>
+        <td >$<%= @etype_v12.fuel_injection_v8_amt %></td>
+      </tr>
+      <tr>
+        <td >Overdrive (T700 or T5)</td>
+        <td >$<%= @etype_v12.overdrive_amt %></td>
+      </tr>
+      <tr>
+        <td >Credit</td>
+        <td > - $<%= @etype_v12.credit_amt %></td>
+      </tr>
+        <td >Subtotal (Parts are freight paid 48 states only) </td>
+        <td >$<%= @etype_v12.subtotal %></td>
+      </tr>
+      <tr>
+        <td >Texas Residents 8.25% Sales Tax +</td>
+        <td >$<%= @etype_v12.sales_tax %></td>
+      </tr>
+
+      <tr>
+        <td >CASHIER'S CHECK = </td>
+        <td ><b>$<%= @etype_v12.total %></b></td>
+      </tr>
+    </tbody>
+</table>
+</div>
+<br clear="all"/>
+<p > Comments: <%= @etype_v12.comments %> </p>
+    <br>
+    <p> Signature _____________________________________________________ Date________________</p>
+  </div>
+  <div class="col-xs-12 text-center">
+      <p class="small-text">JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226
+        <br> www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
+    </div>
+  </div>
