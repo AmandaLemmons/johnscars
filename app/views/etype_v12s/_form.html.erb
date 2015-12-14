@@ -130,8 +130,8 @@
              <td class="col-xs-4"> <%= f.collection_radio_buttons :overdrive, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
            </tr>
            <tr>
-             <td class="col-xs-4">Credit  (Non-illustrated or Repeat Kits)<br> <small>* Price is Required (if no credit put "0")</small></td>
-             <td class="col-xs-4">Price <%= f.input :credit_amt, label: false, placeholder:"Required, must be a positive number" %> </td>
+             <td class="col-xs-4">Credit  (Non-illustrated or Repeat Kits)<br></td>
+             <td class="col-xs-4">Price <%= f.input :credit_amt, label: false, placeholder:"" %> </td>
              <td class="col-xs-4"> Description of Credit <%= f.input :credit_description, label: false, placeholder:"" %></td>
            </tr>
            <tr>
@@ -139,11 +139,11 @@
              <td class="col-xs-4"> Add Sales Tax -- 8.25% </td>
              <td class="col-xs-4"> </td>
            </tr>
-           <tr>
+           <!-- <tr>
              <td class="col-xs-4">Freight</td>
              <td class="col-xs-4">  </td>
-             <td class="col-xs-4">  <%= f.collection_radio_buttons :freight, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
-           </tr>
+             <td class="col-xs-4">  f.collection_radio_buttons :freight, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+           </tr> -->
          </tbody>
        </table>
       </div><!--panel-->

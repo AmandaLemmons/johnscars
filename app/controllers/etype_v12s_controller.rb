@@ -20,29 +20,27 @@ class EtypeV12sController < ApplicationController
  end
 
  def show
-  #  @etype_v12.set_same_shipping
-  #  @etype_v12.set_etype_v12_kit
-  #  @etype_v12.set_ac_hoses
-  #  @etype_v12.set_jci_headers
-  #  @etype_v12.set_fuel_injection_vc
-  #  @etype_v12.set_driveshaft_adaptor
-  #  @etype_v12.set_electrolock
-  #  @etype_v12.set_subtotal
-  #  @etype_v12.set_sales_tax
-  #  @etype_v12.set_total
+    @etype_v12.set_same_shipping
+   @etype_v12.set_auto_trans_kit
+   @etype_v12. set_manual_tras_kit
+   @etype_v12.set_tach_calibration
+   @etype_v12.set_fuel_injection_v8
+   @etype_v12.set_overdrive
+   @etype_v12.set_subtotal
+   @etype_v12.set_sales_tax
+   @etype_v12.set_total
  end
 
  def edit
-  #  @etype_v12.set_same_shipping
-  #  @etype_v12.set_etype_v12_kit
-  #  @etype_v12.set_ac_hoses
-  #  @etype_v12.set_jci_headers
-  #  @etype_v12.set_fuel_injection_vc
-  #  @etype_v12.set_driveshaft_adaptor
-  #  @etype_v12.set_electrolock
-  #  @etype_v12.set_subtotal
-  #  @etype_v12.set_sales_tax
-  #  @etype_v12.set_total
+   @etype_v12.set_same_shipping
+  @etype_v12.set_auto_trans_kit
+  @etype_v12. set_manual_tras_kit
+  @etype_v12.set_tach_calibration
+  @etype_v12.set_fuel_injection_v8
+  @etype_v12.set_overdrive
+  @etype_v12.set_subtotal
+  @etype_v12.set_sales_tax
+  @etype_v12.set_total
  end
 
  def update

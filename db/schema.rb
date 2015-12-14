@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214102833) do
+ActiveRecord::Schema.define(version: 20151214110200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20151214102833) do
     t.integer  "fuel_injection_v8_amt"
     t.boolean  "overdrive",                                        default: false
     t.integer  "overdrive_amt"
-    t.decimal  "credit_amt",              precision: 10, scale: 2
+    t.decimal  "credit_amt",                                       default: 0.0
     t.string   "credit_description"
     t.decimal  "subtotal",                precision: 10, scale: 2
     t.decimal  "freight",                 precision: 10, scale: 2
@@ -81,8 +81,8 @@ ActiveRecord::Schema.define(version: 20151214102833) do
   end
 
   create_table "mark_quarterbreeds", force: :cascade do |t|
-    t.datetime "created_at",                                                         null: false
-    t.datetime "updated_at",                                                         null: false
+    t.datetime "created_at",                                                                       null: false
+    t.datetime "updated_at",                                                                       null: false
     t.string   "car_owner_full_name"
     t.string   "car_owner_address"
     t.string   "car_owner_city"
@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 20151214102833) do
     t.decimal  "mark_quarterbreeds_electrolock_amt",        precision: 10, scale: 2
     t.string   "mark_quarterbreeds_other"
     t.decimal  "mark_quarterbreeds_other_price",            precision: 10, scale: 2
-    t.decimal  "credit_amt",                                precision: 10, scale: 2
+    t.decimal  "credit_amt",                                                         default: 0.0
     t.string   "credit_description"
     t.decimal  "subtotal",                                  precision: 10, scale: 2
     t.decimal  "freight",                                   precision: 10, scale: 2
@@ -228,11 +228,12 @@ ActiveRecord::Schema.define(version: 20151214102833) do
     t.string   "add_mount_set"
     t.string   "transmission_year"
     t.string   "transmission_other"
+    t.decimal  "credit_amt",                                         default: 0.0
   end
 
   create_table "quarterbreeds", force: :cascade do |t|
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
     t.string   "car_owner_full_name"
     t.string   "car_owner_address"
     t.string   "car_owner_city"
@@ -272,7 +273,7 @@ ActiveRecord::Schema.define(version: 20151214102833) do
     t.integer  "flywheel_core_amt"
     t.integer  "driveshaft_amt"
     t.integer  "quarterbreed_kit"
-    t.decimal  "credit",                  precision: 10, scale: 2
+    t.decimal  "credit",                                           default: 0.0
     t.decimal  "subtotal",                precision: 10, scale: 2
     t.decimal  "sales_tex",               precision: 10, scale: 2
     t.boolean  "texas_resident"
@@ -335,7 +336,7 @@ ActiveRecord::Schema.define(version: 20151214102833) do
     t.boolean "driveshaft_adaptor"
     t.boolean "electrolock"
     t.string  "other_kit_options"
-    t.integer "credit_amt"
+    t.decimal "credit_amt",                                           default: 0.0
     t.string  "credit_description"
     t.decimal "subtotal",                    precision: 10, scale: 2
     t.decimal "freight",                     precision: 10, scale: 2
@@ -358,8 +359,8 @@ ActiveRecord::Schema.define(version: 20151214102833) do
   end
 
   create_table "xj6_quarterbreeds", force: :cascade do |t|
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
     t.string   "car_owner_full_name"
     t.string   "car_owner_address"
     t.string   "car_owner_city"
@@ -405,7 +406,7 @@ ActiveRecord::Schema.define(version: 20151214102833) do
     t.decimal  "xj6_quarterbreedss_kit_amt", precision: 10, scale: 2
     t.decimal  "driveshaft_amt",             precision: 10, scale: 2
     t.decimal  "torque_converter_amt",       precision: 10, scale: 2
-    t.decimal  "credit_amt",                 precision: 10, scale: 2
+    t.decimal  "credit_amt",                                          default: 0.0
     t.string   "credit_description"
     t.decimal  "subtotal",                   precision: 10, scale: 2
     t.decimal  "expedite",                   precision: 10, scale: 2
