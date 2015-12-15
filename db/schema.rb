@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214115753) do
+ActiveRecord::Schema.define(version: 20151215074105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "etype_v12s", force: :cascade do |t|
-    t.datetime "created_at",                                                       null: false
-    t.datetime "updated_at",                                                       null: false
+    t.datetime "created_at",                                                              null: false
+    t.datetime "updated_at",                                                              null: false
     t.string   "car_owner_full_name"
     t.string   "car_owner_address"
     t.string   "car_owner_city"
@@ -60,23 +60,23 @@ ActiveRecord::Schema.define(version: 20151214115753) do
     t.boolean  "motor_missing"
     t.boolean  "motor_burned"
     t.boolean  "right_hand_drive"
-    t.boolean  "auto_trans_kit",                                   default: false
+    t.boolean  "auto_trans_kit",                                          default: false
     t.integer  "auto_trans_kit_amt"
-    t.boolean  "manual_tras_kit",                                  default: false
+    t.boolean  "manual_tras_kit",                                         default: false
     t.integer  "manual_tras_kit_amt"
-    t.boolean  "tach_calibration",                                 default: false
+    t.boolean  "tach_calibration",                                        default: false
     t.integer  "tach_calibration_amt"
-    t.boolean  "fuel_injection_v8",                                default: false
+    t.boolean  "fuel_injection_v8",                                       default: false
     t.integer  "fuel_injection_v8_amt"
-    t.boolean  "overdrive",                                        default: false
+    t.boolean  "overdrive",                                               default: false
     t.integer  "overdrive_amt"
-    t.decimal  "credit_amt",                                       default: 0.0
+    t.decimal  "credit_amt",                                              default: 0.0
     t.string   "credit_description"
-    t.decimal  "subtotal",                precision: 10, scale: 2
-    t.decimal  "freight",                 precision: 10, scale: 2
-    t.decimal  "sales_tax",               precision: 10, scale: 2
-    t.decimal  "total",                   precision: 10, scale: 2
-    t.boolean  "same_information",                                 default: false
+    t.decimal  "subtotal",                       precision: 10, scale: 2
+    t.decimal  "freight",                        precision: 10, scale: 2
+    t.decimal  "sales_tax",                      precision: 10, scale: 2
+    t.decimal  "total",                          precision: 10, scale: 2
+    t.boolean  "same_information",                                        default: false
     t.string   "comments"
     t.string   "driveline_engine"
     t.string   "driveline_year"
@@ -91,26 +91,52 @@ ActiveRecord::Schema.define(version: 20151214115753) do
     t.string   "ac_refrigerant_other"
     t.string   "battery_type"
     t.string   "fan_belts"
-    t.boolean  "some_carb_v8",                                     default: false
-    t.boolean  "most_carb_v8",                                     default: false
-    t.boolean  "truck_tbi",                                        default: false
-    t.boolean  "camaro_lt1",                                       default: false
-    t.boolean  "corvette_lt4",                                     default: false
-    t.boolean  "other_front_view",                                 default: false
-    t.boolean  "compressor_a6",                                    default: false
-    t.boolean  "compressor_r4",                                    default: false
-    t.boolean  "compressor_da6",                                   default: false
-    t.boolean  "compressor_nd",                                    default: false
-    t.boolean  "plug_a6",                                          default: false
-    t.boolean  "plug_r4",                                          default: false
-    t.boolean  "plug_da6",                                         default: false
-    t.boolean  "plug_nd",                                          default: false
-    t.boolean  "alternator_plug_type2",                            default: false
-    t.boolean  "alternator_plug_type3",                            default: false
-    t.boolean  "alternator_plug_type1",                            default: false
-    t.boolean  "ignition_plug_type1",                              default: false
-    t.boolean  "ignition_plug_type2",                              default: false
-    t.boolean  "ignition_plug_type3",                              default: false
+    t.boolean  "some_carb_v8",                                            default: false
+    t.boolean  "most_carb_v8",                                            default: false
+    t.boolean  "truck_tbi",                                               default: false
+    t.boolean  "camaro_lt1",                                              default: false
+    t.boolean  "corvette_lt4",                                            default: false
+    t.boolean  "other_front_view",                                        default: false
+    t.boolean  "compressor_a6",                                           default: false
+    t.boolean  "compressor_r4",                                           default: false
+    t.boolean  "compressor_da6",                                          default: false
+    t.boolean  "compressor_nd",                                           default: false
+    t.boolean  "plug_a6",                                                 default: false
+    t.boolean  "plug_r4",                                                 default: false
+    t.boolean  "plug_da6",                                                default: false
+    t.boolean  "plug_nd",                                                 default: false
+    t.boolean  "alternator_plug_type2",                                   default: false
+    t.boolean  "alternator_plug_type3",                                   default: false
+    t.boolean  "alternator_plug_type1",                                   default: false
+    t.boolean  "ignition_plug_type1",                                     default: false
+    t.boolean  "ignition_plug_type2",                                     default: false
+    t.boolean  "ignition_plug_type3",                                     default: false
+    t.string   "engine_fuel_injection"
+    t.string   "engine_fuel_injection_other"
+    t.string   "engine_donor_car"
+    t.string   "engine_donor_car_other"
+    t.string   "engine_tpi_lt1"
+    t.string   "engine_ps_pump_location"
+    t.string   "engine_ps_pump_outlet"
+    t.string   "engine_corvette_nut_size"
+    t.string   "engine_corvette_diameter"
+    t.string   "engine_tbi_thermostat"
+    t.string   "accessories_fan"
+    t.string   "accessories_water_pump"
+    t.string   "accessories_fan_belts"
+    t.string   "accessories_air_pump"
+    t.string   "accessories_valve_covers"
+    t.string   "accessories_ac_refrigerant"
+    t.string   "miscellaneous_fi_harness"
+    t.string   "miscellaneous_fi_harness_other"
+    t.boolean  "miscellaneous_oil_switch",                                default: false
+    t.string   "miscellaneous_speedo_type"
+    t.string   "miscellaneous_t700_lockup"
+    t.string   "miscellaneous_ignition"
+    t.string   "miscellaneous_ignition_other"
+    t.boolean  "call_for_help",                                           default: false
+    t.string   "talk_to"
+    t.string   "impression_staff"
   end
 
   create_table "mark_quarterbreeds", force: :cascade do |t|
