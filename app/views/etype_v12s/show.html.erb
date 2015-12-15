@@ -259,12 +259,13 @@
     <p> Signature _____________________________________________________ Date________________</p>
   </div>
   <div class="col-xs-12 text-center">
-      <p class="small-text">JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226
+      <p class="small-text page-break-after">JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226
         <br> www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
     </div>
   </div>
 
   <br clear="all"/>
+
   <h4 class="center"> Chevy V8 Driveline Info </h5>
     <div class="col-xs-6 printable-table">
       <h5 class="center"> Engine</h5>
@@ -475,7 +476,11 @@
             <tbody>
               <tr>
                 <td><em>FI harness:</em></td>
-                <td> <b><%=@etype_v12.miscellaneous_fi_harness_other %></b></td>
+                <% if @etype_v12.miscellaneous_fi_harness_other.present? %>
+                  <td> <b><%=@etype_v12.miscellaneous_fi_harness_other %></b></td>
+                <% else %>
+                  <td> <b><%=@etype_v12.miscellaneous_fi_harness %></b></td>
+                <% end %>
               </tr>
               <tr>
                 <td><em>Oil Pressure Safety Switch:</em></td>
