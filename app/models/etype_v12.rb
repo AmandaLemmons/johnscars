@@ -34,7 +34,7 @@ class EtypeV12 < ActiveRecord::Base
     if self.tach_calibration == true
       self.tach_calibration_amt = 59
     else
-      self.manual_tras_kit_amt = 0
+      self.tach_calibration_amt = 0
     end
   end
 

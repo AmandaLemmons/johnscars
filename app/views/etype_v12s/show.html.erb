@@ -38,15 +38,40 @@
           <td><em>Email: </em> <b><%= @etype_v12.ship_to_email %></b></td>
         </tr>
         <tr>
-          <td><em> Home Phone: </em><b> <%= @etype_v12.car_owner_home_phone.insert(3, '-').insert(7, '-')  %></b> <em>From: </em><b>  <%= @etype_v12.car_owner_home_hours %></b> </td>
-          <td> <em> Shop Phone: </em><b> <%= @etype_v12.ship_to_phone.insert(3, '-').insert(7, '-') %></b> </td>
+          <td><em> Home Phone: </em><b>
+            <% if @etype_v12.car_owner_home_phone.present? %>
+              <%= @etype_v12.car_owner_home_phone.insert(3, '-').insert(7, '-')  %>
+            <% else %>
+            <% end %>
+          </b> <em>From: </em><b>  <%= @etype_v12.car_owner_home_hours %></b> </td>
+          <td> <em> Shop Phone: </em><b>
+            <% if @etype_v12.ship_to_phone.present? %>
+              <%= @etype_v12.ship_to_phone.insert(3, '-').insert(7, '-') %>
+            <% else %>
+            <% end %>
+          </b> </td>
         </tr>
         <tr>
-          <td> <em>Work Phone: </em><b><%= @etype_v12.car_owner_work_phone.insert(3, '-').insert(7, '-')  %></b> <em>From: </em><b> <%= @etype_v12.car_owner_work_hours%></b> </td>
-          <td><em>Fax: </em><b> <%= @etype_v12.ship_to_fax.insert(3, '-').insert(7, '-')  %></b> </td>
+          <td> <em>Work Phone: </em><b>
+            <% if @etype_v12.car_owner_work_phone.present? %>
+              <%= @etype_v12.car_owner_work_phone.insert(3, '-').insert(7, '-')  %>
+            <% else %>
+            <% end %>
+          </b> <em>From: </em><b> <%= @etype_v12.car_owner_work_hours%></b> </td>
+          <td><em>Fax: </em><b>
+            <% if @etype_v12.ship_to_fax.present? %>
+              <%= @etype_v12.ship_to_fax.insert(3, '-').insert(7, '-')  %>
+            <% else %>
+            <%end %>
+          </b> </td>
         </tr>
         <tr>
-          <td> <em> Fax: </em><b> <%= @etype_v12.car_owner_fax.insert(3, '-').insert(7, '-')  %> </b> <em>From: </em> <b> <%= @etype_v12.car_owner_fax_hours %></b></td>
+          <td> <em> Fax: </em><b>
+            <% if @etype_v12.car_owner_fax.present? %>
+              <%= @etype_v12.car_owner_fax.insert(3, '-').insert(7, '-')  %>
+            <% else %>
+            <% end %>
+           </b> <em>From: </em> <b> <%= @etype_v12.car_owner_fax_hours %></b></td>
             <td><em>How did you find us? </em><b> <%= @etype_v12.car_owner_find_us %> </b> <em> -- </em><b> <%= @etype_v12.car_owner_where_find_us %></b></td>
         </tr>
       </tbody>
@@ -73,13 +98,28 @@
           <td><em>Email: </em> <b><%= @etype_v12.car_owner_email %></b> </td>
         </tr>
         <tr>
-          <td><em>Home Phone: </em> <b>   <%= @etype_v12.car_owner_home_phone.insert(3, '-').insert(7, '-')  %> </b> <em>From:</em>  <b><%= @etype_v12.car_owner_home_hours %> </b></td>
+          <td><em>Home Phone: </em> <b>
+            <% if @etype_v12.car_owner_home_phone.present?%>
+              <%= @etype_v12.car_owner_home_phone.insert(3, '-').insert(7, '-')  %>
+            <% else %>
+            <% end %>
+         </b> <em>From:</em>  <b><%= @etype_v12.car_owner_home_hours %> </b></td>
         </tr>
         <tr>
-          <td> <em>Work Phone: </em> <b><%= @etype_v12.car_owner_work_phone.insert(3, '-').insert(7, '-')  %></b> <em>From: </em> <b> <%= @etype_v12.car_owner_work_hours%> </b></td>
+          <td> <em>Work Phone: </em> <b>
+            <% if @etype_v12.car_owner_work_phone.present? %>
+              <%= @etype_v12.car_owner_work_phone.insert(3, '-').insert(7, '-')  %>
+            <% else %>
+            <% end %>
+          </b> <em>From: </em> <b> <%= @etype_v12.car_owner_work_hours%> </b></td>
         </tr>
         <tr>
-          <td>  <em>Fax: </em>  <b><%= @etype_v12.car_owner_fax.insert(3, '-').insert(7, '-')  %></b> <em>From: </em> <b> <%= @etype_v12.car_owner_fax_hours %></b></td>
+          <td>  <em>Fax: </em>  <b>
+            <% if @etype_v12.car_owner_fax.present? %>
+              <%= @etype_v12.car_owner_fax.insert(3, '-').insert(7, '-')  %>
+            <% else %>
+            <% end %>
+          </b> <em>From: </em> <b> <%= @etype_v12.car_owner_fax_hours %></b></td>
         </tr>
         <tr>
           <td><em>How did you find us? </em> <b><%= @etype_v12.car_owner_find_us %></b><em> -- </em><b> <%= @etype_v12.car_owner_where_find_us %> </b></td>
@@ -223,3 +263,127 @@
         <br> www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
     </div>
   </div>
+
+  <br clear="all"/>
+  <h4 class="center"> Chevy V8 Driveline Info </h5>
+    <div class="col-xs-6 printable-table">
+      <h5 class="center"> Engine</h5>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td> <em> Engine</em> <b> <%= @etype_v12.driveline_engine%> </b> </td>
+            <td> <em> Engine Year</em> <b> <%= @etype_v12.driveline_year%> </b> </td>
+          </tr>
+          <td> <em> Engine CID</em> <b> <%= @etype_v12.driveline_cid%> </b> </td>
+          <% if  @etype_v12.donar_car_other.present? %>
+            <td> <em> Donor Car</em> <b> <%= @etype_v12.donar_car_other%> </b> </td>
+          <% else %>
+            <td> <em> Donor Car</em> <b> <%= @etype_v12.donar_car%> </b> </td>
+          <% end %>
+        </tbody>
+      </table>
+      <h5 class="center"> Trans</h5>
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td> <em> Trans </em> <b> <%= @etype_v12.driveline_trans%> </b></td>
+              <td> <em> Year </em> <b> <%= @etype_v12.driveline_trans_year%> </b></td>
+            </tr>
+            <tr>
+              <td> <em>Tailhousing Length</em> <b> <%= @etype_v12.tailhousing_length%> </b></td>
+              <td> <em>How did you get your Trans?</em> <b> <%= @etype_v12.how_get_trans%> </b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xs-6 printable-table">
+        <h5 class="center"> A/C Refrigerant</h5>
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td><em>A/C Refrigerant:</em>
+                <% if @etype_v12.ac_refrigerant_other.present? %>
+                  <b><%= @etype_v12.ac_refrigerant_other%></b>
+                <% else %>
+                  <b><%= @etype_v12.ac_refrigerant%></b>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h5 class="center"> Battery Type</h5>
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td><em>Battery Type:</em><b><%= @etype_v12.battery_type%></b></td>
+            </tr>
+          </tbody>
+        </table>
+        <h5 class="center"> Fan Belts</h5>
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td><em>Fan Belts:</em><b><%= @etype_v12.fan_belts%></b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xs-12">
+        <div class="col-xs-2 col-xs-offset-1">
+          <h5 class="center"> Front View</h5>
+          <% if @etype_v12.some_carb_v8 == true %>
+            <%= image_tag("some_carb_v8.png") %>
+          <% elsif @etype_v12.most_carb_v8 == true %>
+            <%= image_tag("most_carb_v8.png") %>
+          <% elsif @etype_v12.truck_tbi == true %>
+            <%= image_tag("truck_tbi.png") %>
+          <% elsif @etype_v12.camaro_lt1 == true %>
+            <%= image_tag("camaro_lt1.png") %>
+          <% elsif @etype_v12.corvette_lt4 == true %>
+            <%= image_tag("corvette_lt4.png") %>
+          <% else @etype_v12.other_front_view == true %>
+            Draw your Front View here:
+            <%= image_tag("other_front_view.png") %>
+          <% end %>
+        </div>
+        <div class="col-xs-2">
+          <h5 class="center"> Compressor Type</h5>
+          <% if @etype_v12.compressor_a6 == true %>
+            <%= image_tag("compressor_a6.png") %>
+          <% elsif @etype_v12.compressor_r4 == true %>
+            <%= image_tag("compressor_r4.png") %>
+          <% elsif @etype_v12.compressor_da6 == true %>
+            <%= image_tag("compressor_da6.png") %>
+          <% else @etype_v12.compressor_nd == true %>
+            <%= image_tag("compressor_nd.png") %>
+          <% end %>
+        </div>
+        <div class="col-xs-2">
+          <h5 class="center"> Plug on Front of Compressor</h5>
+          <% if @etype_v12.plug_a6 == true %>
+            <%= image_tag("plug_a6.png") %>
+          <% elsif @etype_v12.plug_r4 == true %>
+            <%= image_tag("plug_r4.png") %>
+          <% elsif @etype_v12.plug_da6 == true %>
+            <%= image_tag("plug_da6.png") %>
+          <% else @etype_v12.plug_nd == true %>
+            <%= image_tag("plug_nd.png") %>
+          <% end %>
+        </div>
+        <div class="col-xs-2">
+          <h5 class="center"> Alternator Plug</h5>
+          <% if @etype_v12.alternator_plug_type2 == true %>
+            <%= image_tag("alternator_plug_type2.png") %>
+          <% else @etype_v12.alternator_plug_type3 == true %>
+            <%= image_tag("alternator_plug_type3.png") %>
+          <% end %>
+        </div>
+        <div class="col-xs-2">
+          <h5 class="center"> HEI Ignition Plug</h5>
+          <% if @etype_v12.ignition_plug_type2 == true %>
+            <%= image_tag("ignition_plug_type2.png") %>
+          <% else @etype_v12.ignition_plug_type3 == true %>
+            <%= image_tag("ignition_plug_type3.png") %>
+          <% end %>
+        </div>
+      </div>

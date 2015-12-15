@@ -276,7 +276,7 @@
             </div>
             <div class="col-md-6">
               <h4>Engine</h4>
-                <%= f.input :etype_cyl, label: false, collection: ["Carb", "TBI", "TPI", "LT-1"]%>
+                <%= f.input :driveline_engine, label: false, collection: ["Carb", "TBI", "TPI", "LT-1"]%>
             </div>
             <div class="col-md-6">
               <h4>Year</h4>
@@ -288,11 +288,11 @@
             </div>
             <div class="col-md-6">
               <h4>Donor Car</h4>
-                <%= f.input :driveline_cid, label: false, collection: ["Caprice", "Camaro", "Truck", "Other - fill out in next box"]%>
+                <%= f.input :donar_car, label: false, collection: ["Caprice", "Camaro", "Truck", "Other - fill out in next box"]%>
             </div>
             <div class="col-md-6">
               <h4>Donor Car Other</h4>
-                <%= f.input :driveline_cid, label: false%>
+                <%= f.input :donar_car_other, label: false%>
             </div>
           </div>
           <div class="col-md-12">
@@ -325,15 +325,15 @@
             </div>
             <div class="col-md-6">
               <h4>A/C Refrigerant Other</h4>
-                <%= f.input :ac_refrigerant, label: false, placeholder: "other"%>
+                <%= f.input :ac_refrigerant_other, label: false, placeholder: "other"%>
             </div>
             <div class="col-md-6">
               <h4>Battery Type</h4>
-                <%= f.input :ac_refrigerant, label: false, collection: ["Top Post", "Side Post"]%>
+                <%= f.input :battery_type, label: false, collection: ["Top Post", "Side Post"]%>
             </div>
             <div class="col-md-6">
               <h4>Fan Belts</h4>
-                <%= f.input :ac_refrigerant, label: false, collection: ["Multiple Vee Belts", "Single Serpentine", "Combo"]%>
+                <%= f.input :fan_belts, label: false, collection: ["Multiple Vee Belts", "Single Serpentine", "Combo"]%>
             </div>
           </div>
         </div>
