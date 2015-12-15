@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215074105) do
+ActiveRecord::Schema.define(version: 20151215090956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20151215074105) do
     t.decimal  "sales_tax",                      precision: 10, scale: 2
     t.decimal  "total",                          precision: 10, scale: 2
     t.boolean  "same_information",                                        default: false
-    t.string   "comments"
+    t.text     "comments"
     t.string   "driveline_engine"
     t.string   "driveline_year"
     t.string   "driveline_cid"
@@ -136,7 +136,8 @@ ActiveRecord::Schema.define(version: 20151215074105) do
     t.string   "miscellaneous_ignition_other"
     t.boolean  "call_for_help",                                           default: false
     t.string   "talk_to"
-    t.string   "impression_staff"
+    t.text     "impression_staff"
+    t.string   "engine_purge_size"
   end
 
   create_table "mark_quarterbreeds", force: :cascade do |t|

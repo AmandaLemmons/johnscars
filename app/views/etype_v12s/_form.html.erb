@@ -474,15 +474,174 @@
               <%= image_tag("ignition_plug_type3.png") %><br>
               <%= f.collection_radio_buttons :ignition_plug_type3, [[true, 'Yes'], [false, 'No']], :first, :last %>
             </div>
-
           </div>
         </div>
+        <br clear="all">
+        <br>
+        <br>
+        <br>
+      <div class="col-md-12">
+        <p> If you're installing a Carbureted V8 motor with serpentine belts and/or weatherpack accessories, <em>please fill the following out below.</em> </p>
+        <p> If you're installing a V8 motor that <em> originally</em> had a carburetor <strong>but</strong> you are switching to Fuel Injection, <em> please fill the following out below. </em></p>
+        <p>If you're installing a V8 motor that <em> originally</em> had Fuel Injection (even if you are switching to a carburetor), <em> please fill the following out below. </em></p>
+        <p>If you're installing a Carbureted V8 with a carburetor <strong>with</strong> multiple vee fan belts, skip the following. </p>
+        <p> This information is <em><strong> critical</strong></em> to providing you with the right parts the <em> first time!</em> Please answer <strong> ALL </strong> of the following questions. Failure to complete this page <strong> will delay</strong> your order. Please call if you need help. </p>
+      </div>
 
+      <div class="panel panel-defualt">
+        <h2 class="text-center">Engine</h2>
+        <div class="row">
+          <div class= "col-md-6">
+            <h4> Fuel Injection Type</h4>
+              <%= f.input :engine_fuel_injection, label: false, collection: ["TBI", "TPI", "LT-1 & 4300", "Vortec", "Holley Projections", "Edelbock Pro-Flo", "Other - fill out in next box"]%>
+          </div>
+          <div class="col-md-6">
+            <h4> Fuel Injection Other </h4>
+              <%= f.input :engine_fuel_injection_other, label: false, placeholder: ""%>
+          </div>
+          <div class= "col-md-6">
+            <h4> Donor Car</h4>
+              <%= f.input :engine_donor_car, label: false, collection: ["Camaro/Firebird", "Caprice", "Corvette", "Truck", "Crate Motor", "Other - fill out in next box"]%>
+          </div>
+          <div class="col-md-6">
+            <h4> Donor Car Other </h4>
+              <%= f.input :engine_donor_car_other, label: false, placeholder: ""%>
+          </div>
+          <div class= "col-md-6">
+            <h4> TPI and LT-1 <em>Only</em></h4>
+              <%= f.input :engine_tpi_lt1, label: false, collection: ["Mass Air Flow Meter", "Speed Density (MAP)"]%>
+          </div>
+          <div class="col-md-6">
+          </div>
+          <div class= "col-md-4">
+            <h4>LT-1 <em>Only</em></h4>Size of purge/fill/vent nipple in throttle body:
+              <%= f.input :engine_purge_size, label: false, collection: ["3/8in", "1/2in"]%>
+          </div>
+          <div class="col-md-2">
+            <%= image_tag("purge_size.png") %>
+          </div>
+          <div class="col-md-6">
+            <h4>LT-1 <em>Only</em>: PS Pump location</h4>
+              <%= f.input :engine_ps_pump_location, label: false, collection: ["Driver's Side", "Passenger's Side"]%>
+          </div>
+          <div class="col-md-6">
+            <h4>LT-1 <em>Only</em>: PS Pump outlet direction</h4>
+              <%= f.input :engine_ps_pump_outlet, label: false, collection: ["Towards Fender", "Towards Firewall"]%>
+          </div>
+          <div class="col-md-6">
+            <h4>Corvette Motor <em>Only</em>: Thread size of nut on power steering hose <strong>at pump</strong></h4>
+              <%= f.input :engine_corvette_nut_size, label: false, collection: ["5/8 in", "18 mm"]%>
+          </div>
+          <div class="col-md-6">
+            <h4>Corvette Motor <em>Only</em>: Diameter of lower radiator hose connection at water pump</h4>
+              <%= f.input :engine_corvette_diameter, label: false, collection: ["1 1/2 in", "1 3/4 in"]%>
+          </div>
+          <div class="col-md-6">
+            <h4>TBI Motor <em>Only</em>: Thermostat Housing Outlet points towards the:</h4>
+              <%= f.input :engine_tbi_thermostat, label: false, collection: ["Front of Motor", "Left Side of Motor"]%>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-defualt">
+        <h2 class="text-center">Accessories</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Fans</h4>
+                <%= f.input :accessories_fan, label: false, collection: ["Mechanical Fan (belt driven)", "Electric Fan(s)", "Both"]%>
+            </div>
+            <div class="col-md-6">
+              <h4>Water Pump</h4>
+                <%= f.input :accessories_water_pump, label: false, collection: ["Standard Rotation", "Reverse Rotation", "LT-1"]%>
+            </div>
+            <div class="col-md-6">
+              <h4>Fan Belts</h4>
+                <%= f.input :accessories_fan_belts, label: false, collection: ["Multiple Vee Belts", "Single Serpentine", "Combination", "Roadmaster"]%>
+            </div>
+            <div class="col-md-6">
+              <h4>Air pump (smog pump)</h4>
+                <%= f.input :accessories_air_pump, label: false, collection: ["Belt driven", "Electric", "None", "Will Remove from Motor"]%>
+            </div>
+            <div class="col-md-6">
+              <h4>Valve Covers</h4>
+                <%= f.input :accessories_valve_covers, label: false, collection: ["4 Bolts at Flange", "Center Bolts"]%>
+            </div>
+            <div class="col-md-6">
+              <h4>A/C Refrigerant</h4>
+                <%= f.input :accessories_ac_refrigerant, label: false, collection: ["R12", "R134", "Other"]%>
+            </div>
+          </div>
+      </div>
+
+      <div class="panel panel-defualt">
+        <h2 class="text-center">Miscellaneous</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>What/whose FI harness are you going to use?</h4>
+                <%= f.input :miscellaneous_fi_harness, label: false, collection: ["Howell Engineering", "S&P", "Ron Francis", "Homegrown (your own)", "Other - fill out in next box"]%>
+            </div>
+            <div class="col-md-6">
+              <h4>FI harness Other</h4>
+                <%= f.input :miscellaneous_fi_harness_other, label: false, placeholder: ""%>
+            </div>
+            <div class="col-md-6">
+              <h4>Oil Pressure Safety Switch for Fuel Pump</h4>
+                <%= f.collection_radio_buttons :miscellaneous_oil_switch, [[true, 'Yes'], [false, 'No']], :first, :last%>
+            </div>
+            <div class="col-md-6">
+              <h4>VSS/Speedo Type</h4> Please pull the four bolts on the trans tailhousing and <strong>circle</strong> the type of speedo drive you have:
+                <%= f.input :miscellaneous_speedo_type, label: false, collection: ["Type 1", "Type 2"]%>
+            </div>
+            <div class="col-md-3">
+              <h4> Type 1 </h4>
+              <%= image_tag("speedo_type1.png") %>
+            </div>
+            <div class="col-md-3">
+              <h4> Type 2 </h4>
+              <%= image_tag("speedo_type2.png") %>
+            </div>
+            <div class="col-md-12">
+              <p> If you are installing a Fuel Injection motor in a Jaguar with electronic speedometer (all after 1982), then you need the John's Cars VSS Buffer ($150.00) for it to function. If you have a cable drive speedometer (pre 82), please call.
+            </div>
+            <div class="col-md-6">
+              <h4> T700 Lockup</h4>
+              <%= f.input :miscellaneous_t700_lockup, label: false, collection: ["Computered Controlled", "Aftermarket kit (Electric or Vacuum)", "Aftermarket kit (Hydraulic)"]%>
+            </div>
+            <div class="col-md-6">
+              <h4> Ignition</h4>
+              <%= f.input :miscellaneous_ignition, label: false, collection: ["HEI Coil in Cap", "Remote coil", "LT-1", "Other - fill out in next box"]%>
+            </div>
+            <div class="col-md-6">
+              <h4> Ignition Other</h4>
+              <%= f.input :miscellaneous_ignition_other, label: false, placeholder: ""%>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <p> <strong> Switching to a Carburetor:</strong> Most FI blocks do not have a place for a mechanical fuel pump. Even if the boss is there, the camshaft may not have a lobe for the fuel pump. Intake bolt angles also vary so intake manifold may not fit directly. These are more examples of why we stress that you get a <strong>"COMPLETE"</strong> driveline.</p>
+          <p> <strong> TBI Notes:</strong> Pickup style TBI alternator & A/C brackets will not clear XJS hood lines. </p>
+          <p> <strong> Fuel Return Notes: </strong> All FI motors must have a fuel return to the tank(s). If you Jaguar was Fuel Injection originally, then you'll reuse teh original plumbing. </p>
+        </div>
+        <div class="col-md-6">
+          <p> Did you call to get help in filling in the order sheet? </p>
+          <%= f.collection_radio_buttons :call_for_help, [[true, 'Yes'], [false, 'No']], :first, :last%>
+        </div>
+        <div class="col-md-6">
+          <p> Who did you talk to? </p>
+          <%= f.collection_radio_buttons :talk_to, [[true, 'Yes'], [false, 'No']], :first, :last%>
+        </div>
+        <div class="col-md-12">
+          <p> What was your impression of our staff? </p>
+          <%= f.input :impression_staff, label: false, placeholder:""%>
+        </div>
+        <div class="col-md-12">
+          <p> Suggestions/Comments on this conversion information? </p>
+          <%= f.input :comments, label: false, placeholder:""%>
+        </div>
 
       <div class="col-md-12">
         <p> The E-Type Conversion Kit is the property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
          <h4>Additional comments or notes </h4>
-           <%= f.input :comments, label: false, placeholder:"" %>
            <%= f.submit "Submit Order" %>
        </div>
       <% end %>
