@@ -387,3 +387,127 @@
           <% end %>
         </div>
       </div>
+
+      <div class="col-xs-6">
+        <h4 class="center"> Engine</h5>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td><em> Fuel Injection Type:</em></td>
+                <% if @etype_v12.engine_fuel_injection_other.present? %>
+                  <td><b><%=@etype_v12.engine_fuel_injection_other %></b></td>
+                <% else %>
+                  <td><b><%=@etype_v12.engine_fuel_injection %></b></td>
+                <% end %>
+              </tr>
+              <tr>
+                <td><em> Donor Car:</em></td>
+                <% if @etype_v12.engine_donor_car_other.present? %>
+                  <td><b><%=@etype_v12.engine_donor_car_other %></b></td>
+                <% else %>
+                  <td><b><%=@etype_v12.engine_donor_car %></b></td>
+                <% end %>
+              </tr>
+              <tr>
+                <td><em> TPI and LT-1 Only:</em></td>
+                <td><b><%=@etype_v12.engine_tpi_lt1 %></b></td>
+              </tr>
+              <tr>
+                <td> LT-1 Only<em> Size of purge nipple:</em></td>
+                <td><b><%=@etype_v12.engine_purge_size %></b></td>
+              </tr>
+              <tr>
+                <td>LT-1 Only <em> PS Pump location: </em> </td>
+                <td><b><%=@etype_v12.engine_ps_pump_location %></b></td>
+              </tr>
+              <tr>
+                <td>LT-1 Only <em> PS Pump outlet direction: </em></td>
+                <td> <b><%=@etype_v12.engine_ps_pump_outlet %></b></td>
+              </tr>
+              <tr>
+                <td>Corvette Motor Only<em> Thread size at pump:</em></td>
+                <td> <b><%=@etype_v12.engine_corvette_nut_size %></b></td>
+              </tr>
+              <tr>
+                <td>Corvette Motor Only<em> Diameter at water pump:</em></td>
+                <td> <b><%=@etype_v12.engine_corvette_diameter %></b></td>
+              </tr>
+              <tr>
+                <td>TBI Motor Only <em>Thermostat Housing Outlet points towards</em></td>
+                <td> <b><%=@etype_v12.engine_tbi_thermostat %></b></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+
+      <div class="col-xs-6">
+        <h4 class="center"> Accessories</h5>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td><em> Fans:</em></td>
+                <td> <b><%=@etype_v12.accessories_fan %></b></td>
+              </tr>
+              <tr>
+                <td><em> Water Pump:</em></td>
+                <td> <b><%=@etype_v12.accessories_water_pump %></b></td>
+              </tr>
+              <tr>
+                <td><em> Fan Belts:</em></td>
+                <td> <b><%=@etype_v12.accessories_fan_belts %></b></td>
+              </tr>
+              <tr>
+                <td><em> Air pump (smog pump):</em>
+                <td><b><%=@etype_v12.accessories_air_pump %></b></td>
+              </tr>
+              <tr>
+                <td><em> Valve Covers:</em></td>
+                <td> <b><%=@etype_v12.accessories_valve_covers %></b></td>
+              </tr>
+              <tr>
+                <td><em> A/C Refrigerant:</em></td>
+                <td> <b><%=@etype_v12.accessories_ac_refrigerant %></b></td>
+              </tr>
+            </tbody>
+          </table>
+        <h4 class="center"> Miscellaneous</h4>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td><em>FI harness:</em></td>
+                <td> <b><%=@etype_v12.miscellaneous_fi_harness_other %></b></td>
+              </tr>
+              <tr>
+                <td><em>Oil Pressure Safety Switch:</em></td>
+                <% if @etype_v12.miscellaneous_oil_switch == true %>
+                  <td> <b>Yes </b></td>
+                <% else %>
+                <td> <b> No </b></td>
+                <% end %>
+              </tr>
+              <tr>
+                <td><em>T700 Lockup </em></td>
+                <td> <%= @etype_v12.miscellaneous_t700_lockup %> </td>
+              </tr>
+              <tr>
+                <td><em>Ignition</em></td>
+                <% if @etype_v12.miscellaneous_ignition_other.present? %>
+                  <td> <%= @etype_v12.miscellaneous_ignition_other %> </td>
+                <% else %>
+                  <td> <%= @etype_v12.miscellaneous_ignition %> </td>
+                <% end %>
+              </tr>
+              <tr>
+                <td><em>VSS/ Speedo Type:</em></td>
+                <td>
+                  <% if @etype_v12.miscellaneous_speedo_type == "Type 1" %>
+                    <%= image_tag("speedo_type1.png") %>
+                  <% else %>
+                    <%= image_tag("speedo_type2.png") %>
+                  <% end %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
