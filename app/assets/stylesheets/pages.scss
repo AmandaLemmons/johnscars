@@ -1,5 +1,7 @@
 body {
   background-color: #ECF0F1;
+  font-size: 15px;
+
 }
 .default-form {
   background: #2C3E50;
@@ -114,4 +116,9 @@ label .collection_radio_buttons {
   @media print {
   display: none;
   }
+}
+
+#background-gris {
+  background-color: #555;
+  padding: 80px, 0;
 }

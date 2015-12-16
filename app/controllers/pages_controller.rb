@@ -15,6 +15,9 @@ class PagesController < ApplicationController
   def datsun_zcar
   end
 
+  def home2
+  end
+
 
 
 end

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'datsun-zcar' => 'pages#datsun_zcar', as: :datsun_zcar
 
   get 'order_forms' => 'pages#order_forms', as: :order_forms
-
+  get 'home2' => 'pages#home2', as: :home2
 
 
   # The priority is based upon order of creation: first created -> highest priority.

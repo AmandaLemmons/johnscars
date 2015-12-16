@@ -9,7 +9,8 @@
                                 <div class="slider-text animated fadeInDown">
                                     <h1>John's Cars</h1>
                                     <p>  Making Jaguars RAD – Reliable, Affordable and Driveable  </p>
-                                    <p class="slide-btn"><a href="#" class="btn btn-white btn-lg">Order Now</a></p>
+                                    <%= link_to "Order Now", order_forms_path, class: "btn btn-white btn-lg" %>
+                                    <!-- <p class="slide-btn"><a href="#" class="btn btn-white btn-lg">Order Now</a></p> -->
                                 </div>
                             </figcaption>
                         </figure>
@@ -34,7 +35,7 @@
                         <% end %>
                         <h1>Jaguar Conversions</h1><br>
                         <p>
-                            Want to put an American motor and/or transmission in your Jaguar?  It's a snap with John's Cars conversion.  Kits are available for the Classic XJ Sedans (1969-1987 XJ6, XJ6C, XJ6L, XJ12, XJ12C, XJ12L), the XJS Coupe and Convertibles, the Mark Series, and the legendary E-Type.
+                            Want to put an American motor and/or transmission in your Jaguar?  It's a snap with John's Cars conversion.  Kits are available for the Classic XJ Sedans ( XJ6C, XJ6L, XJ12C, XJ12L), the XJS Coupe and Convertibles, the Mark Series, and the legendary E-Type.
                         </p>
                     </div>
                 </div><!--services box-->
@@ -52,7 +53,7 @@
                 <div class="col-sm-4">
                     <div class="services-box">
                       <%= link_to triumph_tr7_path do %>
-                        <i class="ion-android-star-outline"></i>
+                      <i class="ion-android-car"></i>
                       <% end %>
                         <h1>Triumph TR7</h1><br>
                         <p>
@@ -65,12 +66,12 @@
                 <div class="col-sm-4">
                     <div class="services-box">
                       <%= link_to datsun_zcar_path do %>
-                        <i class="ion-android-star-half"></i>
+                      <i class="ion-android-car"></i>
                       <% end %>
 
                         <h1>Datsun ZCar</h1><br>
                         <p>
-                          Redefine AWESOME with a John's Cars ZCar Chevy V8 conversion.  Our bolt-in kit will breathe new life into the original Datsun sports car. We do not carry any parts for the Datsun ZCar.
+                          Redefine AWESOME with a John's Cars ZCar Chevy V8 conversion.  Our bolt-in kit will breathe new life into the original Datsun sports car. We do not carry any non V8 conversion.
                         </p>
                     </div>
                 </div><!--services box-->
