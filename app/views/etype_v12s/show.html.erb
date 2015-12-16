@@ -1,7 +1,7 @@
 <div class="hidden-print">
   <%= link_to "Edit", edit_etype_v12_path(@etype_v12.id) %>
 </div>
-  <div class="print-form">
+  <div class="print-form page-break-after">
 
   <h3 class="center"> JCI LS ZCAR ORDER SHEET </h3>
   <br>
@@ -238,11 +238,11 @@
         <td >Credit</td>
         <td > - $<%= @etype_v12.credit_amt %></td>
       </tr>
-        <td >Subtotal (Parts are freight paid 48 states only) </td>
+        <td >Subtotal (freight paid 48 states) </td>
         <td >$<%= @etype_v12.subtotal %></td>
       </tr>
       <tr>
-        <td >Texas Residents 8.25% Sales Tax +</td>
+        <td >Sales Tax (Texas only)</td>
         <td >$<%= @etype_v12.sales_tax %></td>
       </tr>
 
@@ -255,80 +255,57 @@
 </div>
 <br clear="all"/>
 <p > Comments: <%= @etype_v12.comments %> </p>
+<p> Impression of Staff: <%= @etype_v12.impression_staff %> </p>
+<p> Spoke with: <%= @etype_v12.talk_to %> </p>
     <br>
     <p> Signature _____________________________________________________ Date________________</p>
+    <div class="col-xs-12 text-center">
+        <p class="small-text">JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226
+          <br> www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
+      </div>
   </div>
-  <div class="col-xs-12 text-center">
-      <p class="small-text page-break-after">JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226
-        <br> www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
-    </div>
+
   </div>
 
   <br clear="all"/>
 
   <h4 class="center"> Chevy V8 Driveline Info </h5>
-    <div class="col-xs-6 printable-table">
-      <h5 class="center"> Engine</h5>
+    <div class="col-xs-12 printable-table">
       <table class="table table-bordered">
         <tbody>
           <tr>
-            <td> <em> Engine</em> <b> <%= @etype_v12.driveline_engine%> </b> </td>
-            <td> <em> Engine Year</em> <b> <%= @etype_v12.driveline_year%> </b> </td>
+            <td> <em> Engine:</em> <b> <%= @etype_v12.driveline_engine%> </b> </td>
+            <td> <em> Engine Year:</em> <b> <%= @etype_v12.driveline_year%> </b> </td>
+            <td> <em> Engine CID:</em> <b> <%= @etype_v12.driveline_cid%> </b> </td>
           </tr>
-          <td> <em> Engine CID</em> <b> <%= @etype_v12.driveline_cid%> </b> </td>
-          <% if  @etype_v12.donar_car_other.present? %>
-            <td> <em> Donor Car</em> <b> <%= @etype_v12.donar_car_other%> </b> </td>
-          <% else %>
-            <td> <em> Donor Car</em> <b> <%= @etype_v12.donar_car%> </b> </td>
-          <% end %>
-        </tbody>
-      </table>
-      <h5 class="center"> Trans</h5>
-        <table class="table table-bordered">
-          <tbody>
-            <tr>
-              <td> <em> Trans </em> <b> <%= @etype_v12.driveline_trans%> </b></td>
-              <td> <em> Year </em> <b> <%= @etype_v12.driveline_trans_year%> </b></td>
-            </tr>
-            <tr>
-              <td> <em>Tailhousing Length</em> <b> <%= @etype_v12.tailhousing_length%> </b></td>
-              <td> <em>How did you get your Trans?</em> <b> <%= @etype_v12.how_get_trans%> </b></td>
-            </tr>
+          <tr>
+            <% if  @etype_v12.donar_car_other.present? %>
+              <td> <em> Donor Car:</em> <b> <%= @etype_v12.donar_car_other%> </b> </td>
+            <% else %>
+              <td> <em> Donor Car:</em> <b> <%= @etype_v12.donar_car%> </b> </td>
+            <% end %>
+            <td> <em> Transmission: </em> <b> <%= @etype_v12.driveline_trans%> </b></td>
+            <td> <em> Trans Year: </em> <b> <%= @etype_v12.driveline_trans_year%> </b></td>
+          </tr>
+          <tr>
+            <td> <em>Tailhousing Length:</em> <b> <%= @etype_v12.tailhousing_length%> </b></td>
+            <td> <em>How did you get your Trans?</em> <b> <%= @etype_v12.how_get_trans%> </b></td>
+            <td><em>A/C Refrigerant:</em>
+              <% if @etype_v12.ac_refrigerant_other.present? %>
+                <b><%= @etype_v12.ac_refrigerant_other%></b>
+              <% else %>
+                <b><%= @etype_v12.ac_refrigerant%></b>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td><em>Battery Type:</em><b><%= @etype_v12.battery_type%></b></td>
+            <td><em>Fan Belts:</em><b><%= @etype_v12.fan_belts%></b></td>
+          </tr>
           </tbody>
         </table>
       </div>
-      <div class="col-xs-6 printable-table">
-        <h5 class="center"> A/C Refrigerant</h5>
-        <table class="table table-bordered">
-          <tbody>
-            <tr>
-              <td><em>A/C Refrigerant:</em>
-                <% if @etype_v12.ac_refrigerant_other.present? %>
-                  <b><%= @etype_v12.ac_refrigerant_other%></b>
-                <% else %>
-                  <b><%= @etype_v12.ac_refrigerant%></b>
-                <% end %>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <h5 class="center"> Battery Type</h5>
-        <table class="table table-bordered">
-          <tbody>
-            <tr>
-              <td><em>Battery Type:</em><b><%= @etype_v12.battery_type%></b></td>
-            </tr>
-          </tbody>
-        </table>
-        <h5 class="center"> Fan Belts</h5>
-        <table class="table table-bordered">
-          <tbody>
-            <tr>
-              <td><em>Fan Belts:</em><b><%= @etype_v12.fan_belts%></b></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
       <div class="col-xs-12">
         <div class="col-xs-2 col-xs-offset-1">
           <h5 class="center"> Front View</h5>
@@ -389,85 +366,52 @@
         </div>
       </div>
 
-      <div class="col-xs-6">
+      <div class="col-xs-12">
         <h4 class="center"> Engine</h5>
           <table class="table table-bordered">
             <tbody>
               <tr>
-                <td><em> Fuel Injection Type:</em></td>
+                <td><em> Fuel Injection Type:</em>
                 <% if @etype_v12.engine_fuel_injection_other.present? %>
-                  <td><b><%=@etype_v12.engine_fuel_injection_other %></b></td>
+                  <b><%=@etype_v12.engine_fuel_injection_other %></b></td>
                 <% else %>
-                  <td><b><%=@etype_v12.engine_fuel_injection %></b></td>
+                  <b><%=@etype_v12.engine_fuel_injection %></b></td>
                 <% end %>
-              </tr>
-              <tr>
-                <td><em> Donor Car:</em></td>
+                <td><em> Donor Car:</em>
                 <% if @etype_v12.engine_donor_car_other.present? %>
-                  <td><b><%=@etype_v12.engine_donor_car_other %></b></td>
+                  <b><%=@etype_v12.engine_donor_car_other %></b></td>
                 <% else %>
-                  <td><b><%=@etype_v12.engine_donor_car %></b></td>
+                  <b><%=@etype_v12.engine_donor_car %></b></td>
                 <% end %>
+                <td><em> TPI and LT-1 Only:</em> <b><%=@etype_v12.engine_tpi_lt1 %></b></td>
               </tr>
               <tr>
-                <td><em> TPI and LT-1 Only:</em></td>
-                <td><b><%=@etype_v12.engine_tpi_lt1 %></b></td>
+                <td> LT-1 Only<em> Size of purge nipple:</em> <b><%=@etype_v12.engine_purge_size %></b></td>
+                <td>LT-1 Only <em> PS Pump location: </em> <b><%=@etype_v12.engine_ps_pump_location %></b></td>
+                <td>LT-1 Only <em> PS Pump outlet direction: </em> <b><%=@etype_v12.engine_ps_pump_outlet %></b></td>
               </tr>
               <tr>
-                <td> LT-1 Only<em> Size of purge nipple:</em></td>
-                <td><b><%=@etype_v12.engine_purge_size %></b></td>
-              </tr>
-              <tr>
-                <td>LT-1 Only <em> PS Pump location: </em> </td>
-                <td><b><%=@etype_v12.engine_ps_pump_location %></b></td>
-              </tr>
-              <tr>
-                <td>LT-1 Only <em> PS Pump outlet direction: </em></td>
-                <td> <b><%=@etype_v12.engine_ps_pump_outlet %></b></td>
-              </tr>
-              <tr>
-                <td>Corvette Motor Only<em> Thread size at pump:</em></td>
-                <td> <b><%=@etype_v12.engine_corvette_nut_size %></b></td>
-              </tr>
-              <tr>
-                <td>Corvette Motor Only<em> Diameter at water pump:</em></td>
-                <td> <b><%=@etype_v12.engine_corvette_diameter %></b></td>
-              </tr>
-              <tr>
-                <td>TBI Motor Only <em>Thermostat Housing Outlet points towards</em></td>
-                <td> <b><%=@etype_v12.engine_tbi_thermostat %></b></td>
+                <td>Corvette Motor Only<em> Thread size at pump:</em> <b><%=@etype_v12.engine_corvette_nut_size %></b></td>
+                <td>Corvette Motor Only<em> Diameter at water pump:</em>  <b><%=@etype_v12.engine_corvette_diameter %></b></td>
+                <td>TBI Motor Only <em>Thermostat Housing Outlet points towards</em> <b><%=@etype_v12.engine_tbi_thermostat %></b></td>
               </tr>
             </tbody>
           </table>
       </div>
 
-      <div class="col-xs-6">
+      <div class="col-xs-12">
         <h4 class="center"> Accessories</h5>
           <table class="table table-bordered">
             <tbody>
               <tr>
-                <td><em> Fans:</em></td>
-                <td> <b><%=@etype_v12.accessories_fan %></b></td>
+                <td><em> Fans:</em> <b><%=@etype_v12.accessories_fan %></b></td>
+                <td><em> Water Pump:</em> <b><%=@etype_v12.accessories_water_pump %></b></td>
+                <td><em> Fan Belts:</em> <b><%=@etype_v12.accessories_fan_belts %></b></td>
               </tr>
               <tr>
-                <td><em> Water Pump:</em></td>
-                <td> <b><%=@etype_v12.accessories_water_pump %></b></td>
-              </tr>
-              <tr>
-                <td><em> Fan Belts:</em></td>
-                <td> <b><%=@etype_v12.accessories_fan_belts %></b></td>
-              </tr>
-              <tr>
-                <td><em> Air pump (smog pump):</em>
-                <td><b><%=@etype_v12.accessories_air_pump %></b></td>
-              </tr>
-              <tr>
-                <td><em> Valve Covers:</em></td>
-                <td> <b><%=@etype_v12.accessories_valve_covers %></b></td>
-              </tr>
-              <tr>
-                <td><em> A/C Refrigerant:</em></td>
-                <td> <b><%=@etype_v12.accessories_ac_refrigerant %></b></td>
+                <td><em> Air pump (smog pump):</em> <b><%=@etype_v12.accessories_air_pump %></b></td>
+                <td><em> Valve Covers:</em> <b><%=@etype_v12.accessories_valve_covers %></b></td>
+                <td><em> A/C Refrigerant:</em>  <b><%=@etype_v12.accessories_ac_refrigerant %></b></td>
               </tr>
             </tbody>
           </table>
@@ -475,36 +419,29 @@
           <table class="table table-bordered">
             <tbody>
               <tr>
-                <td><em>FI harness:</em></td>
+                <td><em>FI harness:</em>
                 <% if @etype_v12.miscellaneous_fi_harness_other.present? %>
-                  <td> <b><%=@etype_v12.miscellaneous_fi_harness_other %></b></td>
+                  <b><%=@etype_v12.miscellaneous_fi_harness_other %></b></td>
                 <% else %>
-                  <td> <b><%=@etype_v12.miscellaneous_fi_harness %></b></td>
+                  <b><%=@etype_v12.miscellaneous_fi_harness %></b></td>
                 <% end %>
-              </tr>
-              <tr>
-                <td><em>Oil Pressure Safety Switch:</em></td>
+                <td><em>Oil Pressure Safety Switch:</em>
                 <% if @etype_v12.miscellaneous_oil_switch == true %>
-                  <td> <b>Yes </b></td>
+                   <b>Yes </b></td>
                 <% else %>
-                <td> <b> No </b></td>
+                 <b> No </b></td>
                 <% end %>
+                <td><em>T700 Lockup </em> <%= @etype_v12.miscellaneous_t700_lockup %> </td>
               </tr>
               <tr>
-                <td><em>T700 Lockup </em></td>
-                <td> <%= @etype_v12.miscellaneous_t700_lockup %> </td>
-              </tr>
-              <tr>
-                <td><em>Ignition</em></td>
+                <td><em>Ignition</em>
                 <% if @etype_v12.miscellaneous_ignition_other.present? %>
-                  <td> <%= @etype_v12.miscellaneous_ignition_other %> </td>
+                   <%= @etype_v12.miscellaneous_ignition_other %> </td>
                 <% else %>
-                  <td> <%= @etype_v12.miscellaneous_ignition %> </td>
+                   <%= @etype_v12.miscellaneous_ignition %> </td>
                 <% end %>
-              </tr>
-              <tr>
-                <td><em>VSS/ Speedo Type:</em></td>
-                <td>
+
+                <td><em>VSS/ Speedo Type:</em>
                   <% if @etype_v12.miscellaneous_speedo_type == "Type 1" %>
                     <%= image_tag("speedo_type1.png") %>
                   <% else %>

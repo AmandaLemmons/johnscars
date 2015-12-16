@@ -55,21 +55,19 @@ class EtypeV12 < ActiveRecord::Base
   end
 
   def set_subtotal
-    self.subtotal = self.auto_trans_kit_amt + self.manual_tras_kit_amt + self.tach_calibration_amt + self.fuel_injection_v8_amt + self.overdrive_amt - self.credit_amt
-    self.save!
+    self.subtotal = (self.auto_trans_kit_amt + self.manual_tras_kit_amt + self.tach_calibration_amt + self.fuel_injection_v8_amt + self.overdrive_amt - self.credit_amt).round(2)
   end
 
   def set_sales_tax
     if self.ship_to_state == "Texas"
-      self.sales_tax = (self.subtotal) * (0.0825)
-      self.sales_tax
+      self.sales_tax = ((self.subtotal) * (0.0825)).round(2)
     else
       self.sales_tax = 0
     end
   end
 
   def set_total
-    self.total = self.subtotal + self.sales_tax
+    self.total = (self.subtotal + self.sales_tax).round(2)
   end
 
 

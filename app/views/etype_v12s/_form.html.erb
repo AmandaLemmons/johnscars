@@ -62,23 +62,23 @@
        <div class="col-md-2 col-md-offset-1">
          <%= image_tag("speedo2.png") %>
        </div>
-       <div class="col-md-3">
+       <div class="col-md-4 col-md-offset-1">
           <h4>Speedo # </h4>
             <%= f.input :speedo_number, label: false, placeholder: "", collection: ["1020", "1216", "1312", "1352", "Other - fill out in next box"]%>
         </div>
-       <div class="col-md-3">
+       <div class="col-md-4">
           <h4>Other Speedo </h4>
           <%= f.input :speedo_number_other, label: false, placeholder: ""%>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <p> Is the Jaguar motor missing from car? <%= f.collection_radio_buttons :motor_missing, [[true, 'Yes'], [false, 'No']], :first, :last%> </p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <p> Is the Jaguar motor burned from a fire? <%= f.collection_radio_buttons :motor_burned, [[true, 'Yes'], [false, 'No']], :first, :last%> </p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <p> Is the Jaguar motor right-hand drive? <%= f.collection_radio_buttons :right_hand_drive, [[true, 'Yes'], [false, 'No']], :first, :last%> </p>
         </div>
       </div>
@@ -259,20 +259,17 @@
         <br clear="all">
         <h2 class="text-center">Chevy V8 Driveline Information</h2>
 
-        <div class="panel panel-default col-md-6">
+        <div class="panel panel-default col-md-12">
           <div class="row">
-            <div class="col-md-12">
-              <h4 class="text-center"> Engine </h4>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               <h4>Engine</h4>
                 <%= f.input :driveline_engine, label: false, collection: ["Carb", "TBI", "TPI", "LT-1"]%>
             </div>
-            <div class="col-md-6">
-              <h4>Year</h4>
+            <div class="col-md-4">
+              <h4>Engine Year</h4>
                 <%= f.input :driveline_year, label: false, placeholder: "Engine Year"%>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               <h4>CID</h4>
                 <%= f.input :driveline_cid, label: false, placeholder: "Engine CID"%>
             </div>
@@ -284,49 +281,41 @@
               <h4>Donor Car Other</h4>
                 <%= f.input :donar_car_other, label: false%>
             </div>
-          </div>
-          <div class="col-md-12">
-            <h4 class="text-center"> Trans </h4>
-          </div>
-          <div class="row">
             <div class="col-md-6">
-              <h4>Trans</h4>
+              <h4>Transmisison</h4>
                 <%= f.input :driveline_trans, label: false, collection: ["350", "400", "700", "4L60E"]%>
             </div>
             <div class="col-md-6">
-              <h4>Year</h4>
+              <h4>Transmisison Year</h4>
                 <%= f.input :driveline_trans_year, label: false, placeholder: "Year"%>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
               <h4>Tailhousing Length (inches)</h4>
                 <%= f.input :tailhousing_length, label: false, placeholder: "Tailhousing Length in inches"%>
             </div>
-          </div>
-          <div class="col-md-12">
-            <p> How did you get your Trans? <%= f.input :how_get_trans, label: false, collection: ["With Motor", "Separately"] %> </p>
-          </div>
-        </div>
-
-        <div class="panel panel-default col-md-6">
-          <div class="row">
-            <div class="col-md-6">
-              <h4>A/C Refrigerant</h4>
-                <%= f.input :ac_refrigerant, label: false, collection: ["R12", "R134", "Other - fill out in next box"]%>
-            </div>
-            <div class="col-md-6">
-              <h4>A/C Refrigerant Other</h4>
-                <%= f.input :ac_refrigerant_other, label: false, placeholder: "other"%>
-            </div>
-            <div class="col-md-6">
-              <h4>Battery Type</h4>
-                <%= f.input :battery_type, label: false, collection: ["Top Post", "Side Post"]%>
-            </div>
-            <div class="col-md-6">
-              <h4>Fan Belts</h4>
-                <%= f.input :fan_belts, label: false, collection: ["Multiple Vee Belts", "Single Serpentine", "Combo"]%>
-            </div>
+          <div class="col-md-6">
+            <p> How did you get your Transmission? <%= f.input :how_get_trans, label: false, collection: ["With Motor", "Separately"] %> </p>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h4>A/C Refrigerant</h4>
+              <%= f.input :ac_refrigerant, label: false, collection: ["R12", "R134", "Other - fill out in next box"]%>
+          </div>
+          <div class="col-md-6">
+            <h4>A/C Refrigerant Other</h4>
+              <%= f.input :ac_refrigerant_other, label: false, placeholder: "other"%>
+          </div>
+          <div class="col-md-6">
+            <h4>Battery Type</h4>
+              <%= f.input :battery_type, label: false, collection: ["Top Post", "Side Post"]%>
+          </div>
+          <div class="col-md-6">
+            <h4>Fan Belts</h4>
+              <%= f.input :fan_belts, label: false, collection: ["Multiple Vee Belts", "Single Serpentine", "Combo"]%>
+          </div>
+        </div>
+      </div>
         <br clear="all">
         <div class="col-md-12">
           <p> This information is <em><strong> critical</strong></em> to providing you with the right parts the <em> first time!</em> Failure to complete this page <strong> will delay</strong> your order. Please select your accessories layout, compressor and plug, alternator plug, and ignition plug. Black areas on the plugs are closet to you. Please call if you need help. </p>
@@ -505,7 +494,7 @@
           </div>
           <div class= "col-md-4">
             <h4>LT-1 <em>Only</em></h4>Size of purge/fill/vent nipple in throttle body:
-              <%= f.input :engine_purge_size, label: false, collection: ["3/8in", "1/2in"]%>
+              <%= f.input :engine_purge_size, label: false, collection: ["3/8 in", "1/2 in"]%>
           </div>
           <div class="col-md-2">
             <%= image_tag("purge_size.png") %>
@@ -578,6 +567,8 @@
               <h4>Oil Pressure Safety Switch for Fuel Pump</h4>
                 <%= f.collection_radio_buttons :miscellaneous_oil_switch, [[true, 'Yes'], [false, 'No']], :first, :last%>
             </div>
+          </div>
+          <div class="row">
             <div class="col-md-6">
               <h4>VSS/Speedo Type</h4> Please pull the four bolts on the trans tailhousing and <strong>circle</strong> the type of speedo drive you have:
                 <%= f.input :miscellaneous_speedo_type, label: false, collection: ["Type 1", "Type 2"]%>
@@ -618,7 +609,7 @@
         </div>
         <div class="col-md-6">
           <p> Who did you talk to? </p>
-          <%= f.collection_radio_buttons :talk_to, [[true, 'Yes'], [false, 'No']], :first, :last%>
+          <%= f.input :talk_to, label: false, placeholder:""%>
         </div>
         <div class="col-md-12">
           <p> What was your impression of our staff? </p>
