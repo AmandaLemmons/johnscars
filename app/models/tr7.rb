@@ -3,13 +3,13 @@ class Tr7 < ActiveRecord::Base
 
 
   def set_tr7_kit
-    self.kit_amt = 795
+    self.kit_amt = 895
     self.save
   end
 
   def set_ac_hoses
     if self.ac_hoses == true
-       self.ac_hoses_amt = 55
+       self.ac_hoses_amt = 75
      else
         self.ac_hoses_amt = 0
     end
@@ -18,7 +18,7 @@ class Tr7 < ActiveRecord::Base
 
   def set_jci_headers
     if self.jci_headers == true
-       self.jci_headers_amt = 225
+       self.jci_headers_amt = 295
      else
         self.jci_headers_amt = 0
     end
@@ -36,7 +36,7 @@ class Tr7 < ActiveRecord::Base
 
   def set_driveshaft_adaptor
     if self.driveshaft_adaptor == true
-       self.driveshaft_adaptor_amt = 75
+       self.driveshaft_adaptor_amt = 125
      else
         self.driveshaft_adaptor_amt = 0
     end
@@ -45,15 +45,26 @@ class Tr7 < ActiveRecord::Base
 
   def set_electrolock
     if self.electrolock == true
-       self.electrolock_amt = 95
+       self.electrolock_amt = 115
      else
         self.electrolock_amt = 0
     end
     self.save!
   end
 
+  def set_headers_3800
+    if self.headers_3800 == true
+       self.headers_3800_amt = 345
+     else
+        self.headers_3800_amt = 0
+    end
+    self.save!
+  end
+
+
+
   def set_subtotal
-    self.subtotal = self.kit_amt + self.ac_hoses_amt + self.jci_headers_amt + self.fuel_injection_vc_amt + self.driveshaft_adaptor_amt +   self.electrolock_amt - self.credit_amt
+    self.subtotal = self.kit_amt + self.ac_hoses_amt + self.jci_headers_amt + self.fuel_injection_vc_amt + self.driveshaft_adaptor_amt +   self.electrolock_amt + self.headers_3800_amt - self.credit_amt
     self.save!
   end
 

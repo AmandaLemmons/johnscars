@@ -139,11 +139,7 @@
       <tbody>
         <tr>
           <td><em>Year: </em> <b> <%= @tr7.tr7s_year%></b></td>
-          <% if @tr7.tr7s_type == "Other - fill out in next box" || @tr7.other_type.present? %>
-            <td><em>Model: </em> <b> <%=@tr7.other_type%></b></td>
-          <% else %>
             <td><em>Model: </em> <b> <%=@tr7.tr7s_type%></b></td>
-          <% end %>
         </tr>
         <tr>
           <td> <em>VIN:</em> <b> <%=@tr7.tr7s_vin%></b></td>
@@ -218,6 +214,10 @@
         <tr>
           <td >JCI Headers</td>
           <td >$<%= @tr7.jci_headers_amt %></td>
+        </tr>
+        <tr>
+          <td>3800 Headers</td>
+          <td>$<%= @tr7.headers_3800_amt%></td>
         </tr>
         <tr>
           <td >Fuel Injection V6 </td>

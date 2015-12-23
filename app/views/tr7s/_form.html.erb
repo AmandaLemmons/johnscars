@@ -14,15 +14,11 @@
        </div>
        <div class="col-md-4">
          <h4>Model Year</h4>
-         <%= f.input :tr7s_year, label: false, placeholder:"Year", collection: ["1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996"]%>
+         <%= f.input :tr7s_year, label: false, placeholder:"Year", collection: ["1975", "1976", "1977", "1978", "1979", "1980", "1981"]%>
        </div>
        <div class="col-md-4">
          <h4>Type </h4>
-         <%= f.input :tr7s_type, label: false, placeholder:"Type",  collection: ["Coupe", "Convertible", "Other - fill out in next box"]%>
-       </div>
-       <div class="col-md-4">
-         <h4>Other Type </h4>
-         <%= f.input :other_type, label: false, placeholder:"Other Type"%>
+         <%= f.input :tr7s_type, label: false, placeholder:"Type",  collection: ["Coupe", "Convertible"]%>
        </div>
        <div class="col-md-4">
          <h4>VIN #</h4>
@@ -35,7 +31,7 @@
       </div>
      <div class="col-md-4">
           <h4>Year Built </h4>
-          <%= f.input :tr7s_year_built, label: false, placeholder: "Year Built", collection: ["1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996"]%>
+          <%= f.input :tr7s_year_built, label: false, placeholder: "Year Built", collection: ["1975", "1976", "1977", "1978", "1979", "1980", "1981"]%>
       </div>
     </div row>
     <div class="row">
@@ -57,7 +53,7 @@
           </div>
           <div class="col-md-6">
                <h4>Rear Axle Ratio</h4>
-               <%= f.input :tr7s_rear_axle_ratio, label: false, placeholder: "", collection: ["308", "327", "345", "363", "391", "327", "363", "Drop out 3rd memeber", "345", "391", "Salisbury rear cover", "Other - fill out in next box"]%>
+               <%= f.input :tr7s_rear_axle_ratio, label: false, placeholder: "", collection: ["308", "327", "345", "363", "391", "Drop out 3rd memeber", "Other - fill out in next box"]%>
            </div>
            <div class="col-md-12">
                 <h4>Other Rear Axle Ratio</h4>
@@ -100,16 +96,21 @@
     <tbody>
       <td class="col-md-4"> TR7 Kit </td>
       <td class="col-md-4"> </td>
-      <td class="col-md-4"><strong> $795.00 </strong></td>
+      <td class="col-md-4"><strong> $895.00 </strong></td>
       <tr>
         <td class="col-md-4">A/C Hoses </td>
-        <td class="col-md-4"> $55.00 </td>
+        <td class="col-md-4"> $75.00 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :ac_hoses, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
         <td class="col-md-4">JCI Headers </td>
-        <td class="col-md-4"> $225.00 </td>
+        <td class="col-md-4"> $295.00 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :jci_headers, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+      </tr>
+      <tr>
+        <td class="col-md-4">3800 Headers </td>
+        <td class="col-md-4"> $345.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :headers_3800, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
         <td class="col-md-4">Fuel Injection V6 </td>
@@ -118,12 +119,12 @@
       </tr>
       <tr>
         <td class="col-md-4">Driveshaft Adaptor (4-sp rear) </td>
-        <td class="col-md-4"> $75.00 </td>
+        <td class="col-md-4"> $125.00 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :driveshaft_adaptor, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
         <td class="col-md-4">ELECTROLOCK </td>
-        <td class="col-md-4"> $95.00 </td>
+        <td class="col-md-4"> $115.00 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :electrolock, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
