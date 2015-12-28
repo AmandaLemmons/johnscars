@@ -1,4 +1,6 @@
 class EtypeV12 < ActiveRecord::Base
+  validates :vin, :car_owner_full_name, :car_owner_address, :car_owner_city, :car_owner_state, :car_owner_zip, presence: true
+
 
   def set_same_shipping
     if self.same_information == true
