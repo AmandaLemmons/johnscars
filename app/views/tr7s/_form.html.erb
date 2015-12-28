@@ -3,7 +3,7 @@
   <%= f.error_notification %>
 
   <h2 class="text-center"> JOHN'S CARS V6 TR7 CONVERSION KIT ORDER SHEET </h2>
-  <p> Please complete as much information as you can - there are thousands of variations of my V6 TR7 kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em><strong> unsigned</strong> </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transferes. <b> KITS ARE NOT RETURNABLE.</b> </p>
+  <p> Please complete as much information as you can - there are thousands of variations of my kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em><strong> unsigned</strong> </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transfers. <b> KITS ARE NOT RETURNABLE.</b> </p>
 
   <div class="panel panel-default col-md-6">
   <h2 class="text-center">TR7 Information (Before V6)</h2>
@@ -79,15 +79,15 @@
    <div class="row">
      <div class="col-md-4">
        <h4> Engine </h4>
-       <%= f.input :buick_v6_engine, label: false, placeholder: "Engine", collection: ["Carb", "Fuel Injection"]%>
+       <%= f.input :buick_v6_engine, label: false, placeholder: "Engine", collection: ["Carb", "Fuel Injection", "Turbo", "Supercharged"]%>
      </div>
      <div class="col-md-4">
         <h4>Year </h4>
-        <%= f.input :buick_v6_year, label: false, placeholder: "Year"%>
+        <%= f.input :buick_v6_year, label: false, collection: ["1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1989", "1997", "1998", "1999", "2000", "2001", "2002"]%>
     </div>
         <div class="col-md-4">
           <h4> CID </h4>
-          <%= f.input :buick_v6_cid, label: false, placeholder: "CID" %>
+          <%= f.input :buick_v6_cid, label: false, collection: [ "198", "215", "231", "252", "3800"] %>
         </div>
       </div>
 
@@ -133,7 +133,7 @@
         <td class="col-md-4"><%= f.input :other_kit_options, label: false, placeholder: ""%> </td>
       </tr>
       <tr>
-        <td class="col-md-4">Credit <small> (Suggested Buy or Repeat Kits) <br>* Price is Required (if no credit put "0")</small> </td>
+        <td class="col-md-4">Credit <small> (Suggested Buy or Repeat Kits) <br>*must be positive number</small> </td>
         <td class="col-md-4"> Price <%= f.input :credit_amt, label:false, placeholder: "Required, positive number"%> </td>
         <td class="col-md-4"> Credit Description<%= f.input :credit_description, label: false, placeholder:"Credit Description" %></td>
       </tr>
