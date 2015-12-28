@@ -37,38 +37,23 @@
       </tr>
       <tr>
         <td><em> Home Phone: </em>
-          <% if @xj6_quarterbreed.car_owner_home_phone.present? %>
-            <b> <%= @xj6_quarterbreed.car_owner_home_phone.insert(3, '-').insert(7, '-')  %></b>
-          <% else %>
-          <% end %>
+            <b> <%= @xj6_quarterbreed.car_owner_home_phone %></b>
           <em>From: </em><b>  <%= @xj6_quarterbreed.car_owner_home_hours %></b> </td>
         <td> <em> Shop Phone: </em>
-          <% if @xj6_quarterbreed.ship_to_phone.present? %>
-            <b><%= @xj6_quarterbreed.ship_to_phone.insert(3, '-').insert(7, '-')  %></b>
-          <% else %>
-          <% end %>
+            <b><%= @xj6_quarterbreed.ship_to_phone  %></b>
         </td>
       </tr>
       <tr>
         <td> <em>Work Phone: </em>
-          <% if @xj6_quarterbreed.car_owner_work_phone.present? %>
-            <b><%= @xj6_quarterbreed.car_owner_work_phone.insert(3, '-').insert(7, '-')  %></b>
-          <% else %>
-          <% end %>
+            <b><%= @xj6_quarterbreed.car_owner_work_phone %></b>
           <em>From: </em><b> <%= @xj6_quarterbreed.car_owner_work_hours%></b> </td>
         <td><em>Fax: </em>
-          <% if @xj6_quarterbreed.ship_to_fax.present? %>
-            <b><%= @xj6_quarterbreed.ship_to_fax.insert(3, '-').insert(7, '-')  %></b>
-          <% else %>
-          <% end %>
+            <b><%= @xj6_quarterbreed.car_owner_fax  %></b>
         </td>
       </tr>
       <tr>
         <td> <em> Fax: </em>
-          <% if @xj6_quarterbreed.car_owner_fax.present? %>
-            <b> <%= @xj6_quarterbreed.car_owner_fax.insert(3, '-').insert(7, '-')  %> </b>
-          <% else %>
-          <% end %>
+            <b> <%= @xj6_quarterbreed.ship_to_fax  %> </b>
           <em>From: </em> <b> <%= @xj6_quarterbreed.car_owner_fax_hours %></b></td>
           <td><em>How did you find us? </em><b> <%= @xj6_quarterbreed.car_owner_find_us %> </b> <em> -- </em><b> <%= @xj6_quarterbreed.car_owner_where_find_us %></b></td>
       </tr>
@@ -97,26 +82,17 @@
       </tr>
       <tr>
         <td><em>Home Phone: </em>
-          <% if @xj6_quarterbreed.car_owner_home_phone.present? %>
-            <b><%= @xj6_quarterbreed.car_owner_home_phone.insert(3, '-').insert(7, '-')  %></b>
-          <% else %>
-          <% end %>
+            <b><%= @xj6_quarterbreed.car_owner_home_phone %></b>
            <em>From:</em>  <b><%= @xj6_quarterbreed.car_owner_home_hours %> </b></td>
       </tr>
       <tr>
         <td> <em>Work Phone: </em>
-          <% if @xj6_quarterbreed.car_owner_work_phone.present? %>
-            <b><%= @xj6_quarterbreed.car_owner_work_phone.insert(3, '-').insert(7, '-')  %></b>
-          <% else %>
-          <% end %>
+            <b><%= @xj6_quarterbreed.car_owner_work_phone %></b>
           <em>From: </em> <b> <%= @xj6_quarterbreed.car_owner_work_hours%> </b></td>
       </tr>
       <tr>
         <td>  <em>Fax: </em>
-          <% if @xj6_quarterbreed.car_owner_fax.present? %>
-            <b><%= @xj6_quarterbreed.car_owner_fax.insert(3, '-').insert(7, '-')  %></b>
-          <% else %>
-          <% end %>
+            <b><%= @xj6_quarterbreed.car_owner_fax %></b>
           <em>From: </em> <b> <%= @xj6_quarterbreed.car_owner_fax_hours %></b></td>
       </tr>
       <tr>

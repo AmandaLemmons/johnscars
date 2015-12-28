@@ -20,6 +20,11 @@ class Tr7sController < ApplicationController
 
  def show
    @tr7.set_same_shipping
+   @tr7.set_home_phone
+   @tr7.set_work_phone
+   @tr7.set_ship_to_phone
+   @tr7.set_car_owner_fax
+   @tr7.set_ship_to_fax
    @tr7.set_tr7_kit
    @tr7.set_ac_hoses
    @tr7.set_jci_headers
@@ -34,6 +39,11 @@ class Tr7sController < ApplicationController
 
  def edit
    @tr7.set_same_shipping
+   @tr7.set_home_phone
+   @tr7.set_work_phone
+   @tr7.set_ship_to_phone
+   @tr7.set_car_owner_fax
+   @tr7.set_ship_to_fax
    @tr7.set_tr7_kit
    @tr7.set_ac_hoses
    @tr7.set_jci_headers

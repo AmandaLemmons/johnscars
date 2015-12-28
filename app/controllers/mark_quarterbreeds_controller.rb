@@ -32,6 +32,11 @@ class MarkQuarterbreedsController < ApplicationController
     @mark_quarterbreed.set_subtotal
     @mark_quarterbreed.set_sales_tax
     @mark_quarterbreed.set_total
+    @mark_quarterbreed.set_home_phone
+    @mark_quarterbreed.set_work_phone
+    @mark_quarterbreed.set_ship_to_phone
+    @mark_quarterbreed.set_car_owner_fax
+    @mark_quarterbreed.set_ship_to_fax
   end
 
   def edit
@@ -46,6 +51,11 @@ class MarkQuarterbreedsController < ApplicationController
     @mark_quarterbreed.set_subtotal
     @mark_quarterbreed.set_sales_tax
     @mark_quarterbreed.set_total
+    @mark_quarterbreed.set_home_phone
+    @mark_quarterbreed.set_work_phone
+    @mark_quarterbreed.set_ship_to_phone
+    @mark_quarterbreed.set_car_owner_fax
+    @mark_quarterbreed.set_ship_to_fax
   end
 
   def update

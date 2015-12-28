@@ -26,6 +26,11 @@ class QuarterbreedsController < ApplicationController
    @quarterbreed.set_subtotal
    @quarterbreed.set_sales_tax
    @quarterbreed.set_total
+   @quarterbreed.set_home_phone
+   @quarterbreed.set_work_phone
+   @quarterbreed.set_ship_to_phone
+   @quarterbreed.set_car_owner_fax
+   @quarterbreed.set_ship_to_fax
  end
 
  def edit
@@ -36,6 +41,11 @@ class QuarterbreedsController < ApplicationController
    @quarterbreed.set_subtotal
    @quarterbreed.set_sales_tax
    @quarterbreed.set_total
+   @quarterbreed.set_home_phone
+   @quarterbreed.set_work_phone
+   @quarterbreed.set_ship_to_phone
+   @quarterbreed.set_car_owner_fax
+   @quarterbreed.set_ship_to_fax
  end
 
  def update

@@ -72,6 +72,39 @@ class EtypeV12 < ActiveRecord::Base
     self.total = (self.subtotal + self.sales_tax).round(2)
   end
 
+  def set_home_phone
+    if self.car_owner_home_phone.present?
+      self.car_owner_home_phone.gsub!(/[^0-9]/, '')
+      self.car_owner_home_phone.insert(3, '-').insert(7, '-')
+    end
+  end
 
+  def set_work_phone
+      if self.car_owner_work_phone.present?
+        self.car_owner_work_phone.gsub!(/[^0-9]/, '')
+        self.car_owner_work_phone.insert(3, '-').insert(7, '-')
+      end
+  end
+
+  def set_ship_to_phone
+      if self.ship_to_phone.present?
+        self.ship_to_phone.gsub!(/[^0-9]/, '')
+        self.ship_to_phone.insert(3, '-').insert(7, '-')
+      end
+  end
+
+  def set_car_owner_fax
+      if self.car_owner_fax.present?
+        self.car_owner_fax.gsub!(/[^0-9]/, '')
+        self.car_owner_fax.insert(3, '-').insert(7, '-')
+      end
+  end
+
+  def set_ship_to_fax
+      if self.ship_to_fax.present?
+        self.ship_to_fax.gsub!(/[^0-9]/, '')
+        self.ship_to_fax.insert(3, '-').insert(7, '-')
+      end
+  end
 
 end

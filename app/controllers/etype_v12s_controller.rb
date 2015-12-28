@@ -21,7 +21,6 @@ class EtypeV12sController < ApplicationController
 
  def show
   @etype_v12.set_same_shipping
-  # @etype_v12.set_phone_dahses
    @etype_v12.set_auto_trans_kit
    @etype_v12. set_manual_tras_kit
    @etype_v12.set_tach_calibration
@@ -30,6 +29,11 @@ class EtypeV12sController < ApplicationController
    @etype_v12.set_subtotal
    @etype_v12.set_sales_tax
    @etype_v12.set_total
+   @etype_v12.set_home_phone
+   @etype_v12.set_work_phone
+   @etype_v12.set_ship_to_phone
+   @etype_v12.set_car_owner_fax
+   @etype_v12.set_ship_to_fax
  end
 
  def edit
@@ -42,6 +46,11 @@ class EtypeV12sController < ApplicationController
   @etype_v12.set_subtotal
   @etype_v12.set_sales_tax
   @etype_v12.set_total
+  @etype_v12.set_home_phone
+  @etype_v12.set_work_phone
+  @etype_v12.set_ship_to_phone
+  @etype_v12.set_car_owner_fax
+  @etype_v12.set_ship_to_fax
  end
 
  def update

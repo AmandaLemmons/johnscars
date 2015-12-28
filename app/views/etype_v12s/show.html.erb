@@ -39,36 +39,24 @@
         </tr>
         <tr>
           <td><em> Home Phone: </em><b>
-            <% if @etype_v12.car_owner_home_phone.present? %>
-              <%= @etype_v12.car_owner_home_phone.insert(3, '-').insert(7, '-')  %>
-            <% else %>
-            <% end %>
+              <%= @etype_v12.car_owner_home_phone  %>
           </b> <em>From: </em><b>  <%= @etype_v12.car_owner_home_hours %></b> </td>
           <td> <em> Shop Phone: </em><b>
-            <% if @etype_v12.ship_to_phone.present? %>
-              <%= @etype_v12.ship_to_phone.insert(3, '-').insert(7, '-') %>
-            <% else %>
-            <% end %>
+              <%= @etype_v12.ship_to_phone %>
           </b> </td>
         </tr>
         <tr>
           <td> <em>Work Phone: </em><b>
-            <% if @etype_v12.car_owner_work_phone.present? %>
-              <%= @etype_v12.car_owner_work_phone.insert(3, '-').insert(7, '-')  %>
-            <% else %>
-            <% end %>
+              <%= @etype_v12.car_owner_work_phone  %>
           </b> <em>From: </em><b> <%= @etype_v12.car_owner_work_hours%></b> </td>
           <td><em>Fax: </em><b>
-            <% if @etype_v12.ship_to_fax.present? %>
-              <%= @etype_v12.ship_to_fax.insert(3, '-').insert(7, '-')  %>
-            <% else %>
-            <%end %>
+              <%= @etype_v12.ship_to_fax  %>
           </b> </td>
         </tr>
         <tr>
           <td> <em> Fax: </em><b>
             <% if @etype_v12.car_owner_fax.present? %>
-              <%= @etype_v12.car_owner_fax.insert(3, '-').insert(7, '-')  %>
+              <%= @etype_v12.car_owner_fax  %>
             <% else %>
             <% end %>
            </b> <em>From: </em> <b> <%= @etype_v12.car_owner_fax_hours %></b></td>
@@ -99,26 +87,17 @@
         </tr>
         <tr>
           <td><em>Home Phone: </em> <b>
-            <% if @etype_v12.car_owner_home_phone.present?%>
-              <%= @etype_v12.car_owner_home_phone.insert(3, '-').insert(7, '-')  %>
-            <% else %>
-            <% end %>
+              <%= @etype_v12.car_owner_home_phone  %>
          </b> <em>From:</em>  <b><%= @etype_v12.car_owner_home_hours %> </b></td>
         </tr>
         <tr>
           <td> <em>Work Phone: </em> <b>
-            <% if @etype_v12.car_owner_work_phone.present? %>
-              <%= @etype_v12.car_owner_work_phone.insert(3, '-').insert(7, '-')  %>
-            <% else %>
-            <% end %>
+              <%= @etype_v12.car_owner_work_phone  %>
           </b> <em>From: </em> <b> <%= @etype_v12.car_owner_work_hours%> </b></td>
         </tr>
         <tr>
           <td>  <em>Fax: </em>  <b>
-            <% if @etype_v12.car_owner_fax.present? %>
-              <%= @etype_v12.car_owner_fax.insert(3, '-').insert(7, '-')  %>
-            <% else %>
-            <% end %>
+              <%= @etype_v12.car_owner_fax  %>
           </b> <em>From: </em> <b> <%= @etype_v12.car_owner_fax_hours %></b></td>
         </tr>
         <tr>

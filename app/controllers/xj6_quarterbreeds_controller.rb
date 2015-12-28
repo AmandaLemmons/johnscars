@@ -26,7 +26,11 @@ class Xj6QuarterbreedsController < ApplicationController
    @xj6_quarterbreed.set_subtotal
    @xj6_quarterbreed.set_sales_tax
    @xj6_quarterbreed.set_total
-
+   @xj6_quarterbreed.set_home_phone
+   @xj6_quarterbreed.set_work_phone
+   @xj6_quarterbreed.set_ship_to_phone
+   @xj6_quarterbreed.set_car_owner_fax
+   @xj6_quarterbreed.set_ship_to_fax
  end
 
  def edit
@@ -37,6 +41,11 @@ class Xj6QuarterbreedsController < ApplicationController
    @xj6_quarterbreed.set_subtotal
    @xj6_quarterbreed.set_sales_tax
    @xj6_quarterbreed.set_total
+   @xj6_quarterbreed.set_home_phone
+   @xj6_quarterbreed.set_work_phone
+   @xj6_quarterbreed.set_ship_to_phone
+   @xj6_quarterbreed.set_car_owner_fax
+   @xj6_quarterbreed.set_ship_to_fax
  end
 
  def update

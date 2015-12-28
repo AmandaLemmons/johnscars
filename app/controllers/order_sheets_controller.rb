@@ -32,6 +32,11 @@ class OrderSheetsController < ApplicationController
     @order_sheet.set_subtotal
     @order_sheet.set_sales_tax
     @order_sheet.set_total
+    @order_sheet.set_home_phone
+    @order_sheet.set_work_phone
+    @order_sheet.set_ship_to_phone
+    @order_sheet.set_car_owner_fax
+    @order_sheet.set_ship_to_fax
   end
 
   def edit
@@ -47,6 +52,11 @@ class OrderSheetsController < ApplicationController
     @order_sheet.set_subtotal
     @order_sheet.set_sales_tax
     @order_sheet.set_total
+    @order_sheet.set_home_phone
+    @order_sheet.set_work_phone
+    @order_sheet.set_ship_to_phone
+    @order_sheet.set_car_owner_fax
+    @order_sheet.set_ship_to_fax
   end
 
   def update
