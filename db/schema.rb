@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151223124827) do
+ActiveRecord::Schema.define(version: 20151229115452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20151223124827) do
     t.decimal  "freight",                        precision: 10, scale: 2
     t.decimal  "sales_tax",                      precision: 10, scale: 2
     t.decimal  "total",                          precision: 10, scale: 2
-    t.boolean  "same_information",                                        default: false
+    t.boolean  "same_information",                                        default: true
     t.text     "comments"
     t.string   "driveline_engine"
     t.string   "driveline_year"
@@ -141,8 +141,8 @@ ActiveRecord::Schema.define(version: 20151223124827) do
   end
 
   create_table "mark_quarterbreeds", force: :cascade do |t|
-    t.datetime "created_at",                                                                       null: false
-    t.datetime "updated_at",                                                                       null: false
+    t.datetime "created_at",                                                                        null: false
+    t.datetime "updated_at",                                                                        null: false
     t.string   "car_owner_full_name"
     t.string   "car_owner_address"
     t.string   "car_owner_city"
@@ -166,7 +166,7 @@ ActiveRecord::Schema.define(version: 20151223124827) do
     t.string   "ship_to_fax"
     t.string   "ship_to_contact_person"
     t.string   "comments"
-    t.boolean  "same_information"
+    t.boolean  "same_information",                                                   default: true
     t.string   "mark_quarterbreeds_before_type"
     t.string   "mark_quarterbreeds_before_vin"
     t.string   "mark_quarterbreeds_before_year"
@@ -214,8 +214,8 @@ ActiveRecord::Schema.define(version: 20151223124827) do
   end
 
   create_table "order_sheets", force: :cascade do |t|
-    t.datetime "created_at",                                                       null: false
-    t.datetime "updated_at",                                                       null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
     t.string   "car_owner_full_name"
     t.string   "car_owner_address"
     t.string   "car_owner_city"
@@ -256,7 +256,7 @@ ActiveRecord::Schema.define(version: 20151223124827) do
     t.decimal  "total",                     precision: 7,  scale: 2
     t.date     "sign_date"
     t.string   "ship_to_countr"
-    t.boolean  "same_information"
+    t.boolean  "same_information",                                   default: true
     t.boolean  "texas_resident"
     t.string   "transmission_type"
     t.string   "transmission_detail"
@@ -292,8 +292,8 @@ ActiveRecord::Schema.define(version: 20151223124827) do
   end
 
   create_table "quarterbreeds", force: :cascade do |t|
-    t.datetime "created_at",                                                     null: false
-    t.datetime "updated_at",                                                     null: false
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
     t.string   "car_owner_full_name"
     t.string   "car_owner_address"
     t.string   "car_owner_city"
@@ -337,7 +337,7 @@ ActiveRecord::Schema.define(version: 20151223124827) do
     t.decimal  "subtotal",                precision: 10, scale: 2
     t.decimal  "sales_tex",               precision: 10, scale: 2
     t.boolean  "texas_resident"
-    t.boolean  "same_information"
+    t.boolean  "same_information",                                 default: true
     t.integer  "expedite"
     t.decimal  "total",                   precision: 10, scale: 2
     t.text     "comments"
@@ -410,7 +410,7 @@ ActiveRecord::Schema.define(version: 20151223124827) do
     t.decimal "fuel_injection_vc_amt",       precision: 10, scale: 2
     t.decimal "driveshaft_adaptor_amt",      precision: 10, scale: 2
     t.decimal "electrolock_amt",             precision: 10, scale: 2
-    t.boolean "same_information"
+    t.boolean "same_information",                                     default: true
     t.string  "ship_to_countr"
     t.string  "car_owner_countr"
     t.string  "car_owner_where_find_us"
@@ -421,8 +421,8 @@ ActiveRecord::Schema.define(version: 20151223124827) do
   end
 
   create_table "xj6_quarterbreeds", force: :cascade do |t|
-    t.datetime "created_at",                                                        null: false
-    t.datetime "updated_at",                                                        null: false
+    t.datetime "created_at",                                                         null: false
+    t.datetime "updated_at",                                                         null: false
     t.string   "car_owner_full_name"
     t.string   "car_owner_address"
     t.string   "car_owner_city"
@@ -446,7 +446,7 @@ ActiveRecord::Schema.define(version: 20151223124827) do
     t.string   "ship_to_fax"
     t.string   "ship_to_contact_person"
     t.string   "comments"
-    t.boolean  "same_information"
+    t.boolean  "same_information",                                    default: true
     t.string   "model"
     t.string   "vin"
     t.string   "year"
@@ -478,6 +478,8 @@ ActiveRecord::Schema.define(version: 20151223124827) do
     t.string   "ship_to_countr"
     t.string   "car_owner_countr"
     t.string   "car_owner_where_find_us"
+    t.boolean  "gear_drive_starter"
+    t.decimal  "gear_drive_starter_amt",     precision: 10, scale: 2
   end
 
 end

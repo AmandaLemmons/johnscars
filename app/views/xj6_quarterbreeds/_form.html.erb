@@ -13,7 +13,7 @@
      </div>
        <div class="col-md-4">
          <h4>Model</h4>
-         <%= f.input :model, label: false, placeholder:"Type", collection: ["XJ6", "XJ6C", "XJ6L"]%>
+         <%= f.input :model, label: false, placeholder:"Type", collection: ["XJ6", "XJ6C", "XJ6L", "Streetrod/Custom"]%>
        </div>
        <div class="col-md-4">
          <h4>Year </h4>
@@ -55,7 +55,7 @@
       </div>
       <div class="col-md-4">
           <h4>Engine Model </h4>
-          <%= f.input :engine_model, label: false, placeholder:"", collection: ["Carbureted", "Fuel Injection"]
+          <%= f.input :engine_model, label: false, placeholder:"", collection: ["Carbureted", "Fuel Injection", "NOT STOCK - please add info in comments"]
           %>
       </div>
       <div class="col-md-4">
@@ -110,11 +110,11 @@
    <div class="row">
        <div class="col-md-6">
            <h4>Transmission </h4>
-           <%= f.input :trans, label: false, placeholder: "Trans", collection: ["350", "400", "700"]%>
+           <%= f.input :trans, label: false, placeholder: "Trans", collection: ["350", "400", "700", "Powerglide"]%>
        </div>
      <div class="col-md-6">
        <h4> Year</h4>
-       <%= f.input :trans_year, label: false, placeholder: "", collection: ["1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992"]%>
+       <%= f.input :trans_year, label: false, placeholder: "", collection: ["1969", "1970", "1971", "1972","1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992"]%>
     </div>
     <div class="col-md-6">
       <h4> Tailhousing Length </h4>
@@ -135,13 +135,18 @@
       <td class="col-md-4"><strong><%= f.input :xj6_quarterbreedss_kit, label: false,  collection: ["Yes", "No, I already bought this", "Not JCI car parts"]%></strong></td>
       <tr>
         <td class="col-md-4">Driveshaft </td>
-        <td class="col-md-4"> $265 </td>
+        <td class="col-md-4"> $255 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :driveshaft, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
         <td class="col-md-4">Torque Converter Lockup Kit* </td>
-        <td class="col-md-4"> $75.00 </td>
+        <td class="col-md-4"> $115.00 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :torque_converter, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+      </tr>
+      <tr>
+        <td class="col-md-4">Gear Drive Starter </td>
+        <td class="col-md-4"> $165.00 </td>
+        <td class="col-md-4"><%= f.collection_radio_buttons :gear_drive_starter, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
         <td class="col-md-4">Credit  (Non-illustrated or Repeat Kits) <br> <small>* Price is Required (if no credit put "0")</small></td>
@@ -149,19 +154,19 @@
         <td class="col-md-4"> Credit Description <%= f.input :credit_description, label: false, placeholder:"Required, must be a positive number" %></td>
       </tr>
       <tr>
+        <td class="col-md-4">Freight Paid 48 States </td>
+        <td class="col-md-4"> Ship outside of the 48 Continental States?</td>
+        <td class="col-md-4"> <%= f.collection_radio_buttons :expedite, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
+      </tr>
+      <tr>
         <td class="col-md-4">Are you a Texas Resident? </td>
         <td class="col-md-4"> Add Sales Tax -- 8.25% </td>
         <td class="col-md-4"> </td>
       </tr>
-      <!-- <tr>
-        <td class="col-md-4">Hawaii or Expedite </td>
-        <td class="col-md-4"> (Overnite or 2 day) </td>
-        <td class="col-md-4"> f.collection_radio_buttons :expedite, [[true, 'Yes'], [false, 'No']], :first, :last%> </td>
-      </tr> -->
     </tbody>
   </table>
   <br>
-    <p>*All T700 and some T350 (with a blue2-terminal connector) require a torque converted lockup kit. If you're having a T700 transmission built, just have them set it up to lockup for you. If you have a lockup-capable T350 or a used/pull-out T700, you have to use our lockup kit.</p>
+    <p>*All T700 and some T350 (with a blue2-terminal connector) require a torque converter lockup kit. If you're having a T700 transmission built, just have them set it up to lockup for you. If you have a lockup-capable T350 or a used/pull-out T700, you <strong>HAVE TO USE</strong> our lockup kit.</p>
 </div>
 <br clear="all">
 

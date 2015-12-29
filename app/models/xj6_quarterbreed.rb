@@ -20,7 +20,7 @@ class Xj6Quarterbreed < ActiveRecord::Base
 
   def set_xj6_quarterbreeds_driveshaft
     if self.driveshaft == true
-      self.driveshaft_amt = 265
+      self.driveshaft_amt = 255
     else
       self.driveshaft_amt = 0
     end
@@ -29,15 +29,24 @@ class Xj6Quarterbreed < ActiveRecord::Base
 
   def set_torque_converter
     if self.torque_converter == true
-       self.torque_converter_amt = 75
+       self.torque_converter_amt = 115
      else
         self.torque_converter_amt = 0
     end
     self.save!
   end
 
+  def set_gear_drive_starter
+    if self.gear_drive_starter == true
+       self.gear_drive_starter_amt = 165
+     else
+        self.gear_drive_starter_amt = 0
+    end
+      self.save!
+  end
+
   def set_subtotal
-    self.subtotal = self.xj6_quarterbreedss_kit_amt + self.driveshaft_amt + self.torque_converter_amt - self.credit_amt
+    self.subtotal = self.xj6_quarterbreedss_kit_amt + self.driveshaft_amt + self.torque_converter_amt + self.gear_drive_starter_amt - self.credit_amt
     self.save!
   end
 
