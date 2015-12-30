@@ -17,7 +17,7 @@ class MarkQuarterbreed < ActiveRecord::Base
 
   def set_new_angle_drive
     if self.new_angle_drive == true
-      self.new_angle_drive_amt = 150
+      self.new_angle_drive_amt = 175
     else
       self.new_angle_drive_amt = 0
     end
@@ -26,7 +26,7 @@ class MarkQuarterbreed < ActiveRecord::Base
 
   def set_mark_quarterbreeds_driveshaft
     if self.mark_quarterbreeds_driveshaft == true
-      self.mark_quarterbreeds_driveshaft_amt = 245
+      self.mark_quarterbreeds_driveshaft_amt = 255
     else
       self.mark_quarterbreeds_driveshaft_amt = 0
     end

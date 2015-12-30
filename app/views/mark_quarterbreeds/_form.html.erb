@@ -3,12 +3,14 @@
   <%= f.error_notification %>
 
   <h2 class="text-center"> JCI MARK QUARTERBREED KIT ORDER SHEET </h2>
-  <p> Please complete as much information as you can - there are thousands of variations of my kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO COD's</b>, personal checks, company checks, credit cards or wire transfers. <b> KITS ARE NOT RETURNABLE.</b> </p>
+  <p> Please complete as much information as you can - there are thousands of variations of my kits. Phone numbers and Vehicle Identification Number (VIN) (serial number) are essential. Incomplete or <em> unsigned </em> forms will delay your order! We require payment in advance by <b> Cashier's Check or Money Order </b> in U.S. currency. <b> NO CODs</b>, personal checks, company checks, credit cards or wire transfers. <b> KITS ARE NOT RETURNABLE.</b> </p>
 
-  <div class="panel panel-default col-md-6">
+
+  <div class="panel panel-default col-md-12">
   <h2 class="text-center">Mark Information (Before QB)</h2>
-  <div class="col-md-12 text-center">
-    <p> VIN/ Body Number: Plate in the engine bay, Right Hand Block by oil filter </p>
+  <br>
+  <div class="col-md-12 hint">
+    <p> VIN/ Body Number: Plate in the engine bay, engine number is on right hand block by oil filter</p>
   </div>
    <div class="row">
        <div class="col-md-4">
@@ -31,21 +33,18 @@
     <div class="row">
       <div class="col-md-6">
           <h4>Transmission </h4>
-          <%= f.input :mark_quarterbreeds_before_trans, label: false, placeholder: "Trans", collection: ["Automatic", "Manuel"]%>
+          <%= f.input :mark_quarterbreeds_before_trans, label: false, placeholder: "Trans", collection: ["Automatic", "Manual"]%>
       </div>
+
       <div class="col-md-6">
-            <h4>Automatic Shifter </h4>
+            <h5>If transmission shifter is automatic, I need to know its location</h5>
             <%= f.input :auto_shifter, label: false, placeholder: "Trans", collection: ["Column", "Dashboard"]%>
         </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 hint">
         <p> Rear Axle Ratio: Tag under bolt on rear cover, sometimes shown as a ratio (49/17) - just enter it in. </p>
       </div>
-      <div class="col-md-4">
-           <h4>Tire Size/ Radius</h4>
-           <%= f.input :mark_quarterbreeds_before_tire_size, label: false, placeholder: ""%>
-       </div>
        <div class="col-md-4">
             <h4>Rear Axle Ratio </h4>
             <%= f.input :mark_quarterbreeds_before_rear_axle_ratio, label: false, placeholder: "", collection: ["3.31", "3.54", "3.77", "4.07", "4.27", "Other - fill out in next box"]%>
@@ -54,23 +53,28 @@
           <h4>Other Axle Ratio </h4>
           <%= f.input :rear_axle_ratio_other, label: false, placeholder: ""%>
         </div>
+        <div class="col-md-4">
+             <h4>Tire Size/ Radius</h4>
+             <%= f.input :mark_quarterbreeds_before_tire_size, label: false, placeholder: ""%>
+         </div>
        </div row>
 
-
        <div class ="row">
+         <div class= "col-md-12 hint">
+           <p> Angle drive is required to clear transmission tunnel, if your Mark does not have an angle drive now please order the speedo angle kit that comes with new cable as well. </p>
+         </div>
+
          <div class="col-md-8">
-           <h4> Does the car have angle drive like pictured to the right?</h4>
+           <h5> Does the car have angle drive like pictured to the right?</h5>
            <%= f.collection_radio_buttons :angle_drive, [[true, 'Yes'], [false, 'No']], :first, :last%>
          </div>
          <div class="col-md-4">
               <%= image_tag("angle_drive.png") %>
          </div>
-         <div class="col-md-12">
-           <p> Note: If your Mark does not have this angle drive, order new angle drive and cable with kit. </p>
-         </div>
        </div>
+
        <div class="row">
-         <div class="col-md-12">
+         <div class="col-md-12 hint">
            <p class="p-form">Speedo Number: I need the 3 or 4 numbers in fine print near the center of the speedometer. See the arrow.</p>
          </div>
          <div class="col-md-4">
@@ -88,11 +92,11 @@
 
 
          <div class="row">
-           <div class="col-md-12 text-center">
+           <div class="col-md-12 hint">
                  Engine Number is on the engline bellhousing flange, driver's side.
            </div>
            <div class="col-md-6">
-               <h4>Installing or has a later model 4.2 motor with fuel injection? </h4>
+               <h5>Installing or has a later model 4.2 motor with fuel injection? </h5>
                <%= f.collection_radio_buttons :motor_fuel_injection, [[true, 'Yes'], [false, 'No']], :first, :last %>
            </div>
             <div class="col-md-6">
@@ -101,28 +105,29 @@
                 %>
             </div>
             <div class="col-md-6">
-                <h4>NAME??!?! </h4>
-                <%= f.input :xj_engine_number, label: false, placeholder:"", collection: ["Oil Pan", "Alloy", "Steel"]  %>
+                <h4>Oil Pan Material</h4>
+                <%= f.input :xj_engine_number, label: false, placeholder:"", collection: ["Alloy", "Steel"]  %>
             </div>
 
           </div>
+          <h2 class="text-center">GM Trans Information</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <h5> Trans: 700 aka T700, 4L60, Turbo 700 overdrive </h5>
+            </div>
+            <div class="col-md-6">
+              <h4> Year</h4>
+              <%= f.input :mark_quarterbreeds_gm_trans_year, label: false, placeholder: "Year"%>
+           </div>
+           <!-- <div class="col-md-12">
+             <p> 3 Pipe Plugs on right side of case?</p>
+             <f.collection_radio_buttons :pipe_plugs, [[true, 'Yes'], [false, 'No']], :first, :last%>
+          </div> -->
+          </div row>
+
  </div><!--panel-->
 
- <div class="panel panel-default col-md-6">
-   <h2 class="text-center">GM Trans Information</h2>
-   <div class="row">
-     <div class="col-md-6">
-       <h4> Trans: 700 </h4>
-     </div>
-     <div class="col-md-6">
-       <h4> Year</h4>
-       <%= f.input :mark_quarterbreeds_gm_trans_year, label: false, placeholder: "Year"%>
-    </div>
-    <div class="col-md-12">
-      <p> 3 Pipe Plugs on right side of case?</p>
-      <%= f.collection_radio_buttons :pipe_plugs, [[true, 'Yes'], [false, 'No']], :first, :last%>
-   </div>
-   </div row>
+ <div class="panel panel-default col-md-12">
 
  <h3 class="text-center"> MONIES </h3>
   <table class="table table-bordered">
@@ -131,13 +136,13 @@
       <td class="col-md-4">$895.00   </td>
       <td class="col-md-4"><strong><%= f.input :mark_quarterbreeds_kit, label: false,  collection: ["Yes", "No, I already bought this", "Not JCI car parts"]%></strong></td>
       <tr>
-        <td class="col-md-4">New Angle Drive & Speedo Cable </td>
-        <td class="col-md-4"> $150.00 </td>
+        <td class="col-md-4"> Speedo Angle Kit w/cable  </td>
+        <td class="col-md-4"> $175.00 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :new_angle_drive, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
         <td class="col-md-4">Driveshaft </td>
-        <td class="col-md-4"> $245.00 </td>
+        <td class="col-md-4"> $255.00 </td>
         <td class="col-md-4"><%= f.collection_radio_buttons :mark_quarterbreeds_driveshaft, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
       </tr>
       <tr>
@@ -177,7 +182,7 @@
       </tr> -->
     </tbody>
   </table>
-  <p>* All T700 require a torque converted lockup kit. If you're having a T700 transmission built, just have them set it up to lockup for you. If you have a used/pull-out T700, you have to use our lockup kit. </p>
+  <p>* All T700 require a torque convertor lockup kit. If you're having a T700 transmission built, just have them set it up to lockup for you. If you have a used/pull-out T700, the best plan is to use our lockup kit. </p>
 </div>
 <br clear="all">
 
