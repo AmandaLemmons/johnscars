@@ -106,10 +106,12 @@
         <tr>
           <td><em>Year: </em> <b><%= @mark_quarterbreed.mark_quarterbreeds_before_year%></b></td>
           <td><em>Model: </em> <b><%=@mark_quarterbreed.mark_quarterbreeds_before_type%></b></td>
-        </tr>
-        <tr>
           <td><em>VIN:</em> <b><%=@mark_quarterbreed.mark_quarterbreeds_before_vin%></b></td>
         </tr>
+      </tbody>
+    </table>
+    <table class="table table-bordered">
+      <tbody>
         <tr>
           <td><em>Transmission: </em> <b> <%= @mark_quarterbreed.mark_quarterbreeds_before_trans%></b></td>
           <td><em>Automatic Shifter: </em> <b> <%=@mark_quarterbreed.auto_shifter%></b></td>
@@ -147,7 +149,7 @@
         <td><em>Engine #: </em> <b><%= @mark_quarterbreed.mark_quarterbreeds_before_engine_number%></b></td>
       </tr>
       <tr>
-        <td><em> NAME?!?!: </em> <b><%= @mark_quarterbreed.xj_engine_number %></b></td>
+        <td><em> Oil Pan Material: </em> <b><%= @mark_quarterbreed.xj_engine_number %></b></td>
       </tr>
     </tbody>
   </table>
@@ -157,13 +159,13 @@
         <tbody>
           <tr>
             <td><em>Year: </em><b> <%=@mark_quarterbreed.mark_quarterbreeds_gm_trans_year%></b></td>
-            <td> <em>3 Pipe Plugs on right: </em>
-            <% if @mark_quarterbreed.pipe_plugs == true %>
+            <!-- <td> <em>3 Pipe Plugs on right: </em>
+            if @mark_quarterbreed.pipe_plugs == true %>
                <b>Yes</b>
-            <% else %>
+            else %>
               <b>No</b>
-            <% end %>
-          </td>
+            end %>
+          </td> -->
           </tr>
         </tbody>
       </table>
@@ -216,7 +218,7 @@
           <td >$<%= @mark_quarterbreed.subtotal %></td>
         </tr>
         <tr>
-          <td >Texas Residents 8.25% Sales Tax </td>
+          <td >Sales Tax (Texas 8.25%)</td>
           <td >$ <%=@mark_quarterbreed.sales_tax.round(2) %></td>
         </tr>
         <!-- <tr>
