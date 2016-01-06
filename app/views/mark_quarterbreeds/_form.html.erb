@@ -10,7 +10,7 @@
   <h2 class="text-center">Mark Information (Before QB)</h2>
   <br>
   <div class="col-md-12 hint">
-    <p> VIN/ Body Number: Plate in the engine bay, engine number is on right hand block by oil filter</p>
+    <p> VIN/ Body Number: Plate in the engine bay, engine number is on right hand block by oil filter.</p>
   </div>
    <div class="row">
        <div class="col-md-4">
@@ -37,7 +37,7 @@
       </div>
 
       <div class="col-md-6">
-            <h5>If transmission shifter is automatic, I need to know its location</h5>
+            <h5>If transmission shifter is automatic, I need to know its location.</h5>
             <%= f.input :auto_shifter, label: false, placeholder: "Trans", collection: ["Column", "Dashboard"]%>
         </div>
     </div>
@@ -93,7 +93,7 @@
 
          <div class="row">
            <div class="col-md-12 hint">
-                 Engine Number is on the engline bellhousing flange, driver's side.
+                 Engine Number is on the engine bell housing flange, driver's side.
            </div>
            <div class="col-md-6">
                <h5>Installing or has a later model 4.2 motor with fuel injection? </h5>
@@ -156,7 +156,7 @@
         <td class="col-md-4"> <%= f.collection_radio_buttons :starter, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
       </tr>
       <tr>
-        <td class="col-md-4">Oil Flter Spin-on Setup </td>
+        <td class="col-md-4">Oil Filter Spin-on Setup </td>
         <td class="col-md-4"> $175.00</td>
         <td class="col-md-4"> <%= f.collection_radio_buttons :oil_filter, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
       </tr>
@@ -182,7 +182,7 @@
       </tr> -->
     </tbody>
   </table>
-  <p>* All T700 require a torque convertor lockup kit. If you're having a T700 transmission built, just have them set it up to lockup for you. If you have a used/pull-out T700, the best plan is to use our lockup kit. </p>
+  <p>* All T700 require a torque convertor lockup kit. If you're having a T700 transmission built, just have them set it up to lockup for you. If you have a used/pullout T700, the best plan is to use our lockup kit. </p>
 </div>
 <br clear="all">
 
@@ -260,7 +260,7 @@
   <div class="panel panel-default col-md-6">
       <h2 class="text-center"> Shop or "Ship To" Information  </h2>
       <br>
-      <p> Is the shipping information the same as the car owner information (REQUIRED)</p>
+      <p> Is the shipping information the same as the car owner information? (REQUIRED)</p>
       <%= f.collection_radio_buttons :same_information, [[true, 'Yes'] ,[false, 'No']], :first, :last  %> </p>
       <div class="row">
         <div class="col-md-4">

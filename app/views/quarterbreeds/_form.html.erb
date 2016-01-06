@@ -9,8 +9,8 @@
   <h3 class="text-center">Jaguar Information</h3>
    <div class="row">
        <div class="col-md-12">
-         <p class="p-form"> The Vehicle Identification Number (VIN) is located on window pillar or base on windshield in front of driver's door.</p>
-         <p> Year/ Month are located on the driver's door or jamb.</p>
+         <p class="p-form hint"> The Vehicle Identification Number (VIN) is located on window pillar or base on windshield in front of driver's door.</p>
+         <p class="hint"> Year/ Month are located on the driver's door or jamb.</p>
        </div>
        <div class="col-md-4">
          <h4>Model Year</h4>
@@ -41,8 +41,9 @@
     <h3 class="text-center"> Engine Information</h3>
     <div class="row">
       <div class="col-md-12">
-        <p class="p-form"> Engine Number is located at bellhousing flange of engine, in the top center</p>
-        <p class="p-form">Rear Axle Ratio: Tag under bolt on rear cover, sometimes shown in ratio form (49/17)</p>
+        <p class="p-form hint"> Engine Number is located at bell
+          housing flange of engine, in the top center.</p>
+        <p class="p-form hint">Rear Axle Ratio: Tag under bolt on rear cover, sometimes shown in ratio form (49/17).</p>
       </div>
       <div class="col-md-6">
            <h4>Engine #</h4>
@@ -84,7 +85,7 @@
  <div class="panel panel-default col-md-6">
    <h3 class="text-center">Transmission Information</h3>
    <div class="col-md-12">
-        <p class="p-form"> Speedo Number:  I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars</p>
+        <p class="p-form hint"> Speedo Number:  I need the 3 or 4 numbers in fine print located along the bottom edge of the speedometer "face" (between 5 & 6 o'clock) on most cars, near the center on early cars.</p>
    </div>
    <div class="row">
      <div class="col-md-6">
@@ -222,7 +223,7 @@
   <div class="panel panel-default col-md-6">
       <h2 class="text-center"> Shop or "Ship To" Information  </h2>
       <br>
-      <p class="p-form"> Is the shipping information the same as the car owner information (REQUIRED)</p>
+      <p class="p-form"> Is the shipping information the same as the car owner information? (REQUIRED)</p>
       <%= f.collection_radio_buttons :same_information, [[true, 'Yes'] ,[false, 'No']], :first, :last  %> </p>
       <div class="row">
         <div class="col-md-4">

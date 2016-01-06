@@ -260,7 +260,7 @@
 
 <div class="panel panel-default col-md-6">
     <h2 class="text-center"> Shop or "Ship To" Information  </h2>
-    <p class="p-form"> Is the shipping information the same as the car owner information (REQUIRED)</p>
+    <p class="p-form"> Is the shipping information the same as the car owner information? (REQUIRED)</p>
     <%= f.collection_radio_buttons :same_information, [[true, 'Yes'] ,[false, 'No']], :first, :last  %> </p>
     <div class="row">
       <div class="col-md-4">
@@ -309,7 +309,7 @@
 
 
      <div class="col-md-12">
-       <p> These parts are for LS only - the ZCar and ZX to small block Chevy kit is a different product. It is $795.00. No parts interchange with the LS family. Please use the correct order sheet for the small block V8 conversion</p>
+       <p> These parts are for LS only - the ZCar and ZX to small block Chevy kit is a different product. It is $795.00. No parts interchange with the LS family. Please use the correct order sheet for the small block V8 conversion.</p>
         <p> LS ZCar V8 Conversion components are property of John's Cars, Inc., including the design, parts and procedures; All Rights Reserved. Our Conversion parts are for the purchaser's personal use and not to be duplicated in whole or in part even if altered. Please check with local authorities regarding emission controls where required. John's Cars, Inc. assumes no liability regarding purchaser's installation or use. </p>
         <h4>Additional comments or notes </h4>
           <%= f.input :comments, label: false, placeholder:"" %>

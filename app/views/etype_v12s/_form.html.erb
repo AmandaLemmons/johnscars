@@ -9,13 +9,13 @@
   <h3 class="text-center">E-Type Information</h3>
    <div class="row">
      <div class="col-md-12">
-       <p> <b>Vehicle Identificaiton Number (VIN)</b> is located on the driver's window pillar or body tag on firewall. </p>
+       <p class="hint"> <b>Vehicle Identification  Number (VIN)</b> is located on the driver's window pillar or body tag on firewall. </p>
     </div>
     <div class="col-md-12">
-      <p> <b>Rear Axle Ratio:</b> Tag under bolt on rear cover, sometimes shown as a ratio (49/17) - just enter it in. </p>
+      <p class="hint"> <b>Rear Axle Ratio:</b> Tag under bolt on rear cover, sometimes shown as a ratio (49/17) - just enter it in. </p>
     </div>
     <div class="col-md-12">
-      <p><b>Speedo Number:</b> I need the 3 or 4 numbers in fine print near the center of the speedometer. See the arrow.</p>
+      <p class="hint"><b>Speedo Number:</b> I need the 3 or 4 numbers in fine print near the center of the speedometer. See the arrow.</p>
     </div>
        <div class="col-md-3">
          <h4>E-Type</h4>
@@ -282,11 +282,11 @@
                 <%= f.input :donar_car_other, label: false%>
             </div>
             <div class="col-md-6">
-              <h4>Transmisison</h4>
+              <h4>Transmission</h4>
                 <%= f.input :driveline_trans, label: false, collection: ["350", "400", "700", "4L60E"]%>
             </div>
             <div class="col-md-6">
-              <h4>Transmisison Year</h4>
+              <h4>Transmission Year</h4>
                 <%= f.input :driveline_trans_year, label: false, placeholder: "Year"%>
             </div>
             <div class="col-md-6">
@@ -383,7 +383,7 @@
         </div>
         <div class="row">
           <div class="col-md-3">
-            <h4> Plug on Front of Compresson Near Belt</h4><small> (not the rear)</small>
+            <h4> Plug on Front of Compression Near Belt</h4><small> (not the rear)</small>
           </div>
           <div class="col-md-2">
             <%= image_tag("plug_a6.png") %><br>
@@ -570,7 +570,7 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <h4>VSS/Speedo Type</h4> Please pull the four bolts on the trans tailhousing and <strong>circle</strong> the type of speedo drive you have:
+              <h4>VSS/Speedo Type</h4> Please pull the four bolts on the trans tailhousing and <strong>select</strong> the type of speedo drive you have:
                 <%= f.input :miscellaneous_speedo_type, label: false, collection: ["Type 1", "Type 2"]%>
             </div>
             <div class="col-md-3">
@@ -601,7 +601,7 @@
         <div class="col-md-12">
           <p> <strong> Switching to a Carburetor:</strong> Most FI blocks do not have a place for a mechanical fuel pump. Even if the boss is there, the camshaft may not have a lobe for the fuel pump. Intake bolt angles also vary so intake manifold may not fit directly. These are more examples of why we stress that you get a <strong>"COMPLETE"</strong> driveline.</p>
           <p> <strong> TBI Notes:</strong> Pickup style TBI alternator & A/C brackets will not clear XJS hood lines. </p>
-          <p> <strong> Fuel Return Notes: </strong> All FI motors must have a fuel return to the tank(s). If you Jaguar was Fuel Injection originally, then you'll reuse teh original plumbing. </p>
+          <p> <strong> Fuel Return Notes: </strong> All FI motors must have a fuel return to the tank(s). If you Jaguar was Fuel Injection originally, then you'll reuse the original plumbing. </p>
         </div>
         <div class="col-md-6">
           <p> Did you call to get help in filling in the order sheet? </p>
