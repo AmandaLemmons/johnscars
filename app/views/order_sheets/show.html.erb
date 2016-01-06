@@ -193,7 +193,7 @@
   <table class="table table-bordered ">
     <tbody>
       <tr>
-        <td class="col-xs-3"><strong>LS ZCar </strong></td>
+        <td class="col-xs-5"><strong>LS ZCar </strong></td>
         <td class="col-xs-1"><strong> Price</strong> </td>
       </tr>
       <tr>
@@ -202,7 +202,7 @@
         <td>$<%= @order_sheet.mount_set %></td>
       </tr>
       <tr>
-        <td >Trans Crossmember and mount</td>
+        <td >Trans Crossmember w/ mount</td>
         <td >$<%= @order_sheet.amt1 %></td>
       </tr>
       <tr>
@@ -218,15 +218,15 @@
         <td >$<%= @order_sheet.amt4 %></td>
       </tr>
       <tr>
-        <td >Header Set (Not California)</td>
+        <td >Header Set <small>(Not California)</small></td>
         <td >$<%= @order_sheet.amt5 %></td>
       </tr>
       <tr>
-        <td >AC Compressor (new) with mounting kit</td>
+        <td >AC Compressor (new) w/ mounting kit</td>
         <td >$<%= @order_sheet.amt6 %></td>
       </tr>
       <tr>
-        <td >AC 3 hose set w/drier (factory AC)</td>
+        <td >AC 3 hose set w/drier <small>(factory AC)</small></td>
         <td >$<%= @order_sheet.amt7 %></td>
       </tr>
       <tr>
@@ -234,11 +234,11 @@
         <td >$<%= @order_sheet.amt8 %></td>
       </tr>
       <tr>
-        <td >Subtotal (Parts are freight paid 48 states only) </td>
+        <td >Subtotal <small>(Parts are freight paid 48 states)</small> </td>
         <td >$<%= @order_sheet.subtotal %></td>
       </tr>
       <tr>
-        <td >Texas Residents 8.25% Sales Tax +</td>
+        <td >Sales Tax <small>(TX Residents 8.25%) </small></td>
         <td >$<%= @order_sheet.sales_tax.round(2) %></td>
       </tr>
 
