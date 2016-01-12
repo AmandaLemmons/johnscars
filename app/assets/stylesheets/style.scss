@@ -562,8 +562,10 @@ h3.heading-sec {
   margin-bottom: 10px;
   border: 1px solid #ddd;
   padding: 10px;
-  height: 375px;
-
+  height: 175px;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 25px;
 }
 
 .services-box i {
@@ -587,10 +589,10 @@ h3.heading-sec {
 }
 
 .services-box h1 {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 0px;
   color: #333;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -660,8 +662,10 @@ h3.heading-sec {
 }
 
 #content-region-2 {
-  padding: 80px 0;
+  background: image-url("etype_jag.jpg") no-repeat;
+  // padding: 0;
   width: 100%;
+  height: 1200px;
   overflow: hidden;
   background-size: cover;
   background-attachment: fixed;
@@ -675,6 +679,7 @@ h3.heading-sec {
   background-attachment: fixed;
   position: relative;
 }
+
 #content-region-2-soh {
   padding: 80px 0;
   width: 100%;
@@ -1132,15 +1137,16 @@ h4.portfolio-post-title {
 
 /**************************************testimonials******************************************/
 .testimonials p.testi-text {
-  color: #fff;
+  color: black;
   font-size: 20px;
   font-weight: 300;
   margin-bottom: 20px;
+  padding: 0 50px;
 }
 
 .testimonials span.testi-person {
   font-weight: 500;
-  color: #fff;
+  color: black;
 }
 
 /**********************************************footer*****************************************/
@@ -1817,7 +1823,7 @@ a.carousel-control i {
 #footer-option {
   background: #121214;
   border-top: 8px solid #0FAF97;
-  margin-top: 50px;
+  // margin-top: 50px;
   padding: 80px 0 0;
   position: relative;
   clear: both;
@@ -2540,10 +2546,10 @@ h3.heading-sec{
    @include transition (all 0.3s ease-in);
 }
 .services-box h1{
-font-size: 16px;
+font-size: 18px;
 margin-bottom: 0px;
 color: #333;
-font-weight: 400;
+font-weight: 600;
 text-transform: uppercase;
 }
 .services-box:hover i{
@@ -2602,22 +2608,15 @@ text-transform: uppercase;
 #content-region-1{
     background-color: #f5f5f5;
 }
-#content-region-2{
-    background: image-url("paris.jpg") no-repeat;
-    padding: 80px 0;
-    width:100%;
-    overflow: hidden;
-      background-size: cover;
-  background-attachment: fixed;
-    position: relative;
-}
+
 #content-region-2-ggb{
     background: image-url("ggb.jpg") no-repeat;
+    opacity: 0.5;
     padding: 80px 0;
     width:100%;
     overflow: hidden;
-      background-size: cover;
-  background-attachment: fixed;
+    background-size: cover;
+    background-attachment: fixed;
     position: relative;
 }
 #content-region-2-soh{
@@ -2987,14 +2986,14 @@ h4.portfolio-post-title{
 }
 /**************************************testimonials******************************************/
 .testimonials p.testi-text{
-    color: #fff;
+    color: black;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 .testimonials span.testi-person{
     font-weight: 500;
-    color: #fff;
+    color: black;
 }
 
 
