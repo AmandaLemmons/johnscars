@@ -131,3 +131,18 @@ label .collection_radio_buttons {
   margin-bottom: 0px;
   background-color: red;
 }
+.font-over-white p{
+  color: red;
+  font-family: arial;
+  weight: 600;
+  font-size: 11px;
+}
+
+#content-region-3-triumph {
+  background: image-url("jag_car.png") no-repeat;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
