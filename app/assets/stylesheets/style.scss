@@ -2552,11 +2552,18 @@ color: #333;
 font-weight: 600;
 text-transform: uppercase;
 }
+
+.services-box:hover {
+    border-color: $skincolor;
+    background-color: $skincolor;
+    color:#fff;
+}
 .services-box:hover i{
     border-color: $skincolor;
     background-color: $skincolor;
     color:#fff;
 }
+
 /*services option 2*/
 .services-icon i{
     color:#fff;
