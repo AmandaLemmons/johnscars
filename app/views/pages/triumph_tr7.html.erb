@@ -1,25 +1,84 @@
-<section id="content-region-2" class="parallax-1">
-  <div class="space-70"></div>
-  <div class="space-70"></div>
-  <div class="space-70"></div>
+<section id="slider-sec" class="slider-reg">
+    <div class="main-flex-slider" id="triumph_top">
+        <ul class="slides">
+            <li>
+                <figure>
+                  <%= image_tag("jag_car.png", :class => "img-responsive") %>
+                    <figcaption class="slider-overlay ">
+                        <div class="slider-text animated fadeInDown">
+                            <h1>TR7 Rockets</h1>
+                            <p>  Making Jaguars RAD – Reliable, Affordable and Driveable  </p>
+                          <div class="space-30"></div>
+                        </div>
+                        <div class="row">
+                          <div class=" col-xs-6 col-sm-4 col-sm-offset-2">
+                            <div class="services-box-smaller" >
+                              <h5><%= link_to "TR7 Rockets", triumph_tr7_path(anchor: "tr7_rockets") %></h5>
+                            </div>
+                          </div> <!--col4-->
+                          <div class="col-xs-6 col-sm-4">
+                            <div class="services-box-smaller">
+                              <h5><%= link_to "Buick V6 Driveline", triumph_tr7_path(anchor: "buick_v6_driveline") %></h5>
+                            </div>
+                          </div><!--services box-->
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+                            <div class="services-box-smaller">
+                              <h5><%= link_to "Conversion Kit Pricing", triumph_tr7_path(anchor: "conversion_kit_pricing") %></h5>
+                            </div>
+                          </div><!--services box-->
+                          <div class="col-xs-6 col-sm-4">
+                            <div class="services-box-smaller">
+                              <h5><%= link_to "How to Order", triumph_tr7_path(anchor: "how_to_order") %></h5>
+                            </div>
+                          </div><!--services box-->
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+                            <div class="services-box-smaller">
+                              <h5><%= link_to "Parts", triumph_tr7_path(anchor: "parts") %></h5>
+                            </div>
+                          </div><!--services box-->
+                          <div class="col-xs-6 col-sm-4">
+                            <div class="services-box-smaller">
+                              <h5><%= link_to "Customers Testimonials", triumph_tr7_path(anchor: "customers_testimonials") %> </h5>
+                            </div>
+                          </div><!--services box-->
+                        </div>
 
-
-  <div class= "container">
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false" style="background-color: white; opacity: 0.85; border-radius: 25px;">
-
-      <!-- TR7 ROCKETS! -->
+                    </figcaption>
+                </figure>
+            </li>
+        </ul>
+      </div>
+    </section>
+    <!-- TR7 ROCKETS! -->
+    <div id="tr7_rockets">
       <%= render partial: "tr7s/tr7_rockets" %>
-      <!-- Buick V6 Driveline Checklist -->
-      <%= render partial: "tr7s/buick_v6_driveline" %>
-      <!-- TR7 Conversion Kit Pricing -->
-      <%= render partial: "tr7s/conversion_kit_pricing" %>
-      <!-- How to Order -->
-      <%= render partial: "tr7s/how_to_order" %>
-      <!-- TR7 Parts -->
-      <%= render partial: "tr7s/parts" %>
-      <!-- TR7 Customer Testimonials -->
-      <%= render partial: "tr7s/customers_testimonials"%>
-
     </div>
-  </div>
-</section>
+
+    <!-- Buick V6 Driveline Checklist -->
+    <div id="buick_v6_driveline"
+      <%= render partial: "tr7s/buick_v6_driveline" %>
+    </div>
+
+    <!-- TR7 Conversion Kit Pricing -->
+    <div id="conversion_kit_pricing">
+      <%= render partial: "tr7s/conversion_kit_pricing" %>
+    </div>
+
+    <!-- How to Order -->
+    <div id="how_to_order">
+      <%= render partial: "tr7s/how_to_order" %>
+    </div>
+
+    <!-- TR7 Parts -->
+    <div id="parts">
+      <%= render partial: "tr7s/parts" %>
+    </div>
+
+    <!-- TR7 Customer Testimonials -->
+    <div id="customers_testimonials">
+      <%= render partial: "tr7s/customers_testimonials"%>
+    </div>

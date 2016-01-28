@@ -568,6 +568,32 @@ h3.heading-sec {
   border-radius: 25px;
 }
 
+.services-box-smaller {
+  text-align: center;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  padding: 5px;
+  // height: 175px;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+.services-box-smaller h5{
+  text-transform: uppercase;
+  color: black;
+}
+@media(max-width:768px){
+  .services-box-smaller a{
+    color: red;
+    font-size: 12px;
+  }
+}
+
+.services-box-smaller a{
+  color: black;
+}
+
 .services-box i {
   color: #0FAF97;
   font-size: 44px;
