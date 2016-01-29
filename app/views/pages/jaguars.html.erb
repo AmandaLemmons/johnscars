@@ -1,14 +1,78 @@
-<div class="space-30"></div>
-<div class="space-30"></div>
+<section id="slider-sec" class="slider-reg">
+    <div class="main-flex-slider" id="triumph_top">
+        <ul class="slides">
+            <li>
+                <figure>
+                   <%= image_tag("black_background.jpg", :class => "img-responsive") %>
 
-<section id="content-region-1" class="padding-40">
-    <div class="container">
+                    <figcaption class="slider-overlay ">
+                        <div class="slider-text animated fadeInDown">
+                            <h1>Jaguar Conversions</h1>
+                            <p>  Making Jaguars RAD – Reliable, Affordable and Driveable  </p>
+                          <div class="space-30"></div>
+                        </div>
+                        <div class="row">
+                          <div class=" col-xs-6 col-sm-4 col-sm-offset-2">
+                            <div class="services-box-smaller" >
+                              <h5><%= link_to "XJ Sedans", jaguars_path(anchor: "xj_sedans") %></h5>
+                            </div>
+                          </div> <!--col4-->
+                          <div class="col-xs-6 col-sm-4">
+                            <div class="services-box-smaller">
+                              <h5><%= link_to "XJS & XJS HE", jaguars_path(anchor: "xjs_and_xjs_he") %></h5>
+                            </div>
+                          </div><!--services box-->
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+                            <div class="services-box-smaller">
+                              <h5><%= link_to "E-TYPE", jaguars_path(anchor: "e_type") %></h5>
+                            </div>
+                          </div><!--services box-->
+                          <div class="col-xs-6 col-sm-4">
+                            <div class="services-box-smaller">
+                              <h5><%= link_to "MARK SEDANS", jaguars_path(anchor: "mark_sedans") %></h5>
+                            </div>
+                          </div><!--services box-->
+                        </div>
+                    </figcaption>
+                </figure>
+            </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- XJ Sedans  -->
+    <div id="xj_sedans">
+      <%= render partial: "jaguars/xj_sedans" %>
+    </div>
+
+    <!-- XJS & XJS He Sedans  -->
+    <div id="xjs_and_xjs_he">
+      <%= render partial: "jaguars/xjs_and_xjs_he" %>
+    </div>
+
+    <!-- E-Type  -->
+    <div id="e_type">
+      <%= render partial: "jaguars/e_type" %>
+    </div>
+
+    <!-- Mark Sedans  -->
+    <div id="mark_sedans">
+      <%= render partial: "jaguars/mark_sedans" %>
+    </div>
+
+    <%= render partial: "layouts/footer" %>
+
+
+<!-- <section id="content-region-1" class="padding-40"> -->
+    <!-- <div class="container">
         <div class="row">
             <div class="col-md-12 features">
                 <h3>Jaguar Conversions</h3>
                 <p>Which conversion are you looking for?  Just click a conversion or item next to the car that looks like yours.  Or click the Jaguar to go to more information about that model.
-                </p>
-                <div class="row panel panel-default">
+                </p> -->
+                <!-- <div class="row panel panel-default">
                     <div class="col-md-3 services-icon">
                         <%= image_tag("xj_sedans.png", :class => "car-pic") %>
                     </div>
@@ -19,76 +83,76 @@
                         <div class="services-box">
                             <h4><%= link_to "Chevy V8 Conversion", root_path%></h4>
                             <p>   Ready to drive your Sedan there-and-back without visiting the shop?  A Chevy V8 driveline provides the reliability and driveability you have been waiting for!</p>
-                        </div>
-                      </div> <!--col6-->
-                      <div class=" col-sm-6">
+                        </div> -->
+                      <!-- </div> <!-col6-->
+                      <!-- <div class=" col-sm-6">
                       <div class="services-box">
                           <h4><%= link_to "XJ6 Quarterbreed", root_path%></h4>
                           <p> Got the Borg-Warner blues?  Replace it with a reliable and sturdy GM transmission.</p>
-                      </div>
-                    </div> <!--col6-->
-                    <div class=" col-sm-6">
+                      </div> -->
+                    <!-- </div> <!-col6-->
+                    <!-- <div class=" col-sm-6">
                     <div class="services-box">
                         <h4><%= link_to "XJ12 Quarterbreed", root_path%></h4>
                         <p> Tired of third gear?  LEAP into the 21st century with a GM overdrive behind your V12 Jaguar motor.</p>
-                    </div>
-                  </div> <!--col6-->
-                  <div class=" col-sm-6">
+                    </div> -->
+                  <!-- </div> <!-col6-->
+                  <!-- <div class=" col-sm-6">
                   <div class="services-box">
                       <h4><%= link_to "XJ Sedan parts", root_path%></h4>
                       <p> We carry a full line of parts for all XJ Sedan models – new, rebuilt and used.</p>
-                  </div>
-                </div> <!--col6-->
-              </div>
-            </div><!--services list-->
-                <div class="space-30"></div>
-                <div class="row panel panel-default">
-                    <div class="col-md-3 services-icon">
+                  </div> -->
+                <!-- </div> <!-col6-->
+              <!-- </div> -->
+            <!-- </div><!-services list-->
+                <!-- <div class="space-30"></div>
+                <div class="row panel panel-default"> -->
+                    <!-- <div class="col-md-3 services-icon">
                       <%= image_tag("xjs_he.png", :class => "car-pic") %>
-                    </div>
-                    <div class="col-md-9 services-text">
-                        <h4 class="heading-mini">XJS & XJS HE (1976 to 1996)</h4>
-                        <p>The replacement for the E-Type, the Jaguar XJS matched the XJ Sedans in longevity and in variations (XJS, XJS-HE, XJ-SC [Cabriolet], XJS Convertible).  Check out the <%= link_to "XJS Model Guide", root_path%> for more details.</p>
-                        <div class=" col-sm-4">
-                          <div class="services-box">
-                              <h5><%= link_to "XJS Chevy V8 Conversion", root_path%></h5>
-                              <p> Make your XJS what it was meant to be – a luxury sports car.   A Chevy conversion will make your XJS fun to drive – reliability is a side effect.  Fits all XJS.</p>
-                          </div>
+                    </div> -->
+                    <!-- <div class="col-md-9 services-text"> -->
+                        <!-- <h4 class="heading-mini">XJS & XJS HE (1976 to 1996)</h4> -->
+                        <!-- <p>The replacement for the E-Type, the Jaguar XJS matched the XJ Sedans in longevity and in variations (XJS, XJS-HE, XJ-SC [Cabriolet], XJS Convertible).  Check out the <%= link_to "XJS Model Guide", root_path%> for more details.</p> -->
+                        <!-- <div class=" col-sm-4">
+                          <div class="services-box"> -->
+                              <!-- <h5><%= link_to "XJS Chevy V8 Conversion", root_path%></h5> -->
+                              <!-- <p> Make your XJS what it was meant to be – a luxury sports car.   A Chevy conversion will make your XJS fun to drive – reliability is a side effect.  Fits all XJS.</p> -->
+                          <!-- </div>
                         </div>
                         <div class=" col-sm-4">
-                          <div class="services-box">
-                              <h5><%= link_to "XJS Quarterbreed", root_path%></h5>
-                              <p> Tired of third gear?  LEAP into the 21st century with a GM overdrive behind your V12 Jaguar motor.  Fits all V12 XJS.</p>
-                          </div>
+                          <div class="services-box"> -->
+                              <!-- <h5><%= link_to "XJS Quarterbreed", root_path%></h5> -->
+                              <!-- <p> Tired of third gear?  LEAP into the 21st century with a GM overdrive behind your V12 Jaguar motor.  Fits all V12 XJS.</p> -->
+                          <!-- </div>
                         </div>
                         <div class=" col-sm-4">
-                          <div class="services-box">
-                              <h5><%= link_to "XJS & XJS HE Parts", root_path%></h5>
-                              <p> We carry a full line of parts for all XJS models – new, rebuilt and used.  Check out</p>
-                          </div>
+                          <div class="services-box"> -->
+                              <!-- <h5><%= link_to "XJS & XJS HE Parts", root_path%></h5> -->
+                              <!-- <p> We carry a full line of parts for all XJS models – new, rebuilt and used.  Check out</p> -->
+                          <!-- </div>
                         </div>
-                    </div>
-                </div><!--services list-->
-                <div class="space-30"></div>
+                    </div> -->
+                <!-- </div><!-services list-->
+                <!-- <div class="space-30"></div>
                   <div class="row panel panel-default">
-                      <div class="col-md-3 services-icon">
-                        <%= image_tag("e-type.png", :class => "car-pic text-center") %>
-                      </div>
-                    <div class="col-md-9 services-text">
-                        <h4 class="heading-mini">E-Type (1961 to 1974)</h4>
-                        <p>
-                          The sexiest car ever made is even more fun with a V8 under the hood.  Make it a daily driver rather than a toy for the weekends.
-                        </p>
+                      <div class="col-md-3 services-icon"> -->
+                        <!-- <%= image_tag("e-type.png", :class => "car-pic text-center") %> -->
+                      <!-- </div>
+                    <div class="col-md-9 services-text"> -->
+                        <!-- <h4 class="heading-mini">E-Type (1961 to 1974)</h4> -->
+                        <!-- <p> -->
+                          <!-- The sexiest car ever made is even more fun with a V8 under the hood.  Make it a daily driver rather than a toy for the weekends. -->
+                        <!-- </p>
                         <div class=" col-sm-4">
-                          <div class="services-box">
-                              <h5><%= link_to "V12 E-Type to Chevy V8 Conversion", root_path%></h5>
-                              <p> Chevrolet small block spunk and reliability for the sexiest cars ever built.  Fits all V12 E-Types (1971 to 1974).</p>
+                          <div class="services-box"> -->
+                              <!-- <h5><%= link_to "V12 E-Type to Chevy V8 Conversion", root_path%></h5> -->
+                              <!-- <p> Chevrolet small block spunk and reliability for the sexiest cars ever built.  Fits all V12 E-Types (1971 to 1974).</p>
                           </div>
                         </div>
-                        <div class=" col-sm-4">
-                          <div class="services-box">
-                              <h5><%= link_to "6-cylinder E-Type to Ford V8 Conversion", root_path%></h5>
-                              <p> Put a Chevy transmission behind your 6-cylinder Jaguar motor.  Fits all 6-cylinder E-Types (1961 to 1971).</p>
+                        <div class=" col-sm-4"> -->
+                          <!-- <div class="services-box"> -->
+                              <!-- <h5><%= link_to "6-cylinder E-Type to Ford V8 Conversion", root_path%></h5> -->
+                              <!-- <p> Put a Chevy transmission behind your 6-cylinder Jaguar motor.  Fits all 6-cylinder E-Types (1961 to 1971).</p>
                           </div>
                         </div>
                         <div class=" col-sm-4">
@@ -98,39 +162,39 @@
                           </div>
                         </div>
                     </div>
-                  </div>
-                    <div class="space-30"></div>
+                  </div> -->
+                    <!-- <div class="space-30"></div>
 
                     <div class="row panel panel-default">
-                      <div class="col-md-3 services-icon">
-                        <%= image_tag("mark_sedans.png", :class => "car-pic") %>
-                      </div>
-                    <div class="col-md-9 services-text">
-                        <h4 class="heading-mini">Mark Sedans (1955 to 1969)</h4>
-                        <p>
-                            The ancestors of the XJ Sedan, these classics suffer from many of the same motor and transmission woes of its descendants.  The Mark came in several models, including the Mark I, II, IX, X, 240,340, 420 and S-Types.
-                        </p>
-                        <div class=" col-sm-4">
-                          <div class="services-box">
-                              <h5><%= link_to "Mark GM V6 Conversion", root_path%></h5>
-                              <p> A GM V6 and overdrive transmission make the Mark classic feel at home the modern world.  Fits the Mark I, Mark II, S-Types and 420 (does not fit the others).</p>
-                          </div>
-                        </div>
-                        <div class=" col-sm-4">
-                          <div class="services-box">
-                              <h5><%= link_to "Mark Quarterbreed", root_path%></h5>
-                              <p> LEAP into the 21st century with a Chevy overdrive transmission while keeping the 6-cylinder Jaguar motor.  Fits all Mark Models.</p>
-                          </div>
-                        </div>
-                        <div class=" col-sm-4">
-                          <div class="services-box">
-                              <h5><%= link_to "Mark Parts", root_path%></h5>
-                              <p> We have a limited selection of mechanical parts for the Mark Series.</p>
-                          </div>
-                        </div>
-                    </div>
-                    </div
-                </div><!--services list-->
-              </div>
-            </div>
+                      <div class="col-md-3 services-icon"> -->
+                        <!-- <%= image_tag("mark_sedans.png", :class => "car-pic") %> -->
+                      <!-- </div>
+                    <div class="col-md-9 services-text"> -->
+                        <!-- <h4 class="heading-mini">Mark Sedans (1955 to 1969)</h4> -->
+                        <!-- <p> -->
+                            <!-- The ancestors of the XJ Sedan, these classics suffer from many of the same motor and transmission woes of its descendants.  The Mark came in several models, including the Mark I, II, IX, X, 240,340, 420 and S-Types. -->
+                        <!-- </p> -->
+                        <!-- <div class=" col-sm-4"> -->
+                          <!-- <div class="services-box"> -->
+                              <!-- <h5><%= link_to "Mark GM V6 Conversion", root_path%></h5> -->
+                              <!-- <p> A GM V6 and overdrive transmission make the Mark classic feel at home the modern world.  Fits the Mark I, Mark II, S-Types and 420 (does not fit the others).</p> -->
+                          <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- <div class=" col-sm-4"> -->
+                          <!-- <div class="services-box"> -->
+                              <!-- <h5><%= link_to "Mark Quarterbreed", root_path%></h5> -->
+                              <!-- <p> LEAP into the 21st century with a Chevy overdrive transmission while keeping the 6-cylinder Jaguar motor.  Fits all Mark Models.</p> -->
+                          <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- <div class=" col-sm-4"> -->
+                          <!-- <div class="services-box"> -->
+                              <!-- <h5><%= link_to "Mark Parts", root_path%></h5> -->
+                              <!-- <p> We have a limited selection of mechanical parts for the Mark Series.</p> -->
+                          <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- </div -->
+                <!-- </div><!-services list-->
+              <!-- </div>
+            </div> -->
           </section>
