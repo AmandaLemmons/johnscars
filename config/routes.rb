@@ -20,10 +20,11 @@ Rails.application.routes.draw do
   get 'jaguars' =>'pages#jaguars', as: :jaguars
   get 'triumph-tr7' => 'pages#triumph_tr7', as: :triumph_tr7
   get 'datsun-zcar' => 'pages#datsun_zcar', as: :datsun_zcar
+  get 'chevy-v8' => 'pages#chevy_v8', as: :chevy_v8
 
   get 'order_forms' => 'pages#order_forms', as: :order_forms
   get 'home2' => 'pages#home2', as: :home2
-
+  get 'print/:id' => 'etype_v12s#print', as: :print
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -15,6 +15,9 @@ class PagesController < ApplicationController
   def datsun_zcar
   end
 
+  def chevy_v8
+  end
+
   def home2
   end
 

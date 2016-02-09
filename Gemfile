@@ -14,6 +14,8 @@ gem 'roo'
 gem 'roo-xls'
 gem 'ionicons-rails'
 gem 'country_select'
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

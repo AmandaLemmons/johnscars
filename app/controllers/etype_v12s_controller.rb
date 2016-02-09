@@ -1,6 +1,6 @@
 class EtypeV12sController < ApplicationController
 
-  before_action :set_etype_v12, only:[:show, :edit, :update]
+  before_action :set_etype_v12, only:[:show, :edit, :update, :print]
 
   def new
     @etype_v12 = EtypeV12.new
@@ -20,37 +20,9 @@ class EtypeV12sController < ApplicationController
  end
 
  def show
-  @etype_v12.set_same_shipping
-   @etype_v12.set_auto_trans_kit
-   @etype_v12. set_manual_tras_kit
-   @etype_v12.set_tach_calibration
-   @etype_v12.set_fuel_injection_v8
-   @etype_v12.set_overdrive
-   @etype_v12.set_subtotal
-   @etype_v12.set_sales_tax
-   @etype_v12.set_total
-   @etype_v12.set_home_phone
-   @etype_v12.set_work_phone
-   @etype_v12.set_ship_to_phone
-   @etype_v12.set_car_owner_fax
-   @etype_v12.set_ship_to_fax
  end
 
  def edit
-   @etype_v12.set_same_shipping
-  @etype_v12.set_auto_trans_kit
-  @etype_v12. set_manual_tras_kit
-  @etype_v12.set_tach_calibration
-  @etype_v12.set_fuel_injection_v8
-  @etype_v12.set_overdrive
-  @etype_v12.set_subtotal
-  @etype_v12.set_sales_tax
-  @etype_v12.set_total
-  @etype_v12.set_home_phone
-  @etype_v12.set_work_phone
-  @etype_v12.set_ship_to_phone
-  @etype_v12.set_car_owner_fax
-  @etype_v12.set_ship_to_fax
  end
 
  def update
@@ -62,6 +34,19 @@ class EtypeV12sController < ApplicationController
    end
  end
 
+ def print
+   respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+        :encoding => 'utf-8',
+        :template => 'etype_v12s/show.pdf.erb',
+        :layout => 'pdf.html.erb',
+        :show_as_html => params[:debug].present?
+      end
+    end
+  end
+
  private
 
  def etype_v12_params
@@ -69,6 +54,20 @@ class EtypeV12sController < ApplicationController
  end
 
  def set_etype_v12
-   @etype_v12 = EtypeV12.find(params[:id])
+    @etype_v12 = EtypeV12.find(params[:id])
+    @etype_v12.set_same_shipping
+    @etype_v12.set_auto_trans_kit
+    @etype_v12. set_manual_tras_kit
+    @etype_v12.set_tach_calibration
+    @etype_v12.set_fuel_injection_v8
+    @etype_v12.set_overdrive
+    @etype_v12.set_subtotal
+    @etype_v12.set_sales_tax
+    @etype_v12.set_total
+    @etype_v12.set_home_phone
+    @etype_v12.set_work_phone
+    @etype_v12.set_ship_to_phone
+    @etype_v12.set_car_owner_fax
+    @etype_v12.set_ship_to_fax
  end
 end

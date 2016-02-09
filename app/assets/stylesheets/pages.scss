@@ -26,8 +26,14 @@ label .collection_radio_buttons {
 
 .page-break-before {
   @media print {
-  display: block;
-  page-break-before: always;
+    display: block;
+    page-break-before: always !important;
+    background-color: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    font-size: 12px;
+    float:none
 }
 }
 
@@ -41,7 +47,7 @@ label .collection_radio_buttons {
  .printable-table{
    table tbody tr td {
      padding: 5px;
-     font-size: 14px;
+     font-size: 12px;
     }
  }
  .center {
@@ -68,10 +74,16 @@ label .collection_radio_buttons {
  }
 
  .print-form {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 12px;
+  color: black;
   h3 {
-    font-size: 16px;
+    font-size: 14px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  h4 {
+    font-size: 14px;
     margin-top: 3px;
     margin-bottom: 3px;
   }
@@ -121,4 +133,14 @@ label .collection_radio_buttons {
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+}
+.pdf-page-break-before {
+  display: block;
+  page-break-before: always !important;
+  background-color: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+  font-size: 12px;
+  float:none
 }
