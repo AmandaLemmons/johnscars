@@ -1,7 +1,7 @@
 class MarkQuarterbreedsController < ApplicationController
   require 'securerandom'
 
-  before_action :set_mark_quarterbreed, only:[:show, :edit, :update]
+  before_action :set_mark_quarterbreed, only:[:show, :edit, :update, :print_mark_quarterbreeds_pdf]
 
   def new
     @mark_quarterbreed = MarkQuarterbreed.new
@@ -21,41 +21,22 @@ class MarkQuarterbreedsController < ApplicationController
   end
 
   def show
-    @mark_quarterbreed.set_same_shipping
-    @mark_quarterbreed.set_mark_quarterbreeds_kit
-    @mark_quarterbreed.set_mark_quarterbreeds_driveshaft
-    @mark_quarterbreed.set_mark_quarterbreeds_electrolock
-    @mark_quarterbreed.set_starter
-    @mark_quarterbreed.set_new_angle_drive
-    @mark_quarterbreed.set_oil_filter
-    @mark_quarterbreed.set_trans_oil_cooler
-    @mark_quarterbreed.set_subtotal
-    @mark_quarterbreed.set_sales_tax
-    @mark_quarterbreed.set_total
-    @mark_quarterbreed.set_home_phone
-    @mark_quarterbreed.set_work_phone
-    @mark_quarterbreed.set_ship_to_phone
-    @mark_quarterbreed.set_car_owner_fax
-    @mark_quarterbreed.set_ship_to_fax
   end
 
+  def print_mark_quarterbreeds_pdf
+    respond_to do |format|
+       format.html
+       format.pdf do
+         render :pdf => 'file_name',
+         :encoding => 'utf-8',
+         :template => 'mark_quarterbreeds/print_mark_quarterbreeds_pdf.pdf.erb',
+         :layout => 'pdf.html.erb',
+         :show_as_html => params[:debug].present?
+       end
+     end
+   end
+
   def edit
-    @mark_quarterbreed.set_same_shipping
-    @mark_quarterbreed.set_mark_quarterbreeds_kit
-    @mark_quarterbreed.set_mark_quarterbreeds_driveshaft
-    @mark_quarterbreed.set_mark_quarterbreeds_electrolock
-    @mark_quarterbreed.set_starter
-    @mark_quarterbreed.set_new_angle_drive
-    @mark_quarterbreed.set_oil_filter
-    @mark_quarterbreed.set_trans_oil_cooler
-    @mark_quarterbreed.set_subtotal
-    @mark_quarterbreed.set_sales_tax
-    @mark_quarterbreed.set_total
-    @mark_quarterbreed.set_home_phone
-    @mark_quarterbreed.set_work_phone
-    @mark_quarterbreed.set_ship_to_phone
-    @mark_quarterbreed.set_car_owner_fax
-    @mark_quarterbreed.set_ship_to_fax
   end
 
   def update
@@ -76,6 +57,22 @@ end
 
 def set_mark_quarterbreed
   @mark_quarterbreed = MarkQuarterbreed.find(params[:id])
+  @mark_quarterbreed.set_same_shipping
+  @mark_quarterbreed.set_mark_quarterbreeds_kit
+  @mark_quarterbreed.set_mark_quarterbreeds_driveshaft
+  @mark_quarterbreed.set_mark_quarterbreeds_electrolock
+  @mark_quarterbreed.set_starter
+  @mark_quarterbreed.set_new_angle_drive
+  @mark_quarterbreed.set_oil_filter
+  @mark_quarterbreed.set_trans_oil_cooler
+  @mark_quarterbreed.set_subtotal
+  @mark_quarterbreed.set_sales_tax
+  @mark_quarterbreed.set_total
+  @mark_quarterbreed.set_home_phone
+  @mark_quarterbreed.set_work_phone
+  @mark_quarterbreed.set_ship_to_phone
+  @mark_quarterbreed.set_car_owner_fax
+  @mark_quarterbreed.set_ship_to_fax
 end
 
 end

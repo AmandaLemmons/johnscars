@@ -26,6 +26,12 @@ Rails.application.routes.draw do
   get 'home2' => 'pages#home2', as: :home2
   get 'print-etype-v12/:id' => 'etype_v12s#print_etype_v12_pdf', as: :print_etype_v12_pdf
   get 'print-xj6-quarterbreeds-pdf/:id' => 'xj6_quarterbreeds#print_xj6_pdf', as: :print_xj6_pdf
+  get 'print-mark-quarterbreeds-pdf/:id' => 'mark_quarterbreeds#print_mark_quarterbreeds_pdf', as: :print_mark_quarterbreeds_pdf
+  get 'print-tr7s-pdf/:id' => 'tr7s#print_tr7_pdf', as: :print_tr7_pdf
+  get 'print-quarterbreeds-pdf/:id' => 'quarterbreeds#print_quarterbreeds_pdf', as: :print_quarterbreeds_pdf
+  get 'print-order-sheet-pdf/:id' => 'order_sheets#print_order_sheet_pdf', as: :print_order_sheet_pdf
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

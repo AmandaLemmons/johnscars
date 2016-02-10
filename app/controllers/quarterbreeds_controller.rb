@@ -1,5 +1,5 @@
 class QuarterbreedsController < ApplicationController
-  before_action :set_quarterbreed, only:[:show, :edit, :update]
+  before_action :set_quarterbreed, only:[:show, :edit, :update, :print_quarterbreeds_pdf]
 
   def new
     @quarterbreed = Quarterbreed.new
@@ -19,33 +19,22 @@ class QuarterbreedsController < ApplicationController
  end
 
  def show
-   @quarterbreed.set_same_shipping
-   @quarterbreed.set_quarterbreed_kit
-   @quarterbreed.set_driveshaft
-   @quarterbreed.set_flywheel_core
-   @quarterbreed.set_subtotal
-   @quarterbreed.set_sales_tax
-   @quarterbreed.set_total
-   @quarterbreed.set_home_phone
-   @quarterbreed.set_work_phone
-   @quarterbreed.set_ship_to_phone
-   @quarterbreed.set_car_owner_fax
-   @quarterbreed.set_ship_to_fax
  end
 
+ def print_quarterbreeds_pdf
+   respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+        :encoding => 'utf-8',
+        :template => 'quarterbreeds/print_quarterbreeds_pdf.pdf.erb',
+        :layout => 'pdf.html.erb',
+        :show_as_html => params[:debug].present?
+      end
+    end
+  end
+
  def edit
-   @quarterbreed.set_same_shipping
-   @quarterbreed.set_quarterbreed_kit
-   @quarterbreed.set_driveshaft
-   @quarterbreed.set_flywheel_core
-   @quarterbreed.set_subtotal
-   @quarterbreed.set_sales_tax
-   @quarterbreed.set_total
-   @quarterbreed.set_home_phone
-   @quarterbreed.set_work_phone
-   @quarterbreed.set_ship_to_phone
-   @quarterbreed.set_car_owner_fax
-   @quarterbreed.set_ship_to_fax
  end
 
  def update
@@ -68,6 +57,18 @@ class QuarterbreedsController < ApplicationController
 
  def set_quarterbreed
    @quarterbreed = Quarterbreed.find(params[:id])
+   @quarterbreed.set_same_shipping
+   @quarterbreed.set_quarterbreed_kit
+   @quarterbreed.set_driveshaft
+   @quarterbreed.set_flywheel_core
+   @quarterbreed.set_subtotal
+   @quarterbreed.set_sales_tax
+   @quarterbreed.set_total
+   @quarterbreed.set_home_phone
+   @quarterbreed.set_work_phone
+   @quarterbreed.set_ship_to_phone
+   @quarterbreed.set_car_owner_fax
+   @quarterbreed.set_ship_to_fax
  end
 
 

@@ -1,5 +1,5 @@
 class Tr7sController < ApplicationController
-  before_action :set_tr7, only:[:show, :edit, :update]
+  before_action :set_tr7, only:[:show, :edit, :update, :print_tr7_pdf]
 
   def new
     @tr7 = Tr7.new
@@ -19,41 +19,22 @@ class Tr7sController < ApplicationController
  end
 
  def show
-   @tr7.set_same_shipping
-   @tr7.set_home_phone
-   @tr7.set_work_phone
-   @tr7.set_ship_to_phone
-   @tr7.set_car_owner_fax
-   @tr7.set_ship_to_fax
-   @tr7.set_tr7_kit
-   @tr7.set_ac_hoses
-   @tr7.set_jci_headers
-   @tr7.set_fuel_injection_vc
-   @tr7.set_driveshaft_adaptor
-   @tr7.set_electrolock
-   @tr7.set_headers_3800
-   @tr7.set_subtotal
-   @tr7.set_sales_tax
-   @tr7.set_total
  end
 
+ def print_tr7_pdf
+   respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+        :encoding => 'utf-8',
+        :template => 'tr7s/print_tr7_pdf.pdf.erb',
+        :layout => 'pdf.html.erb',
+        :show_as_html => params[:debug].present?
+      end
+    end
+  end
+
  def edit
-   @tr7.set_same_shipping
-   @tr7.set_home_phone
-   @tr7.set_work_phone
-   @tr7.set_ship_to_phone
-   @tr7.set_car_owner_fax
-   @tr7.set_ship_to_fax
-   @tr7.set_tr7_kit
-   @tr7.set_ac_hoses
-   @tr7.set_jci_headers
-   @tr7.set_fuel_injection_vc
-   @tr7.set_driveshaft_adaptor
-   @tr7.set_electrolock
-   @tr7.set_headers_3800
-   @tr7.set_subtotal
-   @tr7.set_sales_tax
-   @tr7.set_total
  end
 
  def update
@@ -75,6 +56,22 @@ class Tr7sController < ApplicationController
 
  def set_tr7
    @tr7 = Tr7.find(params[:id])
+   @tr7.set_same_shipping
+   @tr7.set_home_phone
+   @tr7.set_work_phone
+   @tr7.set_ship_to_phone
+   @tr7.set_car_owner_fax
+   @tr7.set_ship_to_fax
+   @tr7.set_tr7_kit
+   @tr7.set_ac_hoses
+   @tr7.set_jci_headers
+   @tr7.set_fuel_injection_vc
+   @tr7.set_driveshaft_adaptor
+   @tr7.set_electrolock
+   @tr7.set_headers_3800
+   @tr7.set_subtotal
+   @tr7.set_sales_tax
+   @tr7.set_total
  end
 
 end

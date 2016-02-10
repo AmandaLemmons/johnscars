@@ -1,0 +1,242 @@
+<div class="print-form">
+<h4 class="center"> JCI MARK QUARTERBREED KIT ORDER SHEET </h4>
+<div class="col-xs-12 printable-table">
+  <% if @mark_quarterbreed.same_information == false || nil  %>
+  <table class="table table-bordered ">
+    <tbody>
+      <tr>
+        <td>CAR OWNER INFORMATION </td>
+        <td>SHOP OR "SHIP TO" INFORMATION  </td>
+      </tr>
+      <tr>
+        <td ><em>Name: </em><b><%= @mark_quarterbreed.car_owner_full_name %></b> </td>
+        <td> <em>Name: </em><b><%= @mark_quarterbreed.ship_to_full_name %></b> </td>
+      </tr>
+      <tr>
+        <td><em>Address: </em><b> <%= @mark_quarterbreed.car_owner_address %> <br> <%= @mark_quarterbreed.car_owner_city %>,
+          <% if @mark_quarterbreed.car_owner_state == "None" %>
+          <%= @mark_quarterbreed.car_owner_zip %>   <%= @mark_quarterbreed.car_owner_countr %></b>
+          <% else %>
+          <%= @mark_quarterbreed.car_owner_state %> <%= @mark_quarterbreed.car_owner_zip %>,   <%= @mark_quarterbreed.car_owner_countr %></b>
+          <% end %>
+        </td>
+        <td><em>Address: </em><b> <%= @mark_quarterbreed.ship_to_address %> <br> <%= @mark_quarterbreed.ship_to_city %>,
+          <% if @mark_quarterbreed.ship_to_state == "None" %>
+        <%= @mark_quarterbreed.ship_to_zip %>   <%= @mark_quarterbreed.ship_to_countr %></b>
+          <% else %>
+          <%= @mark_quarterbreed.ship_to_state %> <%= @mark_quarterbreed.ship_to_zip %>,   <%= @mark_quarterbreed.ship_to_countr %></b>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><em>Email: </em> <b><%= @mark_quarterbreed.car_owner_email %></b></td>
+        <td><em>Email: </em> <b><%= @mark_quarterbreed.ship_to_email %></b></td>
+      </tr>
+      <tr>
+        <td><em> Home Phone: </em>
+            <b><%= @mark_quarterbreed.car_owner_home_phone  %></b>
+          <em>From: </em> <b><%= @mark_quarterbreed.car_owner_home_hours %></b> </td>
+        <td> <em> Shop Phone: </em><b>
+            <%= @mark_quarterbreed.ship_to_phone  %></b>
+      </tr>
+      <tr>
+        <td> <em>Work Phone: </em><b>
+            <%= @mark_quarterbreed.car_owner_work_phone  %></b>
+            <em>From: </em><b> <%= @mark_quarterbreed.car_owner_work_hours%></b> </td>
+        <td><em>Fax: </em><b> <%= @mark_quarterbreed.ship_to_fax  %></b> </td>
+      </tr>
+      <tr>
+        <td> <em> Fax: </em>
+            <b> <%= @mark_quarterbreed.car_owner_fax  %> </b>
+            <em>From: </em> <b> <%= @mark_quarterbreed.car_owner_fax_hours %></b></td>
+          <td><em>How did you find us? </em><b> <%= @mark_quarterbreed.car_owner_find_us %> </b> <em> -- </em><b> <%= @mark_quarterbreed.car_owner_where_find_us %></b></td>
+      </tr>
+    </tbody>
+  </table>
+  <% else %>
+  <table class="table table-bordered ">
+    <tbody>
+      <tr>
+        <td>CAR OWNER INFORMATION </td>
+      </tr>
+      <tr>
+        <td><em>Name: </em> <b><%= @mark_quarterbreed.car_owner_full_name %></b> </td>
+      </tr>
+      <tr>
+        <td><em>Address: </em> <b> <%= @mark_quarterbreed.car_owner_address %> <br> <%= @mark_quarterbreed.car_owner_city %>,
+          <% if @mark_quarterbreed.car_owner_state == "None" %>
+          <%= @mark_quarterbreed.car_owner_zip %>   <%= @mark_quarterbreed.car_owner_countr %></b>
+          <% else %>
+          <%= @mark_quarterbreed.car_owner_state %> <%= @mark_quarterbreed.car_owner_zip %>,   <%= @mark_quarterbreed.car_owner_countr %></b>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><em>Email: </em> <b><%= @mark_quarterbreed.car_owner_email %></b> </td>
+      </tr>
+      <tr>
+        <td><em>Home Phone: </em>
+            <b> <%= @mark_quarterbreed.car_owner_home_phone  %> </b>
+          <em>From:</em>  <b><%= @mark_quarterbreed.car_owner_home_hours %> </b></td>
+      </tr>
+      <tr>
+        <td> <em>Work Phone: </em>
+            <b><%= @mark_quarterbreed.car_owner_work_phone  %></b>
+          <em>From: </em> <b> <%= @mark_quarterbreed.car_owner_work_hours%> </b></td>
+      </tr>
+      <tr>
+        <td>  <em>Fax: </em>  <b><%= @mark_quarterbreed.car_owner_fax %></b> <em>From: </em> <b> <%= @mark_quarterbreed.car_owner_fax_hours %></b></td>
+      </tr>
+      <tr>
+        <td><em>How did you find us? </em> <b><%= @mark_quarterbreed.car_owner_find_us %></b><em> -- </em><b> <%= @mark_quarterbreed.car_owner_where_find_us %> </b></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+</div>
+
+
+  <div class="col-xs-6 printable-table">
+    <h5 class="center"> MARK QUARTERBREED (BEFORE QB) </h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><em>Year: </em> <b><%= @mark_quarterbreed.mark_quarterbreeds_before_year%></b></td>
+          <td><em>Model: </em> <b><%=@mark_quarterbreed.mark_quarterbreeds_before_type%></b></td>
+          <td><em>VIN:</em> <b><%=@mark_quarterbreed.mark_quarterbreeds_before_vin%></b></td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><em>Transmission: </em> <b> <%= @mark_quarterbreed.mark_quarterbreeds_before_trans%></b></td>
+          <td><em>Automatic Shifter: </em> <b> <%=@mark_quarterbreed.auto_shifter%></b></td>
+      </tr>
+      <tr>
+        <td><em>Tire Size/Radius: </em> <b> <%=@mark_quarterbreed.mark_quarterbreeds_before_tire_size%></b></td>
+        <% if @mark_quarterbreed.rear_axle_ratio_other.present? || @mark_quarterbreed.mark_quarterbreeds_before_rear_axle_ratio == "Other - fill out in next box"%>
+          <td><em>Rear Axle Ratio: </em> <b><%=@mark_quarterbreed.rear_axle_ratio_other%></b></td>
+        <% else %>
+          <td><em>Rear Axle Ratio: </em><b> <%=@mark_quarterbreed.mark_quarterbreeds_before_rear_axle_ratio%></b></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td><em>Angle drive? : </em><b>
+          <% if @mark_quarterbreed.angle_drive == true %>
+            <b>Yes</b>
+          <% else %>
+            <b>No</b>
+          <% end %>
+        </b></td>
+        <% if @mark_quarterbreed.speedo_other.present? ||  @mark_quarterbreed.mark_quarterbreeds_before_speedo == "Other - fill out in next box"%>
+          <td><em>Speedo #: </em> <b><%=@mark_quarterbreed.speedo_other%></b></td>
+        <% else %>
+          <td><em>Speedo #: </em> <b><%=@mark_quarterbreed.mark_quarterbreeds_before_speedo%></b></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td> <em> Motor w fuel injection </em>
+          <% if @mark_quarterbreed.motor_fuel_injection == true %>
+            <b>Yes</b>
+          <%else%>
+            <b>No</b>
+          <% end %>
+        </td>
+        <td><em>Engine #: </em> <b><%= @mark_quarterbreed.mark_quarterbreeds_before_engine_number%></b></td>
+      </tr>
+      <tr>
+        <td><em> Oil Pan Material: </em> <b><%= @mark_quarterbreed.xj_engine_number %></b></td>
+      </tr>
+    </tbody>
+  </table>
+
+    <h5 class="center"> GM TRANSMISSION </h5>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td><em>Year: </em><b> <%=@mark_quarterbreed.mark_quarterbreeds_gm_trans_year%></b></td>
+            <!-- <td> <em>3 Pipe Plugs on right: </em>
+            if @mark_quarterbreed.pipe_plugs == true %>
+               <b>Yes</b>
+            else %>
+              <b>No</b>
+            end %>
+          </td> -->
+          </tr>
+        </tbody>
+      </table>
+    <small>Comments: <%= @mark_quarterbreed.comments%></small>
+  </div>
+
+
+  <div class="col-xs-6 printable-table">
+    <h5 class="center"> BUILDING BLOCKS</h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td class="col-xs-3"><strong>MARK QUARTERBREED </strong></td>
+          <td class="col-xs-1"><strong> Price</strong> </td>
+        </tr>
+        <tr>
+          <td>Mark Quarterbreed Kit</td>
+          <td>$<%= @mark_quarterbreed.mark_quarterbreeds_kit_amt %></td>
+        </tr>
+        <tr>
+          <td >Speedo Angle Kit w/cable</td>
+          <td >$<%= @mark_quarterbreed.new_angle_drive_amt %></td>
+        </tr>
+        <tr>
+          <td >Driveshaft</td>
+          <td >$<%= @mark_quarterbreed.mark_quarterbreeds_driveshaft_amt %></td>
+        </tr>
+        <tr>
+          <td >Electrolock TC Lookup Kit </td>
+          <td >$<%= @mark_quarterbreed.mark_quarterbreeds_electrolock_amt %></td>
+        </tr>
+        <tr>
+          <td >Starter - "New" gear drive </td>
+          <td >$<%= @mark_quarterbreed.starter_amt %></td>
+        </tr>
+        <tr>
+          <td >Oil Filter Spin-on Setup </td>
+          <td >$<%= @mark_quarterbreed.oil_filter_amt %></td>
+        </tr>
+        <tr>
+          <td >Trans Oil Cooler </td>
+          <td >$<%= @mark_quarterbreed.trans_oil_cooler_amt %></td>
+        </tr>
+        <tr>
+          <td >Credit</td>
+          <td > - $<%= @mark_quarterbreed.credit_amt %></td>
+        </tr>
+
+          <td >Subtotal (Parts are freight paid 48 states only)</td>
+          <td >$<%= @mark_quarterbreed.subtotal %></td>
+        </tr>
+        <tr>
+          <td >Sales Tax (Texas 8.25%)</td>
+          <td >$ <%=@mark_quarterbreed.sales_tax.round(2) %></td>
+        </tr>
+        <!-- <tr>
+          <td>Hawaii or Expedite</td>
+          <td>$  @mark_quarterbreed.freight %></td>
+        </tr> -->
+        <tr>
+          <td>CASHIER'S CHECK = </td>
+          <td ><b>$<%= @mark_quarterbreed.total.round(2) %></b></td>
+        </tr>
+      </tbody>
+  </table>
+  </div>
+<div class="col-xs-12">
+
+  <br>
+
+  <p> Signature _____________________________________________________ Date______________________</p>
+</div>
+<div class="col-xs-12 text-center">
+    <p class="small-text"><strong>JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226</strong>
+    <br>  www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
+</div>
+</div>

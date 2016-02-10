@@ -1,5 +1,5 @@
 class OrderSheetsController < ApplicationController
-   before_action :set_order_sheet, only:[:show, :edit, :update]
+   before_action :set_order_sheet, only:[:show, :edit, :update, :print_order_sheet_pdf]
 
    def new
      @order_sheet = OrderSheet.new
@@ -19,44 +19,22 @@ class OrderSheetsController < ApplicationController
   end
 
   def show
-    @order_sheet.set_add_mount_set
-    @order_sheet.set_trans_crossmember
-    @order_sheet.set_driveshaft
-    @order_sheet.set_speedometer
-    @order_sheet.set_vital_liquids
-    @order_sheet.set_header_set
-    @order_sheet.set_ac_compressor_mount_kit
-    @order_sheet.set_ac_hose_kit
-    @order_sheet.set_high_volume
-    @order_sheet.set_same_shipping
-    @order_sheet.set_subtotal
-    @order_sheet.set_sales_tax
-    @order_sheet.set_total
-    @order_sheet.set_home_phone
-    @order_sheet.set_work_phone
-    @order_sheet.set_ship_to_phone
-    @order_sheet.set_car_owner_fax
-    @order_sheet.set_ship_to_fax
   end
 
+  def print_order_sheet_pdf
+    respond_to do |format|
+       format.html
+       format.pdf do
+         render :pdf => 'file_name',
+         :encoding => 'utf-8',
+         :template => 'order_sheets/print_order_sheet_pdf.pdf.erb',
+         :layout => 'pdf.html.erb',
+         :show_as_html => params[:debug].present?
+       end
+     end
+   end
+
   def edit
-    @order_sheet.set_add_mount_set
-    @order_sheet.set_trans_crossmember
-    @order_sheet.set_speedometer
-    @order_sheet.set_vital_liquids
-    @order_sheet.set_header_set
-    @order_sheet.set_ac_compressor_mount_kit
-    @order_sheet.set_ac_hose_kit
-    @order_sheet.set_high_volume
-    @order_sheet.set_same_shipping
-    @order_sheet.set_subtotal
-    @order_sheet.set_sales_tax
-    @order_sheet.set_total
-    @order_sheet.set_home_phone
-    @order_sheet.set_work_phone
-    @order_sheet.set_ship_to_phone
-    @order_sheet.set_car_owner_fax
-    @order_sheet.set_ship_to_fax
   end
 
   def update
@@ -77,6 +55,24 @@ class OrderSheetsController < ApplicationController
 
   def set_order_sheet
     @order_sheet = OrderSheet.find(params[:id])
+    @order_sheet.set_add_mount_set
+    @order_sheet.set_trans_crossmember
+    @order_sheet.set_driveshaft
+    @order_sheet.set_speedometer
+    @order_sheet.set_vital_liquids
+    @order_sheet.set_header_set
+    @order_sheet.set_ac_compressor_mount_kit
+    @order_sheet.set_ac_hose_kit
+    @order_sheet.set_high_volume
+    @order_sheet.set_same_shipping
+    @order_sheet.set_subtotal
+    @order_sheet.set_sales_tax
+    @order_sheet.set_total
+    @order_sheet.set_home_phone
+    @order_sheet.set_work_phone
+    @order_sheet.set_ship_to_phone
+    @order_sheet.set_car_owner_fax
+    @order_sheet.set_ship_to_fax
   end
 
 end
