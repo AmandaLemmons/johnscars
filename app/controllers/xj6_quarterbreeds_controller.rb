@@ -1,5 +1,5 @@
 class Xj6QuarterbreedsController < ApplicationController
-  before_action :set_xj6_quarterbreed, only:[:show, :edit, :update]
+  before_action :set_xj6_quarterbreed, only:[:show, :edit, :update, :print_xj6_pdf]
 
   def new
     @xj6_quarterbreed = Xj6Quarterbreed.new
@@ -19,35 +19,23 @@ class Xj6QuarterbreedsController < ApplicationController
  end
 
  def show
-   @xj6_quarterbreed.set_same_shipping
-   @xj6_quarterbreed.set_xj6_quarterbreeds_kit
-   @xj6_quarterbreed.set_xj6_quarterbreeds_driveshaft
-   @xj6_quarterbreed.set_torque_converter
-   @xj6_quarterbreed.set_gear_drive_starter
-   @xj6_quarterbreed.set_subtotal
-   @xj6_quarterbreed.set_sales_tax
-   @xj6_quarterbreed.set_total
-   @xj6_quarterbreed.set_home_phone
-   @xj6_quarterbreed.set_work_phone
-   @xj6_quarterbreed.set_ship_to_phone
-   @xj6_quarterbreed.set_car_owner_fax
-   @xj6_quarterbreed.set_ship_to_fax
  end
 
+ def print_xj6_pdf
+   respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+        :encoding => 'utf-8',
+        :template => 'xj6_quarterbreeds/print_xj6_pdf.pdf.erb',
+        :layout => 'pdf.html.erb',
+        :show_as_html => params[:debug].present?
+      end
+    end
+  end
+
  def edit
-   @xj6_quarterbreed.set_same_shipping
-   @xj6_quarterbreed.set_xj6_quarterbreeds_kit
-   @xj6_quarterbreed.set_xj6_quarterbreeds_driveshaft
-   @xj6_quarterbreed.set_torque_converter
-   @xj6_quarterbreed.set_gear_drive_starter
-   @xj6_quarterbreed.set_subtotal
-   @xj6_quarterbreed.set_sales_tax
-   @xj6_quarterbreed.set_total
-   @xj6_quarterbreed.set_home_phone
-   @xj6_quarterbreed.set_work_phone
-   @xj6_quarterbreed.set_ship_to_phone
-   @xj6_quarterbreed.set_car_owner_fax
-   @xj6_quarterbreed.set_ship_to_fax
+
  end
 
  def update
@@ -68,6 +56,19 @@ class Xj6QuarterbreedsController < ApplicationController
 
  def set_xj6_quarterbreed
    @xj6_quarterbreed = Xj6Quarterbreed.find(params[:id])
+   @xj6_quarterbreed.set_same_shipping
+   @xj6_quarterbreed.set_xj6_quarterbreeds_kit
+   @xj6_quarterbreed.set_xj6_quarterbreeds_driveshaft
+   @xj6_quarterbreed.set_torque_converter
+   @xj6_quarterbreed.set_gear_drive_starter
+   @xj6_quarterbreed.set_subtotal
+   @xj6_quarterbreed.set_sales_tax
+   @xj6_quarterbreed.set_total
+   @xj6_quarterbreed.set_home_phone
+   @xj6_quarterbreed.set_work_phone
+   @xj6_quarterbreed.set_ship_to_phone
+   @xj6_quarterbreed.set_car_owner_fax
+   @xj6_quarterbreed.set_ship_to_fax
  end
 
 end

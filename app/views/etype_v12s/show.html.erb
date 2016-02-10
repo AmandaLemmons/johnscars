@@ -1,2 +1,6 @@
-<br><br><br>
-<%= link_to "print", print_path(@etype_v12.id, format: 'pdf')%>
+<br><br><br><br>
+<div class="container">
+  <p> Your Etype V12 Order form was generated correctly. <%= link_to "Click Here", print_etype_v12_pdf_path(@etype_v12.id, format: :pdf) %> to print your order form. </p>
+  <br><br>
+  <p> Need to Edit your Etype V12 order form? <%= link_to "Click Here", edit_etype_v12_path(@etype_v12.id) %> to edit your form. </p>
+</div>

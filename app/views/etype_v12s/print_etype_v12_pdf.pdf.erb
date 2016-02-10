@@ -1,6 +1,3 @@
-<div class="hidden-print">
-  <%= link_to "Edit", edit_etype_v12_path(@etype_v12.id) %>
-</div>
   <div class="print-form">
 
   <h3 class="center"> JCI Etype V12 ORDER SHEET </h3>
@@ -18,7 +15,7 @@
           <td> <em>Name: </em><b><%= @etype_v12.ship_to_full_name %></b> </td>
         </tr>
         <tr>
-          <td><em>Address: </em> <b> <%= @etype_v12.car_owner_address %>  <%= @etype_v12.car_owner_city %>,
+          <td><em>Address: </em> <b> <%= @etype_v12.car_owner_address %><br>  <%= @etype_v12.car_owner_city %>,
             <% if @etype_v12.car_owner_state == "None" %>
             <%= @etype_v12.car_owner_zip %>   <%= @etype_v12.car_owner_country %></b>
             <% else %>
@@ -283,69 +280,85 @@
     </tbody>
   </table>
 
-  <div class="col-xs-2 col-xs-offset-1">
-    <p class="center"> Front View</p>
-    <% if @etype_v12.some_carb_v8 == true %>
-      <p> Some Carb V8, Some TPI V8 </p>
-    <% elsif @etype_v12.most_carb_v8 == true %>
-      <p> Most Carb V8, Some TPI V8 </p>
-    <% elsif @etype_v12.truck_tbi == true %>
-      <p> Truck TBI, Won't Fit XJS</p>
-    <% elsif @etype_v12.camaro_lt1 == true %>
-      <p> Camaro LT-1, Firebird LT-1 </p>
-    <% elsif @etype_v12.corvette_lt4 == true %>
-      <p> Corvette LT-1, Corvette LT-4 </p>
-    <% else @etype_v12.other_front_view == true %>
-      Draw your Front View here:
-      <%= image_tag("other_front_view.png") %>
-    <% end %>
-  </div>
+  <table class="table table-bordered printable-table">
+    <tbody>
+      <tr>
+        <td><em>Front View</em><b>
+          <% if @etype_v12.some_carb_v8 == true %>
+            <%= wicked_pdf_image_tag("some_carb_v8.png") %>
+          <% elsif @etype_v12.most_carb_v8 == true %>
+            <%= wicked_pdf_image_tag("most_carb_v8.png") %>
+          <% elsif @etype_v12.truck_tbi == true %>
+            <%= wicked_pdf_image_tag("truck_tbi.png") %>
+          <% elsif @etype_v12.camaro_lt1 == true %>
+            <%= wicked_pdf_image_tag("camaro_lt1.png") %>
+          <% elsif @etype_v12.corvette_lt4 == true %>
+            <%= wicked_pdf_image_tag("corvette_lt4.png") %>
+          <% elsif @etype_v12.other_front_view == true %>
+            Draw your Front View here:
+            <%= wicked_pdf_image_tag("other_front_view.png") %>
+          <% else %>
+          <% end %>
+          </b></td>
+        <td><em>Compressor Type</em>
+          <b>
+            <% if @etype_v12.compressor_a6 == true %>
+              <%= wicked_pdf_image_tag("compressor_a6.png") %>
+            <% elsif @etype_v12.compressor_r4 == true %>
+              <%= wicked_pdf_image_tag("compressor_r4.png") %>
+            <% elsif @etype_v12.compressor_da6 == true %>
+              <%= wicked_pdf_image_tag("compressor_da6.png") %>
+            <% elsif @etype_v12.compressor_nd == true %>
+              <%= wicked_pdf_image_tag("compressor_nd.png") %>
+            <% else %>
+            <% end %>
+          </b>
+        </td>
+        <td><em>Plug on Front of Compressor</em>
+          <b>
+            <% if @etype_v12.plug_a6 == true %>
+              <%= wicked_pdf_image_tag("plug_a6.png") %>
+            <% elsif @etype_v12.plug_r4 == true %>
+              <%= wicked_pdf_image_tag("plug_r4.png") %>
+            <% elsif @etype_v12.plug_da6 == true %>
+              <%= wicked_pdf_image_tag("plug_da6.png") %>
+            <% elsif @etype_v12.plug_nd == true %>
+              <%= wicked_pdf_image_tag("plug_nd.png") %>
+            <% else %>
+            <% end %>
+          </b>
+        </td>
+      </tr>
+      <tr>
+        <td><em>Alternator Plug</em>
+          <b>
+            <% if @etype_v12.alternator_plug_type2 == true %>
+              <%= wicked_pdf_image_tag("alternator_plug_type2.png") %>
+            <% elsif @etype_v12.alternator_plug_type3 == true %>
+              <%= wicked_pdf_image_tag("alternator_plug_type3.png") %>
+            <% else %>
+            <% end %>
+          </b>
+        </td>
+        <td><em>HEI Ignition Plug</em>
+          <b>
+            <% if @etype_v12.ignition_plug_type2 == true %>
+              <%= wicked_pdf_image_tag("ignition_plug_type2.png") %>
+            <% elsif @etype_v12.ignition_plug_type3 == true %>
+              <%= wicked_pdf_image_tag("ignition_plug_type3.png") %>
+            <% else %>
+            <% end %>
+          </b>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-  <div class="col-xs-2">
-    <p class="center"> Compressor Type</p>
-    <% if @etype_v12.compressor_a6 == true %>
-      <p>A6 (long)</p>
-    <% elsif @etype_v12.compressor_r4 == true %>
-      <p>R4 (short)</p>
-    <% elsif @etype_v12.compressor_da6 == true %>
-      <p> DA6</p>
-    <% else @etype_v12.compressor_nd == true %>
-      <p> ND (Nippondenso)<p>
-    <% end %>
-  </div>
-  <div class="col-xs-2">
-    <p class="center"> Plug on Front of Compressor</p>
-    <% if @etype_v12.plug_a6 == true %>
-      <%= image_tag("plug_a6.png") %>
-    <% elsif @etype_v12.plug_r4 == true %>
-      <%= image_tag("plug_r4.png") %>
-    <% elsif @etype_v12.plug_da6 == true %>
-      <%= image_tag("plug_da6.png") %>
-    <% else @etype_v12.plug_nd == true %>
-      <%= image_tag("plug_nd.png") %>
-    <% end %>
-  </div>
-  <div class="col-xs-2">
-    <p class="center"> Alternator Plug</p>
-    <% if @etype_v12.alternator_plug_type2 == true %>
-      <p> Type 2 </p>
-    <% else @etype_v12.alternator_plug_type3 == true %>
-      <p> Type 1 </p>
-    <% end %>
-  </div>
-  <div class="col-xs-2">
-    <p class="center"> HEI Ignition Plug</p>
-    <% if @etype_v12.ignition_plug_type2 == true %>
-      <p> Type 2: Coll in Cap 5" </p>
-    <% else @etype_v12.ignition_plug_type3 == true %>
-      <p> Type 3: Remote Coll 4" </p>
-    <% end %>
-  </div>
   <br clear="all">
 
   <p class="center"> Engine</p>
 
-<table class="table table-bordered">
+  <table class="table table-bordered">
     <tbody>
       <tr>
         <td><em> Fuel Injection Type:</em>
@@ -406,21 +419,21 @@
         <% else %>
          <b> No </b></td>
         <% end %>
-        <td><em>T700 Lockup </em> <%= @etype_v12.miscellaneous_t700_lockup %> </td>
+        <td><em>T700 Lockup </em> <b><%= @etype_v12.miscellaneous_t700_lockup %></b> </td>
       </tr>
       <tr>
         <td><em>Ignition</em>
         <% if @etype_v12.miscellaneous_ignition_other.present? %>
-           <%= @etype_v12.miscellaneous_ignition_other %> </td>
+           <b><%= @etype_v12.miscellaneous_ignition_other %></b> </td>
         <% else %>
-           <%= @etype_v12.miscellaneous_ignition %> </td>
+           <b><%= @etype_v12.miscellaneous_ignition %></b> </td>
         <% end %>
 
         <td><em>VSS/ Speedo Type:</em>
           <% if @etype_v12.miscellaneous_speedo_type == "Type 1" %>
-            <%= image_tag("speedo_type1.png") %>
+            <b> Type 1 </b></td>
           <% else %>
-            <%= image_tag("speedo_type2.png") %>
+            <b> Type 2 </b></td>
           <% end %>
         </td>
       </tr>

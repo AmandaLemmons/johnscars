@@ -1,6 +1,6 @@
 class EtypeV12sController < ApplicationController
 
-  before_action :set_etype_v12, only:[:show, :edit, :update, :print]
+  before_action :set_etype_v12, only:[:show, :edit, :update, :print_etype_v12_pdf]
 
   def new
     @etype_v12 = EtypeV12.new
@@ -22,6 +22,19 @@ class EtypeV12sController < ApplicationController
  def show
  end
 
+ def print_etype_v12_pdf
+   respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+        :encoding => 'utf-8',
+        :template => 'etype_v12s/print_etype_v12_pdf.pdf.erb',
+        :layout => 'pdf.html.erb',
+        :show_as_html => params[:debug].present?
+      end
+    end
+  end
+
  def edit
  end
 
@@ -34,18 +47,6 @@ class EtypeV12sController < ApplicationController
    end
  end
 
- def print
-   respond_to do |format|
-      format.html
-      format.pdf do
-        render :pdf => 'file_name',
-        :encoding => 'utf-8',
-        :template => 'etype_v12s/show.pdf.erb',
-        :layout => 'pdf.html.erb',
-        :show_as_html => params[:debug].present?
-      end
-    end
-  end
 
  private
 

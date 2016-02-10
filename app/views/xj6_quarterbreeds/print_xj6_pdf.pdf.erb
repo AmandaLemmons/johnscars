@@ -1,0 +1,224 @@
+<div class="print-form">
+
+<h3 class="center"> XJ6 QUARTERBREED CONVERSION KIT ORDER SHEET </h3>
+<div class="col-xs-12 printable-table">
+  <% if @xj6_quarterbreed.same_information == false || nil  %>
+  <table class="table table-bordered ">
+    <tbody>
+      <tr>
+        <td>CAR OWNER INFORMATION </td>
+        <td>SHOP OR "SHIP TO" INFORMATION  </td>
+      </tr>
+      <tr>
+        <td ><em>Name: </em><b><%= @xj6_quarterbreed.car_owner_full_name %></b> </td>
+        <td> <em>Name: </em><b><%= @xj6_quarterbreed.ship_to_full_name %></b> </td>
+      </tr>
+      <tr>
+        <td><em>Address: </em><b> <%= @xj6_quarterbreed.car_owner_address %> <br> <%= @xj6_quarterbreed.car_owner_city %>,
+          <% if @xj6_quarterbreed.car_owner_state == "None" %>
+            <%= @xj6_quarterbreed.car_owner_zip %>   <%= @xj6_quarterbreed.car_owner_countr %></b>
+          <% else %>
+            <%= @xj6_quarterbreed.car_owner_state %> <%= @xj6_quarterbreed.car_owner_zip %>,   <%= @xj6_quarterbreed.car_owner_countr %></b>
+          <% end %>
+        </td>
+        <td><em>Address: </em><b> <%= @xj6_quarterbreed.ship_to_address %> <br> <%= @xj6_quarterbreed.ship_to_city %>,
+          <% if @xj6_quarterbreed.ship_to_state == "None" %>
+            <%= @xj6_quarterbreed.ship_to_zip %>   <%= @xj6_quarterbreed.ship_to_countr %></b>
+          <% else %>
+          <%= @xj6_quarterbreed.ship_to_state %> <%= @xj6_quarterbreed.ship_to_zip %>,   <%= @xj6_quarterbreed.ship_to_countr %></b>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><em>Email: </em> <b><%= @xj6_quarterbreed.car_owner_email %></b></td>
+        <td><em>Email: </em> <b><%= @xj6_quarterbreed.ship_to_email %></b></td>
+      </tr>
+      <tr>
+        <td><em> Home Phone: </em>
+            <b> <%= @xj6_quarterbreed.car_owner_home_phone %></b>
+          <em>From: </em><b>  <%= @xj6_quarterbreed.car_owner_home_hours %></b> </td>
+        <td> <em> Shop Phone: </em>
+            <b><%= @xj6_quarterbreed.ship_to_phone  %></b>
+        </td>
+      </tr>
+      <tr>
+        <td> <em>Work Phone: </em>
+            <b><%= @xj6_quarterbreed.car_owner_work_phone %></b>
+          <em>From: </em><b> <%= @xj6_quarterbreed.car_owner_work_hours%></b> </td>
+        <td><em>Fax: </em>
+            <b><%= @xj6_quarterbreed.car_owner_fax  %></b>
+        </td>
+      </tr>
+      <tr>
+        <td> <em> Fax: </em>
+            <b> <%= @xj6_quarterbreed.ship_to_fax  %> </b>
+          <em>From: </em> <b> <%= @xj6_quarterbreed.car_owner_fax_hours %></b></td>
+          <td><em>How did you find us? </em><b> <%= @xj6_quarterbreed.car_owner_find_us %> </b> <em> -- </em><b> <%= @xj6_quarterbreed.car_owner_where_find_us %></b></td>
+      </tr>
+    </tbody>
+  </table>
+<% else %>
+  <table class="table table-bordered ">
+    <tbody>
+      <tr>
+        <td>CAR OWNER INFORMATION </td>
+      </tr>
+      <tr>
+        <td><em>Name: </em> <b><%= @xj6_quarterbreed.car_owner_full_name %></b> </td>
+      </tr>
+      <tr>
+        <td><em>Address: </em> <b> <%= @xj6_quarterbreed.car_owner_address %> <br> <%= @xj6_quarterbreed.car_owner_city %>,
+          <% if @xj6_quarterbreed.car_owner_state == "None" %>
+            <%= @xj6_quarterbreed.car_owner_zip %>   <%= @xj6_quarterbreed.car_owner_countr %></b>
+          <% else %>
+            <%= @xj6_quarterbreed.car_owner_state %> <%= @xj6_quarterbreed.car_owner_zip %>,   <%= @xj6_quarterbreed.car_owner_countr %></b>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><em>Email: </em> <b><%= @xj6_quarterbreed.car_owner_email %></b> </td>
+      </tr>
+      <tr>
+        <td><em>Home Phone: </em>
+            <b><%= @xj6_quarterbreed.car_owner_home_phone %></b>
+           <em>From:</em>  <b><%= @xj6_quarterbreed.car_owner_home_hours %> </b></td>
+      </tr>
+      <tr>
+        <td> <em>Work Phone: </em>
+            <b><%= @xj6_quarterbreed.car_owner_work_phone %></b>
+          <em>From: </em> <b> <%= @xj6_quarterbreed.car_owner_work_hours%> </b></td>
+      </tr>
+      <tr>
+        <td>  <em>Fax: </em>
+            <b><%= @xj6_quarterbreed.car_owner_fax %></b>
+          <em>From: </em> <b> <%= @xj6_quarterbreed.car_owner_fax_hours %></b></td>
+      </tr>
+      <tr>
+        <td><em>How did you find us? </em> <b><%= @xj6_quarterbreed.car_owner_find_us %></b><em> -- </em><b> <%= @xj6_quarterbreed.car_owner_where_find_us %> </b></td>
+      </tr>
+    </tbody>
+  </table>
+
+<% end %>
+</div>
+
+
+  <div class="col-xs-6 printable-table">
+    <h5 class="center"> XJ6 INFORMATION </h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><em>Year: </em> <b><%= @xj6_quarterbreed.year%></b></td>
+          <td><em>Model: </em> <b><%=@xj6_quarterbreed.model%></b></td>
+        </tr>
+          <td> <em>VIN:</em> <b><%=@xj6_quarterbreed.vin%></b></td>
+        </tr>
+        <tr>
+          <td> <em> Month Built</em> <b><%= @xj6_quarterbreed.month_built%></b> </td>
+          <td> <em> Year Built</em> <b><%= @xj6_quarterbreed.year_built%></b> </td>
+        </tr>
+      </tbody>
+    </table>
+    <h5 class="center"> ENGINE/ MOTOR DETAILS </h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><em>Engine Model: </em> <b><%= @xj6_quarterbreed.engine_model%><b></td>
+          <td><em>Engine #: </em> <b><%= @xj6_quarterbreed.engine_number%><b></td>
+      </tr>
+      <tr>
+        <% if @xj6_quarterbreed.rear_axl_ratio_other.present? || @xj6_quarterbreed.rear_axl_ratio == "Other - fill out in next box"%>
+          <td><em>Rear Axle Ratio: </em> <b><%=@xj6_quarterbreed.rear_axl_ratio_other%></b></td>
+        <% else %>
+          <td><em>Rear Axle Ratio: </em> <b><%=@xj6_quarterbreed.rear_axl_ratio%></b></td>
+        <% end %>
+        <td><em>Tire Size/ Radius: </em> <b><%=@xj6_quarterbreed.tire_size%></b></td>
+      </tr>
+      <tr>
+        <% if @xj6_quarterbreed.speedo_number_other.present? || @xj6_quarterbreed.speedo_number == "Other - fill out in next box"%>
+          <td><em>Speedo #: </em> <b><%=@xj6_quarterbreed.speedo_number_other%></b></td>
+        <% else %>
+          <td><em>Speedo #: </em> <b><%=@xj6_quarterbreed.speedo_number%></b></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="center"> GM TRANSMISSION INFORMATION </h5>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td><em>Year: </em> <b><%=@xj6_quarterbreed.trans_year%></b></td>
+        <td><em>Model: </em> <b><%=@xj6_quarterbreed.trans%></b></td>
+      </tr>
+      <tr>
+          <% if @xj6_quarterbreed.trans_length_other.present? || @xj6_quarterbreed.trans_length == "Other - fill out in box"%>
+            <td><em>Tailhousing Length: </em> <b><%=@xj6_quarterbreed.trans_length_other%></b></td>
+          <% else %>
+            <td><em>Tailhousing Length: </em> <b><%=@xj6_quarterbreed.trans_length%></b></td>
+          <% end %>
+        </tr>
+      </tr>
+      </tbody>
+    </table>
+    <p>Comments: <%= @xj6_quarterbreed.comments%></p>
+  </div>
+
+
+  <div class="col-xs-6 printable-table">
+    <h5 class="center"> BUILDING BLOCKS</h5>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td class="col-xs-3"><strong>QJ6 QUARTERBREED </strong></td>
+          <td class="col-xs-1"><strong> Price</strong> </td>
+        </tr>
+        <tr>
+          <td>QJ6 Quarterbreed Kit</td>
+          <td>$<%= @xj6_quarterbreed.xj6_quarterbreedss_kit_amt %></td>
+        </tr>
+        <tr>
+          <td >Driveshaft</td>
+          <td >$<%= @xj6_quarterbreed.driveshaft_amt %></td>
+        </tr>
+        <tr>
+          <td >Torque Convertor Lockup Kit </td>
+          <td >$<%= @xj6_quarterbreed.torque_converter_amt %></td>
+        </tr>
+        <tr>
+          <td> Gear Drive Starter  </td>
+          <td >$<%= @xj6_quarterbreed.gear_drive_starter_amt %></td>
+        </tr>
+        <tr>
+          <td >Credit</td>
+          <td > - $<%= @xj6_quarterbreed.credit_amt %></td>
+        </tr>
+          <td >Subtotal (Parts are freight paid 48 states only)</td>
+          <td >$<%= @xj6_quarterbreed.subtotal %></td>
+        </tr>
+        <tr>
+          <td >Texas Residents 8.25% Sales Tax </td>
+          <td >$ <%=@xj6_quarterbreed.sales_tax.round(2) %></td>
+        </tr>
+        <!-- <tr>
+          <td>Hawaii or Expedite</td>
+          <td>$ < @xj6_quarterbreed.expedite %></td>
+        </tr> -->
+        <tr>
+          <td>CASHIER'S CHECK = </td>
+          <td ><b>$<%= @xj6_quarterbreed.total.round(2) %></b></td>
+        </tr>
+      </tbody>
+  </table>
+  </div>
+  <br>
+
+<div class="col-xs-12">
+  <br>
+
+  <p> Signature _____________________________________________________ Date______________________</p>
+</div>
+<div class="col-xs-12 text-center">
+    <p class="small-text"><strong>JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226</strong><br>
+    www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
+</div>
+</div>
