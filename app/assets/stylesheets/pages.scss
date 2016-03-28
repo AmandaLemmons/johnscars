@@ -46,8 +46,10 @@ label .collection_radio_buttons {
 
  .printable-table{
    table tbody tr td {
-     padding: 5px;
+     padding: 2px;
      font-size: 12px;
+    //  border-top: none;
+    //  border-bottom: 1px solid black;
     }
  }
  .center {
