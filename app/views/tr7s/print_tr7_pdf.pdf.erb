@@ -3,13 +3,15 @@
 <h3 class="text-center"> JCI V6 TR7 CONVERSION KIT ORDER SHEET </h3>
 
 <div class="col-xs-12 printable-table">
-  <% if @tr7.same_information == false || nil  %>
-  <table class="table table-bordered ">
-    <tbody>
+  <!-- if @tr7.same_information == false || nil  %> -->
+  <table class="table table-condensed table-bordered">
+    <thead>
       <tr>
-        <td>CAR OWNER INFORMATION </td>
-        <td>SHOP OR "SHIP TO" INFORMATION  </td>
+        <th><strong>CAR OWNER INFORMATION</strong> </th>
+        <th><strong>SHOP OR "SHIP TO" INFORMATION</strong>  </th>
       </tr>
+    </thead>
+    <tbody>
       <tr>
         <td ><em>Name: </em><b><%= @tr7.car_owner_full_name %></b> </td>
         <td> <em>Name: </em><b><%= @tr7.ship_to_full_name %></b> </td>
@@ -58,8 +60,8 @@
       </tr>
     </tbody>
   </table>
-<% else %>
-  <table class="table table-bordered ">
+<!-- else %> -->
+  <!-- <table class="table table-bordered ">
     <tbody>
       <tr>
         <td>CAR OWNER INFORMATION </td>
@@ -98,67 +100,140 @@
         <td><em>How did you find us? </em> <b><%= @tr7.car_owner_find_us %></b><em> -- </em><b> <%= @tr7.car_owner_where_find_us %> </b></td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
 
-<% end %>
+<!-- end %> -->
 </div>
+  <!-- <div class= "col-xs-6">
+  <div class="row">
+    <div class="col-xs-3">
+      <p><b>Type: </b>
+    </div>
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-6">
+      <em> Year: <%= @tr7.tr7s_year%></em>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <b>Info: </b>
+    </div>
+    <div class="col-xs-6">
+      Vin #: <em> <%=@tr7.tr7s_vin%></em>
+    </div>
+    <div class="col-xs-3">
 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <b> </b>
+    </div>
+    <div class="col-xs-6">
+       Year:<em><%= @tr7.tr7s_year_built%></em>
+    </div>
+    <div class="col-xs-3">
+      </p>
+    </div>
+  </div>
+</div> -->
 
 
   <div class="col-xs-6 printable-table">
-    <h5 class="center"> TR7 Information (Before V8) </h5>
+    <h5 class="center"> <b>TR7 Information (Before V8)</b> </h5>
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td><em>Year: </em> <b> <%= @tr7.tr7s_year%></b></td>
-            <td><em>Model: </em> <b> <%=@tr7.tr7s_type%></b></td>
+          <td class="col-xs-4"><em> <b>Type:</b> </em></td>
+          <td class="col-xs-4"></td>
+          <td class="col-xs-4"> <%=@tr7.tr7s_type%></td>
         </tr>
         <tr>
-          <td> <em>VIN:</em> <b> <%=@tr7.tr7s_vin%></b></td>
+          <td><b><em>Info: </b></em> </td>
+          <td><em>VIN:</em> </td>
+          <td> <%=@tr7.tr7s_vin%></td>
         </tr>
         <tr>
-          <td><em>Month Built: </em> <b> <%= @tr7.tr7s_month_built%></b></td>
-          <td><em>Year Built: </em> <b> <%= @tr7.tr7s_year_built%></b></td>
+          <td></td>
+          <td><em>Year:</em> </td>
+          <td> <%= @tr7.tr7s_year%></td>
         </tr>
         <tr>
-          <td><em>Engine: </em> <b><%=@tr7.tr7s_engine%></b></td>
-          <td><em>Transmission Type: </em> <b> <%= @tr7.tr7s_transmission_type%></b></td>
+          <td></td>
+          <td><em>Month Built: </em></td>
+          <td> <%= @tr7.tr7s_month_built%></td>
         </tr>
         <tr>
-          <td><em>AC: </em>
-            <% if @tr7.tr7s_ac == true%>
-              <b>Yes</b>
+          <td></td>
+          <td><em>Year Built: </em> </td>
+          <td> <%= @tr7.tr7s_year_built%></td>
+        </tr>
+        <tr>
+          <td><b><em>Engine: </em> </b></td>
+          <td> </td>
+          <td><%=@tr7.tr7s_engine%></td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td><em>AC: </em></td>
+          <td> <% if @tr7.tr7s_ac == true%>
+                Yes
+              <% else %>
+                No
+              <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td><b><em>Transmission Type: </em> </b> </td>
+          <td></td>
+          <td><%= @tr7.tr7s_transmission_type%></td>
+        </tr>
+        <tr>
+          <td><b><em>Rear Axle Ration:</em></b></td>
+          <td></td>
+          <td>
+            <% if @tr7.tr7s_rear_axle_ratio == "Other - fill out in next box" ||  @tr7.other_rear_axle_ratio.present?%>
+              <%=@tr7.other_rear_axle_ratio%></td>
             <% else %>
-              <b>No</b>
+              <%=@tr7.tr7s_rear_axle_ratio%></td>
             <% end %>
           </td>
-          <% if @tr7.tr7s_rear_axle_ratio == "Other - fill out in next box" ||  @tr7.other_rear_axle_ratio.present?%>
-            <td><em>Rear Axle Ratio: </em> <b><%=@tr7.other_rear_axle_ratio%></b></td>
-          <% else %>
-            <td><em>Rear Axle Ratio: </em> <b><%=@tr7.tr7s_rear_axle_ratio%></b></td>
-          <% end %>
         </tr>
         <tr>
-          <td><em>Tire Size: </em> <b><%=@tr7.tr7s_tire_size%></b></td>
-          <td><em>Expansion Tank: </em>
-            <% if @tr7.tr7s_expansion_tank == true%>
-              <b>Yes</b>
+          <td><b><em>Tire Size: </b></em> </td>
+          <td></td>
+          <td><%=@tr7.tr7s_tire_size%></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>  <em>Expansion Tank: </em></td>
+            <td><% if @tr7.tr7s_expansion_tank == true%>
+              Yes
             <% else %>
-              <b>No</b>
+              No
             <% end %>
           </td>
         </tr>
       </tbody>
     </table>
-    <h5 class="center"> Buick Engine </h5>
+    <h5 class="center"> <b>Buick Engine </b></h5>
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td> <em> Buick Engine: </em> <b><%= @tr7.buick_v6_engine%></b></td>
-          <td> <em> Buick Year: </em><b> <%= @tr7.buick_v6_year%></b></td>
+          <td><b>Engine:</b></td>
+          <td> <em> Buick Engine: </em></td>
+          <td><%= @tr7.buick_v6_engine%></td>
         </tr>
         <tr>
-          <td> <em> Buick CID: </em> <b><%= @tr7.buick_v6_cid%></b></td>
+          <td></td>
+          <td> <em> Buick Year: </em></td>
+          <td><%= @tr7.buick_v6_year%></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td> <em> Buick CID: </em></td>
+          <td><%= @tr7.buick_v6_cid%></td>
         </tr>
       </tbody>
     </table>
