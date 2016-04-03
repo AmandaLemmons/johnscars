@@ -35,7 +35,7 @@
          <%= f.input :month_built, label: false, placeholder:"Month Built", collection: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]%>
        </div>
        <div class="col-md-3">
-         <h4>Year Buitl</h4>
+         <h4>Year Built</h4>
          <%= f.input :year_built, label: false, placeholder:"Year Built"%>
        </div>
        <div class="col-md-3">
@@ -65,77 +65,98 @@
 
 
       <div class="panel panel-default col-md-12">
-      <h3 class="text-center"> MONIES </h3>
       <h5 class="text-center"> <strong>ZCar Conversion Kit </strong> </h5>
        <table class="table table-bordered">
+         <thead>
+           <th>Kit & Goodies</th>
+           <th>Monies</th>
+           <th>Will Purchase?</th>
+           <th>Freight</th>
+         </thead>
          <tbody>
            <tr>
              <td class="col-md-4"> ZCar Conversion Kit </td>
              <td class="col-md-4">$695  </td>
              <td class="col-md-4"><strong></strong></td>
-             <td class="col-md-4"> Tach Calibration </td>
-             <td class="col-md-4">$55  </td>
-             <td class="col-md-4"><strong><%= f.collection_radio_buttons :tach_calibration, [[true, 'Yes'], [false, 'No']], :first, :last%></strong></td>
+             <td> PAID </td>
            </tr>
            <tr>
-             <td class="col-md-4"> Without Smog </td>
+             <td class="col-md-4"> Tach Calibration </td>
+             <td class="col-md-4"> $55 </td>
+             <td class="col-md-4"><%= f.collection_radio_buttons :tach_calibration, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+             <td></td>
+           </tr>
+           <tr>
+             <td class="col-md-4"> Tach Calibration Without Smog </td>
              <td class="col-md-4"> $125 </td>
              <td class="col-md-4"><%= f.collection_radio_buttons :tach_calibration_without_smog, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+             <td></td>
            </tr>
            <tr>
              <td class="col-md-4"> Ramshorn With Smog </td>
              <td class="col-md-4"> $275 </td>
              <td class="col-md-4"><%= f.collection_radio_buttons :ramshorn_w_smog, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+             <td></td>
            </tr>
            <tr>
              <td class="col-md-4">Ramshorn With EGR  & Smog </td>
              <td class="col-md-4"> $325.00 </td>
              <td class="col-md-4"><%= f.collection_radio_buttons :ramshorn_w_egr_smog, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+             <td></td>
            </tr>
            <tr>
              <td class="col-md-4">Driveshaft All except T400</td>
              <td class="col-md-4"> $165.00 </td>
              <td class="col-md-4"><%= f.collection_radio_buttons :driveshaft_except_t400, [[true, 'Yes'], [false, 'No']], :first, :last %> </td>
+             <td></td>
            </tr>
            <tr>
              <td class="col-md-4">Driveshaft T400</td>
              <td class="col-md-4"> $205.00</td>
              <td class="col-md-4"> <%= f.collection_radio_buttons :driveshaft_t400, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+             <td></td>
            </tr>
            <tr>
-             <td class="col-md-4">Driveshaft Adaptro</td>
+             <td class="col-md-4">Driveshaft Adaptor</td>
              <td class="col-md-4"> $100.00</td>
-             <!-- <td class="col-md-4"> < f.collection_radio_buttons :driveshaft_adaptor, [[true, 'Yes'], [false, 'No']], :first, :last %></td> -->
+             <td class="col-md-4"> <%= f.collection_radio_buttons :driveshaft_adaptor, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+             <td></td>
            </tr>
            <tr>
              <td class="col-md-4">Radiator - 4Row- exchange</td>
              <td class="col-md-4"> $245.00</td>
              <td class="col-md-4"> <%= f.collection_radio_buttons :radiator, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+             <td></td>
            </tr>
            <tr>
              <td class="col-md-4">16" Electric Fan w/Shroud</td>
              <td class="col-md-4"> $94.25</td>
              <td class="col-md-4"> <%= f.collection_radio_buttons :electric_fan, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+             <td></td>
            </tr>
            <tr>
              <td class="col-md-4">ELECTROLOCK T700</td>
              <td class="col-md-4"> $85</td>
              <td class="col-md-4"> <%= f.collection_radio_buttons :electrolock_t700, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+             <td></td>
            </tr>
            <tr>
              <td class="col-md-4">Other</td>
              <td class="col-md-4"> </td>
              <td class="col-md-4"> <%= f.collection_radio_buttons :other, [[true, 'Yes'], [false, 'No']], :first, :last %></td>
+             <td></td>
            </tr>
            <tr>
              <td class="col-md-4">Credit  (Suggested Buy or Repeat Kits)<br></td>
              <td class="col-md-4">Price <%= f.input :credit_amt, label: false, placeholder:"" %> </td>
              <td class="col-md-4"> Description of Credit <%= f.input :credit_description, label: false, placeholder:"" %></td>
+             <td></td>
            </tr>
            <tr>
              <td class="col-md-4">Are you a Texas Resident? </td>
              <td class="col-md-4"> 8.25% sales tax will be added </td>
              <td class="col-md-4"> </td>
+             <td>N/A</td>
            </tr>
            <!-- <tr>
              <td class="col-md-4">Freight</td>

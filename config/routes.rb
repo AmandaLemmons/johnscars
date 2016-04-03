@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   get 'print-tr7s-pdf/:id' => 'tr7s#print_tr7_pdf', as: :print_tr7_pdf
   get 'print-quarterbreeds-pdf/:id' => 'quarterbreeds#print_quarterbreeds_pdf', as: :print_quarterbreeds_pdf
   get 'print-order-sheet-pdf/:id' => 'order_sheets#print_order_sheet_pdf', as: :print_order_sheet_pdf
+  get 'print-datsun-zcar-pdf/:id' => 'datsun_zcars#print_datsun_zcar_pdf', as: :print_datsun_zcar_pdf
+
 
 
 

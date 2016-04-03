@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160403131750) do
+ActiveRecord::Schema.define(version: 20160403142424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,6 +152,8 @@ ActiveRecord::Schema.define(version: 20160403131750) do
     t.decimal  "total",                             precision: 10, scale: 2
     t.string   "rear_axl_ratio"
     t.string   "trans_type"
+    t.boolean  "driveshaft_adaptor",                                         default: false
+    t.decimal  "driveshaft_adaptor_amt",            precision: 10, scale: 2
   end
 
   create_table "etype_v12s", force: :cascade do |t|
