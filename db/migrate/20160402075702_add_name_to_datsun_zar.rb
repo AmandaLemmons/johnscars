@@ -62,7 +62,6 @@ class AddNameToDatsunZar < ActiveRecord::Migration
     add_column :datsun_zars, :electric_sfan_amt, :decimal, :precision => 10, :scale => 2
     add_column :datsun_zars, :electrolock_t700_amt, :decimal, :precision => 10, :scale => 2
     add_column :datsun_zars, :other_amt, :decimal, :precision => 10, :scale => 2
-    add_column :datsun_zars, :credit_amt, :decimal, :default => 0
     add_column :datsun_zars, :credit_description, :string
     add_column :datsun_zars, :subtotal, :decimal, :precision => 10, :scale => 2
     add_column :datsun_zars, :expedite, :decimal, :precision => 10, :scale => 2

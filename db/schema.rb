@@ -11,14 +11,77 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402075350) do
+ActiveRecord::Schema.define(version: 20160402075702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "datsun_zars", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                                                                 null: false
+    t.datetime "updated_at",                                                                 null: false
+    t.string   "car_owner_full_name"
+    t.string   "car_owner_address"
+    t.string   "car_owner_city"
+    t.string   "car_owner_state"
+    t.string   "car_owner_email"
+    t.string   "car_owner_zip"
+    t.string   "car_owner_home_phone"
+    t.string   "car_owner_work_phone"
+    t.string   "car_owner_fax"
+    t.string   "car_owner_find_us"
+    t.string   "car_owner_home_hours"
+    t.string   "car_owner_work_hours"
+    t.string   "car_owner_fax_hours"
+    t.string   "car_owner_country"
+    t.string   "car_owner_where_find_us"
+    t.string   "ship_to_full_name"
+    t.string   "ship_to_address"
+    t.string   "ship_to_city"
+    t.string   "ship_to_state"
+    t.string   "ship_to_email"
+    t.string   "ship_to_zip"
+    t.string   "ship_to_phone"
+    t.string   "ship_to_fax"
+    t.string   "ship_to_contact_person"
+    t.string   "ship_to_country"
+    t.boolean  "same_information",                                           default: false
+    t.string   "comments"
+    t.string   "type"
+    t.string   "vin"
+    t.string   "year"
+    t.string   "month_built"
+    t.string   "year_built"
+    t.string   "engine"
+    t.string   "rear_axle"
+    t.string   "tire_size"
+    t.string   "power_steering"
+    t.integer  "zcar_kit"
+    t.boolean  "tach_calibration",                                           default: false
+    t.boolean  "tach_calibration_without_smog",                              default: false
+    t.boolean  "ramshorn_w_smog",                                            default: false
+    t.boolean  "ramshorn_w_egr_smog",                                        default: false
+    t.boolean  "driveshaft_except_t400",                                     default: false
+    t.boolean  "driveshaft_t400",                                            default: false
+    t.boolean  "radiator",                                                   default: false
+    t.boolean  "electric_fan",                                               default: false
+    t.boolean  "electrolock_t700",                                           default: false
+    t.boolean  "other",                                                      default: false
+    t.decimal  "credit_amt",                                                 default: 0.0
+    t.decimal  "tach_calibration_amt",              precision: 10, scale: 2
+    t.decimal  "tach_calibration_without_smog_amt", precision: 10, scale: 2
+    t.decimal  "ramshorn_w_smog_amt",               precision: 10, scale: 2
+    t.decimal  "ramshorn_w_egr_smog_amt",           precision: 10, scale: 2
+    t.decimal  "driveshaft_except_t400_amt",        precision: 10, scale: 2
+    t.decimal  "driveshaft_t400_amt",               precision: 10, scale: 2
+    t.decimal  "radiator_amt",                      precision: 10, scale: 2
+    t.decimal  "electric_sfan_amt",                 precision: 10, scale: 2
+    t.decimal  "electrolock_t700_amt",              precision: 10, scale: 2
+    t.decimal  "other_amt",                         precision: 10, scale: 2
+    t.string   "credit_description"
+    t.decimal  "subtotal",                          precision: 10, scale: 2
+    t.decimal  "expedite",                          precision: 10, scale: 2
+    t.decimal  "sales_tax",                         precision: 10, scale: 2
+    t.decimal  "total",                             precision: 10, scale: 2
   end
 
   create_table "etype_v12s", force: :cascade do |t|
