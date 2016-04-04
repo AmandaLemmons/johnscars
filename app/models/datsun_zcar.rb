@@ -3,7 +3,7 @@ class DatsunZcar < ActiveRecord::Base
 
 
 def set_datsun_zcar
-  self.kit_amt = 695
+  self.zcar_kit = 695
   self.save
 end
 
@@ -81,9 +81,9 @@ end
 
 def set_electric_fan
   if self.electric_fan == true
-     self.electric_fan_amt = 94.25
+     self.electric_sfan_amt = 94.25
    else
-      self.electric_fan_amt = 0
+      self.electric_sfan_amt = 0
   end
   self.save!
 end
@@ -98,7 +98,7 @@ def set_electrolock_t700
 end
 
 def set_subtotal
-  self.subtotal = self.electrolock_t700_amt + self.electric_fan_amt + self.kit_amt + self.tach_calibration_amt + self.tach_calibration_without_smog_amt + self.ramshorn_w_smog_amt + self.ramshorn_w_egr_smog_amt + self.driveshaft_except_t400_amt + self.driveshaft_t400_amt + self.driveshaft_adaptor_amt + self.radiator_amt - self.credit_amt
+  self.subtotal = self.electrolock_t700_amt + self.electric_sfan_amt + self.zcar_kit + self.tach_calibration_amt + self.tach_calibration_without_smog_amt + self.ramshorn_w_smog_amt + self.ramshorn_w_egr_smog_amt + self.driveshaft_except_t400_amt + self.driveshaft_t400_amt + self.driveshaft_adaptor_amt + self.radiator_amt - self.credit_amt
   self.save!
 end
 

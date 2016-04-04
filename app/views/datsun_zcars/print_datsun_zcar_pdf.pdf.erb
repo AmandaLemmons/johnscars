@@ -68,7 +68,7 @@
         <tr>
           <td class="col-xs-4"><em> <b>Type:</b> </em></td>
           <td class="col-xs-4"></td>
-          <td class="col-xs-4"> <%=@datsun_zcar.type%></td>
+          <td class="col-xs-4"> <%=@datsun_zcar.datsun_type%></td>
         </tr>
         <tr>
           <td><b><em>Info: </b></em> </td>
@@ -232,4 +232,204 @@
     <p class="small-text">JOHN'S CARS, INC. | 800 JAGUAR LANE | DALLAS, TEXAS 75226
       <br> www.johnscars.com | Fax (214) 426-3116 | (214) 426-4100</p>
   </div>
+</div>
+
+<div class="pdf-page-break-before"></div>
+<div class="print-form page-break-before">
+  <p class="center "> Chevy V8 Driveline Info </p>
+
+  <table class="table table-bordered printable-table">
+    <tbody>
+      <tr>
+        <td> <em> Engine:</em> <b> <%= @datsun_zcar.driveline_engine%> </b> </td>
+        <td> <em> Engine Year:</em> <b> <%= @datsun_zcar.driveline_year%> </b> </td>
+        <td> <em> Engine CID:</em> <b> <%= @datsun_zcar.driveline_cid%> </b> </td>
+      </tr>
+      <tr>
+        <% if  @datsun_zcar.donar_car_other.present? %>
+          <td> <em> Donor Car:</em> <b> <%= @datsun_zcar.donar_car_other%> </b> </td>
+        <% else %>
+          <td> <em> Donor Car:</em> <b> <%= @datsun_zcar.donar_car%> </b> </td>
+        <% end %>
+        <td> <em> Transmission: </em> <b> <%= @datsun_zcar.driveline_trans%> </b></td>
+        <td> <em> Trans Year: </em> <b> <%= @datsun_zcar.driveline_trans_year%> </b></td>
+      </tr>
+      <tr>
+        <td> <em>Tailhousing Length:</em> <b> <%= @datsun_zcar.tailhousing_length%> </b></td>
+        <td> <em>How did you get your Trans?</em> <b> <%= @datsun_zcar.how_get_trans%> </b></td>
+        <td><em>A/C Refrigerant:</em>
+          <% if @datsun_zcar.ac_refrigerant_other.present? %>
+            <b><%= @datsun_zcar.ac_refrigerant_other%></b>
+          <% else %>
+            <b><%= @datsun_zcar.ac_refrigerant%></b>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><em>Battery Type:</em><b><%= @datsun_zcar.battery_type%></b></td>
+        <td><em>Fan Belts:</em><b><%= @datsun_zcar.fan_belts%></b></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-bordered printable-table">
+    <tbody>
+      <tr>
+        <td><em>Front View</em><b>
+          <% if @datsun_zcar.some_carb_v8 == true %>
+            <%= wicked_pdf_image_tag("some_carb_v8.png") %>
+          <% elsif @datsun_zcar.most_carb_v8 == true %>
+            <%= wicked_pdf_image_tag("most_carb_v8.png") %>
+          <% elsif @datsun_zcar.truck_tbi == true %>
+            <%= wicked_pdf_image_tag("truck_tbi.png") %>
+          <% elsif @datsun_zcar.camaro_lt1 == true %>
+            <%= wicked_pdf_image_tag("camaro_lt1.png") %>
+          <% elsif @datsun_zcar.corvette_lt4 == true %>
+            <%= wicked_pdf_image_tag("corvette_lt4.png") %>
+          <% elsif @datsun_zcar.other_front_view == true %>
+            Draw your Front View here:
+            <%= wicked_pdf_image_tag("other_front_view.png") %>
+          <% else %>
+          <% end %>
+          </b></td>
+        <td><em>Compressor Type</em>
+          <b>
+            <% if @datsun_zcar.compressor_a6 == true %>
+              <%= wicked_pdf_image_tag("compressor_a6.png") %>
+            <% elsif @datsun_zcar.compressor_r4 == true %>
+              <%= wicked_pdf_image_tag("compressor_r4.png") %>
+            <% elsif @datsun_zcar.compressor_da6 == true %>
+              <%= wicked_pdf_image_tag("compressor_da6.png") %>
+            <% elsif @datsun_zcar.compressor_nd == true %>
+              <%= wicked_pdf_image_tag("compressor_nd.png") %>
+            <% else %>
+            <% end %>
+          </b>
+        </td>
+        <td><em>Plug on Front of Compressor</em>
+          <b>
+            <% if @datsun_zcar.plug_a6 == true %>
+              <%= wicked_pdf_image_tag("plug_a6.png") %>
+            <% elsif @datsun_zcar.plug_r4 == true %>
+              <%= wicked_pdf_image_tag("plug_r4.png") %>
+            <% elsif @datsun_zcar.plug_da6 == true %>
+              <%= wicked_pdf_image_tag("plug_da6.png") %>
+            <% elsif @datsun_zcar.plug_nd == true %>
+              <%= wicked_pdf_image_tag("plug_nd.png") %>
+            <% else %>
+            <% end %>
+          </b>
+        </td>
+      </tr>
+      <tr>
+        <td><em>Alternator Plug</em>
+          <b>
+            <% if @datsun_zcar.alternator_plug_type2 == true %>
+              <%= wicked_pdf_image_tag("alternator_plug_type2.png") %>
+            <% elsif @datsun_zcar.alternator_plug_type3 == true %>
+              <%= wicked_pdf_image_tag("alternator_plug_type3.png") %>
+            <% else %>
+            <% end %>
+          </b>
+        </td>
+        <td><em>HEI Ignition Plug</em>
+          <b>
+            <% if @datsun_zcar.ignition_plug_type2 == true %>
+              <%= wicked_pdf_image_tag("ignition_plug_type2.png") %>
+            <% elsif @datsun_zcar.ignition_plug_type3 == true %>
+              <%= wicked_pdf_image_tag("ignition_plug_type3.png") %>
+            <% else %>
+            <% end %>
+          </b>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br clear="all">
+
+  <p class="center"> Engine</p>
+
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td><em> Fuel Injection Type:</em>
+        <% if @datsun_zcar.engine_fuel_injection_other.present? %>
+          <b><%=@datsun_zcar.engine_fuel_injection_other %></b></td>
+        <% else %>
+          <b><%=@datsun_zcar.engine_fuel_injection %></b></td>
+        <% end %>
+        <td><em> Donor Car:</em>
+        <% if @datsun_zcar.engine_donor_car_other.present? %>
+          <b><%=@datsun_zcar.engine_donor_car_other %></b></td>
+        <% else %>
+          <b><%=@datsun_zcar.engine_donor_car %></b></td>
+        <% end %>
+        <td><em> TPI and LT-1 Only:</em> <b><%=@datsun_zcar.engine_tpi_lt1 %></b></td>
+      </tr>
+      <tr>
+        <td> LT-1 Only<em> Size of purge nipple:</em> <b><%=@datsun_zcar.engine_purge_size %></b></td>
+        <td>LT-1 Only <em> PS Pump location: </em> <b><%=@datsun_zcar.engine_ps_pump_location %></b></td>
+        <td>LT-1 Only <em> PS Pump outlet direction: </em> <b><%=@datsun_zcar.engine_ps_pump_outlet %></b></td>
+      </tr>
+      <tr>
+        <td>Corvette Motor Only<em> Thread size at pump:</em> <b><%=@datsun_zcar.engine_corvette_nut_size %></b></td>
+        <td>Corvette Motor Only<em> Diameter at water pump:</em>  <b><%=@datsun_zcar.engine_corvette_diameter %></b></td>
+        <td>TBI Motor Only <em>Thermostat Housing Outlet points towards</em> <b><%=@datsun_zcar.engine_tbi_thermostat %></b></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="center"> Accessories</p>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td><em> Fans:</em> <b><%=@datsun_zcar.accessories_fan %></b></td>
+        <td><em> Water Pump:</em> <b><%=@datsun_zcar.accessories_water_pump %></b></td>
+        <td><em> Fan Belts:</em> <b><%=@datsun_zcar.accessories_fan_belts %></b></td>
+      </tr>
+      <tr>
+        <td><em> Air pump (smog pump):</em> <b><%=@datsun_zcar.accessories_air_pump %></b></td>
+        <td><em> Valve Covers:</em> <b><%=@datsun_zcar.accessories_valve_covers %></b></td>
+        <td><em> A/C Refrigerant:</em>  <b><%=@datsun_zcar.accessories_ac_refrigerant %></b></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="center"> Miscellaneous</p>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td><em>FI harness:</em>
+        <% if @datsun_zcar.miscellaneous_fi_harness_other.present? %>
+          <b><%=@datsun_zcar.miscellaneous_fi_harness_other %></b></td>
+        <% else %>
+          <b><%=@datsun_zcar.miscellaneous_fi_harness %></b></td>
+        <% end %>
+        <td><em>Oil Pressure Safety Switch:</em>
+        <% if @datsun_zcar.miscellaneous_oil_switch == true %>
+           <b>Yes </b></td>
+        <% else %>
+         <b> No </b></td>
+        <% end %>
+        <td><em>T700 Lockup </em> <b><%= @datsun_zcar.miscellaneous_t700_lockup %></b> </td>
+      </tr>
+      <tr>
+        <td><em>Ignition</em>
+        <% if @datsun_zcar.miscellaneous_ignition_other.present? %>
+           <b><%= @datsun_zcar.miscellaneous_ignition_other %></b> </td>
+        <% else %>
+           <b><%= @datsun_zcar.miscellaneous_ignition %></b> </td>
+        <% end %>
+
+        <td><em>VSS/ Speedo Type:</em>
+          <% if @datsun_zcar.miscellaneous_speedo_type == "Type 1" %>
+            <b> Type 1 </b></td>
+          <% else %>
+            <b> Type 2 </b></td>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>

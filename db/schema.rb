@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160403142424) do
+ActiveRecord::Schema.define(version: 20160404195209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,8 +113,7 @@ ActiveRecord::Schema.define(version: 20160403142424) do
     t.string   "ship_to_contact_person"
     t.string   "ship_to_country"
     t.boolean  "same_information",                                           default: false
-    t.string   "comments"
-    t.string   "type"
+    t.text     "comments"
     t.string   "vin"
     t.string   "year"
     t.string   "month_built"
@@ -154,6 +153,67 @@ ActiveRecord::Schema.define(version: 20160403142424) do
     t.string   "trans_type"
     t.boolean  "driveshaft_adaptor",                                         default: false
     t.decimal  "driveshaft_adaptor_amt",            precision: 10, scale: 2
+    t.string   "datsun_type"
+    t.string   "driveline_engine"
+    t.string   "driveline_year"
+    t.string   "driveline_cid"
+    t.string   "donar_car"
+    t.string   "donar_car_other"
+    t.string   "driveline_trans"
+    t.string   "driveline_trans_year"
+    t.string   "tailhousing_length"
+    t.string   "how_get_trans"
+    t.string   "ac_refrigerant"
+    t.string   "ac_refrigerant_other"
+    t.string   "battery_type"
+    t.string   "fan_belts"
+    t.boolean  "some_carb_v8",                                               default: false
+    t.boolean  "most_carb_v8",                                               default: false
+    t.boolean  "truck_tbi",                                                  default: false
+    t.boolean  "camaro_lt1",                                                 default: false
+    t.boolean  "corvette_lt4",                                               default: false
+    t.boolean  "other_front_view",                                           default: false
+    t.boolean  "compressor_a6",                                              default: false
+    t.boolean  "compressor_r4",                                              default: false
+    t.boolean  "compressor_da6",                                             default: false
+    t.boolean  "compressor_nd",                                              default: false
+    t.boolean  "plug_a6",                                                    default: false
+    t.boolean  "plug_r4",                                                    default: false
+    t.boolean  "plug_da6",                                                   default: false
+    t.boolean  "plug_nd",                                                    default: false
+    t.boolean  "alternator_plug_type2",                                      default: false
+    t.boolean  "alternator_plug_type3",                                      default: false
+    t.boolean  "alternator_plug_type1",                                      default: false
+    t.boolean  "ignition_plug_type1",                                        default: false
+    t.boolean  "ignition_plug_type2",                                        default: false
+    t.boolean  "ignition_plug_type3",                                        default: false
+    t.string   "engine_fuel_injection"
+    t.string   "engine_fuel_injection_other"
+    t.string   "engine_donor_car"
+    t.string   "engine_donor_car_other"
+    t.string   "engine_tpi_lt1"
+    t.string   "engine_ps_pump_location"
+    t.string   "engine_ps_pump_outlet"
+    t.string   "engine_corvette_nut_size"
+    t.string   "engine_corvette_diameter"
+    t.string   "engine_tbi_thermostat"
+    t.string   "accessories_fan"
+    t.string   "accessories_water_pump"
+    t.string   "accessories_fan_belts"
+    t.string   "accessories_air_pump"
+    t.string   "accessories_valve_covers"
+    t.string   "accessories_ac_refrigerant"
+    t.string   "miscellaneous_fi_harness"
+    t.string   "miscellaneous_fi_harness_other"
+    t.boolean  "miscellaneous_oil_switch",                                   default: false
+    t.string   "miscellaneous_speedo_type"
+    t.string   "miscellaneous_t700_lockup"
+    t.string   "miscellaneous_ignition"
+    t.string   "miscellaneous_ignition_other"
+    t.boolean  "call_for_help",                                              default: false
+    t.string   "talk_to"
+    t.text     "impression_staff"
+    t.string   "engine_purge_size"
   end
 
   create_table "etype_v12s", force: :cascade do |t|
