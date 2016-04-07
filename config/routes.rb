@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :mark_quarterbreeds
   resources :xj6_quarterbreeds
   resources :etype_v12s
+
   resources :datsun_zcars
+    get "information" => "datsun_zcars#information", as: :datsun_zcar_information
+
 
   # , :except => [:show, :edit, :update] do
   #  collection do
@@ -20,7 +23,6 @@ Rails.application.routes.draw do
 
   get 'jaguars' =>'pages#jaguars', as: :jaguars
   get 'triumph-tr7' => 'pages#triumph_tr7', as: :triumph_tr7
-  # get 'datsun-zcar' => 'pages#datsun_zcar', as: :datsun_zcar
   get 'chevy-v8' => 'pages#chevy_v8', as: :chevy_v8
 
   get 'order_forms' => 'pages#order_forms', as: :order_forms

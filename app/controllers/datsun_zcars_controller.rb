@@ -14,6 +14,9 @@ class DatsunZcarsController < ApplicationController
    end
  end
 
+ def information
+ end
+
  def index
    @datsun_zcar = DatsunZcar.new
 
