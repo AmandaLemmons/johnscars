@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   root 'pages#index'
   resources :order_sheets
   resources :quarterbreeds
+    get "quarterbreed/information" => "quarterbreeds#information", as: :quarterbreed_information
+
   resources :tr7s
   resources :mark_quarterbreeds
   resources :xj6_quarterbreeds
   resources :etype_v12s
 
   resources :datsun_zcars
-    get "information" => "datsun_zcars#information", as: :datsun_zcar_information
+    get "datsun_zcars/information" => "datsun_zcars#information", as: :datsun_zcar_information
 
 
   # , :except => [:show, :edit, :update] do

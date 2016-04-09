@@ -18,6 +18,9 @@ class QuarterbreedsController < ApplicationController
     @quarterbreed = Quarterbreed.new
  end
 
+ def information
+ end
+
  def show
  end
 
