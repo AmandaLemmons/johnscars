@@ -1,4 +1,3 @@
-
 <div class="space-30"></div>
 <div class="space-30"></div>
 
@@ -8,24 +7,28 @@
             <div class="col-md-12 features">
                 <h3>Datsun ZCar</h3>
                 <div class="row panel panel-default">
-                    <div class="col-md-3 services-icon">
+                    <div class="col-md-3 services-icon" id="v8_conversion">
                         <%= image_tag("zcar.png", :class => "car-pic") %>
                     </div>
                     <div class="col-md-9 services-text">
                         <h4 class="heading-mini">Datsun ZCar</h4>
                         <p>The Datsun ZCar was the first Japanese sports car to gain acceptance in America. </p>
-                        <div class=" col-sm-9">
-                        <div class="services-box">
-                            <h4><%= link_to "ZCar V8 Conversion", datsun_zcar_information_path(anchor: "v8_conversion")%></h4>
-                            <p>   Chevy spunk for your Datsun ZCar. John's Cars ZCar conversion to a Chevrolet V8 small block and GM transmission redefines <strong><em>AWESOME</em></strong>.  Stock exhaust manifolds can be used and the GM A6 A/C compressor fits. We suggest you use a GM alternator and PS pump (as needed) rather than retain the $$$ ZCar units. Transmission choices are 4, 5 or 6-speed manual, T350, T400 or T700 overdrive automatics.</p>
+                        <div class="row">
+                          <div class=" col-xs-6 col-sm-6">
+                            <div class="services-box-smaller" >
+                              <h5><%= link_to "ZCar V8 Conversion", anchor: ("datsun_info") %></h5>
+                            </div>
+
+                          </div> <!--col4-->
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6">
+                              <div class="services-box-smaller">
+                                <h5>ZCar Parts</h5>
+                              </div>
+                                  <p> <small>**This is the extent of our Zcar offerings, we do not have brakes, suspension, frame etc components nor do we have any experience with other companies parts.</small></p>
+                            </div><!--services box-->
                         </div>
-                        </div> <!--col6-->
-                        <div class=" col-sm-9">
-                        <div class="services-box">
-                            <h4>ZCar Parts</h4>
-                            <p> This is the extent of our Zcar offerings, we do not have brakes, suspension, frame etc components nor do we have any experience with other companies parts.</p>
-                        </div>
-                        </div> <!--col6-->
+
 
                     </div>
                 </div><!--row panel-->
@@ -33,3 +36,4 @@
     </div><!--row-->
   </div><!--container-->
 </section>
+<%= render partial: 'datsun_zcars/information' %>

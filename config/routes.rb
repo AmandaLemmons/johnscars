@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :etype_v12s
 
   resources :datsun_zcars
-    get "datsun_zcars/information" => "datsun_zcars#information", as: :datsun_zcar_information
+    get "datsun_zcar/information" => "datsun_zcars#information", as: :datsun_zcar_information
 
 
   # , :except => [:show, :edit, :update] do
