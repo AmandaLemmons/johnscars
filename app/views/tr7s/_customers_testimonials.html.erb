@@ -2,13 +2,9 @@
 <div class="panel panel-default">
   <div class="panel-heading" role="tab" id="headingFive">
     <h1 class="panel-title">
-      <!-- <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"> -->
         <strong>TR7 Customer Testimonials</strong>
-      <!-- </a> -->
     </h1>
   </div>
-  <!-- <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-    <div class="panel-body"> -->
       <p>
         Engine and trans are now in car and I am hooking stuff up. Everything fits!!! I'm very pleased with kit. Thanks (TR7)..... Dave Burton, Charlotte, NC.
       </p>
@@ -31,7 +27,18 @@
         Still have doubts?  Read more <%= link_to"Customer Testimonials", root_path%> about John's Cars.
       </p>
       <div class="space-70"></div>
-      <p> <%= link_to "Back to top", anchor: ("triumph_top")%>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6">
+          <div class="services-box-smaller">
+            <%= link_to "Back to top", anchor: ("triumph_top")%>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6">
+          <div class="services-box-smaller">
+            <%= link_to "TR7 KIT ", tr7s_path%>
+          </div>
+        </div>
+      </div>
     <!-- </div>
   </div> -->
 </div>
