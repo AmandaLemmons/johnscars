@@ -24,6 +24,7 @@ Rails.application.routes.draw do
  # end
 
   get 'jaguars' =>'pages#jaguars', as: :jaguars
+  get 'xj-sedans' => 'jaguars#xj_sedans', as: :xj_sedans
   get 'triumph-tr7' => 'pages#triumph_tr7', as: :triumph_tr7
   get 'chevy-v8' => 'pages#chevy_v8', as: :chevy_v8
 
@@ -36,6 +37,8 @@ Rails.application.routes.draw do
   get 'print-quarterbreeds-pdf/:id' => 'quarterbreeds#print_quarterbreeds_pdf', as: :print_quarterbreeds_pdf
   get 'print-order-sheet-pdf/:id' => 'order_sheets#print_order_sheet_pdf', as: :print_order_sheet_pdf
   get 'print-datsun-zcar-pdf/:id' => 'datsun_zcars#print_datsun_zcar_pdf', as: :print_datsun_zcar_pdf
+
+
 
 
 
